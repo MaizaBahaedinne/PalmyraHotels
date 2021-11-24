@@ -52,7 +52,7 @@
                         <div class="header-left">
                             <ul class="list-items">
                                 <li><a href="#"><i class="la la-phone mr-1"></i>(123) 123-456</a></li>
-                                <li><a href="#"><i class="la la-envelope mr-1"></i>trizen@palmyra.com.tn</a></li>
+                                <li><a href="#"><i class="la la-envelope mr-1"></i>info@palmyra.com.tn</a></li>
                             </ul>
                         </div>
                     </div>

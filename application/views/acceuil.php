@@ -283,14 +283,14 @@
                         
                         <div class="card-item">
                             <div class="card-img">
-                                <a href="hotel-single.html" class="d-block">
+                                <a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" class="d-block">
                                     <img src="<?php echo base_url() ?>assets/images/facade/<?php echo $hotel->facade ?>" alt="<?php echo $hotel->name ?>">
                                 </a>
                                 <!-- <span class="badge">Featured</span>
                                 <span class="badge badge-ribbon">20% off</span> -->
                             </div>
                             <div class="card-body">
-                                <h3 class="card-title"><a href="hotel-single.html"><?php echo $hotel->name ?></a></h3>
+                                <h3 class="card-title"><a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" ><?php echo $hotel->name ?></a></h3>
                                 <p class="card-meta"><?php echo $hotel->location ?></p>
                                 <div class="card-rating">
                                     <span class="badge text-white">4.4/5</span>
@@ -303,7 +303,7 @@
                                         <span class="price__num before-price color-text-3">$100.00</span>
                                         <span class="price__text">Per night</span>
                                     </p>
-                                    <a href="hotel-single.html" class="btn-text">See details<i class="la la-angle-right"></i></a>
+                                    <a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" class="btn-text">See details<i class="la la-angle-right"></i></a>
                                 </div>
                             </div>
                         </div><!-- end card-item -->

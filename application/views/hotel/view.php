@@ -23,7 +23,7 @@
 <!-- ================================
     START BREADCRUMB AREA
 ================================= -->
-<section class="breadcrumb-area bread-bg-7 py-0">
+<section class="breadcrumb-area py-0" style="background-image: url(<?php echo base_url() ?>assets/images/facade/<?php echo $hotel->facade ?>);" >
     <div class="breadcrumb-wrap">
         <div class="container">
             <div class="row">
@@ -289,13 +289,16 @@
                                     </form>
                                 </div><!-- end contact-form-action -->
                                 <h3 class="title font-size-20">Available Rooms</h3>
+
+                                <?php foreach ($rooms as $room) { ?> 
+
                                 <div class="cabin-type padding-top-30px">
                                     <div class="cabin-type-item seat-selection-item d-flex">
                                         <div class="cabin-type-img flex-shrink-0">
-                                            <img src="<?php echo base_url() ?>assets/images/inside-cabin.jpg" alt="">
+                                            <img src="<?php echo base_url() ?>assets/images/Hotels/rooms/<?php echo $room->facade_r ?>" alt="">
                                         </div>
                                         <div class="cabin-type-detail">
-                                            <h3 class="title">Standard Family Room</h3>
+                                            <h3 class="title"><?php echo $room->titre ?></h3>
                                             <div class="row padding-top-20px">
                                                 <div class="col-lg-6 responsive-column">
                                                     <div class="single-tour-feature d-flex align-items-center mb-3">
@@ -313,7 +316,7 @@
                                                              <i class="la la-bed"></i>
                                                          </div>
                                                          <div class="single-feature-titles">
-                                                             <h3 class="title font-size-15 font-weight-medium">2 Single beds</h3>
+                                                             <h3 class="title font-size-15 font-weight-medium"><?php echo $room->capacity ?> Single beds</h3>
                                                          </div>
                                                      </div>
                                                 </div><!-- end col-lg-6 -->
@@ -338,6 +341,7 @@
                                                      </div>
                                                 </div><!-- end col-lg-6 -->
                                             </div><!-- end row -->
+                                            <!--
                                             <div class="room-photos">
                                                 <a class="btn theme-btn-hover-gray" data-src="<?php echo base_url() ?>assets/images/img1.jpg"
                                                    data-fancybox="gallery"
@@ -345,34 +349,23 @@
                                                    data-speed="700">
                                                     <i class="la la-photo mr-2"></i>Room Photos
                                                 </a>
-                                                <a class="d-none"
-                                                     data-fancybox="gallery"
-                                                     data-src="<?php echo base_url() ?>assets/images/img2.jpg"
-                                                     data-caption="Showing image - 02"
-                                                     data-speed="700"></a>
-                                                <a class="d-none"
-                                                     data-fancybox="gallery"
-                                                     data-src="<?php echo base_url() ?>assets/images/img3.jpg"
-                                                     data-caption="Showing image - 03"
-                                                     data-speed="700"></a>
-                                                <a class="d-none"
-                                                     data-fancybox="gallery"
-                                                     data-src="<?php echo base_url() ?>assets/images/img4.jpg"
-                                                     data-caption="Showing image - 04"
-                                                     data-speed="700"></a>
+                                            
                                             </div>
+                                            -->
                                         </div>
                                         <div class="cabin-price">
-                                            <p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong></>
+                                            <p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong>
+                                                 <!--
                                             <div class="custom-checkbox mb-0">
                                                 <input type="checkbox" id="selectChb1">
                                                 <label for="selectChb1" class="theme-btn theme-btn-small">Select</label>
                                             </div>
+                                                -->
                                         </div>
                                     </div><!-- end cabin-type-item -->
                                 </div><!-- end cabin-type -->
                                 
-
+                            <?php } ?>
                                 
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>

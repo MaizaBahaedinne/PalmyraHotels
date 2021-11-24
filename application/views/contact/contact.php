@@ -16,7 +16,7 @@
                         <div class="breadcrumb-list text-right">
                             <ul class="list-items">
                                 <li><a href="index.html">Home</a></li>
-                                <li>Pages</li>
+                                
                                 <li>Contact us</li>
                             </ul>
                         </div><!-- end breadcrumb-list -->

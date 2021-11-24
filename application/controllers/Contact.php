@@ -17,8 +17,9 @@ class Contact extends BaseController
     public function __construct()
     {
         parent::__construct();
-         $this->load->model('contact_model');
-
+        $this->load->model('hotel_model');
+       
+        
         $this->isLoggedIn();   
     }
     
@@ -43,26 +44,6 @@ class Contact extends BaseController
 
     
 
-      function addNew(){
-
-        $contactInfo = array(
-                 'nom' => $this->input->post('nom') ,
-                 'prenom' => $this->input->post('prenom') ,
-                 'adresse' => $this->input->post('adresse') ,
-                 'ville' => $this->input->post('ville') ,
-                 'phone'=> $this->input->post('email') ,                
-                 'email'=> $this->input->post('email') ,
-                 'message'=>$this->input->post('message'),
-                 'createdDtm'=>date('Y-m-d H:i:s'),
-                     );
-                
-        $result = $this->contact_model->addNewContact($contactInfo);
-
-           
-
-
-       redirect('')  ; 
-
-     }
+     
 
 }
