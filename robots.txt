@@ -1,0 +1,5 @@
+User-agent: * 
+Disallow: /dashboard
+Access-Control-Allow-Origin: http://localhost
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: Content-Type
