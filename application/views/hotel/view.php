@@ -87,7 +87,7 @@
                     <div class="single-content-wrap padding-top-60px">
                         <div id="description" class="page-scroll">
                             <div class="single-content-item pb-4">
-                                <h3 class="title font-size-26"><?php echo $hotel->name ?></h3>
+                                <h3 class="title font-size-26"><?php echo $hotel->name ?> </h3>
                                 <div class="d-flex align-items-center pt-2">
                                     <p class="mr-2"><?php echo $hotel->location ?></p>
                                     <p>
@@ -200,14 +200,14 @@
                             <div class="single-content-item padding-top-40px padding-bottom-30px">
                                 <h3 class="title font-size-20">Availability</h3>
                                 <div class="contact-form-action padding-bottom-35px">
-                                    <form method="post">
+                                    <form method="get" action="<?php echo base_url() ?>/Hotel/view/<?php echo $hotel->hotelId ?>">
                                         <div class="row">
                                             <div class="col-lg-6 responsive-column">
                                                 <div class="input-box">
                                                     <label class="label-text">Check in - Check out</label>
                                                     <div class="form-group">
                                                         <span class="la la-calendar form-icon"></span>
-                                                        <input class="date-range form-control" type="text" name="daterange" readonly>
+                                                        <input class="date-range form-control" type="text" name="daterange" value="<?php echo $this->input->get('daterange') ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -216,65 +216,50 @@
                                                     <label class="label-text">Rooms</label>
                                                     <div class="form-group">
                                                         <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="0">Select Rooms</option>
-                                                                <option value="1">1 Room</option>
-                                                                <option value="2">2 Rooms</option>
-                                                                <option value="3">3 Rooms</option>
-                                                                <option value="4">4 Rooms</option>
-                                                                <option value="5">5 Rooms</option>
-                                                                <option value="6">6 Rooms</option>
-                                                                <option value="7">7 Rooms</option>
-                                                                <option value="8">8 Rooms</option>
-                                                                <option value="9">9 Rooms</option>
-                                                                <option value="10">10 Rooms</option>
-                                                                <option value="11">11 Rooms</option>
-                                                                <option value="12">12 Rooms</option>
-                                                                <option value="13">13 Rooms</option>
-                                                                <option value="14">14 Rooms</option>
+                                                            <select class="select-contain-select" name="nroom" required>
+                                                                <option value="">Select Rooms</option>
+                                                                <option value="1" <?php if( $this->input->get('nroom') == '1') echo 'selected' ?> >1 Room</option>
+                                                                <option value="2" <?php if( $this->input->get('nroom') == '2') echo 'selected' ?> >2 Rooms</option>
+                                                                <option value="3" <?php if( $this->input->get('nroom') == '3') echo 'selected' ?> >3 Rooms</option>
+                                                                <option value="4" <?php if( $this->input->get('nroom') == '4') echo 'selected' ?> >4 Rooms</option>
+                                                                <option value="5  <?php if( $this->input->get('nroom') == '5') echo 'selected' ?>">5 Rooms</option>
+                                                                <option value="6" <?php if( $this->input->get('nroom') == '6') echo 'selected' ?> >6 Rooms</option>
+                                                                <option value="7" <?php if( $this->input->get('nroom') == '7') echo 'selected' ?> >7 Rooms</option>
+                                                                <option value="8" <?php if( $this->input->get('nroom') == '8') echo 'selected' ?> >8 Rooms</option>
+                                                                <option value="9" <?php if( $this->input->get('nroom') == '9') echo 'selected' ?> >9 Rooms</option>
+                                                                <option value="10" <?php if( $this->input->get('nroom') == '10') echo 'selected' ?>>10 Rooms</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">Adults (18+)</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="0">Select Adults</option>
-                                                                <option value="1">1 Adults</option>
-                                                                <option value="2">2 Adults</option>
-                                                                <option value="3">3 Adults</option>
-                                                                <option value="4">4 Adults</option>
-                                                                <option value="5">5 Adults</option>
-                                                                <option value="6">6 Adults</option>
-                                                                <option value="7">7 Adults</option>
-                                                                <option value="8">8 Adults</option>
-                                                                <option value="9">9 Adults</option>
-                                                                <option value="10">10 Adults</option>
-                                                                <option value="11">11 Adults</option>
-                                                                <option value="12">12 Adults</option>
-                                                                <option value="13">13 Adults</option>
-                                                                <option value="14">14 Adults</option>
-                                                            </select>
+                                             <div class="col-lg-6 responsive-column">
+                                                    <div class="input-box">
+                                                        <label class="label-text" name="child" >Children (0-2 years old)</label>
+                                                        <div class="form-group">
+                                                            <div class="select-contain w-auto">
+                                                                <select class="select-contain-select" required>
+                                                                    <option value="0">Select childrens</option>
+                                                                    <option value="1">1 child</option>
+                                                                    <option value="2">2 childs</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                         
                                             <div class="col-lg-6 responsive-column">
                                                 <div class="input-box">
-                                                    <label class="label-text">Children (0-17)</label>
+                                                    <label class="label-text">Pension</label>
                                                     <div class="form-group">
                                                         <div class="select-contain w-auto">
-                                                            <select class="select-contain-select">
-                                                                <option value="0">Select Children</option>
-                                                                <option value="1">1 Children</option>
-                                                                <option value="2">2 Children</option>
-                                                                <option value="3">3 Children</option>
-                                                                <option value="4">4 Children</option>
-                                                                <option value="5">5 Children</option>
+                                                            <select class="select-contain-select" name="pension" required>
+                                                                <option  value="" >Pension</option>
+                                                                <option value="PD" <?php if( $this->input->get('pension') == 'PD') echo 'selected' ?>  >LPD</option>
+                                                                <option value="DP" <?php if( $this->input->get('pension') == 'DP') echo 'selected' ?> >LDP</option>
+                                                                <option value="PC" <?php if( $this->input->get('pension') == 'PC') echo 'selected' ?> >PC</option>
+                                                                <option value="ALLS" <?php if( $this->input->get('pension') == 'ALLS') echo 'selected' ?> >All inclusive Soft</option>
+                                                                <option value="ALLH" <?php if( $this->input->get('pension') == 'ALLH') echo 'selected' ?> >All inclusive hard</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -282,15 +267,37 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="btn-box">
-                                                    <button type="button" class="theme-btn">Search Now</button>
+                                                    <button type="submit" class="theme-btn">Search Now</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div><!-- end contact-form-action -->
-                                <h3 class="title font-size-20">Available Rooms</h3>
+                                <h3 class="title font-size-20">Available Rooms</h3> 
+                                
 
-                                <?php foreach ($rooms as $room) { ?> 
+                                <?php 
+
+                                     $d = $this->input->get('daterange') ; 
+                                    //str_replace("/","-",  $d );
+                                    $d1 = substr($d ,0, 10) ;
+                                    $d2 = substr($d ,13, 23) ;
+                                    $date1 = strtotime(substr($d1 ,6, 4)."-".substr($d1 ,3, 2)."-".substr($d1 ,0, 2)) ;
+                                     
+                                    $date2 = strtotime(substr($d2 ,6, 4)."-".substr($d2 ,3, 2)."-".substr($d2 ,0, 2)) ;
+
+                                    
+
+                                    // this calculates the diff between two dates, which is the number of nights
+                                    $diff = abs($date2 - $date1) ;
+                                    $years = floor($diff / (365*60*60*24)); 
+                                    $months = floor(($diff - $years * 365*60*60*24)/(30*60*60*24)); 
+                                    $numberOfNights= floor(($diff-$years*365*60*60*24-$months*30*60*60*24)/ (60*60*24)) ; 
+
+                                    if ($numberOfNights>1){ 
+
+                                    foreach ($rooms as $room) { ?> 
+
 
                                 <div class="cabin-type padding-top-30px">
                                     <div class="cabin-type-item seat-selection-item d-flex">
@@ -354,7 +361,39 @@
                                             -->
                                         </div>
                                         <div class="cabin-price">
-                                            <p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">$121</strong>
+                                            <p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">
+                                                <?php 
+
+                                                $b = $room->prices->price ;
+
+                                                 
+                                                   if ($this->input->GET('pension') =='PD' ) {
+                                                    $bp =   $b + $room->prices->PD;
+                                                    }
+
+                                                   if ($this->input->GET('pension') == 'DP' ) {
+                                                    $bp =   $b + $room->prices->DP;
+                                                    }
+                                                    if ($this->input->GET('pension') == 'PC' ) {
+                                                    $bp =   $b + $room->prices->PC;
+                                                    }
+                                                    if ($this->input->GET('pension') == 'ALLS' ) {
+                                                    $bp =   $b + $room->prices->ALLS;
+                                                    }
+                                                    if ($this->input->GET('pension') == 'ALLH' ) {
+                                                    $bp =   $b + $room->prices->ALLH;
+                                                    }
+                                                    if ($this->input->GET('pension') == '' ) {
+                                                        $bp =   $b ;
+                                                    }
+
+                                                    $bpc = $bp * $room->capacity ;
+
+                                                    echo  $bpc.'  TND' ;
+                                                 ?> 
+                                                TND</strong>
+                                                <br>
+                                                <a href="<?php echo base_url() ?>Hotel/booking/<?php echo $hotel->hotelId; ?>/<?php echo $room->roomId; ?>?daterange=<?php echo $this->input->get('daterange') ?>&nroom=<?php echo $this->input->get('nroom') ?>&adult_number=1&nchild=1&pension=<?php echo $this->input->get('pension') ?>" class="theme-btn theme-btn-small theme-btn-transparent mb-0"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
                                                  <!--
                                             <div class="custom-checkbox mb-0">
                                                 <input type="checkbox" id="selectChb1">
@@ -365,7 +404,7 @@
                                     </div><!-- end cabin-type-item -->
                                 </div><!-- end cabin-type -->
                                 
-                            <?php } ?>
+                            <?php } } else { echo "<p style='color : red'> Minimum Stay 2 Nights </p>" ; }  ?>
                                 
                             </div><!-- end single-content-item -->
                             <div class="section-block"></div>
@@ -1003,81 +1042,28 @@
                             <div class="sidebar-widget-item">
                                 <div class="sidebar-book-title-wrap mb-3">
                                     <h3>Popular</h3>
-                                    <p><span class="text-form">From</span><span class="text-value ml-2 mr-1">$399.00</span> <span class="before-price">$412.00</span></p>
+                                    <p><span class="text-form">From</span><span class="text-value ml-2 mr-1"><?php echo $rooms[0]->prices->price ?> TND</span><!-- <span class="before-price">$412.00</span> --></p>
                                 </div>
                             </div><!-- end sidebar-widget-item -->
                             <div class="sidebar-widget-item">
                                 <div class="contact-form-action">
                                     <form action="#">
-                                        <div class="input-box">
-                                            <label class="label-text">Check in - Check out</label>
-                                            <div class="form-group">
-                                                <span class="la la-calendar form-icon"></span>
-                                                <input class="date-range form-control" type="text" name="daterange" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="input-box">
-                                            <label class="label-text">Rooms</label>
-                                            <div class="form-group">
-                                                <div class="select-contain w-auto">
-                                                    <select class="select-contain-select">
-                                                        <option value="0">Select Rooms</option>
-                                                        <option value="1">1 Room</option>
-                                                        <option value="2">2 Rooms</option>
-                                                        <option value="3">3 Rooms</option>
-                                                        <option value="4">4 Rooms</option>
-                                                        <option value="5">5 Rooms</option>
-                                                        <option value="6">6 Rooms</option>
-                                                        <option value="7">7 Rooms</option>
-                                                        <option value="8">8 Rooms</option>
-                                                        <option value="9">9 Rooms</option>
-                                                        <option value="10">10 Rooms</option>
-                                                        <option value="11">11 Rooms</option>
-                                                        <option value="12">12 Rooms</option>
-                                                        <option value="13">13 Rooms</option>
-                                                        <option value="14">14 Rooms</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+                                       
                                     </form>
                                 </div>
                             </div><!-- end sidebar-widget-item -->
-                            <div class="sidebar-widget-item">
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">Adults <span>Age 18+</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">Children <span>2-12 years old</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                                <div class="qty-box mb-2 d-flex align-items-center justify-content-between">
-                                    <label class="font-size-16">Infants <span>0-2 years old</span></label>
-                                    <div class="qtyBtn d-flex align-items-center">
-                                        <div class="qtyDec"><i class="la la-minus"></i></div>
-                                        <input type="text" name="qtyInput" value="0">
-                                        <div class="qtyInc"><i class="la la-plus"></i></div>
-                                    </div>
-                                </div><!-- end qty-box -->
-                            </div><!-- end sidebar-widget-item -->
+                            
                             <div class="btn-box pt-2">
                                 <a href="tour-booking.html" class="theme-btn text-center w-100 mb-2"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
-                                <a href="#" class="theme-btn text-center w-100 theme-btn-transparent"><i class="la la-heart-o mr-2"></i>Add to Wishlist</a>
+                               
                                 <div class="d-flex align-items-center justify-content-between pt-2">
                                     <a href="#" class="btn theme-btn-hover-gray font-size-15" data-toggle="modal" data-target="#sharePopupForm"><i class="la la-share mr-1"></i>Share</a>
                                     <p><i class="la la-eye mr-1 font-size-15 color-text-2"></i>3456</p>
                                 </div>
                             </div>
                         </div><!-- end sidebar-widget -->
+
+
                         <div class="sidebar-widget single-content-widget">
                             <h3 class="title stroke-shape">Enquiry Form</h3>
                             <div class="enquiry-forum">
@@ -1140,8 +1126,8 @@
                             <p class="font-size-14 line-height-24">Do not hesitate to give us a call. We are an expert team and we are happy to talk to you.</p>
                             <div class="sidebar-list pt-3">
                                 <ul class="list-items">
-                                    <li><i class="la la-phone icon-element mr-2"></i><a href="#">+ 61 23 8093 3400</a></li>
-                                    <li><i class="la la-envelope icon-element mr-2"></i><a href="mailto:info@trizen.com">info@trizen.com</a></li>
+                                    <li><i class="la la-phone icon-element mr-2"></i><a href="#">+216 <?php echo $hotel->phone ?></a></li>
+                                    <li><i class="la la-envelope icon-element mr-2"></i><a href="mailto:info@trizen.com"><?php echo $hotel->mail ?><</a></li>
                                 </ul>
                             </div><!-- end sidebar-list -->
                         </div><!-- end sidebar-widget -->

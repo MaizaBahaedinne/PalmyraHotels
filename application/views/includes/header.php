@@ -63,8 +63,13 @@
                             
                             
                             <div class="header-right-action">
-                                <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">Sign Up</a>
-                                 <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">Login</a>
+                                <?php if($uid == 0 ) { ?>
+                                    <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">Sign Up</a>
+                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">Login</a>
+                                <?php } else {  ?>
+                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#menu"><i class="las la-user"></i> <?php echo $name ?></a>
+                                    <a href="<?php echo base_url() ?>logout" class="theme-btn theme-btn-small " ><i class="las la-sign-out-alt"></i></a>
+                                <?php }   ?>
                             </div>
                         </div>
                     </div>

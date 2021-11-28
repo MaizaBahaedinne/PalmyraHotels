@@ -25,18 +25,18 @@
                     </div><!-- end hero-content -->
                     <div class="search-fields-container">
                         <div class="contact-form-action">
-                            <form action="<?php echo base_url() ?>Room/search" class="row">
-                                <div class="col-lg-4 pr-0">
+                            <form action="<?php echo base_url() ?>Hotel/search" method="Get" class="row">
+                                <div class="col-lg-3 pr-0">
                                     <div class="input-box">
                                         <label class="label-text">Hotel name</label>
                                         <div class="form-group">
                                             <span class="la la-map-marker form-icon"></span>
-                                            <select class="form-control" >
+                                            <select class="form-control" name="hotel"  >
                                            
                                              
                                                 <?php foreach ($hotels as $hotel) {
                                                 ?>
-                                                <option value="<?php echo $hotel->hotelId ?>"><?php echo $hotel->name ?></option>
+                                                <option value="<?php echo $hotel->hotelId ?>"><?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
                                                 <?php
                                                     }
                                                 ?> 
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                 </div><!-- end col-lg-3 -->
-                                <div class="col-lg-4 pr-0">
+                                <div class="col-lg-3 pr-0">
                                     <div class="input-box">
                                         <label class="label-text">Check in - Check out</label>
                                         <div class="form-group">
@@ -56,7 +56,7 @@
                                     </div>
                                 </div><!-- end col-lg-3 -->
 
-                                <div class="col-lg-4">
+                                <div class="col-lg-3">
                                     <div class="input-box">
                                         <label class="label-text">Guests</label>
                                         <div class="form-group">
@@ -72,7 +72,7 @@
                                                             <label>Rooms</label>
                                                             <div class="qtyBtn d-flex align-items-center">
                                                                 <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                                <input type="text" name="room_number" value="0" class="qty-input">
+                                                                <input type="text" name="nroom" value="0" class="qty-input">
                                                                 <div class="qtyInc"><i class="la la-plus"></i></div>
                                                             </div>
                                                         </div>
@@ -92,7 +92,7 @@
                                                             <label>Children</label>
                                                             <div class="qtyBtn d-flex align-items-center">
                                                                 <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                                <input type="text" name="child_number" value="0">
+                                                                <input type="text" name="nchild" value="0" max="2">
                                                                 <div class="qtyInc"><i class="la la-plus"></i></div>
                                                             </div>
                                                         </div>
@@ -103,6 +103,23 @@
                                     </div>
                                 </div><!-- end col-lg-3 -->
                             
+                            <div class="col-lg-3 ">
+                                                <div class="input-box">
+                                                    <label class="label-text">Pension</label>
+                                                    <div class="form-group">
+                                                        <div class="select-contain w-auto">
+                                                            <select class="select-contain-select" name="pension" required>
+                                                                
+                                                                <option value="PD" >LPD</option>
+                                                                <option value="DP">LDP</option>
+                                                                <option value="PC">PC</option>
+                                                                <option value="ALLS">All inclusive Soft</option>
+                                                                <option value="ALLH">All inclusive hard</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                             
                                 <input type="submit"   class="btn btn-block btn-primary" value="Search Now"> 
                            

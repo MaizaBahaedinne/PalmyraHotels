@@ -102,6 +102,58 @@ class Hotel_model extends CI_Model
         return $query->result();
     }
 
+
+             /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function roomMsPrice( $hotelId , $dateDebut  , $dateFin  )
+    {
+
+       
+        $this->db->select('BaseTbl.* , prices.* ');
+        $this->db->from('tbl_saison as BaseTbl');
+        $this->db->join('tbl_price as prices' , 'BaseTbl.saisonId = prices.saisonId ','Left');
+            
+       
+        $this->db->where('prices.hotelId = ',$hotelId );
+//  $this->db->where("BaseTbl.date_debut BETWEEN '$dateDebut' AND '$dateFin'" );
+
+       
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+
+
+             /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function roomPrice( $roomId , $dateDebut  , $dateFin  )
+    {
+
+
+       
+        $this->db->select('BaseTbl.* , Room.* , price.* , BaseTbl.capacity ');
+        $this->db->from('tbl_rooms as  BaseTbl');
+        $this->db->join('tbl_hotel_room as Room' , 'BaseTbl.roomId = Room.roomId','Left');
+        $this->db->join('tbl_price as price' , 'Room.hotelId = price.hotelId','Left');
+
+      
+            
+       
+        $this->db->where('Room.roomId = ',$roomId );
+    //  $this->db->where("BaseTbl.date_debut BETWEEN '$dateDebut' AND '$dateFin'" );
+
+       
+        $query = $this->db->get();
+        return $query->row();
+    }
+    
+
     
 
 }
