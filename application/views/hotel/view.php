@@ -217,8 +217,8 @@
                                                     <div class="form-group">
                                                         <div class="select-contain w-auto">
                                                             <select class="select-contain-select" name="nroom" required>
-                                                                <option value="">Select Rooms</option>
-                                                                <option value="1" <?php if( $this->input->get('nroom') == '1') echo 'selected' ?> >1 Room</option>
+                                                                
+                                                                <option value="1" <?php if( $this->input->get('nroom') == '1' || $this->input->get('nroom') == "") echo 'selected' ?> >1 Room</option>
                                                                 <option value="2" <?php if( $this->input->get('nroom') == '2') echo 'selected' ?> >2 Rooms</option>
                                                                 <option value="3" <?php if( $this->input->get('nroom') == '3') echo 'selected' ?> >3 Rooms</option>
                                                                 <option value="4" <?php if( $this->input->get('nroom') == '4') echo 'selected' ?> >4 Rooms</option>
@@ -393,7 +393,7 @@
                                                  ?> 
                                                 TND</strong>
                                                 <br>
-                                                <a href="<?php echo base_url() ?>Hotel/booking/<?php echo $hotel->hotelId; ?>/<?php echo $room->roomId; ?>?daterange=<?php echo $this->input->get('daterange') ?>&nroom=<?php echo $this->input->get('nroom') ?>&adult_number=1&nchild=1&pension=<?php echo $this->input->get('pension') ?>" class="theme-btn theme-btn-small theme-btn-transparent mb-0"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
+                                                <a href="<?php echo base_url() ?>Hotel/booking/<?php echo $hotel->hotelId; ?>/<?php echo $room->hotel_roomId; ?>?daterange=<?php echo $this->input->get('daterange') ?>&nroom=<?php echo $this->input->get('nroom') ?>&adult_number=1&nchild=1&pension=<?php echo $this->input->get('pension') ?>" class="theme-btn theme-btn-small theme-btn-transparent mb-0"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
                                                  <!--
                                             <div class="custom-checkbox mb-0">
                                                 <input type="checkbox" id="selectChb1">

@@ -140,29 +140,68 @@
             <div class="col-lg-8">
                 <div class="form-box">
                     <div class="form-title-wrap">
-                        <h3 class="title">Your rooms Information</h3>
+                        <h3 class="title">Your rooms Informations</h3>
                     </div><!-- form-title-wrap -->
                     <div class="form-content ">
-                        <div class="contact-form-action">
-                            <?php for ($i= 0 ; $i <  $this->input->get('nroom') ; $i++)   {?>
+                     <div class="contact-form-action">
+                        <form action="" method="post" >
+                            <?php for ($j= 0 ; $j <  $this->input->get('nroom') ; $j++)   {?>
+
                              <div class="row">
-                             <?php for ($i= 0 ; $i <  $room->capacity ; $i++)   {?>
-                                 <div class="col-md-<?php echo 12/$this->input->get('nroom') ?>">
+                              <div class="col-md-12">   
+                                <h5>Room <?php echo $j+1 ?></h5>
+                                <br>
+                             </div>
+                             <?php for ($i= 0 ; $i <  $price->capacity ; $i++)   {?>
+                                 <div class="col-md-<?php echo 12/$price->capacity ?>">
                                      <div class="input-box">
-                                        <label class="label-text">Guest 1</label>
+                                        <label class="label-text">Guest <?php echo $i+1 ?></label>
                                         <div class="form-group">
                                             <span class="la la-user form-icon"></span>
-                                            <input class="form-control" type="text" name="text" placeholder="Your name">
+                                            <input class="form-control" type="text" name="guest_<?php echo $i+1 ?>_<?php echo $j+1 ?>_<?php echo '' ?>" placeholder=" name" required>
                                         </div>
                                     </div>
                                  </div>
                             <?php } ?>
-                             </div> 
                               
-
+                                  <div class="col-md-12">
+                                    <label>Extras</label>
+                                   </div>
+                                   
+                                    <?php if(!empty($opts)){  foreach ($opts as $opt ) {
+                                    ?> 
+                                    <div class="col-md-4">
+                                            
+                                                 <input type="checkbox" data-valeur="<?php  echo $opt->price  ?>"  name="options_room_<?php echo $j+1 ?>[]"  > 
+                                                <label ><?php  echo $opt->option  ?> <small>(+<?php  echo $opt->price  ?> TND)</small></label>
+                                            
+                                     </div>  
+                                    <?php
+                                    } }else { echo "No Extrat" ; }  ?>
+                                    
+                              
+                            </div> 
+                              
+                            <div style="text-align: right;" >
+                                <span ><b>Price :</b>
+                                    <span id="PriceRoom<?php echo $j+1 ?>" >
+                                        <?php   echo  $bpc    ; ?>
+                                    </span> 
+                                TND</span> 
+                                <br>
+                                <span ><b>Extrat :</b>
+                                    <span id="ExtratRoom<?php echo $j+1 ?>" >
+                                        0
+                                    </span>  
+                                TND</span> 
+                            </div>
                             <?php } ?>
-                                                
-                        </div><!-- end contact-form-action -->
+                            
+                              <hr>
+
+                        </div>
+                        <input type="submit" class="btn btn-block btn-primary" value="Confirme">
+                        <!-- end contact-form-action -->
                     </div><!-- end form-content -->
                 </div><!-- end form-box -->
                 

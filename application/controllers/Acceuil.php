@@ -34,9 +34,15 @@ class Acceuil extends BaseController
 
        
         $data['hotels'] = $this->hotel_model->hotelListing() ;  
-        
+
+       foreach ($data['hotels'] as $hotel ) {
+                
+                $hotel->prices = $this->hotel_model->roomMsPrice($hotel->hotelId,  date("d/m/Y") , date("d/m/Y")   ) ;
+                
+            }
+
         $this->global['pageTitle'] = 'Home';
-        $this->loadViews("acceuil", $this->global,  $data , NULL);
+       $this->loadViews("acceuil", $this->global,  $data , NULL);
     }
 
 

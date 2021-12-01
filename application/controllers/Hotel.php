@@ -44,7 +44,7 @@ class Hotel extends BaseController {
 		                		
 		                	}
  
-		                //	echo json_encode($data['rooms']) ; 
+		               
 
 		                 $this->global['pageTitle'] = $data['hotel']->name  ;
 		        		 $this->loadViews("hotel/view", $this->global, $data  , NULL); 
@@ -54,12 +54,15 @@ class Hotel extends BaseController {
 
 		        public function booking($hotelId,$roomId)
 		        {
-		        	 $data['hotel'] =  $this->hotel_model->hotel($hotelId);
-		        	 $data['room'] = $this->hotel_model->roomMediaListing($roomId)  ;
-		        	 
-		             $data['price'] = $this->hotel_model->roomPrice($roomId, $hotelId , date("d/m/Y") , date("d/m/Y")   ) ;
-		              
+		        	 $data['hotel'] =  $this->hotel_model->hotel($hotelId);        	 
+		             $data['price'] = $this->hotel_model->roomPrice($hotelId , $roomId , date("d/m/Y") , date("d/m/Y")   ) ;	
+
+		                
+		             $data['opts'] 	= $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $data['price']->options )  )  ;	
+
 		             
+
+		             $data['roomHotel'] = $roomId ; 
 
 		                 $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;
 		        		 $this->loadViews("hotel/booking", $this->global, $data  , NULL); 

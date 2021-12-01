@@ -72,7 +72,7 @@
                                                             <label>Rooms</label>
                                                             <div class="qtyBtn d-flex align-items-center">
                                                                 <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                                <input type="text" name="nroom" value="0" class="qty-input">
+                                                                <input type="text" name="nroom" value="1" min="1" class="qty-input">
                                                                 <div class="qtyInc"><i class="la la-plus"></i></div>
                                                             </div>
                                                         </div>
@@ -316,8 +316,9 @@
                                 </div>
                                 <div class="card-price d-flex align-items-center justify-content-between">
                                     <p>
-                                        <span class="price__num">$80.00</span>
-                                        <span class="price__num before-price color-text-3">$100.00</span>
+                                        <span class="price__num"><?php 
+                                        if(!empty($hotel->prices->price)) { echo $hotel->prices->price." TND" ; } else { echo '<span style="color:red">No Price</span>' ;}  ?></span>
+                                        <!--<span class="price__num before-price color-text-3">$100.00</span>-->
                                         <span class="price__text">Per night</span>
                                     </p>
                                     <a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" class="btn-text">See details<i class="la la-angle-right"></i></a>
