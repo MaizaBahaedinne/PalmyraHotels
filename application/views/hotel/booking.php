@@ -172,7 +172,7 @@
                                     ?> 
                                     <div class="col-md-4">
                                             
-                                                 <input type="checkbox" data-valeur="<?php  echo $opt->price  ?>"  name="options_room_<?php echo $j+1 ?>[]"  > 
+                                                 <input type="checkbox" class="check" data-valeur="<?php  echo $opt->price  ?>"  data-room="<?php echo $j+1 ?>" name="options_room_<?php echo $j+1 ?>[]"  > 
                                                 <label ><?php  echo $opt->option  ?> <small>(+<?php  echo $opt->price  ?> TND)</small></label>
                                             
                                      </div>  
@@ -189,7 +189,7 @@
                                     </span> 
                                 TND</span> 
                                 <br>
-                                <span ><b>Extrat :</b>
+                                <span ><b>Extras :</b>
                                     <span id="ExtratRoom<?php echo $j+1 ?>" >
                                         0
                                     </span>  
@@ -197,6 +197,14 @@
                             </div>
                             <?php } ?>
                             
+
+                            <script type="text/javascript">                                         
+                                     $(".check").change(function(index) {
+                                        if(this.checked) {
+                                          $("#ExtratRoom"+$( this ).data("room")).innerHTML("") ;
+                                        }
+                                    });                                        
+                            </script>
                               <hr>
 
                         </div>

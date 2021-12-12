@@ -26,6 +26,26 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+
+
+    <script src="<?php echo base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
+<script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/bootstrap-select.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/moment.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/daterangepicker.js"></script>
+<script src="<?php echo base_url() ?>assets/js/owl.carousel.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery.fancybox.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery.countTo.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/animated-headline.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery.ripples-min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/quantity-input.js"></script>
+<script src="<?php echo base_url() ?>assets/js/jquery.superslides.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/superslider-script.js"></script>
+<script src="<?php echo base_url() ?>assets/js/main.js"></script>
+
+
 </head>
 <body>
 <!-- start cssload-loader -->

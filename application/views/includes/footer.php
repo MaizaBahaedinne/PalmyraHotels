@@ -481,22 +481,7 @@ div class="modal-popup">
 
 
 <!-- Template JS Files -->
-<script src="<?php echo base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
-<script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/bootstrap-select.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/moment.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/daterangepicker.js"></script>
-<script src="<?php echo base_url() ?>assets/js/owl.carousel.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.fancybox.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.countTo.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/animated-headline.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.ripples-min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/quantity-input.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.superslides.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/superslider-script.js"></script>
-<script src="<?php echo base_url() ?>assets/js/main.js"></script>
+
 </body>
 
 <!-- Mirrored from techydevs.com/demos/themes/html/trizen-demo/trizen/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Jul 2021 10:49:25 GMT -->
