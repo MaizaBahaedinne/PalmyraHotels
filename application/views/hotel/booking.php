@@ -172,7 +172,7 @@
                                     ?> 
                                     <div class="col-md-4">
                                             
-                                                 <input type="checkbox" class="check" data-valeur="<?php  echo $opt->price  ?>"  data-room="<?php echo $j+1 ?>" name="options_room_<?php echo $j+1 ?>[]"  > 
+                                                 <input type="checkbox" class="check check<?php echo $j+1 ?>" data-valeur="<?php  echo $opt->price  ?>"  data-room="<?php echo $j+1 ?>" name="options_room_<?php echo $j+1 ?>[]"  > 
                                                 <label ><?php  echo $opt->option  ?> <small>(+<?php  echo $opt->price  ?> TND)</small></label>
                                             
                                      </div>  
@@ -187,12 +187,21 @@
                                     <span id="PriceRoom<?php echo $j+1 ?>" >
                                         <?php   echo  $bpc    ; ?>
                                     </span> 
+                                    <input type="hidden" name="PriceRoom<?php echo $j+1 ?>" value="<?php   echo  $bpc    ; ?>" >
                                 TND</span> 
                                 <br>
                                 <span ><b>Extras :</b>
                                     <span id="ExtratRoom<?php echo $j+1 ?>" >
                                         0
-                                    </span>  
+                                    </span>
+                                    <input type="hidden" name="ExtratRoom<?php echo $j+1 ?>" value="0" >    
+                                TND</span> 
+                                <br>
+                                <span ><b>Total :</b>
+                                    <span id="TotalRoom<?php echo $j+1 ?>" >
+                                      <?php   echo  $bpc    ; ?>
+                                    </span>
+                                    <input type="hidden" name="TotalRoom<?php echo $j+1 ?>" value="<?php   echo  $bpc    ; ?>" >  
                                 TND</span> 
                             </div>
                             <?php } ?>
@@ -200,9 +209,26 @@
 
                             <script type="text/javascript">                                         
                                      $(".check").change(function(index) {
-                                        if(this.checked) {
-                                          $("#ExtratRoom"+$( this ).data("room")).innerHTML("") ;
-                                        }
+
+
+                                          var totalPrice   = 0,
+                                              values       = [];
+                                              
+                                          $(".check"+$(this).data("room")).each( function() {
+                                            if( $(this).is(':checked') ) {
+                                              values.push($(this).val());
+                                                    
+                                                        totalPrice += parseInt($(this).data("valeur"));
+                                                       
+                                                    
+                                                    
+                                                }
+                                            });
+
+                                           
+                                            $("#ExtratRoom"+$(this).data("room")).html(totalPrice) ;
+                                                        $("#TotalRoom"+$(this).data("room")).html(totalPrice+ parseInt($("#PriceRoom"+$(this).data("room")).html() ) ) ;
+
                                     });                                        
                             </script>
                               <hr>

@@ -48,7 +48,7 @@
                         </div><!-- form-title-wrap -->
                         <div class="form-content ">
                             <div class="contact-form-action">
-                                <form class="row messenger-box-form" method="post" action="https://techydevs.com/demos/themes/html/trizen-demo/trizen/mailer.php">
+                                <form class="row messenger-box-form" method="post" action="<?php echo base_url() ?>Contact/addNewMessage" >
                                     <div class="alert alert-success messenger-box-contact__msg col-lg-12"
                                         style="display: none" role="alert">
                                         Thank You! Your message has been sent.
@@ -118,8 +118,8 @@
                                     <li>
                                         <i class="la la-envelope-o icon-element"></i>
                                         <h5 class="title font-size-16 pb-1">Email</h5>
-                                        <p class="map__desc">needhelp@trizen.com</p>
-                                        <p class="map__desc">inquiry@trizen.com</p>
+                                        <p class="map__desc">info@palmyra.com.tn</p>
+                                       
                                     </li>
                                 </ul>
                                 <ul class="social-profile text-center">

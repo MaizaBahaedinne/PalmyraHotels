@@ -36,14 +36,23 @@ class Contact extends BaseController
       
                      
         
-        $this->global['pageTitle'] = 'Kontakt';
+        $this->global['pageTitle'] = 'Contact';
         $this->loadViews("contact/contact", $this->global, null , NULL);
     }
     
 
 
     
-
+    /**
+     * This function used to load the first screen of the user
+     */
+    public function addNewMessage()
+    {
+        
+        $this->global['pageTitle'] = 'Contact';
+        $this->loadViews("contact/contact", $this->global, null , NULL);
+    }
+    
      
 
 }

@@ -5,13 +5,13 @@
     <div class="hero-box pb-0">
         <div id="fullscreen-slide-contain">
             <ul class="slides-container">
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/1.jpg" alt=""></li>
+                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/1.jpg" alt=""></li> <!--
                 <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/2.jpg" alt=""></li>
                 <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/3.jpg" alt=""></li>
                 <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/4.jpg" alt=""></li>
                 <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/5.jpg" alt=""></li>
                 <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/6.jpg" alt=""></li>
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/7.jpg" alt=""></li>
+                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/7.jpg" alt=""></li>-->
             </ul>
         </div><!-- End background slider -->
         <div class="container">
