@@ -42,7 +42,14 @@ class Acceuil extends BaseController
             }
 
         $this->global['pageTitle'] = 'Home';
-       $this->loadViews("acceuil", $this->global,  $data , NULL);
+        if($this->input->get("a") == "1"){
+            $this->loadViews("acceuil", $this->global,  $data , NULL);
+        }
+        else 
+        {
+            $this->view("soon") ;
+        }
+
     }
 
 
