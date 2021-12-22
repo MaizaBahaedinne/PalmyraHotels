@@ -1,155 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from techydevs.com/demos/themes/html/trizen-demo/trizen/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Jul 2021 10:49:16 GMT -->
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="author" content="TechyDevs">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Palmyra Hotels - <?php echo $pageTitle ?></title>
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Palmyra Hotels ">
+    <meta name="author" content="Maiza Bahaedinne">
+    <title>Palmyra Hotels | <?php echo $pageTitle ?></title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/apple-touch-icon-57x57-precomposed-1.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/img/apple-touch-icon-72x72-precomposed-1.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/img/apple-touch-icon-114x114-precomposed-1.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/img/apple-touch-icon-144x144-precomposed-1.png">
 
-    <!-- Template CSS Files -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/line-awesome.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/daterangepicker.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/animated-headline.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css2-2.css?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- COMMON CSS -->
+    <link href="<?php echo base_url() ?>assets/css/bootstrap.min-1.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/style-1.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/vendors-1.css" rel="stylesheet">
+    
+    <!-- ALTERNATIVE COLORS CSS -->
+    <link href="#" id="colors" rel="stylesheet">
 
-    <script src="<?php echo base_url() ?>assets/js/jquery-3.4.1.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery-ui.js"></script>
-<script src="<?php echo base_url() ?>assets/js/popper.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/bootstrap-select.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/moment.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/daterangepicker.js"></script>
-<script src="<?php echo base_url() ?>assets/js/owl.carousel.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.fancybox.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.countTo.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/animated-headline.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.ripples-min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/quantity-input.js"></script>
-<script src="<?php echo base_url() ?>assets/js/jquery.superslides.min.js"></script>
-<script src="<?php echo base_url() ?>assets/js/superslider-script.js"></script>
-<script src="<?php echo base_url() ?>assets/js/main.js"></script>
-
-
+    <!-- CUSTOM CSS -->
+    <link href="<?php echo base_url() ?>assets/css/custom-1.css" rel="stylesheet">
+        
 </head>
 <body>
-<!-- start cssload-loader -->
-<div class="preloader" id="preloader">
-    <div class="loader">
-        <svg class="spinner" viewBox="0 0 50 50">
-            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-        </svg>
-    </div>
-</div>
-<!-- end cssload-loader -->
 
-
-
-<!-- ================================
-            START HEADER AREA
-================================= -->
-<header class="header-area">
-    <div class="header-top-bar padding-right-100px padding-left-100px">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="header-top-content">
-                        <div class="header-left">
-                            <ul class="list-items">
-                                <li><a href="#"><i class="la la-phone mr-1"></i>(123) 123-456</a></li>
-                                <li><a href="#"><i class="la la-envelope mr-1"></i>info@palmyra.com.tn</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="header-top-content">
-                        <div class="header-right d-flex align-items-center justify-content-end">
-                            
-                            
-                            <div class="header-right-action">
-                                <?php if($uid == 0 ) { ?>
-                                    <a href="#" class="theme-btn theme-btn-small theme-btn-transparent mr-1" data-toggle="modal" data-target="#signupPopupForm">Sign Up</a>
-                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#loginPopupForm">Login</a>
-                                <?php } else {  ?>
-                                    <a href="#" class="theme-btn theme-btn-small" data-toggle="modal" data-target="#menu"><i class="las la-user"></i> <?php echo $name ?></a>
-                                    <a href="<?php echo base_url() ?>logout" class="theme-btn theme-btn-small " ><i class="las la-sign-out-alt"></i></a>
-                                <?php }   ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div id="preloader">
+        <div class="sk-spinner sk-spinner-wave">
+            <div class="sk-rect1"></div>
+            <div class="sk-rect2"></div>
+            <div class="sk-rect3"></div>
+            <div class="sk-rect4"></div>
+            <div class="sk-rect5"></div>
         </div>
     </div>
-    <div class="header-menu-wrapper padding-right-100px padding-left-100px">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="menu-wrapper justify-content-between">
-                        <a href="<?php echo base_url() ?>" class="down-button"><i class="la la-angle-down"></i></a>
-                        <div class="logo">
-                            <a href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>assets/images/logo.png" alt="logo"></a>
-                            <div class="menu-toggler">
-                                <i class="la la-bars"></i>
-                                <i class="la la-times"></i>
-                            </div><!-- end menu-toggler -->
-                        </div><!-- end logo -->
-                        <div class="main-menu-content pr-0 ml-0">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="<?php echo base_url() ?>">Home </a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url() ?>About">About </a>
-                                        
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="#">Hotels <i class="la la-angle-down"></i></a>
-                                        <ul class="dropdown-menu-item">
-                                            <?php foreach ($hotels as $hotel) {
-                                            ?>
-                                                <li><a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>"><?php echo $hotel->name ?></a></li>
-                                            <?php
-                                            }
-                                            ?> 
+    <!-- End Preload -->
 
-                                        </ul>
+    <div class="layer"></div>
+    <!-- Mobile menu overlay mask -->
+
+     <!-- Header================================================== -->
+    <header>
+        <div id="top_line">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6"><i class="icon-phone"></i><strong>0045 043204434</strong></div>
+                    <div class="col-6">
+                        <ul id="top_links">
+                            <li><a href="#sign-in-dialog" id="access_link">Sign in</a></li>
+                            <li><a href="wishlist-1.html" id="wishlist_link">Wishlist</a></li>
+                           
+                        </ul>
+                    </div>
+                </div><!-- End row -->
+            </div><!-- End container-->
+        </div><!-- End top line-->
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div id="logo_home">
+                        <h1><a href="<?php echo base_url() ?>" title="Home">Palmyra Hotels</a></h1>
+                    </div>
+                </div>
+                <nav class="col-9">
+                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
+                    <div class="main-menu">
+                        <div id="header_menu">
+                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" height="34" alt="Palmyra Hotels">
+                        </div>
+                        <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                         <ul>
+                            <li><a href="<?php echo base_url() ?>" class="show-submenu">Home</a></li>                            
+                            <li><a href="<?php echo base_url() ?>About">About</a></li>
+                             <li class="submenu">
+                                <a href="javascript:void(0);" class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a>
+                                <ul>
+                                    <?php foreach ($hotels as $hotel ) { ?> 
+                                            <li> 
+                                                <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId ?>" >
+                                                    Palmyra <?php echo $hotel->name ?>
+                                                        
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                </ul>
+                            </li>
+                            <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
+                            
+                             
+                           
+                        </ul>
+                    </div><!-- End main-menu -->
+                    <ul id="top_tools">
+                        <li>
+                            <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a>
+                        </li>
+                        <li>
+                            <div class="dropdown dropdown-cart">
+                                <a href="#" data-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong>3</strong></a>
+                                <ul class="dropdown-menu" id="cart_items">
+                                    <li>
+                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="image"></div>
+                                        <strong><a href="#">Louvre museum</a>1x $36.00 </strong>
+                                        <a href="#" class="action"><i class="icon-trash"></i></a>
                                     </li>
-                                     <li>
-                                        <a href="<?php echo base_url() ?>Contact">Contact </a>
-                                        
+                                    <li>
+                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_2-1.jpg" alt="image"></div>
+                                        <strong><a href="#">Versailles tour</a>2x $36.00 </strong>
+                                        <a href="#" class="action"><i class="icon-trash"></i></a>
+                                    </li>
+                                    <li>
+                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_3-1.jpg" alt="image"></div>
+                                        <strong><a href="#">Versailles tour</a>1x $36.00 </strong>
+                                        <a href="#" class="action"><i class="icon-trash"></i></a>
+                                    </li>
+                                    <li>
+                                        <div>Total: <span>$120.00</span></div>
+                                        <a href="cart-1.html" class="button_drop">Go to cart</a>
+                                        <a href="payment-1.html" class="button_drop outline">Check out</a>
                                     </li>
                                 </ul>
-                            </nav>
-                        </div><!-- end main-menu-content -->
-                        <div class="nav-btn">
-                          <!--  <a href="become-local-expert.html" class="theme-btn">Become Local Expert</a>-->
-                        </div><!-- end nav-btn -->
-                    </div><!-- end menu-wrapper -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container-fluid -->
-    </div><!-- end header-menu-wrapper -->
-</header>
-<!-- ================================
-         END HEADER AREA
-================================= -->
+                            </div><!-- End dropdown-cart-->
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div><!-- container -->
+    </header><!-- End Header -->

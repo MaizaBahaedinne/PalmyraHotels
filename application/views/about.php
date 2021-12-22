@@ -1,443 +1,239 @@
-<!-- ================================
-    START BREADCRUMB AREA
-================================= -->
-<section class="breadcrumb-area bread-bg-9">
-    <div class="breadcrumb-wrap">
-        <div class="container">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/header_bg.jpg" data-natural-width="1400" data-natural-height="470">
+        <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+            <div class="animated fadeInDown">
+                <h1>About us</h1>
+                <p>Cursus neque cursus curae ante scelerisque vehicula</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <main>
+        <div id="position">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Category</a>
+                    </li>
+                    <li>Page active</li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Position -->
+
+        <div class="container margin_60">
+
+            <div class="main_title">
+                <h2>Some <span>good </span>reasons</h2>
+                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+            </div>
+
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-content">
-                        <div class="section-heading">
-                            <h2 class="sec__title line-height-50 text-white">Trizen.com is Your Trusted <br> Travel Companion.</h2>
-                        </div>
-                    </div><!-- end breadcrumb-content -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end breadcrumb-wrap -->
-    <div class="bread-svg-box">
-        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
-    </div><!-- end bread-svg -->
-</section><!-- end breadcrumb-area -->
-<!-- ================================
-    END BREADCRUMB AREA
-================================= -->
-
-<!-- ================================
-    START INFO AREA
-================================= -->
-<section class="info-area padding-top-100px padding-bottom-70px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item" data-toggle="tooltip" data-placement="top" title="hello word">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/img21.jpg" alt="about-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title mb-2">Who We Are?</h3>
-                        <p class="card-text">
-                            Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper donec luctus.
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="feature">
+                        <i class="icon_set_1_icon-30"></i>
+                        <h3><span>+ 1000</span> Customers</h3>
+                        <p>
+                            
                         </p>
                     </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item ">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/img22.jpg" alt="about-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title mb-2">What We Do?</h3>
-                        <p class="card-text">
-                            Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper donec luctus.
-                        </p>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item ">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/img23.jpg" alt="about-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title mb-2">Our Mission</h3>
-                        <p class="card-text">
-                            Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper donec luctus.
-                        </p>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end info-area -->
-<!-- ================================
-    END INFO AREA
-================================= -->
-
-<!-- ================================
-    START ABOUT AREA
-================================= -->
-<section class="about-area padding-bottom-90px overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-heading margin-bottom-40px">
-                    <h2 class="sec__title">About Us</h2>
-                    <h4 class="title font-size-16 line-height-26 pt-4 pb-2">Since 2002, TRIZEN has been revolutionising the travel industry. Metasearch for travel? No one was doing it. Until we did.</h4>
-                    <p class="sec__desc font-size-16 pb-3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                    <p class="sec__desc font-size-16 pb-3">Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
-                    <p class="sec__desc font-size-16">Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, </p>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-6 -->
-            <div class="col-lg-5 ml-auto">
-                <div class="image-box about-img-box">
-                    <img src="<?php echo base_url() ?>assets/images/img24.jpg" alt="about-img" class="img__item img__item-1">
-                    <img src="<?php echo base_url() ?>assets/images/img25.jpg" alt="about-img" class="img__item img__item-2">
                 </div>
-            </div><!-- end col-lg-5 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end about-area -->
-<!-- ================================
-    END ABOUT AREA
-================================= -->
-
-<!-- ================================
-    STAR FUNFACT AREA
-================================= -->
-<section class="funfact-area padding-bottom-70px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h2 class="sec__title">Our Numbers Say Everything</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="counter-box counter-box-2 margin-top-60px mb-0">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="feature">
+                        <i class="icon_set_1_icon-41"></i>
+                        <h3><span>+120</span> Premium city tours</h3>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
             <div class="row">
-                <div class="col-lg-3 responsive-column">
-                    <div class="counter-item counter-item-layout-2 d-flex">
-                        <div class="counter-icon flex-shrink-0">
-                            <i class="la la-users"></i>
-                        </div>
-                        <div class="counter-content">
-                            <div>
-                                <span class="counter" data-from="0" data-to="200"  data-refresh-interval="5">0</span>
-                                <span class="count-symbol">+</span>
-                            </div>
-                            <p class="counter__title">Partners</p>
-                        </div><!-- end counter-content -->
-                    </div><!-- end counter-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 responsive-column">
-                    <div class="counter-item counter-item-layout-2 d-flex">
-                        <div class="counter-icon flex-shrink-0">
-                            <i class="la la-building"></i>
-                        </div>
-                        <div class="counter-content">
-                            <div>
-                                <span class="counter" data-from="0" data-to="3"  data-refresh-interval="5">0</span>
-                                <span class="count-symbol">k</span>
-                            </div>
-                            <p class="counter__title">Properties</p>
-                        </div><!-- end counter-content -->
-                    </div><!-- end counter-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 responsive-column">
-                    <div class="counter-item counter-item-layout-2 d-flex">
-                        <div class="counter-icon flex-shrink-0">
-                            <i class="la la-globe"></i>
-                        </div>
-                        <div class="counter-content">
-                            <div>
-                                <span class="counter" data-from="0" data-to="400"  data-refresh-interval="5">0</span>
-                                <span class="count-symbol">+</span>
-                            </div>
-                            <p class="counter__title">Destinations</p>
-                        </div><!-- end counter-content -->
-                    </div><!-- end counter-item -->
-                </div><!-- end col-lg-3 -->
-                <div class="col-lg-3 responsive-column">
-                    <div class="counter-item counter-item-layout-2 d-flex">
-                        <div class="counter-icon flex-shrink-0">
-                            <i class="la la-check-circle"></i>
-                        </div>
-                        <div class="counter-content">
-                            <div>
-                                <span class="counter" data-from="0" data-to="40"  data-refresh-interval="5">0</span>
-                                <span class="count-symbol">k</span>
-                            </div>
-                            <p class="counter__title">Booking</p>
-                        </div><!-- end counter-content -->
-                    </div><!-- end counter-item -->
-                </div><!-- end col-lg-3 -->
-            </div><!-- end row -->
-        </div><!-- end counter-box -->
-    </div><!-- end container -->
-</section>
-<!-- ================================
-    END FUNFACT AREA
-================================= -->
-
-<!-- ================================
-       START TESTIMONIAL AREA
-================================= -->
-<section class="testimonial-area section-bg section-padding">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4">
-                <div class="section-heading">
-                    <h2 class="sec__title line-height-50">What our customers are saying us?</h2>
-                    <p class="sec__desc padding-top-30px">
-                        Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero
-                    </p>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-8">
-                <div class="testimonial-carousel carousel-action">
-                    <div class="testimonial-card">
-                        <div class="testi-desc-box">
-                            <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident des.</p>
-                        </div>
-                        <div class="author-content d-flex align-items-center">
-                            <div class="author-img">
-                                <img src="<?php echo base_url() ?>assets/images/team8.jpg" alt="testimonial image">
-                            </div>
-                            <div class="author-bio">
-                                <h4 class="author__title">Leroy Bell</h4>
-                                <span class="author__meta">United States</span>
-                                <span class="ratings d-flex align-items-center">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div><!-- end testimonial-card -->
-                    <div class="testimonial-card">
-                        <div class="testi-desc-box">
-                            <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident des.</p>
-                        </div>
-                        <div class="author-content d-flex align-items-center">
-                            <div class="author-img">
-                                <img src="<?php echo base_url() ?>assets/images/team9.jpg" alt="testimonial image">
-                            </div>
-                            <div class="author-bio">
-                                <h4 class="author__title">Richard Pam</h4>
-                                <span class="author__meta">Canada</span>
-                                <span class="ratings d-flex align-items-center">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div><!-- end testimonial-card -->
-                    <div class="testimonial-card">
-                        <div class="testi-desc-box">
-                            <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident des.</p>
-                        </div>
-                        <div class="author-content d-flex align-items-center">
-                            <div class="author-img">
-                                <img src="<?php echo base_url() ?>assets/images/team10.jpg" alt="testimonial image">
-                            </div>
-                            <div class="author-bio">
-                                <h4 class="author__title">Luke Jacobs</h4>
-                                <span class="author__meta">Australia</span>
-                                <span class="ratings d-flex align-items-center">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div><!-- end testimonial-card -->
-                    <div class="testimonial-card">
-                        <div class="testi-desc-box">
-                            <p class="testi__desc">Excepteur sint occaecat cupidatat non proident sunt in culpa officia deserunt mollit anim laborum sint occaecat cupidatat non proident. Occaecat cupidatat non proident des.</p>
-                        </div>
-                        <div class="author-content d-flex align-items-center">
-                            <div class="author-img">
-                                <img src="<?php echo base_url() ?>assets/images/team8.jpg" alt="testimonial image">
-                            </div>
-                            <div class="author-bio">
-                                <h4 class="author__title">Chulbul Panday</h4>
-                                <span class="author__meta">Italy</span>
-                                <span class="ratings d-flex align-items-center">
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                    <i class="la la-star"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div><!-- end testimonial-card -->
-                </div><!-- end testimonial-carousel -->
-            </div><!-- end col-lg-8 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end testimonial-area -->
-<!-- ================================
-       START TESTIMONIAL AREA
-================================= -->
-
-<!-- ================================
-    START INFO AREA
-================================= -->
-<section class="info-area padding-top-100px padding-bottom-60px text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading">
-                    <h2 class="sec__title">Our Dedicated Team</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row padding-top-100px">
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item team-card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/team1.jpg" alt="team-img">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="feature">
+                        <i class="icon_set_1_icon-57"></i>
+                        <h3><span>H24</span> Support</h3>
+                        <p>
+                            
+                        </p>
                     </div>
-                    <div class="card-body">
-                        <h3 class="card-title">David Roberts</h3>
-                        <p class="card-meta">Founder & Director</p>
-                        <p class="card-text font-size-15 pt-2">Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum fugats vitaes nemo minima.</p>
-                        <ul class="social-profile padding-top-20px pb-2">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item team-card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/team2.jpg" alt="team-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Augusta Silva</h3>
-                        <p class="card-meta">Chief Operating Officer</p>
-                        <p class="card-text font-size-15 pt-2">Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum fugats vitaes nemo minima.</p>
-                        <ul class="social-profile padding-top-20px pb-2">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item team-card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/team3.jpg" alt="team-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Bernice Lucas</h3>
-                        <p class="card-meta">Account Manager</p>
-                        <p class="card-text font-size-15 pt-2">Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum fugats vitaes nemo minima.</p>
-                        <ul class="social-profile padding-top-20px pb-2">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-             <div class="col-lg-4 responsive-column">
-                <div class="card-item team-card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/team4.jpg" alt="team-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">David Jackson</h3>
-                        <p class="card-meta">Sales Support</p>
-                        <p class="card-text font-size-15 pt-2">Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum fugats vitaes nemo minima.</p>
-                        <ul class="social-profile padding-top-20px pb-2">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item team-card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/team5.jpg" alt="team-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Kyle Martin</h3>
-                        <p class="card-meta">Order Manager</p>
-                        <p class="card-text font-size-15 pt-2">Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum fugats vitaes nemo minima.</p>
-                        <ul class="social-profile padding-top-20px pb-2">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item team-card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url() ?>assets/images/team6.jpg" alt="team-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Evan Porter</h3>
-                        <p class="card-meta">Head of Design</p>
-                        <p class="card-text font-size-15 pt-2">Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum fugats vitaes nemo minima.</p>
-                        <ul class="social-profile padding-top-20px pb-2">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                            <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                        </ul>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end info-area -->
-<!-- ================================
-    END INFO AREA
-================================= -->
-
-<!-- ================================
-    START CTA AREA
-================================= -->
-<section class="cta-area cta-bg-2 bg-fixed section-padding text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading">
-                    <h2 class="sec__title mb-3 text-white">Interested in a career <br> at Trizen.</h2>
-                    <p class="sec__desc text-white">We’re always looking for talented individuals and
-                        <br> people who are hungry to do great work.
-                    </p>
-                </div><!-- end section-heading -->
-                <div class="btn-box padding-top-35px">
-                    <a href="#" class="theme-btn border-0">Join Our Team</a>
                 </div>
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end cta-area -->
-<!-- ================================
-    END CTA AREA
-================================= -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="feature">
+                        <i class="icon_set_1_icon-61"></i>
+                        <h3><span>10 Languages</span> available</h3>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
+            <div class="row">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="feature">
+                        <i class="icon_set_1_icon-13"></i>
+                        <h3><span>Accesibility</span> managment</h3>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="feature">
+                        <i class="icon_set_1_icon-22"></i>
+                        <h3><span>Pet</span> allowed</h3>
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
+            <hr>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4>Pertinax elaboraret sed</h4>
+                    <p>Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut <a href="#">utamur antiopam inciderint</a> sed. Ut iriure perpetua voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at. </p>
+                    <div class="general_icons">
+                        <ul>
+                            <li><i class="icon_set_1_icon-59"></i>Breakfast</li>
+                            <li><i class="icon_set_1_icon-8"></i>Dinner</li>
+                            <li><i class="icon_set_1_icon-32"></i>Photo collection</li>
+                            <li><i class="icon_set_1_icon-50"></i>Personal shopper</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Mel at vide soluta</h4>
+                    <p>Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut <strong>utamur antiopam inciderint</strong> sed. Ut iriure perpetua voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at. </p>
+                    <div class="general_icons">
+                        <ul>
+                            <li><i class="icon_set_1_icon-98"></i>Audio guide</li>
+                            <li><i class="icon_set_1_icon-27"></i>Parking</li>
+                            <li><i class="icon_set_1_icon-36"></i>Exchange</li>
+                            <li><i class="icon_set_1_icon-63"></i>Mobile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End container -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 nopadding features-intro-img">
+                    <div class="features-bg">
+                        <div class="features-img"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 nopadding">
+                    <div class="features-content">
+                        <h3>"Ex vero mediocrem"</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        <p><a href="#" class=" btn_1 white">Read more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End container-fluid  -->
+
+        <div class="container margin_60">
+
+            <div class="main_title">
+                <h2>What <span>customers </span>says</h2>
+                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="review_strip">
+                        <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
+                        <h4>Jhon Doe</h4>
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                        </p>
+                        <div class="rating">
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
+                        </div>
+                    </div>
+                    <!-- End review strip -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="review_strip">
+                        <img src="<?php echo base_url() ?>assets/img/avatar2.jpg" alt="Image" class="rounded-circle">
+                        <h4>Frank Rosso</h4>
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                        </p>
+                        <div class="rating">
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
+                        </div>
+                    </div>
+                    <!-- End review strip -->
+                </div>
+            </div>
+            <!-- End row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="review_strip">
+                        <img src="<?php echo base_url() ?>assets/img/avatar3.jpg" alt="Image" class="rounded-circle">
+                        <h4>Marc twain</h4>
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                        </p>
+                        <div class="rating">
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
+                        </div>
+                    </div>
+                    <!-- End review strip -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="review_strip">
+                        <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
+                        <h4>Peter Gabriel</h4>
+                        <p>
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                        </p>
+                        <div class="rating">
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
+                        </div>
+                    </div>
+                    <!-- End review strip -->
+                </div>
+            </div>
+            <!-- End row -->
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="<?php echo base_url() ?>assets/img/laptop.png" alt="Laptop" class="img-fluid laptop">
+                </div>
+                <div class="col-md-6">
+                    <h3><span>Get started</span> with CityTours</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                    </p>
+                    <ul class="list_order">
+                        <li><span>1</span>Select your preferred tours</li>
+                        <li><span>2</span>Purchase tickets and options</li>
+                        <li><span>3</span>Pick them directly from your office</li>
+                    </ul>
+                    <a href="all_tour_list.html" class="btn_1">Start now</a>
+                </div>
+            </div>
+            <!-- End row -->
+            
+        </div>
+        <!-- End Container -->
+    </main>
+    <!-- End main -->
+
+   

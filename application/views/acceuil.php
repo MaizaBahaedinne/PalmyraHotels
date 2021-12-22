@@ -1,374 +1,212 @@
-<!-- ================================
-    START HERO-WRAPPER AREA
-================================= -->
-<section class="hero-wrapper hero-wrapper2">
-    <div class="hero-box pb-0">
-        <div id="fullscreen-slide-contain">
-            <ul class="slides-container">
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/1.jpg" alt=""></li> <!--
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/2.jpg" alt=""></li>
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/3.jpg" alt=""></li>
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/4.jpg" alt=""></li>
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/5.jpg" alt=""></li>
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/6.jpg" alt=""></li>
-                <li><img src="<?php echo base_url() ?>assets/images/slideAcceuil/7.jpg" alt=""></li>-->
+    <section id="search_container">
+        <div id="search">
+            <ul class="nav nav-tabs">
+                <li><a href="#hotels" data-toggle="tab">Hotels</a></li>
+
             </ul>
-        </div><!-- End background slider -->
-        <div class="container">
+
+            <div class="tab-content">
+               
+                <!-- End rab -->
+                <div class="tab-pane active show" id="hotels">
+                    <h3>Search Hotels in Paris</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label><i class="icon-calendar-7"></i> Check in</label>
+                                <input class="date-pick form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label><i class="icon-calendar-7"></i> Check out</label>
+                                <input class="date-pick form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-6">
+                            <div class="form-group">
+                                <label>Adults</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="1" id="adults" class="qty2 form-control" name="adults_2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-6">
+                            <div class="form-group">
+                                <label>Children</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children_2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-12">
+                            <div class="form-group">
+                                <label>Rooms</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="1" id="children" class="qty2 form-control" name="rooms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End row -->
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Preferred city area</label>
+                                <div class="styled-select-common">
+                                    <select name="area">
+                                        
+                                        <?php foreach ($hotels as $hotel ) { ?> 
+                                            <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End row -->
+                    <hr>
+                    <button class="btn_1 green btn-block"><i class="icon-search"></i>Search now</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End hero -->
+
+    <main>
+    <div class="container margin_60">
+    
+        <div class="main_title">
+            <h2>Palmyra <span>Top</span> Hotels</h2>
+            <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+        </div>
+        
+        <div class="row">
+        <?php foreach ($hotels as $hotel ) { ?> 
+            <div class="col-lg-6 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                <div class="tour_container">
+                    <div class="ribbon_3 popular"><span>Popular</span></div>
+                    <div class="img_container">
+                        <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId?>">
+                        <img src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade?>" width="800" height="533" class="img-fluid" alt="Image">
+                        <div class="short_info">
+                            <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price ; } else{ echo "0" ; } ?><sup>DT</sup></span>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="tour_title">
+                        <h3>Palmyra <strong><?php echo $hotel->name ?></strong></h3>
+                        <div class="rating">
+                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                        </div><!-- end rating -->
+                        <div class="wishlist">
+                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+                        </div><!-- End wish list-->
+                    </div>
+                </div><!-- End box tour -->
+            </div><!-- End col -->
+            
+        <?php } ?>
+            
+        </div><!-- End row -->
+        <!--
+        <p class="text-center nopadding">
+            <a href="#" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
+        </p>
+        -->
+    </div><!-- End container -->
+    
+    <div class="white_bg">
+          
+                
+           
+        </div>
+        <!-- End white_bg -->
+
+        <section class="promo_full">
+            <div class="promo_full_wp magnific">
+                <div>
+                    <h3>BELONG ANYWHERE</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=b0x42ldwzww" class="video"><i class="icon-play-circled2-1"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- End section -->
+
+        <div class="container margin_60">
+
+            <div class="main_title">
+                <h2>Some <span>good</span> reasons</h2>
+                <p>
+                    Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+                </p>
+            </div>
+
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="hero-content pb-5">
-                        <div class="section-heading">
-                            <p class="sec__desc pb-2">Hotel stays, Dream getaways</p>
-                            <h2 class="sec__title">Find the Perfect Place to Stay <br> for Your Next Trip</h2>
-                        </div>
-                    </div><!-- end hero-content -->
-                    <div class="search-fields-container">
-                        <div class="contact-form-action">
-                            <form action="<?php echo base_url() ?>Hotel/search" method="Get" class="row">
-                                <div class="col-lg-3 pr-0">
-                                    <div class="input-box">
-                                        <label class="label-text">Hotel name</label>
-                                        <div class="form-group">
-                                            <span class="la la-map-marker form-icon"></span>
-                                            <select class="form-control" name="hotel"  >
-                                           
-                                             
-                                                <?php foreach ($hotels as $hotel) {
-                                                ?>
-                                                <option value="<?php echo $hotel->hotelId ?>"><?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
-                                                <?php
-                                                    }
-                                                ?> 
-                                           
-                                                </select>
 
-                                        </div>
-                                    </div>
-                                </div><!-- end col-lg-3 -->
-                                <div class="col-lg-3 pr-0">
-                                    <div class="input-box">
-                                        <label class="label-text">Check in - Check out</label>
-                                        <div class="form-group">
-                                            <span class="la la-calendar form-icon"></span>
-                                            <input class="date-range form-control" type="text" name="daterange" readonly>
-                                        </div>
-                                    </div>
-                                </div><!-- end col-lg-3 -->
-
-                                <div class="col-lg-3">
-                                    <div class="input-box">
-                                        <label class="label-text">Guests</label>
-                                        <div class="form-group">
-                                            <div class="dropdown dropdown-contain gty-container">
-                                                <a class="dropdown-toggle dropdown-btn" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                                    <span class="adult" data-text="Adult" data-text-multi="Adults">0 Adult</span>
-                                                    -
-                                                    <span class="children" data-text="Child" data-text-multi="Children">0 Children</span>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-wrap">
-                                                    <div class="dropdown-item">
-                                                        <div class="qty-box d-flex align-items-center justify-content-between">
-                                                            <label>Rooms</label>
-                                                            <div class="qtyBtn d-flex align-items-center">
-                                                                <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                                <input type="text" name="nroom" value="1" min="1" class="qty-input">
-                                                                <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="dropdown-item">
-                                                        <div class="qty-box d-flex align-items-center justify-content-between">
-                                                            <label>Adults</label>
-                                                            <div class="qtyBtn d-flex align-items-center">
-                                                                <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                                <input type="text" name="adult_number" value="0">
-                                                                <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="dropdown-item">
-                                                        <div class="qty-box d-flex align-items-center justify-content-between">
-                                                            <label>Children</label>
-                                                            <div class="qtyBtn d-flex align-items-center">
-                                                                <div class="qtyDec"><i class="la la-minus"></i></div>
-                                                                <input type="text" name="nchild" value="0" max="2">
-                                                                <div class="qtyInc"><i class="la la-plus"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- end dropdown -->
-                                        </div>
-                                    </div>
-                                </div><!-- end col-lg-3 -->
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.2s">
+                    <div class="feature_home">
+                        <i class="icon_set_1_icon-41"></i>
+                        <h3><span>+120</span> Premium tours</h3>
+                        <p>
                             
-                            <div class="col-lg-3 ">
-                                                <div class="input-box">
-                                                    <label class="label-text">Pension</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select" name="pension" required>
-                                                                
-                                                                <option value="PD" >LPD</option>
-                                                                <option value="DP">LDP</option>
-                                                                <option value="PC">PC</option>
-                                                                <option value="ALLS">All inclusive Soft</option>
-                                                                <option value="ALLH">All inclusive hard</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                        </p>
+                        <a href="about-1.html" class="btn_1 outline">Read more</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.4s">
+                    <div class="feature_home">
+                        <i class="icon_set_1_icon-30"></i>
+                        <h3><span>+1000</span> Customers</h3>
+                        <p>
                             
-                                <input type="submit"   class="btn btn-block btn-primary" value="Search Now"> 
-                           
-                            </form>
-                        </div>
+                        </p>
+                        <a href="about-1.html" class="btn_1 outline">Read more</a>
                     </div>
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div>
-</section><!-- end hero-wrapper -->
-<!-- ================================
-    END HERO-WRAPPER AREA
-================================= -->
+                </div>
 
-<!-- ================================
-    START INFO AREA
-================================= -->
-<section class="info-area info-bg info-area2 padding-top-80px padding-bottom-45px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 responsive-column">
-                <div class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb text-color-2">
-                        <i class="las la-radiation"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Unique Atmosphere</h4>
-                        <p class="info__desc">
-                            Varius quam quisque id diam vel quam
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="feature_home">
+                        <i class="icon_set_1_icon-57"></i>
+                        <h3><span>H24 </span> Support</h3>
+                        <p>
+                            
                         </p>
-                    </div><!-- end info-content -->
-                </div><!-- end icon-box -->
-            </div><!-- end col-lg-3 -->
-             <div class="col-lg-3 responsive-column">
-                <div class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb-2 text-color-3">
-                        <i class="la la-tree"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Environment</h4>
-                        <p class="info__desc">
-                            Varius quam quisque id diam vel quam
-                        </p>
-                    </div><!-- end info-content -->
-                </div><!-- end icon-box -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb-3 text-color-4">
-                        <i class="las la-map-marked-alt"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Great Location</h4>
-                        <p class="info__desc">
-                            Varius quam quisque id diam vel quam
-                        </p>
-                    </div><!-- end info-content -->
-                </div><!-- end icon-box -->
-            </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 responsive-column">
-                <div class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb-4 text-color-5">
-                        <i class="las la-bed"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Homey Comfort</h4>
-                        <p class="info__desc">
-                            Varius quam quisque id diam vel quam
-                        </p>
-                    </div><!-- end info-content -->
-                </div><!-- end icon-box -->
-            </div><!-- end col-lg-3 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end info-area -->
-<!-- ================================
-    END INFO AREA
-================================= -->
+                        <a href="about-1.html" class="btn_1 outline">Read more</a>
+                    </div>
+                </div>
 
-<!-- ================================
-    START ABOUT AREA
-================================= -->
-<section class="about-area section--padding overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="about-content pr-5">
-                    <div class="section-heading">
-                        <h4 class="font-size-16 pb-2">Our Story</h4>
-                        <h2 class="sec__title">Atmosphere and Design</h2>
-                        <p class="sec__desc pt-4 pb-2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+            </div>
+            <!--End row -->
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="<?php echo base_url() ?>assets/img/laptop-1.png" alt="Laptop" class="img-fluid laptop">
+                </div>
+                <div class="col-md-6">
+                    <h3><span>Get started</span> with CityTours</h3>
+                    <p>
                         
-                    </div><!-- end section-heading -->
-                    <div class="btn-box pt-4">
-                        <a href="about.html" class="theme-btn">Read More <i class="la la-arrow-right ml-1"></i></a>
-                    </div>
+                    </p>
+                    <ul class="list_order">
+                        <li><span>1</span>Select your preferred Hotel</li>
+                        <li><span>2</span>Book Now</li>
+                        <li><span>3</span>Print your invoic</li>
+                    </ul>
+                    <a href="all_tour_list.html" class="btn_1">Start now</a>
                 </div>
-            </div><!-- end col-lg-6 -->
-            <div class="col-lg-6">
-                <div class="image-box about-img-box">
-                    <img src="<?php echo base_url() ?>assets/images/slideAcceuil/4.jpg" alt="about-img" class="img__item img__item-1">
-                    <img src="<?php echo base_url() ?>assets/images/tripadvisor.png" alt="about-img" class="img__item img__item-2">
-                </div>
-            </div><!-- end col-lg-6 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section>
-<!-- ================================
-    END ABOUT AREA
-================================= -->
-
-<div class="section-block"></div>
-
-<!-- ================================
-    START ROOM TYPE AREA
-================================= -->
-<section class="room-type-area section--padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h2 class="sec__title">Find a Room Type</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row padding-top-50px">
-            <div class="col-lg-6">
-                <div class="room-type-content">
-                    <div class="image-box">
-                        <a href="room-list.html" class="d-block">
-                            <img src="<?php echo base_url() ?>assets/images/img27.jpg" alt="room type img" class="img__item">
-                            <div class="room-type-link">
-                                Dorm Beds <i class="la la-arrow-right ml-2"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- end col-lg-6 -->
-            <div class="col-lg-6">
-                <div class="room-type-content">
-                    <div class="image-box">
-                        <a href="room-list.html" class="d-block">
-                            <img src="<?php echo base_url() ?>assets/images/img28.jpg" alt="room type img" class="img__item">
-                            <div class="room-type-link">
-                                Private Room <i class="la la-arrow-right ml-2"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div><!-- end col-lg-6 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section>
-<!-- ================================
-    END ROOM TYPE AREA
-================================= -->
-
-<!-- ================================
-    START HOTEL AREA
-================================= -->
-<section class="hotel-area section-bg padding-top-100px padding-bottom-200px overflow-hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h2 class="sec__title line-height-55">Popular Hotel Destinations <br> You Might Like</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row padding-top-50px">
-            <div class="col-lg-12">
-                <div class="hotel-card-wrap">
-                    <div class="hotel-card-carousel-2 carousel-action">
-                         <?php foreach ($hotels as $hotel) {   ?>
-                           
-                          
-                        
-                        <div class="card-item">
-                            <div class="card-img">
-                                <a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" class="d-block">
-                                    <img src="<?php echo base_url() ?>assets/images/facade/<?php echo $hotel->facade ?>" alt="<?php echo $hotel->name ?>">
-                                </a>
-                                <!-- <span class="badge">Featured</span>
-                                <span class="badge badge-ribbon">20% off</span> -->
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title"><a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" ><?php echo $hotel->name ?></a></h3>
-                                <p class="card-meta"><?php echo $hotel->location ?></p>
-                                <div class="card-rating">
-                                    <span class="badge text-white">4.4/5</span>
-                                    <span class="review__text">Average</span>
-                                    <span class="rating__text">(30 Reviews)</span>
-                                </div>
-                                <div class="card-price d-flex align-items-center justify-content-between">
-                                    <p>
-                                        <span class="price__num"><?php 
-                                        if(!empty($hotel->prices->price)) { echo $hotel->prices->price." TND" ; } else { echo '<span style="color:red">No Price</span>' ;}  ?></span>
-                                        <!--<span class="price__num before-price color-text-3">$100.00</span>-->
-                                        <span class="price__text">Per night</span>
-                                    </p>
-                                    <a  href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId  ?>" class="btn-text">See details<i class="la la-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div><!-- end card-item -->
-                       
-                         <?php
-                                }
-                            ?> 
-                      
-                    </div><!-- end hotel-card-carousel -->
-                </div>
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container-fluid -->
-</section><!-- end hotel-area -->
-<!-- ================================
-    END HOTEL AREA
-================================= -->
-
-<!-- ================================
-    START DISCOUNT AREA
-================================= -->
-<section class="discount-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="discount-box">
-                    <div class="discount-img">
-                        <img src="<?php echo base_url() ?>assets/images/discount-hotel-img.jpg" alt="discount img">
-                    </div><!-- end discount-img -->
-                    <div class="discount-content">
-                        <div class="section-heading">
-                            <p class="sec__desc text-white">Hot deal, save 50%</p>
-                            <h2 class="sec__title mb-0 line-height-50 text-white">Discount 50% for the <br> First Booking</h2>
-                        </div><!-- end section-heading -->
-                        <div class="btn-box pt-4">
-                            <a href="#" class="theme-btn border-0">Learn More <i class="la la-arrow-right ml-1"></i></a>
-                        </div>
-                    </div><!-- end discount-content -->
-                    <div class="company-logo">
-                        <img src="<?php echo base_url() ?>assets/images/logo2.png" alt="">
-                        <p class="text-white font-size-14 text-right">*Terms applied</p>
-                    </div><!-- end company-logo -->
-                </div>
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end discount-area -->
-<!-- ================================
-    END DISCOUNT AREA
-================================= -->
+            </div>
+            <!-- End row -->
+        
+        </div>
+        <!-- End container -->
+    </main>
+    <!-- End main -->

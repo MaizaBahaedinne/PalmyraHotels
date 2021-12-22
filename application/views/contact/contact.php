@@ -1,159 +1,141 @@
-    <!-- ================================
-    START BREADCRUMB AREA
-================================= -->
-    <section class="breadcrumb-area bread-bg-5">
-        <div class="breadcrumb-wrap">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/header_bg.jpg" data-natural-width="1400" data-natural-height="470">
+        <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+            <div class="animated fadeInDown">
+                <h1>Contact us</h1>
+                <p>Cursus neque cursus curae ante scelerisque vehicula.</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <main>
+        <div id="position">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="breadcrumb-content">
-                            <div class="section-heading">
-                                <h2 class="sec__title text-white">Contact us</h2>
-                            </div>
-                        </div><!-- end breadcrumb-content -->
-                    </div><!-- end col-lg-6 -->
-                    <div class="col-lg-6">
-                        <div class="breadcrumb-list text-right">
-                            <ul class="list-items">
-                                <li><a href="index.html">Home</a></li>
-                                
-                                <li>Contact us</li>
-                            </ul>
-                        </div><!-- end breadcrumb-list -->
-                    </div><!-- end col-lg-6 -->
-                </div><!-- end row -->
-            </div><!-- end container -->
-        </div><!-- end breadcrumb-wrap -->
-        <div class="bread-svg-box">
-            <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <polygon points="100 0 50 10 0 0 0 10 100 10"></polygon>
-            </svg>
-        </div><!-- end bread-svg -->
-    </section><!-- end breadcrumb-area -->
-    <!-- ================================
-    END BREADCRUMB AREA
-================================= -->
+                <ul>
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Contact</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- End Position -->
 
-    <!-- ================================
-    START CONTACT AREA
-================================= -->
-    <section class="contact-area section--padding">
-        <div class="container">
+        <div class="container margin_60">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="form-box">
-                        <div class="form-title-wrap">
-                            <h3 class="title">We'd love to hear from you</h3>
-                            <p class="font-size-15">Send us a message and we'll respond as soon as possible</p>
-                        </div><!-- form-title-wrap -->
-                        <div class="form-content ">
-                            <div class="contact-form-action">
-                                <form class="row messenger-box-form" method="post" action="<?php echo base_url() ?>Contact/addNewMessage" >
-                                    <div class="alert alert-success messenger-box-contact__msg col-lg-12"
-                                        style="display: none" role="alert">
-                                        Thank You! Your message has been sent.
+                <div class="col-md-8">
+                    <div class="form_title">
+                        <h3><strong><i class="icon-pencil"></i></strong>Fill the form below</h3>
+                        <p>
+                            Mussum ipsum cacilds, vidis litro abertis.
+                        </p>
+                    </div>
+                    <div class="step">
+
+                        <div id="message-contact"></div>
+                        <form method="post" action="assets/contact.php" id="contactform">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" id="name_contact" name="name_contact" placeholder="Enter Name">
                                     </div>
-                                    <div class="col-lg-6 responsive-column">
-                                        <div class="input-box messenger-box-input-wrap">
-                                            <label class="label-text" for="name">Your Name</label>
-                                            <div class="form-group">
-                                                <span class="la la-user form-icon"></span>
-                                                <input class="form-control" type="text" id="name" name="name"
-                                                    placeholder="Your name" required>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-6 responsive-column">
-                                        <div class="input-box messenger-box-input-wrap">
-                                            <label class="label-text" for="email">Your Email</label>
-                                            <div class="form-group">
-                                                <span class="la la-envelope-o form-icon"></span>
-                                                <input class="form-control" type="email" name="email" id="email"
-                                                    placeholder="Email address" required>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-6 -->
-                                    <div class="col-lg-12">
-                                        <div class="input-box messenger-box-input-wrap">
-                                            <label class="label-text" for="message">Message</label>
-                                            <div class="form-group">
-                                                <span class="la la-pencil form-icon"></span>
-                                                <textarea class="message-control form-control" name="message"
-                                                    id="message" placeholder="Write message" required></textarea>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-12 -->
-                                    <div class="col-lg-12">
-                                        <div class="btn-box messenger-box-input-wrap">
-                                            <button name="submit" type="submit" class="theme-btn send-message-btn"
-                                                id="send-message-btn">Send Message</button>
-                                        </div>
-                                    </div><!-- end col-lg-12 -->
-                                </form>
-                            </div><!-- end contact-form-action -->
-                        </div><!-- end form-content -->
-                    </div><!-- end form-box -->
-                </div><!-- end col-lg-8 -->
-                <div class="col-lg-4">
-                    <div class="form-box">
-                        <div class="form-title-wrap">
-                            <h3 class="title">Contact Us</h3>
-                        </div><!-- form-title-wrap -->
-                        <div class="form-content">
-                            <div class="address-book">
-                                <ul class="list-items contact-address">
-                                    <li>
-                                        <i class="la la-map-marker icon-element"></i>
-                                        <h5 class="title font-size-16 pb-1">Address</h5>
-                                        <p class="map__desc">
-                                            Melbourne, Australia, 105 South Park Avenue
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="la la-phone icon-element"></i>
-                                        <h5 class="title font-size-16 pb-1">Phone</h5>
-                                        <p class="map__desc">Telephone: 2800 256 508</p>
-                                        <p class="map__desc">Mobile: 666 777 888</p>
-                                    </li>
-                                    <li>
-                                        <i class="la la-envelope-o icon-element"></i>
-                                        <h5 class="title font-size-16 pb-1">Email</h5>
-                                        <p class="map__desc">info@palmyra.com.tn</p>
-                                       
-                                    </li>
-                                </ul>
-                                <ul class="social-profile text-center">
-                                    <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="#"><i class="lab la-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="lab la-youtube"></i></a></li>
-                                </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" id="lastname_contact" name="lastname_contact" placeholder="Enter Last Name">
+                                    </div>
+                                </div>
                             </div>
-                        </div><!-- end form-content -->
-                    </div><!-- end form-box -->
-                </div><!-- end col-lg-4 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end contact-area -->
-    <!-- ================================
-    END CONTACT AREA
-================================= -->
+                            <!-- End row -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" id="email_contact" name="email_contact" class="form-control" placeholder="Enter Email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="text" id="phone_contact" name="phone_contact" class="form-control" placeholder="Enter Phone number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea rows="5" id="message_contact" name="message_contact" class="form-control" placeholder="Write your message" style="height:200px;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Human verification</label>
+                                    <input type="text" id="verify_contact" class=" form-control add_bottom_30" placeholder="Are you human? 3 + 1 =">
+                                    <input type="submit" value="Submit" class="btn_1" id="submit-contact">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End col-md-8 -->
 
-    <!-- ================================
-    START MAP AREA
-================================= -->
-    <section class="map-area padding-bottom-100px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="map-container">
-                        <div id="map"></div>
-                    </div><!-- end map-container -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </section><!-- end map-area -->
-    <!-- ================================
-    END MAP AREA
-================================= -->
+                <div class="col-md-4">
+                    <div class="box_style_1">
+                        <span class="tape"></span>
+                        <h4>Address <span><i class="icon-pin pull-right"></i></span></h4>
+                        <p>
+                            Place Charles de Gaulle, 75008 Paris
+                        </p>
+                        <hr>
+                        <h4>Help center <span><i class="icon-help pull-right"></i></span></h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, vim id accusata sensibus, id ridens quaeque qui. Ne qui vocent ornatus molestie.
+                        </p>
+                        <ul id="contact-info">
+                            <li>+ 61 (2) 8093 3400 / + 61 (2) 8093 3402</li>
+                            <li><a href="#">info@domain.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box_style_4">
+                        <i class="icon_set_1_icon-57"></i>
+                        <h4>Need <span>Help?</span></h4>
+                        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                    </div>
+                </div>
+                <!-- End col-md-4 -->
+            </div>
+            <!-- End row -->
+        </div>
+        <!-- End container -->
+
+        <div id="map_contact"></div>
+        <!-- end map-->
+        <div id="directions">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form action="http://maps.google.com/maps" method="get" target="_blank">
+                            <div class="input-group">
+                                <input type="text" name="saddr" placeholder="Enter your starting point" class="form-control style-2" />
+                                <input type="hidden" name="daddr" value="New York, NY 11430" />
+                                <!-- Write here your end point -->
+                                <span class="input-group-btn">
+                                <button class="btn" type="submit" value="Get directions" style="margin-left:0;">GET DIRECTIONS</button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end directions-->
+    </main>
+    <!-- End main -->

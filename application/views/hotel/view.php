@@ -1,1313 +1,387 @@
-<!-- ================================
-    START BREADCRUMB TOP BAR
-================================= -->
-<section class="breadcrumb-top-bar">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-list breadcrumb-top-list">
-                    <ul class="list-items bg-transparent radius-none p-0">
-                        <li><a href="index.html">Home</a></li>
-                        <li><?php echo $hotel->location ?></li>
-                        <li><?php echo $hotel->name ?></li>
-                    </ul>
-                </div><!-- end breadcrumb-list -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end breadcrumb-top-bar -->
-<!-- ================================
-    END BREADCRUMB TOP BAR
-================================= -->
-
-<!-- ================================
-    START BREADCRUMB AREA
-================================= -->
-<section class="breadcrumb-area py-0" style="background-image: url(<?php echo base_url() ?>assets/images/facade/<?php echo $hotel->facade ?>);" >
-    <div class="breadcrumb-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-btn">
-                        <div class="btn-box">
-                            <a class="theme-btn" data-fancybox="video" data-src="https://www.youtube.com/watch?v=5u1WISBbo5I"
-                               data-speed="700">
-                                <i class="la la-video-camera mr-2"></i>Video
-                            </a>
-                            <a class="theme-btn" data-src="<?php echo base_url() ?>assets/images/facade/<?php echo $hotel->facade ?>"
-                               data-fancybox="gallery"
-                               data-caption="<?php echo $hotel->description ?>"
-                               data-speed="700">
-                                <i class="la la-photo mr-2"></i>More Photos
-                            </a>
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade ?>" data-natural-width="1400" data-natural-height="470">
+        <div class="parallax-content-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
+                        <h1>Palmyra <?php echo $hotel->name ?></h1>
+                        <span><?php echo $hotel->location ?></span>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="price_single_main" class="hotel">
+                            from/per night <span><sup>$</sup>95</span>
                         </div>
-                        <?php  foreach ($medias as $media ): ?>
-                            <a class="d-none"
-                                 data-fancybox="gallery"
-                                 data-src="<?php echo base_url() ?>assets/images/<?php echo $hotel->emplacement ?>"
-                                 data-caption="<?php echo $media->description ?>"
-                                 data-speed="700"></a>
-                        <?php endforeach ?>
-                        
-                    </div><!-- end breadcrumb-btn -->
-                </div><!-- end col-lg-12 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end breadcrumb-wrap -->
-</section><!-- end breadcrumb-area -->
-<!-- ================================
-    END BREADCRUMB AREA
-================================= -->
-
-<!-- ================================
-    START TOUR DETAIL AREA
-================================= -->
-<section class="tour-detail-area padding-bottom-90px">
-    <div class="single-content-navbar-wrap menu section-bg" id="single-content-navbar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="single-content-nav" id="single-content-nav">
-                        <ul>
-                            <li><a data-scroll="description" href="#description" class="scroll-link active">Hotel Details</a></li>
-                            <li><a data-scroll="availability" href="#availability" class="scroll-link">Availability</a></li>
-                            <li><a data-scroll="amenities" href="#amenities" class="scroll-link">Amenities</a></li>
-                            <li><a data-scroll="faq" href="#faq" class="scroll-link">Faq</a></li>
-                            <li><a data-scroll="reviews" href="#reviews" class="scroll-link">Reviews</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- end single-content-navbar-wrap -->
-    <div class="single-content-box">
-        <div class="container">
+    </section>
+    <!-- End section -->
+
+    <main>
+        <div id="position">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Hotel</a>
+                    </li>
+                    <li><?php echo $hotel->name ?></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Position -->
+
+        <div class="collapse" id="collapseMap">
+            <div id="map" class="map"></div>
+        </div>
+        <!-- End Map -->
+
+        <div class="container margin_60">
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="single-content-wrap padding-top-60px">
-                        <div id="description" class="page-scroll">
-                            <div class="single-content-item pb-4">
-                                <h3 class="title font-size-26"><?php echo $hotel->name ?> </h3>
-                                <div class="d-flex align-items-center pt-2">
-                                    <p class="mr-2"><?php echo $hotel->location ?></p>
-                                    <p>
-                                        <span class="badge badge-warning text-white font-size-16">4.7</span>
-                                        <span>(4,209 Reviews)</span>
-                                    </p>
+                <div class="col-lg-8" id="single_tour_desc">
+                    <div id="single_tour_feat">
+                        <ul>
+                            <li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
+                            <li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
+                            <li><i class="icon_set_2_icon-110"></i>Poll</li>
+                            <li><i class="icon_set_1_icon-59"></i>Breakfast</li>
+                            <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
+                            <li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
+                            <li><i class="icon_set_1_icon-27"></i>Parking</li>
+                        </ul>
+                    </div>
+                    <p class="d-none d-md-block d-block d-lg-none"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                    </p>
+                    <!-- Map button for tablets/mobiles -->
+                    <div id="Img_carousel" class="slider-pro">
+                        <div class="sp-slides">
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/1_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/1_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/1_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/1_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/1_large.jpg">
+                            </div>
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/2_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/2_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/2_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/2_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/2_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/3_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/3_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/3_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/3_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/3_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/4_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/4_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/4_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/4_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/4_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/5_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/5_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/5_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/5_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/5_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/6_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/6_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/6_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/6_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/6_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/7_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/7_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/7_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/7_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/7_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/8_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/8_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/8_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/8_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/8_large.jpg">
+                            </div>
+
+                            <div class="sp-slide">
+                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/9_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/9_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/9_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/9_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/9_large.jpg">
+                            </div>
+                        </div>
+                        <div class="sp-thumbnails">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/1_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/2_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/3_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/4_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/5_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/6_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/7_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/8_medium.jpg">
+                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/9_medium.jpg">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h3>Description</h3>
+                        </div>
+                        <div class="col-lg-9">
+                            <p>
+                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                            </p>
+                            <h4>Hotel facilities</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list_ok">
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Quidam percipitur instructior an eum</li>
+                                        <li>Ut est saepe munere ceteros</li>
+                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Quidam percipitur instructior an eum</li>
+                                    </ul>
                                 </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                            <div class="single-content-item py-4">
-                                <div class="row">
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-hotel"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Hotel Type</h3>
-                                                <span class="font-size-13">4 Star</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-user"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Extra People</h3>
-                                                <span class="font-size-13">No Charge</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-bed"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Minimum Stay</h3>
-                                                <span class="font-size-13">2 Nights</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-money"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Security Deposit</h3>
-                                                <span class="font-size-13">$279</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-globe"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Country</h3>
-                                                <span class="font-size-13">Tunisia</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-map"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">City</h3>
-                                                <span class="font-size-13"><?php echo $hotel->location ?></span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-user"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Neighborhood</h3>
-                                                <span class="font-size-13">République</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                    <div class="col-lg-4 responsive-column">
-                                        <div class="single-tour-feature d-flex align-items-center mb-3">
-                                            <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                <i class="la la-times"></i>
-                                            </div>
-                                            <div class="single-feature-titles">
-                                                <h3 class="title font-size-15 font-weight-medium">Cancellation</h3>
-                                                <span class="font-size-13">Strict</span>
-                                            </div>
-                                        </div><!-- end single-tour-feature -->
-                                    </div><!-- end col-lg-4 -->
-                                </div><!-- end row -->
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">About <?php echo $hotel->name ?></h3>
-                                <p class="py-3"><?php echo $hotel->description ?></p>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end description -->
-                        <div id="availability" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-30px">
-                                <h3 class="title font-size-20">Availability</h3>
-                                <div class="contact-form-action padding-bottom-35px">
-                                    <form method="get" action="<?php echo base_url() ?>/Hotel/view/<?php echo $hotel->hotelId ?>">
-                                        <div class="row">
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">Check in - Check out</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-calendar form-icon"></span>
-                                                        <input class="date-range form-control" type="text" name="daterange" value="<?php echo $this->input->get('daterange') ?>" readonly>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">Rooms</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select" name="nroom" required>
-                                                                
-                                                                <option value="1" <?php if( $this->input->get('nroom') == '1' || $this->input->get('nroom') == "") echo 'selected' ?> >1 Room</option>
-                                                                <option value="2" <?php if( $this->input->get('nroom') == '2') echo 'selected' ?> >2 Rooms</option>
-                                                                <option value="3" <?php if( $this->input->get('nroom') == '3') echo 'selected' ?> >3 Rooms</option>
-                                                                <option value="4" <?php if( $this->input->get('nroom') == '4') echo 'selected' ?> >4 Rooms</option>
-                                                                <option value="5  <?php if( $this->input->get('nroom') == '5') echo 'selected' ?>">5 Rooms</option>
-                                                                <option value="6" <?php if( $this->input->get('nroom') == '6') echo 'selected' ?> >6 Rooms</option>
-                                                                <option value="7" <?php if( $this->input->get('nroom') == '7') echo 'selected' ?> >7 Rooms</option>
-                                                                <option value="8" <?php if( $this->input->get('nroom') == '8') echo 'selected' ?> >8 Rooms</option>
-                                                                <option value="9" <?php if( $this->input->get('nroom') == '9') echo 'selected' ?> >9 Rooms</option>
-                                                                <option value="10" <?php if( $this->input->get('nroom') == '10') echo 'selected' ?>>10 Rooms</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                             <div class="col-lg-6 responsive-column">
-                                                    <div class="input-box">
-                                                        <label class="label-text" name="child" >Children (0-2 years old)</label>
-                                                        <div class="form-group">
-                                                            <div class="select-contain w-auto">
-                                                                <select class="select-contain-select" required>
-                                                                    <option value="0">Select childrens</option>
-                                                                    <option value="1">1 child</option>
-                                                                    <option value="2">2 childs</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                         
-                                            <div class="col-lg-6 responsive-column">
-                                                <div class="input-box">
-                                                    <label class="label-text">Pension</label>
-                                                    <div class="form-group">
-                                                        <div class="select-contain w-auto">
-                                                            <select class="select-contain-select" name="pension" required>
-                                                                <option  value="" >Pension</option>
-                                                                <option value="PD" <?php if( $this->input->get('pension') == 'PD') echo 'selected' ?>  >LPD</option>
-                                                                <option value="DP" <?php if( $this->input->get('pension') == 'DP') echo 'selected' ?> >LDP</option>
-                                                                <option value="PC" <?php if( $this->input->get('pension') == 'PC') echo 'selected' ?> >PC</option>
-                                                                <option value="ALLS" <?php if( $this->input->get('pension') == 'ALLS') echo 'selected' ?> >All inclusive Soft</option>
-                                                                <option value="ALLH" <?php if( $this->input->get('pension') == 'ALLH') echo 'selected' ?> >All inclusive hard</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="btn-box">
-                                                    <button type="submit" class="theme-btn">Search Now</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div><!-- end contact-form-action -->
-                                <h3 class="title font-size-20">Available Rooms</h3> 
-                                
-
-                                <?php 
-
-                                     $d = $this->input->get('daterange') ; 
-                                    //str_replace("/","-",  $d );
-                                    $d1 = substr($d ,0, 10) ;
-                                    $d2 = substr($d ,13, 23) ;
-                                    $date1 = strtotime(substr($d1 ,6, 4)."-".substr($d1 ,3, 2)."-".substr($d1 ,0, 2)) ;
-                                     
-                                    $date2 = strtotime(substr($d2 ,6, 4)."-".substr($d2 ,3, 2)."-".substr($d2 ,0, 2)) ;
-
-                                    
-
-                                    // this calculates the diff between two dates, which is the number of nights
-                                    $diff = abs($date2 - $date1) ;
-                                    $years = floor($diff / (365*60*60*24)); 
-                                    $months = floor(($diff - $years * 365*60*60*24)/(30*60*60*24)); 
-                                    $numberOfNights= floor(($diff-$years*365*60*60*24-$months*30*60*60*24)/ (60*60*24)) ; 
-
-                                    if ($numberOfNights>1){ 
-
-                                    foreach ($rooms as $room) { ?> 
-
-
-                                <div class="cabin-type padding-top-30px">
-                                    <div class="cabin-type-item seat-selection-item d-flex">
-                                        <div class="cabin-type-img flex-shrink-0">
-                                            <img src="<?php echo base_url() ?>assets/images/Hotels/rooms/<?php echo $room->facade_r ?>" alt="">
-                                        </div>
-                                        <div class="cabin-type-detail">
-                                            <h3 class="title"><?php echo $room->titre ?></h3>
-                                            <div class="row padding-top-20px">
-                                                <div class="col-lg-6 responsive-column">
-                                                    <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                        <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                            <i class="la la-wifi"></i>
-                                                        </div>
-                                                        <div class="single-feature-titles">
-                                                            <h3 class="title font-size-15 font-weight-medium">Free Wi-Fi</h3>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- end col-lg-6 -->
-                                                 <div class="col-lg-6 responsive-column">
-                                                     <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                         <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                             <i class="la la-bed"></i>
-                                                         </div>
-                                                         <div class="single-feature-titles">
-                                                             <h3 class="title font-size-15 font-weight-medium"><?php echo $room->capacity ?> Single beds</h3>
-                                                         </div>
-                                                     </div>
-                                                </div><!-- end col-lg-6 -->
-                                                <div class="col-lg-6 responsive-column">
-                                                    <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                        <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                            <i class="la la-building"></i>
-                                                        </div>
-                                                        <div class="single-feature-titles">
-                                                            <h3 class="title font-size-15 font-weight-medium">15 m²</h3>
-                                                        </div>
-                                                    </div>
-                                                </div><!-- end col-lg-6 -->
-                                                 <div class="col-lg-6 responsive-column">
-                                                     <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                         <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-2">
-                                                             <i class="la la-hotel"></i>
-                                                         </div>
-                                                         <div class="single-feature-titles">
-                                                             <h3 class="title font-size-15 font-weight-medium">Shower and bathtub</h3>
-                                                         </div>
-                                                     </div>
-                                                </div><!-- end col-lg-6 -->
-                                            </div><!-- end row -->
-                                            <!--
-                                            <div class="room-photos">
-                                                <a class="btn theme-btn-hover-gray" data-src="<?php echo base_url() ?>assets/images/img1.jpg"
-                                                   data-fancybox="gallery"
-                                                   data-caption="Showing image - 01"
-                                                   data-speed="700">
-                                                    <i class="la la-photo mr-2"></i>Room Photos
-                                                </a>
-                                            
-                                            </div>
-                                            -->
-                                        </div>
-                                        <div class="cabin-price">
-                                            <p class="text-uppercase font-size-14">Per/night<strong class="mt-n1 text-black font-size-18 font-weight-black d-block">
-                                                <?php 
-
-                                                $b = $room->prices->price ;
-
-                                                 
-                                                   if ($this->input->GET('pension') =='PD' ) {
-                                                    $bp =   $b + $room->prices->PD;
-                                                    }
-
-                                                   if ($this->input->GET('pension') == 'DP' ) {
-                                                    $bp =   $b + $room->prices->DP;
-                                                    }
-                                                    if ($this->input->GET('pension') == 'PC' ) {
-                                                    $bp =   $b + $room->prices->PC;
-                                                    }
-                                                    if ($this->input->GET('pension') == 'ALLS' ) {
-                                                    $bp =   $b + $room->prices->ALLS;
-                                                    }
-                                                    if ($this->input->GET('pension') == 'ALLH' ) {
-                                                    $bp =   $b + $room->prices->ALLH;
-                                                    }
-                                                    if ($this->input->GET('pension') == '' ) {
-                                                        $bp =   $b ;
-                                                    }
-
-                                                    $bpc = $bp * $room->capacity ;
-
-                                                    echo  $bpc.'  TND' ;
-                                                 ?> 
-                                                TND</strong>
-                                                <br>
-                                                <a href="<?php echo base_url() ?>Hotel/booking/<?php echo $hotel->hotelId; ?>/<?php echo $room->hotel_roomId; ?>?daterange=<?php echo $this->input->get('daterange') ?>&nroom=<?php echo $this->input->get('nroom') ?>&adult_number=1&nchild=1&pension=<?php echo $this->input->get('pension') ?>" class="theme-btn theme-btn-small theme-btn-transparent mb-0"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
-                                                 <!--
-                                            <div class="custom-checkbox mb-0">
-                                                <input type="checkbox" id="selectChb1">
-                                                <label for="selectChb1" class="theme-btn theme-btn-small">Select</label>
-                                            </div>
-                                                -->
-                                        </div>
-                                    </div><!-- end cabin-type-item -->
-                                </div><!-- end cabin-type -->
-                                
-                            <?php } } else { echo "<p style='color : red'> Minimum Stay 2 Nights </p>" ; }  ?>
-                                
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end location-map -->
-                        <div id="amenities" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-20px">
-                                <h3 class="title font-size-20">Amenities</h3>
-                                <div class="amenities-feature-item pt-4">
-                                    <div class="row">
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-wifi"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">WI-FI</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Swimming Pool</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-television"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Television</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-coffee"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Coffee</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-tree"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Air Conditioning</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-gear"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Fitness Facility</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Fridge</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-glass"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Wine Bar</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-music"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Entertainment</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-lock"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Secure Vault</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                         <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-car"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Pick And Drop</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-check"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Room Service</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-check-circle"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Pets Allowed</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-coffee"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Breakfast</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-car"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Free Parking</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-fire"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Fire Place</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-wheelchair"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Handicap Accessible</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-user-secret"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Doorman</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-building"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Elevator In Building</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-gift"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Suitable For Events</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-4 responsive-column">
-                                            <div class="single-tour-feature d-flex align-items-center mb-3">
-                                                <div class="single-feature-icon icon-element ml-0 flex-shrink-0 mr-3">
-                                                    <i class="la la-gamepad"></i>
-                                                </div>
-                                                <div class="single-feature-titles">
-                                                    <h3 class="title font-size-15 font-weight-medium">Play Place</h3>
-                                                </div>
-                                            </div><!-- end single-tour-feature -->
-                                        </div><!-- end col-lg-4 -->
-                                    </div><!-- end row -->
-                                </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end faq -->
-                        <div id="faq" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">FAQs</h3>
-                                <div class="accordion accordion-item padding-top-30px" id="accordionExample2">
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingFour">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="true" aria-controls="faqCollapseFour">
-                                                    <span class="ml-3">How do I know a reservation is accepted or confirmed?</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseFour" class="collapse show" aria-labelledby="faqHeadingFour" data-parent="#accordionExample2">
-                                            <div class="card-body d-flex">
-                                                <p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingFive">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
-                                                    <span class="ml-3">Am I allowed to decline reservation requests?</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseFive" class="collapse" aria-labelledby="faqHeadingFive" data-parent="#accordionExample2">
-                                            <div class="card-body d-flex">
-                                                <p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingSix">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
-                                                    <span class="ml-3">What happens if I let a reservation request expire?</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseSix" class="collapse" aria-labelledby="faqHeadingSix" data-parent="#accordionExample2">
-                                            <div class="card-body d-flex">
-                                                <p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                    <div class="card">
-                                        <div class="card-header" id="faqHeadingSeven">
-                                            <h2 class="mb-0">
-                                                <button class="btn btn-link d-flex align-items-center justify-content-end flex-row-reverse font-size-16" type="button" data-toggle="collapse" data-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
-                                                    <span class="ml-3">How do I set reservation requirements?</span>
-                                                    <i class="la la-minus"></i>
-                                                    <i class="la la-plus"></i>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="faqCollapseSeven" class="collapse" aria-labelledby="faqHeadingSeven" data-parent="#accordionExample2">
-                                            <div class="card-body d-flex">
-                                                <p>Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end faq -->
-                        <div id="reviews" class="page-scroll">
-                            <div class="single-content-item padding-top-40px padding-bottom-40px">
-                                <h3 class="title font-size-20">Reviews</h3>
-                                <div class="review-container padding-top-30px">
-                                    <div class="row align-items-center">
-                                        <div class="col-lg-4">
-                                            <div class="review-summary">
-                                                <h2>4.5<span>/5</span></h2>
-                                                <p>Excellent</p>
-                                                <span>Based on 4 reviews</span>
-                                            </div>
-                                        </div><!-- end col-lg-4 -->
-                                        <div class="col-lg-8">
-                                            <div class="review-bars">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">Service</h3>
-                                                            <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="70%">
-                                                                        <div class="progressbar-line-item bar-bg-1"></div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">4.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">Location</h3>
-                                                            <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="55%">
-                                                                        <div class="progressbar-line-item bar-bg-2"></div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">4.7</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">Value for Money</h3>
-                                                            <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="40%">
-                                                                        <div class="progressbar-line-item bar-bg-3"></div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">2.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">Cleanliness</h3>
-                                                            <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="60%">
-                                                                        <div class="progressbar-line-item bar-bg-4"></div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">3.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                    <div class="col-lg-6">
-                                                        <div class="progress-item">
-                                                            <h3 class="progressbar-title">Facilities</h3>
-                                                            <div class="progressbar-content line-height-20 d-flex align-items-center justify-content-between">
-                                                                <div class="progressbar-box flex-shrink-0">
-                                                                    <div class="progressbar-line" data-percent="50%">
-                                                                        <div class="progressbar-line-item bar-bg-5"></div>
-                                                                    </div> <!-- End Skill Bar -->
-                                                                </div>
-                                                                <div class="bar-percent">2.6</div>
-                                                            </div>
-                                                        </div><!-- end progress-item -->
-                                                    </div><!-- end col-lg-6 -->
-                                                </div><!-- end row -->
-                                            </div>
-                                        </div><!-- end col-lg-8 -->
-                                    </div>
-                                </div>
-                            </div><!-- end single-content-item -->
-                            <div class="section-block"></div>
-                        </div><!-- end reviews -->
-                        <div class="review-box">
-                            <div class="single-content-item padding-top-40px">
-                                <h3 class="title font-size-20">Showing 3 guest reviews</h3>
-                                <div class="comments-list padding-top-50px">
-                                    <div class="comment">
-                                        <div class="comment-avatar">
-                                            <img class="avatar__img" alt="" src="<?php echo base_url() ?>assets/images/team8.jpg">
-                                        </div>
-                                        <div class="comment-body">
-                                            <div class="meta-data">
-                                                <h3 class="comment__author">Jenny Doe</h3>
-                                                <div class="meta-data-inner d-flex">
-                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                    </span>
-                                                    <p class="comment__date">April 5, 2019</p>
-                                                </div>
-                                            </div>
-                                            <p class="comment-content">
-                                                Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis
-                                            </p>
-                                            <div class="comment-reply d-flex align-items-center justify-content-between">
-                                                <a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-                                                    <span class="la la-mail-reply mr-1"></span>Reply
-                                                </a>
-                                                <div class="reviews-reaction">
-                                                    <a href="#" class="comment-like"><i class="la la-thumbs-up"></i> 13</a>
-                                                    <a href="#" class="comment-dislike"><i class="la la-thumbs-down"></i> 2</a>
-                                                    <a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end comments -->
-                                    <div class="comment comment-reply-item">
-                                        <div class="comment-avatar">
-                                            <img class="avatar__img" alt="" src="<?php echo base_url() ?>assets/images/team9.jpg">
-                                        </div>
-                                        <div class="comment-body">
-                                            <div class="meta-data">
-                                                <h3 class="comment__author">Jenny Doe</h3>
-                                                <div class="meta-data-inner d-flex">
-                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                    </span>
-                                                    <p class="comment__date">April 5, 2019</p>
-                                                </div>
-                                            </div>
-                                            <p class="comment-content">
-                                                Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis
-                                            </p>
-                                            <div class="comment-reply d-flex align-items-center justify-content-between">
-                                                <a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-                                                    <span class="la la-mail-reply mr-1"></span>Reply
-                                                </a>
-                                                <div class="reviews-reaction">
-                                                    <a href="#" class="comment-like"><i class="la la-thumbs-up"></i> 13</a>
-                                                    <a href="#" class="comment-dislike"><i class="la la-thumbs-down"></i> 2</a>
-                                                    <a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end comments -->
-                                    <div class="comment">
-                                        <div class="comment-avatar">
-                                            <img class="avatar__img" alt="" src="<?php echo base_url() ?>assets/images/team10.jpg">
-                                        </div>
-                                        <div class="comment-body">
-                                            <div class="meta-data">
-                                                <h3 class="comment__author">Jenny Doe</h3>
-                                                <div class="meta-data-inner d-flex">
-                                                    <span class="ratings d-flex align-items-center mr-1">
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                        <i class="la la-star"></i>
-                                                    </span>
-                                                    <p class="comment__date">April 5, 2019</p>
-                                                </div>
-                                            </div>
-                                            <p class="comment-content">
-                                                Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis
-                                            </p>
-                                            <div class="comment-reply d-flex align-items-center justify-content-between">
-                                                <a class="theme-btn" href="#" data-toggle="modal" data-target="#replayPopupForm">
-                                                    <span class="la la-mail-reply mr-1"></span>Reply
-                                                </a>
-                                                <div class="reviews-reaction">
-                                                    <a href="#" class="comment-like"><i class="la la-thumbs-up"></i> 13</a>
-                                                    <a href="#" class="comment-dislike"><i class="la la-thumbs-down"></i> 2</a>
-                                                    <a href="#" class="comment-love"><i class="la la-heart-o"></i> 5</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end comments -->
-                                    <div class="btn-box load-more text-center">
-                                        <button class="theme-btn theme-btn-small theme-btn-transparent" type="button">Load More Review</button>
-                                    </div>
-                                </div><!-- end comments-list -->
-                                <div class="comment-forum padding-top-40px">
-                                    <div class="form-box">
-                                        <div class="form-title-wrap">
-                                            <h3 class="title">Write a Review</h3>
-                                        </div><!-- form-title-wrap -->
-                                        <div class="form-content">
-                                            <div class="rate-option p-2">
-                                                <div class="row">
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>Service</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="lst1" value="1">
-                                                                <label for="lst1"></label>
-                                                                <input type="checkbox" id="lst2" value="2">
-                                                                <label for="lst2"></label>
-                                                                <input type="checkbox" id="lst3" value="3">
-                                                                <label for="lst3"></label>
-                                                                <input type="checkbox" id="lst4" value="4">
-                                                                <label for="lst4"></label>
-                                                                <input type="checkbox" id="lst5" value="5">
-                                                                <label for="lst5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>Location</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="l1" value="1">
-                                                                <label for="l1"></label>
-                                                                <input type="checkbox" id="l2" value="2">
-                                                                <label for="l2"></label>
-                                                                <input type="checkbox" id="l3" value="3">
-                                                                <label for="l3"></label>
-                                                                <input type="checkbox" id="l4" value="4">
-                                                                <label for="l4"></label>
-                                                                <input type="checkbox" id="l5" value="5">
-                                                                <label for="l5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>Value for Money</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="vm1" value="1">
-                                                                <label for="vm1"></label>
-                                                                <input type="checkbox" id="vm2" value="2">
-                                                                <label for="vm2"></label>
-                                                                <input type="checkbox" id="vm3" value="3">
-                                                                <label for="vm3"></label>
-                                                                <input type="checkbox" id="vm4" value="4">
-                                                                <label for="vm4"></label>
-                                                                <input type="checkbox" id="vm5" value="5">
-                                                                <label for="vm5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>Cleanliness</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="cln1" value="1">
-                                                                <label for="cln1"></label>
-                                                                <input type="checkbox" id="cln2" value="2">
-                                                                <label for="cln2"></label>
-                                                                <input type="checkbox" id="cln3" value="3">
-                                                                <label for="cln3"></label>
-                                                                <input type="checkbox" id="cln4" value="4">
-                                                                <label for="cln4"></label>
-                                                                <input type="checkbox" id="cln5" value="5">
-                                                                <label for="cln5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                    <div class="col-lg-4 responsive-column">
-                                                        <div class="rate-option-item">
-                                                            <label>Facilities</label>
-                                                            <div class="rate-stars-option">
-                                                                <input type="checkbox" id="f1" value="1">
-                                                                <label for="f1"></label>
-                                                                <input type="checkbox" id="f2" value="2">
-                                                                <label for="f2"></label>
-                                                                <input type="checkbox" id="f3" value="3">
-                                                                <label for="f3"></label>
-                                                                <input type="checkbox" id="f4" value="4">
-                                                                <label for="f4"></label>
-                                                                <input type="checkbox" id="f5" value="5">
-                                                                <label for="f5"></label>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- col-lg-4 -->
-                                                </div><!-- end row -->
-                                            </div><!-- end rate-option -->
-                                            <div class="contact-form-action">
-                                                <form method="post">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 responsive-column">
-                                                            <div class="input-box">
-                                                                <label class="label-text">Name</label>
-                                                                <div class="form-group">
-                                                                    <span class="la la-user form-icon"></span>
-                                                                    <input class="form-control" type="text" name="text" placeholder="Your name">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-6 responsive-column">
-                                                            <div class="input-box">
-                                                                <label class="label-text">Email</label>
-                                                                <div class="form-group">
-                                                                    <span class="la la-envelope-o form-icon"></span>
-                                                                    <input class="form-control" type="email" name="email" placeholder="Email address">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12">
-                                                            <div class="input-box">
-                                                                <label class="label-text">Message</label>
-                                                                <div class="form-group">
-                                                                    <span class="la la-pencil form-icon"></span>
-                                                                    <textarea class="message-control form-control" name="message" placeholder="Write message"></textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12">
-                                                            <div class="btn-box">
-                                                                <button type="button" class="theme-btn">Leave a Review</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div><!-- end contact-form-action -->
-                                        </div><!-- end form-content -->
-                                    </div><!-- end form-box -->
-                                </div><!-- end comment-forum -->
-                            </div><!-- end single-content-item -->
-                        </div><!-- end review-box -->
-                    </div><!-- end single-content-wrap -->
-                </div><!-- end col-lg-8 -->
-                <div class="col-lg-4">
-                    <div class="sidebar single-content-sidebar mb-0">
-                        <div class="sidebar-widget single-content-widget">
-                            <div class="sidebar-widget-item">
-                                <div class="sidebar-book-title-wrap mb-3">
-                                    <h3>Popular</h3>
-                                    <p><span class="text-form">From</span><span class="text-value ml-2 mr-1"><?php echo $rooms[0]->prices->price ?> TND</span><!-- <span class="before-price">$412.00</span> --></p>
-                                </div>
-                            </div><!-- end sidebar-widget-item -->
-                            <div class="sidebar-widget-item">
-                                <div class="contact-form-action">
-                                    <form action="#">
-                                       
-                                    </form>
-                                </div>
-                            </div><!-- end sidebar-widget-item -->
-                            
-                            <div class="btn-box pt-2">
-                                <a href="tour-booking.html" class="theme-btn text-center w-100 mb-2"><i class="la la-shopping-cart mr-2 font-size-18"></i>Book Now</a>
-                               
-                                <div class="d-flex align-items-center justify-content-between pt-2">
-                                    <a href="#" class="btn theme-btn-hover-gray font-size-15" data-toggle="modal" data-target="#sharePopupForm"><i class="la la-share mr-1"></i>Share</a>
-                                    <p><i class="la la-eye mr-1 font-size-15 color-text-2"></i>3456</p>
+                                <div class="col-md-6">
+                                    <ul class="list_ok">
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Quidam percipitur instructior an eum</li>
+                                        <li>No scripta electram necessitatibus sit</li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div><!-- end sidebar-widget -->
+                            <!-- End row  -->
+                        </div>
+                        <!-- End col-md-9  -->
+                    </div>
+                    <!-- End row  -->
 
+                    <hr>
 
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">Enquiry Form</h3>
-                            <div class="enquiry-forum">
-                                <div class="form-box">
-                                    <div class="form-content">
-                                        <div class="contact-form-action">
-                                            <form method="post">
-                                                <div class="input-box">
-                                                    <label class="label-text">Your Name</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-user form-icon"></span>
-                                                        <input class="form-control" type="text" name="text" placeholder="Your name">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <label class="label-text">Your Email</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-envelope-o form-icon"></span>
-                                                        <input class="form-control" type="email" name="email" placeholder="Email address">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <label class="label-text">Message</label>
-                                                    <div class="form-group">
-                                                        <span class="la la-pencil form-icon"></span>
-                                                        <textarea class="message-control form-control" name="message" placeholder="Write message"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="input-box">
-                                                    <div class="form-group">
-                                                        <div class="custom-checkbox mb-0">
-                                                            <input type="checkbox" id="agreeChb">
-                                                            <label for="agreeChb">I agree with <a href="#">Terms of Service</a> and
-                                                                <a href="#">Privacy Statement</a></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="btn-box">
-                                                    <button type="button" class="theme-btn">Submit Enquiry</button>
-                                                </div>
-                                            </form>
-                                        </div><!-- end contact-form-action -->
-                                    </div><!-- end form-content -->
-                                </div><!-- end form-box -->
-                            </div><!-- end enquiry-forum -->
-                        </div><!-- end sidebar-widget -->
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">Why Book With Us?</h3>
-                            <div class="sidebar-list">
-                                <ul class="list-items">
-                                    <li><i class="la la-dollar icon-element mr-2"></i>No-hassle best price guarantee</li>
-                                    <li><i class="la la-microphone icon-element mr-2"></i>Customer care available 24/7</li>
-                                    <li><i class="la la-thumbs-up icon-element mr-2"></i>Hand-picked Tours & Activities</li>
-                                    <li><i class="la la-file-text icon-element mr-2"></i>Free Travel Insureance</li>
-                                </ul>
-                            </div><!-- end sidebar-list -->
-                        </div><!-- end sidebar-widget -->
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">Get a Question?</h3>
-                            <p class="font-size-14 line-height-24">Do not hesitate to give us a call. We are an expert team and we are happy to talk to you.</p>
-                            <div class="sidebar-list pt-3">
-                                <ul class="list-items">
-                                    <li><i class="la la-phone icon-element mr-2"></i><a href="#">+216 <?php echo $hotel->phone ?></a></li>
-                                    <li><i class="la la-envelope icon-element mr-2"></i><a href="mailto:info@trizen.com"><?php echo $hotel->mail ?><</a></li>
-                                </ul>
-                            </div><!-- end sidebar-list -->
-                        </div><!-- end sidebar-widget -->
-                        <div class="sidebar-widget single-content-widget">
-                            <h3 class="title stroke-shape">Organized by</h3>
-                            <div class="author-content">
-                                <div class="d-flex">
-                                    <div class="author-img">
-                                        <a href="#"><img src="<?php echo base_url() ?>assets/images/team8.jpg" alt="testimonial image"></a>
-                                    </div>
-                                    <div class="author-bio">
-                                        <h4 class="author__title"><a href="#">royaltravelagency</a></h4>
-                                        <span class="author__meta">Member Since 2017</span>
-                                        <span class="ratings d-flex align-items-center">
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star"></i>
-                                            <i class="la la-star-o"></i>
-                                            <span class="ml-2">305 Reviews</span>
-                                        </span>
-                                        <div class="btn-box pt-3">
-                                            <a href="#" class="theme-btn theme-btn-small theme-btn-transparent">Ask a Question</a>
-                                        </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h3>Rooms Types</h3>
+                        </div>
+                        <div class="col-lg-9">
+                            <h4>Single Room</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                            </p>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list_icons">
+                                        <li><i class="icon_set_1_icon-86"></i> Free wifi</li>
+                                        <li><i class="icon_set_2_icon-116"></i> Plasma Tv</li>
+                                        <li><i class="icon_set_2_icon-106"></i> Safety box</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list_ok">
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Quidam percipitur instructior an eum</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End row  -->
+                            <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/1.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/2.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/2.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/3.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/3.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/4.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/4.jpg" alt="Image">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End photo carousel  -->
+
+                            <hr>
+
+                            <h4>Double Room</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                            </p>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list_icons">
+                                        <li><i class="icon_set_1_icon-86"></i> Free wifi</li>
+                                        <li><i class="icon_set_2_icon-116"></i> Plasma Tv</li>
+                                        <li><i class="icon_set_2_icon-106"></i> Safety box</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list_ok">
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Quidam percipitur instructior an eum</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End row  -->
+                            <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/1.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/2.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/2.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/3.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/3.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/carousel/4.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/4.jpg" alt="Image">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End photo carousel  -->
+                        </div>
+                        <!-- End col-md-9  -->
+                    </div>
+                    <!-- End row  -->
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h3>Reviews</h3>
+                            <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
+                        </div>
+                        <div class="col-lg-9">
+                            <div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
+                            </div>
+                            <!-- End general_rating -->
+                            <div class="row" id="rating_summary">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>Position
+                                            <div class="rating">
+                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            </div>
+                                        </li>
+                                        <li>Comfort
+                                            <div class="rating">
+                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li>Price
+                                            <div class="rating">
+                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            </div>
+                                        </li>
+                                        <li>Quality
+                                            <div class="rating">
+                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End row -->
+                            <hr>
+                            <div class="review_strip_single">
+                                <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
+                                <small> - 10 March 2015 -</small>
+                                <h4>Jhon Doe</h4>
+                                <p>
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                                </p>
+                                <div class="rating">
+                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                </div>
+                            </div>
+                            <!-- End review strip -->
+
+                            <div class="review_strip_single">
+                                <img src="<?php echo base_url() ?>assets/img/avatar2.jpg" alt="Image" class="rounded-circle">
+                                <small> - 10 March 2015 -</small>
+                                <h4>Jhon Doe</h4>
+                                <p>
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                                </p>
+                                <div class="rating">
+                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                </div>
+                            </div>
+                            <!-- End review strip -->
+
+                            <div class="review_strip_single last">
+                                <img src="<?php echo base_url() ?>assets/img/avatar3.jpg" alt="Image" class="rounded-circle">
+                                <small> - 10 March 2015 -</small>
+                                <h4>Jhon Doe</h4>
+                                <p>
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                                </p>
+                                <div class="rating">
+                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                </div>
+                            </div>
+                            <!-- End review strip -->
+                        </div>
+                    </div>
+                </div>
+                <!--End  single_tour_desc-->
+
+                <aside class="col-lg-4">
+                    <p class="d-none d-xl-block d-lg-block d-xl-none">
+                        <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                    </p>
+                    <div class="box_style_1 expose">
+                        <h3 class="inner">Check Availability</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label><i class="icon-calendar-7"></i> Check in / Check out</label>
+                                    <input class="date-pick form-control" type="text" placeholder="Select dates">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Adults</label>
+                                    <div class="numbers-row">
+                                        <input type="text" value="1" id="adults" class="qty2 form-control" name="quantity">
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- end sidebar-widget -->
-                    </div><!-- end sidebar -->
-                </div><!-- end col-lg-4 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end single-content-box -->
-</section><!-- end tour-detail-area -->
-<!-- ================================
-    END TOUR DETAIL AREA
-================================= -->
-
-<div class="section-block"></div>
-
-<!-- ================================
-    START RELATE TOUR AREA
-================================= -->
-<section class="related-tour-area section--padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <h2 class="sec__title">You might also like</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row padding-top-50px">
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item">
-                    <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
-                            <img src="<?php echo base_url() ?>assets/images/img1.jpg" alt="hotel-img">
-                        </a>
-                        <span class="badge">Bestseller</span>
-                        <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="Bookmark">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html">The Millennium Hilton New York</a></h3>
-                        <p class="card-meta">124 E Huron St, New york</p>
-                        <div class="card-rating">
-                            <span class="badge text-white">4.4/5</span>
-                            <span class="review__text">Average</span>
-                            <span class="rating__text">(30 Reviews)</span>
-                        </div>
-                        <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__from">From</span>
-                                <span class="price__num">$88.00</span>
-                                <span class="price__text">Per night</span>
-                            </p>
-                            <a href="hotel-single.html" class="btn-text">See details<i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item">
-                    <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
-                            <img src="<?php echo base_url() ?>assets/images/img2.jpg" alt="hotel-img">
-                        </a>
-                        <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="Bookmark">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html">Best Western Grant Park Hotel</a></h3>
-                        <p class="card-meta">124 E Huron St, Chicago</p>
-                        <div class="card-rating">
-                            <span class="badge text-white">4.4/5</span>
-                            <span class="review__text">Average</span>
-                            <span class="rating__text">(30 Reviews)</span>
-                        </div>
-                        <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__from">From</span>
-                                <span class="price__num">$58.00</span>
-                                <span class="price__text">Per night</span>
-                            </p>
-                            <a href="hotel-single.html" class="btn-text">See details<i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <div class="card-item">
-                    <div class="card-img">
-                        <a href="hotel-single.html" class="d-block">
-                            <img src="<?php echo base_url() ?>assets/images/img3.jpg" alt="hotel-img">
-                        </a>
-                        <span class="badge">Featured</span>
-                        <div class="add-to-wishlist icon-element" data-toggle="tooltip" data-placement="top" title="Bookmark">
-                            <i class="la la-heart-o"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="hotel-single.html">Hyatt Regency Maui Resort & Spa</a></h3>
-                        <p class="card-meta">200 Nohea Kai Dr, Lahaina, HI</p>
-                        <div class="card-rating">
-                            <span class="badge text-white">4.4/5</span>
-                            <span class="review__text">Average</span>
-                            <span class="rating__text">(30 Reviews)</span>
-                        </div>
-                        <div class="card-price d-flex align-items-center justify-content-between">
-                            <p>
-                                <span class="price__from">From</span>
-                                <span class="price__num">$88.00</span>
-                                <span class="price__text">Per night</span>
-                            </p>
-                            <a href="hotel-single.html" class="btn-text">See details<i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end card-item -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end related-tour-area -->
-<!-- ================================
-    END RELATE TOUR AREA
-================================= -->
-
-<!-- ================================
-    START CTA AREA
-================================= -->
-<section class="cta-area subscriber-area section-bg-2 padding-top-60px padding-bottom-60px">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <div class="section-heading">
-                    <h2 class="sec__title font-size-30 text-white">Subscribe to see Secret Deals</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-7 -->
-            <div class="col-lg-5">
-                <div class="subscriber-box">
-                    <div class="contact-form-action">
-                        <form action="#">
-                            <div class="input-box">
-                                <label class="label-text text-white">Enter email address</label>
-                                <div class="form-group mb-0">
-                                    <span class="la la-envelope form-icon"></span>
-                                    <input class="form-control" type="email" name="email" placeholder="Email address">
-                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Subscribe</button>
-                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Don't worry your information is safe with us.</span>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Children</label>
+                                    <div class="numbers-row">
+                                        <input type="text" value="0" id="children" class="qty2 form-control" name="quantity">
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                        <br>
+
+                        <a class="btn_full" href="cart_hotel.html">Check now</a>
+                        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
                     </div>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-5 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end cta-area -->
-<!-- ================================
-    END CTA AREA
-================================= -->
+                    <!--/box_style_1 -->
+
+                    <div class="box_style_4">
+                        <i class="icon_set_1_icon-90"></i>
+                        <h4><span>Book</span> by phone</h4>
+                        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                    </div>
+
+                </aside>
+            </div>
+            <!--End row -->
+        </div>
+        <!--End container -->
+        
+        <div id="overlay"></div>
+        <!-- Mask on input focus -->
+    
+    </main>
+    <!-- End main -->
