@@ -217,9 +217,12 @@
                             <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
                         </div>
                         <div class="col-lg-9">
+                        <!--    
                             <div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
                             </div>
+                        -->
                             <!-- End general_rating -->
+                        <!--
                             <div class="row" id="rating_summary">
                                 <div class="col-md-6">
                                     <ul>
@@ -250,8 +253,10 @@
                                     </ul>
                                 </div>
                             </div>
+                        -->
                             <!-- End row -->
                             <hr>
+                        <!--
                             <div class="review_strip_single">
                                 <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
                                 <small> - 10 March 2015 -</small>
@@ -263,35 +268,15 @@
                                     <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
                                 </div>
                             </div>
+                        -->
                             <!-- End review strip -->
 
-                            <div class="review_strip_single">
-                                <img src="<?php echo base_url() ?>assets/img/avatar2.jpg" alt="Image" class="rounded-circle">
-                                <small> - 10 March 2015 -</small>
-                                <h4>Jhon Doe</h4>
-                                <p>
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-                                </p>
-                                <div class="rating">
-                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                                </div>
-                            </div>
-                            <!-- End review strip -->
-
-                            <div class="review_strip_single last">
-                                <img src="<?php echo base_url() ?>assets/img/avatar3.jpg" alt="Image" class="rounded-circle">
-                                <small> - 10 March 2015 -</small>
-                                <h4>Jhon Doe</h4>
-                                <p>
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-                                </p>
-                                <div class="rating">
-                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                                </div>
-                            </div>
-                            <!-- End review strip -->
+              
+                     
                         </div>
                     </div>
+
+
                 </div>
                 <!--End  single_tour_desc-->
 
