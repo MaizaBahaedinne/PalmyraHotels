@@ -1,4 +1,4 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/header_bg.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/holiday.jpg" data-natural-width="1400" data-natural-height="470">
         <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="animated fadeInDown">
                 <h1>Contact us</h1>

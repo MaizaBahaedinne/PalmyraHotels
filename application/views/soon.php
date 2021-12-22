@@ -54,7 +54,7 @@
             <div class="row">
             <div class="col-md-6 col-md-offset-3">
       <div id="newsletter_wp">
-        <form method="post" action="<?php echo base_url() ?>" id="newsletter" name="newsletter" autocomplete="off">
+        <form method="post" action="<?php echo base_url() ?>Acceuil/newsletter"  autocomplete="off">
               <div class="row">
                               <div class="col-md-9 first-nogutter">
                                   <input name="email_newsletter" id="email_newsletter" type="email" placeholder="Your Email" class="form-control">
