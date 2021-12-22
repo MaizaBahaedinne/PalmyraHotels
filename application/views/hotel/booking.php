@@ -1,338 +1,352 @@
-<!-- ================================
-    START BREADCRUMB AREA
-================================= -->
-<section class="breadcrumb-area bread-bg-7">
-    <div class="breadcrumb-wrap">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="breadcrumb-content">
-                        <div class="section-heading">
-                            <h2 class="sec__title text-white">Hotel Booking</h2>
+<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade ?>)">
+        <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
+            <div class="intro_title">
+                <h1>Place your order</h1>
+                <div class="bs-wizard row">
+
+                    <div class="col-4 bs-wizard-step active">
+                        <div class="text-center bs-wizard-stepnum">Your cart</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
                         </div>
-                    </div><!-- end breadcrumb-content -->
-                </div><!-- end col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="breadcrumb-list text-right">
-                        <ul class="list-items">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Hotel Booking</li>
-                        </ul>
-                    </div><!-- end breadcrumb-list -->
-                </div><!-- end col-lg-6 -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end breadcrumb-wrap -->
-    <div class="bread-svg-box">
-        <svg class="bread-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none"><polygon points="100 0 50 10 0 0 0 10 100 10"></polygon></svg>
-    </div><!-- end bread-svg -->
-</section><!-- end breadcrumb-area -->
-<!-- ================================
-    END BREADCRUMB AREA
-================================= -->
-
-<!-- ================================
-    START BOOKING AREA
-================================= -->
-<section class="booking-area padding-top-100px padding-bottom-70px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="form-box booking-detail-form">
-                    <div class="form-title-wrap">
-                        <h3 class="title">Booking Details</h3>
-                    </div><!-- end form-title-wrap -->
-                    <div class="form-content">
-                        <div class="card-item shadow-none radius-none mb-0">
-                            <div class="card-img pb-4">
-                                <a href="hotel-single.html" class="d-block">
-                                    <img src="<?php echo base_url() ?>assets/images/facade/<?php echo $hotel->facade ?>" alt="tour-img">
-                                </a>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h3 class="card-title"><?php echo $hotel->name ?></h3>
-                                        <p class="card-meta"><?php echo $hotel->location ?></p>
-                                    </div>
-                                    <div>
-                                        <a href="hotel-single.html" class="btn ml-1"><i class="la la-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-                                    </div>
-                                </div>
-                                <div class="card-rating">
-                                    <span class="badge text-white">4.4/5</span>
-                                    <span class="review__text">Average</span>
-                                    <span class="rating__text">(30 Reviews)</span>
-                                </div>
-                                <div class="section-block"></div>
-                                <ul class="list-items list-items-2 py-2">
-                                    <li><span>Check in:</span><?php echo  substr( $this->input->get('daterange') ,0, 10 ) ?> at 14:00 pm</li>
-                                    <li><span>Check out:</span><?php echo  substr( $this->input->get('daterange') , 13, 23 ) ?> at 12:00 pm</li>
-                                </ul>
-                                <div class="section-block"></div>
-                                <h3 class="card-title pt-3 pb-2 font-size-15"><a href="hotel-single.html">Order Details</a></h3>
-                                <div class="section-block"></div>
-                                <ul class="list-items list-items-2 py-3">
-                                    <li><span>Room Type:</span><?php echo $price->titre ?></li>
-                                    <li><span>Room:</span><?php echo $this->input->get('nroom') ?> Rooms</li>
-                                    <li><span>Per Room Price:</span>
-                                        <?php 
-
-                                                $b = $price->price ;
-
-                                                 
-                                                   if ($this->input->GET('pension') =='PD' ) {
-                                                    $bp =   $b + $price->PD;
-                                                    }
-
-                                                   if ($this->input->GET('pension') == 'DP' ) {
-                                                    $bp =   $b + $price->DP;
-                                                    }
-                                                    if ($this->input->GET('pension') == 'PC' ) {
-                                                    $bp =   $b + $price->PC;
-                                                    }
-                                                    if ($this->input->GET('pension') == 'ALLS' ) {
-                                                    $bp =   $b + $price->ALLS;
-                                                    }
-                                                    if ($this->input->GET('pension') == 'ALLH' ) {
-                                                    $bp =   $b + $price->ALLH;
-                                                    }
-                                                    if ($this->input->GET('pension') == '' ) {
-                                                        $bp =   $b ;
-                                                    }
-                                                    $bpc = ($bp * $price->capacity)  ; 
-                                                    echo  $bpc. ' TND' ;                                                   
-                                                 ?></li>
-                                    <li><span>Adults:</span>4</li>
-                                    <li><span>Stay:</span><?php
-
-                                    $d = $this->input->get('daterange') ; 
-                                    //str_replace("/","-",  $d );
-                                    $d1 = substr($d ,0, 10) ;
-                                    $d2 = substr($d ,13, 23) ;
-                                    $date1 = strtotime(substr($d1 ,6, 4)."-".substr($d1 ,3, 2)."-".substr($d1 ,0, 2)) ;
-                                     
-                                    $date2 = strtotime(substr($d2 ,6, 4)."-".substr($d2 ,3, 2)."-".substr($d2 ,0, 2)) ;
-
-                                    
-
-                                    // this calculates the diff between two dates, which is the number of nights
-                                    $diff = abs($date2 - $date1) ;
-                                    $years = floor($diff / (365*60*60*24)); 
-                                    $months = floor(($diff - $years * 365*60*60*24)/(30*60*60*24)); 
-                                    $numberOfNights= floor(($diff-$years*365*60*60*24-$months*30*60*60*24)/ (60*60*24)) ; 
-
-                                    echo $numberOfNights.' Night<br>';
-
-                                     ?></li>
-                                </ul>
-                                <div class="section-block"></div>
-                                <ul class="list-items list-items-2 pt-3">
-                                    <li><span>Sub Total:</span> <?php  $bpcr =   $bpc * $this->input->get('nroom')*$numberOfNights  ;  echo  $bpcr .' TND' ; ?></li>
-                                    <li><span>Taxes And Fees:</span><?php $T = 3 * $price->capacity * $this->input->get('nroom') ; echo  $T  .' TND'   ; ?>  </li>
-                                    <li><span>Total Price:</span><?php echo  $T +   $bpcr .' TND'   ; ?> </li>
-                                </ul>
-                            </div>
-                        </div><!-- end card-item -->
-                    </div><!-- end form-content -->
-                </div><!-- end form-box -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-8">
-                <div class="form-box">
-                    <div class="form-title-wrap">
-                        <h3 class="title">Your rooms Informations</h3>
-                    </div><!-- form-title-wrap -->
-                    <div class="form-content ">
-                     <div class="contact-form-action">
-                        <form action="" method="post" >
-                            <?php for ($j= 0 ; $j <  $this->input->get('nroom') ; $j++)   {?>
-
-                             <div class="row">
-                              <div class="col-md-12">   
-                                <h5>Room <?php echo $j+1 ?></h5>
-                                <br>
-                             </div>
-                             <?php for ($i= 0 ; $i <  $price->capacity ; $i++)   {?>
-                                 <div class="col-md-<?php echo 12/$price->capacity ?>">
-                                     <div class="input-box">
-                                        <label class="label-text">Guest <?php echo $i+1 ?></label>
-                                        <div class="form-group">
-                                            <span class="la la-user form-icon"></span>
-                                            <input class="form-control" type="text" name="guest_<?php echo $i+1 ?>_<?php echo $j+1 ?>_<?php echo '' ?>" placeholder=" name" required>
-                                        </div>
-                                    </div>
-                                 </div>
-                            <?php } ?>
-                              
-                                  <div class="col-md-12">
-                                    <label>Extras</label>
-                                   </div>
-                                   
-                                    <?php if(!empty($opts)){  foreach ($opts as $opt ) {
-                                    ?> 
-                                    <div class="col-md-4">
-                                            
-                                                 <input type="checkbox" class="check check<?php echo $j+1 ?>" data-valeur="<?php  echo $opt->price  ?>"  data-room="<?php echo $j+1 ?>" name="options_room_<?php echo $j+1 ?>[]"  > 
-                                                <label ><?php  echo $opt->option  ?> <small>(+<?php  echo $opt->price  ?> TND)</small></label>
-                                            
-                                     </div>  
-                                    <?php
-                                    } }else { echo "No Extrat" ; }  ?>
-                                    
-                              
-                            </div> 
-                              
-                            <div style="text-align: right;" >
-                                <span ><b>Price :</b>
-                                    <span id="PriceRoom<?php echo $j+1 ?>" >
-                                        <?php   echo  $bpc    ; ?>
-                                    </span> 
-                                    <input type="hidden" name="PriceRoom<?php echo $j+1 ?>" value="<?php   echo  $bpc    ; ?>" >
-                                TND</span> 
-                                <br>
-                                <span ><b>Extras :</b>
-                                    <span id="ExtratRoom<?php echo $j+1 ?>" >
-                                        0
-                                    </span>
-                                    <input type="hidden" name="ExtratRoom<?php echo $j+1 ?>" value="0" >    
-                                TND</span> 
-                                <br>
-                                <span ><b>Total :</b>
-                                    <span id="TotalRoom<?php echo $j+1 ?>" >
-                                      <?php   echo  $bpc    ; ?>
-                                    </span>
-                                    <input type="hidden" name="TotalRoom<?php echo $j+1 ?>" value="<?php   echo  $bpc    ; ?>" >  
-                                TND</span> 
-                            </div>
-                            <?php } ?>
-                            
-
-                            <script type="text/javascript">                                         
-                                     $(".check").change(function(index) {
-
-
-                                          var totalPrice   = 0,
-                                              values       = [];
-                                              
-                                          $(".check"+$(this).data("room")).each( function() {
-                                            if( $(this).is(':checked') ) {
-                                              values.push($(this).val());
-                                                    
-                                                        totalPrice += parseInt($(this).data("valeur"));
-                                                       
-                                                    
-                                                    
-                                                }
-                                            });
-
-                                           
-                                            $("#ExtratRoom"+$(this).data("room")).html(totalPrice) ;
-                                                        $("#TotalRoom"+$(this).data("room")).html(totalPrice+ parseInt($("#PriceRoom"+$(this).data("room")).html() ) ) ;
-
-                                    });                                        
-                            </script>
-                              <hr>
-
-                        </div>
-                        <input type="submit" class="btn btn-block btn-primary" value="Confirme">
-                        <!-- end contact-form-action -->
-                    </div><!-- end form-content -->
-                </div><!-- end form-box -->
-                
-            </div><!-- end col-lg-8 -->
-            
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end booking-area -->
-<!-- ================================
-    END BOOKING AREA
-================================= -->
-
-<div class="section-block"></div>
-
-<!-- ================================
-    START INFO AREA
-================================= -->
-<section class="info-area info-bg padding-top-90px padding-bottom-70px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 responsive-column">
-                <a href="#" class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb text-color-2">
-                        <i class="la la-phone"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Need Help? Contact us</h4>
-                        <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                        </p>
-                    </div><!-- end info-content -->
-                </a><!-- end icon-box -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <a href="#" class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb-2 text-color-3">
-                        <i class="la la-money"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Payments</h4>
-                        <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                        </p>
-                    </div><!-- end info-content -->
-                </a><!-- end icon-box -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column">
-                <a href="#" class="icon-box icon-layout-2 d-flex">
-                    <div class="info-icon flex-shrink-0 bg-rgb-3 text-color-4">
-                        <i class="la la-times"></i>
-                    </div><!-- end info-icon-->
-                    <div class="info-content">
-                        <h4 class="info__title">Cancel Policy</h4>
-                        <p class="info__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                        </p>
-                    </div><!-- end info-content -->
-                </a><!-- end icon-box -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end info-area -->
-<!-- ================================
-    END INFO AREA
-================================= -->
-
-<!-- ================================
-    START CTA AREA
-================================= -->
-<section class="cta-area subscriber-area section-bg-2 padding-top-60px padding-bottom-60px">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <div class="section-heading">
-                    <h2 class="sec__title font-size-30 text-white">Subscribe to see Secret Deals</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-7 -->
-            <div class="col-lg-5">
-                <div class="subscriber-box">
-                    <div class="contact-form-action">
-                        <form action="#">
-                            <div class="input-box">
-                                <label class="label-text text-white">Enter email address</label>
-                                <div class="form-group mb-0">
-                                    <span class="la la-envelope form-icon"></span>
-                                    <input class="form-control" type="email" name="email" placeholder="Email address">
-                                    <button class="theme-btn theme-btn-small submit-btn" type="submit">Subscribe</button>
-                                    <span class="font-size-14 pt-1 text-white-50"><i class="la la-lock mr-1"></i>Don't worry your information is safe with us.</span>
-                                </div>
-                            </div>
-                        </form>
+                        <a href="cart-1.html" class="bs-wizard-dot"></a>
                     </div>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-5 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end cta-area -->
-<!-- ================================
-    END CTA AREA
-================================= -->
+
+                    <div class="col-4 bs-wizard-step disabled">
+                        <div class="text-center bs-wizard-stepnum">Your details</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <a href="payment-1.html" class="bs-wizard-dot"></a>
+                    </div>
+
+                    <div class="col-4 bs-wizard-step disabled">
+                        <div class="text-center bs-wizard-stepnum">Finish!</div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <a href="confirmation-1.html" class="bs-wizard-dot"></a>
+                    </div>
+
+                </div>
+                <!-- End bs-wizard -->
+            </div>
+            <!-- End intro-title -->
+        </div>
+        <!-- End opacity-mask-->
+    </section>
+    <!-- End Section hero_2 -->
+
+    <main>
+        <div id="position">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Cart</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+        <!-- End position -->
+
+        <div class="container margin_60">
+            <div class="row">
+                <div class="col-lg-8">
+                    <table class="table table-striped cart-list add_bottom_30">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Item
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Discount
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="thumb_cart">
+                                        <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
+                                    </div>
+                                    <span class="item_cart">Louvre Museum tickets</span>
+                                </td>
+                                <td>
+                                    <div class="numbers-row">
+                                        <input type="text" value="1" id="quantity_1" class="qty2 form-control" name="quantity_1">
+                                    </div>
+                                </td>
+                                <td>
+                                    0%
+                                </td>
+                                <td>
+                                    <strong>€24,71</strong>
+                                </td>
+                                <td class="options">
+                                    <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="thumb_cart">
+                                        <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
+                                    </div>
+                                    <span class="item_cart">Eiffell tour</span>
+                                </td>
+                                <td>
+                                    <div class="numbers-row">
+                                        <input type="text" value="0" id="quantity_2" class="qty2 form-control" name="quantity_2">
+                                    </div>
+                                </td>
+                                <td>
+                                    0%
+                                </td>
+                                <td>
+                                    <strong>€0,0</strong>
+                                </td>
+                                <td class="options">
+                                    <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="thumb_cart">
+                                        <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
+                                    </div>
+                                    <span class="item_cart">Senna river Tour</span>
+                                </td>
+                                <td>
+                                    <div class="numbers-row">
+                                        <input type="text" value="1" id="quantity_3" class="qty2 form-control" name="quantity_3">
+                                    </div>
+                                </td>
+                                <td>
+                                    0%
+                                </td>
+                                <td>
+                                    <strong>€24,71</strong>
+                                </td>
+                                <td class="options">
+                                    <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped options_cart">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                    Add options / Services
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width:10%">
+                                    <i class="icon_set_1_icon-16"></i>
+                                </td>
+                                <td style="width:60%">
+                                    Dedicated Tour guide <strong>+$34</strong>
+                                </td>
+                                <td style="width:35%">
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_1" id="option_1" checked="" value="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="icon_set_1_icon-26"></i>
+                                </td>
+                                <td>
+                                    Pick up service <strong>+$34*</strong>
+                                </td>
+                                <td>
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_2" id="option_2" value="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="icon_set_1_icon-71"></i>
+                                </td>
+                                <td>
+                                    Insurance <strong>+$24*</strong>
+                                </td>
+                                <td>
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_3" id="option_3" value="" checked="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="icon_set_1_icon-15"></i>
+                                </td>
+                                <td>
+                                    Welcome bottle <strong>+$24</strong>
+                                </td>
+                                <td>
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_4" id="option_4" value="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="icon_set_1_icon-59"></i>
+                                </td>
+                                <td>
+                                    Coffe break <strong>+$12*</strong>
+                                </td>
+                                <td>
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_5" id="option_5" value="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="icon_set_1_icon-58"></i>
+                                </td>
+                                <td>
+                                    Dinner <strong>+$26*</strong>
+                                </td>
+                                <td>
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_6" id="option_6" value="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="icon_set_1_icon-40"></i>
+                                </td>
+                                <td>
+                                    Bike rent <strong>+$26*</strong>
+                                </td>
+                                <td>
+                                    <label class="switch-light switch-ios float-right">
+                                        <input type="checkbox" name="option_7" id="option_7" value="">
+                                        <span>
+                                        <span>No</span>
+                                        <span>Yes</span>
+                                        </span>
+                                        <a></a>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="add_bottom_15"><small>* Prices for person.</small>
+                    </div>
+                </div>
+                <!-- End col -->
+
+                <aside class="col-lg-4">
+                    <div class="box_style_1">
+                        <h3 class="inner">- Summary -</h3>
+                        <table class="table table_summary">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Adults
+                                    </td>
+                                    <td class="text-right">
+                                        <?php echo $this->input->get("adults_2") ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Children
+                                    </td>
+                                    <td class="text-right">
+                                        <?php echo $this->input->get("children_2") ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Dedicated tour guide
+                                    </td>
+                                    <td class="text-right">
+                                        $34
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Insurance
+                                    </td>
+                                    <td class="text-right">
+                                        $34
+                                    </td>
+                                </tr>
+                                <tr class="total">
+                                    <td>
+                                        Total cost
+                                    </td>
+                                    <td class="text-right">
+                                        $154
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a class="btn_full" href="payment-1.html">Check out</a>
+                        <a class="btn_full_outline" href="#"><i class="icon-right"></i> Continue shopping</a>
+                    </div>
+                    <div class="box_style_4">
+                        <i class="icon_set_1_icon-57"></i>
+                        <h4>Need <span>Help?</span></h4>
+                        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                    </div>
+                </aside>
+                <!-- End aside -->
+
+            </div>
+            <!--End row -->
+        </div>
+        <!--End container -->
+    </main>
+    <!-- End main -->

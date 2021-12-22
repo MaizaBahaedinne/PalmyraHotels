@@ -9,18 +9,19 @@
                
                 <!-- End rab -->
                 <div class="tab-pane active show" id="hotels">
+                    <form method="get" action="<?php echo base_url() ?>Hotel/search">
                     <h3>Search Hotels in Paris</h3>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="date-pick form-control" type="text">
+                                <input class="date-pick form-control" type="text" name="checkin">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check out</label>
-                                <input class="date-pick form-control" type="text">
+                                <input class="date-pick form-control" type="text" name="checkout">
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-3 col-6">
@@ -51,11 +52,11 @@
                     <!-- End row -->
                     <div class="row">
                         
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Preferred city area</label>
                                 <div class="styled-select-common">
-                                    <select name="area">
+                                    <select name="hotel">
                                         
                                         <?php foreach ($hotels as $hotel ) { ?> 
                                             <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
@@ -64,10 +65,28 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Pension</label>
+                                <div class="styled-select-common">
+                                    <select name="pension">
+                                        
+                                        
+                                            <option value="" >L</option>
+                                            <option value="" >LP</option>
+                                            <option value="" >DP</option>
+                                            <option value="" >PC</option>
+                                            <option value="" >All inclusive</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End row -->
                     <hr>
-                    <button class="btn_1 green btn-block"><i class="icon-search"></i>Search now</button>
+                    <button class="btn_1 green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
+                </form>
                 </div>
 
             </div>

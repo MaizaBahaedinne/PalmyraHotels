@@ -66,12 +66,12 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-4">
                     <div id="logo_home">
                         <h1><a href="<?php echo base_url() ?>" title="Home">Palmyra Hotels</a></h1>
                     </div>
                 </div>
-                <nav class="col-9">
+                <nav class="col-8">
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
@@ -95,6 +95,7 @@
                                         <?php } ?>
                                 </ul>
                             </li>
+                            <li><a href="<?php echo base_url() ?>About">Services</a></li>
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
                             
                              

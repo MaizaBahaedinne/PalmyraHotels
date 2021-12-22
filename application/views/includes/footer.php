@@ -143,7 +143,7 @@
           minDate:new Date(),
           showCustomRangeLabel: false,
           locale: {
-            format: 'MM-DD-YYYY'
+            format: 'DD-MM-YYYY'
           }
           }, function(start, end, label) {
           console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('DD-MM-YYYY') + ' (predefined range: ' + label + ')');

@@ -26,9 +26,14 @@ class Hotel extends BaseController {
  		                $this->loadViews("hotel/list", $this->global, $data, NULL);   
 		        }
         		
-        public function search()
-        {
-        	$this->view($this->input->get('hotel') ) ;
+        public function search( )
+        {	$hotelId = $this->input->get('hotel') ;
+
+		                $data['hotel'] =  $this->hotel_model->hotel($hotelId);
+		                $data['medias'] = $this->hotel_model->hotelMediaListing($hotelId) ;
+		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
+
+        	$this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
         }
 
 		public function view($hotelId)
