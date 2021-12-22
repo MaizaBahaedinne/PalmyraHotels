@@ -152,7 +152,7 @@
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.2s">
                     <div class="feature_home">
                         <i class="icon_set_1_icon-41"></i>
-                        <h3><span>+120</span> Premium tours</h3>
+                        <h3><span>4</span> Premium Hotel</h3>
                         <p>
                             
                         </p>
@@ -163,7 +163,7 @@
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.4s">
                     <div class="feature_home">
                         <i class="icon_set_1_icon-30"></i>
-                        <h3><span>+1000</span> Customers</h3>
+                        <h3><span>+100k</span> Customers</h3>
                         <p>
                             
                         </p>

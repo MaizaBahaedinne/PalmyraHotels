@@ -1,4 +1,4 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/header_bg.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/aqua.jpg" data-natural-width="1400" data-natural-height="470">
         <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="animated fadeInDown">
                 <h1>About us</h1>
@@ -14,9 +14,9 @@
                 <ul>
                     <li><a href="#">Home</a>
                     </li>
-                    <li><a href="#">Category</a>
+                    <li><a href="#">About</a>
                     </li>
-                    <li>Page active</li>
+                   
                 </ul>
             </div>
         </div>
@@ -30,28 +30,26 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="feature">
                         <i class="icon_set_1_icon-30"></i>
-                        <h3><span>+ 1000</span> Customers</h3>
+                        <h3><span>+ 100k</span> Customers</h3>
                         <p>
                             
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
                     <div class="feature">
                         <i class="icon_set_1_icon-41"></i>
-                        <h3><span>+120</span> Premium city tours</h3>
+                        <h3><span>4</span> Premium Hotel</h3>
                         <p>
                             
                         </p>
                     </div>
                 </div>
-            </div>
-            <!-- End row -->
-            <div class="row">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+    
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                     <div class="feature">
                         <i class="icon_set_1_icon-57"></i>
                         <h3><span>H24</span> Support</h3>
@@ -60,37 +58,10 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.4s">
-                    <div class="feature">
-                        <i class="icon_set_1_icon-61"></i>
-                        <h3><span>10 Languages</span> available</h3>
-                        <p>
-                            
-                        </p>
-                    </div>
-                </div>
+                
             </div>
             <!-- End row -->
-            <div class="row">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="feature">
-                        <i class="icon_set_1_icon-13"></i>
-                        <h3><span>Accesibility</span> managment</h3>
-                        <p>
-                            
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
-                    <div class="feature">
-                        <i class="icon_set_1_icon-22"></i>
-                        <h3><span>Pet</span> allowed</h3>
-                        <p>
-                            
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
             <!-- End row -->
             <hr>
             <div class="row">

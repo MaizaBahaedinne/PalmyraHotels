@@ -1,9 +1,15 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade ?>" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade ?>" data-natural-width="1400" data-natural-height="600">
         <div class="parallax-content-2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
+                        <span class="rating">
+                            <i class="icon-star voted"></i>
+                            <i class="icon-star voted"></i>
+                            <i class="icon-star voted"></i>
+                            <i class="icon-star voted"></i>
+                            <i class="icon-star-empty"></i>
+                        </span>
                         <h1>Palmyra <?php echo $hotel->name ?></h1>
                         <span><?php echo $hotel->location ?></span>
                     </div>
@@ -152,7 +158,8 @@
                             <h3>Rooms Types</h3>
                         </div>
                         <div class="col-lg-9">
-                            <h4>Single Room</h4>
+                            <?php foreach ($rooms as $room ) { ?> 
+                            <h4><?php echo $room->titre ?></h4>
                             <p>
                                 Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
                             </p>
@@ -195,48 +202,8 @@
                             <!-- End photo carousel  -->
 
                             <hr>
-
-                            <h4>Double Room</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
-                            </p>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="list_icons">
-                                        <li><i class="icon_set_1_icon-86"></i> Free wifi</li>
-                                        <li><i class="icon_set_2_icon-116"></i> Plasma Tv</li>
-                                        <li><i class="icon_set_2_icon-106"></i> Safety box</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <ul class="list_ok">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>No scripta electram necessitatibus sit</li>
-                                        <li>Quidam percipitur instructior an eum</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- End row  -->
-                            <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/1.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/2.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/2.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/3.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/3.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/4.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/4.jpg" alt="Image">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End photo carousel  -->
+                        <?php } ?>
+                          
                         </div>
                         <!-- End col-md-9  -->
                     </div>
