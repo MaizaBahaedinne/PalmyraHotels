@@ -47,7 +47,7 @@ class Acceuil extends BaseController
         }
         else 
         {
-            $this->view("soon") ;
+           $this->load->view ("soon") ;
         }
 
     }
