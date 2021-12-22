@@ -57,7 +57,7 @@
                             <li><a href="#"><i class="icon-vimeo"></i></a></li>
                             <li><a href="#"><i class="icon-youtube-play"></i></a></li>
                         </ul>
-                        <p>Palmyra Hotels © 2021 Made by Bahaedinne Maiza </p>
+                        <p>Palmyra Hotels © 2022 Made by Bahaedinne Maiza </p>
                     </div>
                 </div>
             </div><!-- End row -->

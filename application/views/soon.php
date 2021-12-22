@@ -73,7 +73,7 @@
                             <li><a href="#"><i class="icon-youtube-play"></i></a></li>
                             <li><a href="#"><i class="icon-linkedin"></i></a></li>
                         </ul>
-                        <p>© Citytours 2021</p>
+                        <p>Palmyra Hotels © 2022 Made by Bahaedinne Maiza</p>
                     </div>
 
             
