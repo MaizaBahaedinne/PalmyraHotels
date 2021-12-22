@@ -75,16 +75,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($rooms as $room ) { ?>
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
                                         <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
                                     </div>
-                                    <span class="item_cart">Louvre Museum tickets</span>
+                                    <span class="item_cart"><?php echo $room->titre ?></span>
                                 </td>
                                 <td>
                                     <div class="numbers-row">
-                                        <input type="text" value="1" id="quantity_1" class="qty2 form-control" name="quantity_1">
+                                        <input type="text" value="0" id="quantity_1" class="qty2 form-control" name="quantity_1">
                                     </div>
                                 </td>
                                 <td>
@@ -97,50 +98,7 @@
                                     <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div class="thumb_cart">
-                                        <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
-                                    </div>
-                                    <span class="item_cart">Eiffell tour</span>
-                                </td>
-                                <td>
-                                    <div class="numbers-row">
-                                        <input type="text" value="0" id="quantity_2" class="qty2 form-control" name="quantity_2">
-                                    </div>
-                                </td>
-                                <td>
-                                    0%
-                                </td>
-                                <td>
-                                    <strong>€0,0</strong>
-                                </td>
-                                <td class="options">
-                                    <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="thumb_cart">
-                                        <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
-                                    </div>
-                                    <span class="item_cart">Senna river Tour</span>
-                                </td>
-                                <td>
-                                    <div class="numbers-row">
-                                        <input type="text" value="1" id="quantity_3" class="qty2 form-control" name="quantity_3">
-                                    </div>
-                                </td>
-                                <td>
-                                    0%
-                                </td>
-                                <td>
-                                    <strong>€24,71</strong>
-                                </td>
-                                <td class="options">
-                                    <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
-                                </td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                     <table class="table table-striped options_cart">

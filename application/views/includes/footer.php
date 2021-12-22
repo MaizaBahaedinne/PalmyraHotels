@@ -81,7 +81,7 @@
         <div class="small-dialog-header">
             <h3>Sign In</h3>
         </div>
-        <form>
+        <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
             <div class="sign-in-wrapper">
                 <a href="#0" class="social_bt facebook">Login with Facebook</a>
                 <a href="#0" class="social_bt google">Login with Google</a>
