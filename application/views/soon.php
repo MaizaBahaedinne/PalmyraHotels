@@ -5,6 +5,13 @@
     <title>Palmyra Hotels Coming soon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
+   <meta property="og:url"                 content="<?php echo base_url() ?>" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Palmyra Hotels Coming soon" />
+    <meta property="og:description"        content="Meanwhile, you can make leave your email. We will advice when we will be online!" />
+    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/golden.jpg" />
+
+
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/site_launch/img/favicon-1.ico" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-57x57-precomposed-1.png">
