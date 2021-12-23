@@ -63,52 +63,42 @@
                     <div id="Img_carousel" class="slider-pro">
                         <div class="sp-slides">
 
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/1_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/1_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/1_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/1_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/1_large.jpg">
-                            </div>
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/2_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/2_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/2_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/2_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/2_large.jpg">
-                            </div>
+                             <?php
+                                $dir = "./assets/img/hotels/holiday/";
+                                $dir1 = base_url()."/assets/img/hotels/holiday/";
+                                chdir($dir);
+                                array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
+                                foreach($files as $filename)
+                                {?>
+                                <div class="sp-slide">
+                                <img alt="Image" class="sp-image" 
+                                src="" 
+                                data-src="" 
+                                data-small=""
+                                data-medium="" 
+                                data-large="" 
+                                data-retina="<?php echo $dir1.$filename ?>" >
 
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/3_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/3_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/3_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/3_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/3_large.jpg">
-                            </div>
+                            </div>   
+                                <?php } 
+                            ?>
 
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/4_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/4_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/4_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/4_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/4_large.jpg">
-                            </div>
+                            
+                            
 
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/5_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/5_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/5_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/5_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/5_large.jpg">
-                            </div>
-
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/6_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/6_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/6_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/6_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/6_large.jpg">
-                            </div>
-
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/7_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/7_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/7_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/7_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/7_large.jpg">
-                            </div>
-
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/8_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/8_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/8_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/8_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/8_large.jpg">
-                            </div>
-
-                            <div class="sp-slide">
-                                <img alt="Image" class="sp-image" src="css/images/blank.gif" data-src="<?php echo base_url() ?>assets/img/slider_single_tour/9_medium.jpg" data-small="<?php echo base_url() ?>assets/img/slider_single_tour/9_small.jpg" data-medium="<?php echo base_url() ?>assets/img/slider_single_tour/9_medium.jpg" data-large="<?php echo base_url() ?>assets/img/slider_single_tour/9_large.jpg" data-retina="<?php echo base_url() ?>assets/img/slider_single_tour/9_large.jpg">
-                            </div>
+                          
                         </div>
+                        <!--
                         <div class="sp-thumbnails">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/1_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/2_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/3_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/4_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/5_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/6_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/7_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/8_medium.jpg">
-                            <img alt="Image" class="sp-thumbnail" src="<?php echo base_url() ?>assets/img/slider_single_tour/9_medium.jpg">
+                            <?php
+                                array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
+                                foreach($files as $filename)
+                                {?>
+                                <img alt="Image" class="sp-thumbnail" src="<?php echo $dir1.$filename ?>" width="40px">   
+                                <?php } 
+                            ?>
                         </div>
+                        -->
                     </div>
 
                     <hr>

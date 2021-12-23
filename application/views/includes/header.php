@@ -29,6 +29,8 @@
 
     <!-- CUSTOM CSS -->
     <link href="<?php echo base_url() ?>assets/css/custom-1.css" rel="stylesheet">
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/util.js"></script>
         
 </head>
 <body>

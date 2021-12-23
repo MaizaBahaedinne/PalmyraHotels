@@ -131,7 +131,31 @@
 
      <!-- SWITCHER  -->
     <script src="<?php echo base_url() ?>assets/js/switcher-1.js"></script>
-    
+    <script src="<?php echo base_url() ?>assets/js/jquery.sliderPro.min-1.js"></script>
+    <script src="<?php echo base_url() ?>assets/maps/api/js-2?key=AIzaSyAUQKuq-IHkzCt4VoGq2z4XYJ_ip7ZRkws"></script>
+    <script src="<?php echo base_url() ?>assets/js/map-1.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/infobox-1.js"></script>
+
+    <script>
+        $('.carousel-thumbs-2').owlCarousel({
+        loop:false,
+        margin:5,
+        responsiveClass:true,
+        nav:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4,
+                nav:false
+            }
+        }
+    });
+    </script>
 
     <!-- Specific scripts -->
     <script>
