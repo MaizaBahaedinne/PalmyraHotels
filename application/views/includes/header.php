@@ -77,8 +77,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-4">
-                    <div id="logo_home">
-                        <h1><a href="<?php echo base_url() ?>" title="Home">Palmyra Hotels</a></h1>
+                    <div >
+                        <h3><a href="<?php echo base_url() ?>" title="Home">Palmyra<small>Hotels.tn</small></a></h3>
                     </div>
                 </div>
                 <nav class="col-8">
