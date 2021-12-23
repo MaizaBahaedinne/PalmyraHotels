@@ -78,7 +78,7 @@
             <div class="row">
                 <div class="col-4">
                     <div >
-                        <h3><a href="<?php echo base_url() ?>" title="Home">Palmyra<small>Hotels.tn</small></a></h3>
+                        <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>
                     </div>
                 </div>
                 <nav class="col-8">

@@ -10,7 +10,7 @@
                 <!-- End rab -->
                 <div class="tab-pane active show" id="hotels">
                     <form method="get" action="<?php echo base_url() ?>Hotel/search">
-                    <h3>Search Hotels in Paris</h3>
+                    <h3>Search Hotels in PalmyraHotels.tn</h3>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
