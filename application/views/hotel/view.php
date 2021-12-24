@@ -317,7 +317,7 @@
                         <hr>
                        
                         <h4><span>Contact us</span> by email</h4>
-                        <a href="mailto://<?php echo $hotel->mail ?>" class="phone"><?php echo $hotel->mail ?></a>
+                        <a href="mailto://<?php echo $hotel->mail ?>" ><?php echo $hotel->mail ?></a>
                         
 
                     </div>
