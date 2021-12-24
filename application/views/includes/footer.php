@@ -132,6 +132,25 @@
      <!-- SWITCHER  -->
     <script src="<?php echo base_url() ?>assets/js/switcher-1.js"></script>
     <script src="<?php echo base_url() ?>assets/js/jquery.sliderPro.min-1.js"></script>
+        
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('#Img_carousel').sliderPro({
+                width: 960,
+                height: 500,
+                fade: true,
+                arrows: true,
+                buttons: false,
+                fullScreen: false,
+                smallSize: 500,
+                startSlide: 0,
+                mediumSize: 1000,
+                largeSize: 3000,
+                thumbnailArrows: true,
+                autoplay: false
+            });
+        });
+    </script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAUQKuq-IHkzCt4VoGq2z4XYJ_ip7ZRkws"></script>
     <script src="<?php echo base_url() ?>assets/js/map-1.js"></script>
     <script src="<?php echo base_url() ?>assets/js/infobox-1.js"></script>

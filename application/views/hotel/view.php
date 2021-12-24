@@ -64,22 +64,22 @@
                         <div class="sp-slides">
 
                              <?php
-                                $dir = "./assets/img/hotels/holiday/";
-                                $dir1 = base_url()."/assets/img/hotels/holiday/";
+                                $dir = "./assets/img/hotels/".$hotel->acro."/";
+                                $dir1 = base_url()."/assets/img/hotels/".$hotel->acro."/";
                                 chdir($dir);
                                 array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
                                 foreach($files as $filename)
                                 {?>
                                 <div class="sp-slide">
-                                <img alt="Image" class="sp-image" 
-                                src="" 
-                                data-src="" 
-                                data-small=""
-                                data-medium="" 
-                                data-large="" 
-                                data-retina="<?php echo $dir1.$filename ?>" >
+                                    <img alt="Image" class="sp-image" 
+                                    src="<?php echo $dir1.$filename ?>" 
+                                    data-src="<?php echo $dir1.$filename ?>" 
+                                    data-small="<?php echo $dir1.$filename ?>"
+                                    data-medium="<?php echo $dir1.$filename ?>" 
+                                    data-large="<?php echo $dir1.$filename ?>" 
+                                    data-retina="<?php echo $dir1.$filename ?>" >
 
-                            </div>   
+                                </div>   
                                 <?php } 
                             ?>
 
@@ -88,7 +88,7 @@
 
                           
                         </div>
-                        <!--
+                        
                         <div class="sp-thumbnails">
                             <?php
                                 array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
@@ -98,7 +98,7 @@
                                 <?php } 
                             ?>
                         </div>
-                        -->
+                        
                     </div>
 
                     <hr>
@@ -311,9 +311,15 @@
 
                     <div class="box_style_4">
                         <i class="icon_set_1_icon-90"></i>
-                        <h4><span>Book</span> by phone</h4>
-                        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                        <h4><span>Book</span> by phone or by email</h4>
+                        <a href="tel://<?php echo $hotel->phone ?>" class="phone">+216 <?php echo $hotel->phone ?></a>
                         <small>Monday to Friday 9.00am - 7.30pm</small>
+                        <hr>
+                       
+                        <h4><span>Contact us</span> by email</h4>
+                        <a href="mailto://<?php echo $hotel->mail ?>" class="phone"><?php echo $hotel->mail ?></a>
+                        
+
                     </div>
 
                 </aside>
