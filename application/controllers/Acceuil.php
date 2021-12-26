@@ -47,8 +47,8 @@ class Acceuil extends BaseController
         }
         else 
         {
-         //  $this->load->view ("soon") ;
-          var_dump(  $this->send_mail("bahaedinne.maiza@esprit.tn", "test"  , "" , "Test Mail" )  ) ;
+         $this->load->view ("soon") ;
+         // var_dump(  $this->send_mail("bahaedinne.maiza@esprit.tn", "test"  , "" , "Test Mail" )  ) ;
         }
 
     }
