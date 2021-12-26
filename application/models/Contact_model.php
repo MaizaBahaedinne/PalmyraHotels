@@ -25,6 +25,21 @@ class Contact_model extends CI_Model
         return $insert_id;
     }
 
+
+      /**
+     * This function is used to add new user to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addNewsletter($contactInfo)
+    {
+        $this->db->trans_start();
+        $this->db->insert('tbl_contact', $contactInfo);
+        $insert_id = $this->db->insert_id();
+        $this->db->trans_complete();
+        
+        return $insert_id;
+    }
+
     
     /**
      * This function is used to update the user information

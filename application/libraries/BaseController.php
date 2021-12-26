@@ -84,15 +84,15 @@ class BaseController extends CI_Controller {
                     
                     // SMTP configuration
                     $mail->isSMTP();
-                    $mail->Host     = 'tunivisions.link';
+                    $mail->Host     = 'topnet.tn';
                     $mail->SMTPAuth = true;
-                    $mail->Username = 'no-reply@tunivisions.link';
-                    $mail->Password = 'Tunivisions-Link-2019';
+                    $mail->Username = 'aquapark@palmyrahotels.tn';
+                    $mail->Password = 'Aquapark2022';
                     $mail->SMTPSecure = 'tls';
                     $mail->Port     = 587;
                     
-                    $mail->setFrom('no-reply@tunivisions.link', 'Tunivisions Link');
-                    $mail->addReplyTo('no-reply@tunivisions.link', 'Tunivisions Link');
+                    $mail->setFrom('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park Kantaoui');
+                    $mail->addReplyTo('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park Kantaoui');
                     
                     // Add a recipient
                 

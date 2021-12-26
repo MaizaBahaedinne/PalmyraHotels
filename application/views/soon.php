@@ -39,7 +39,7 @@
       <div class="row countdown">
               <div class="col-md-12">
                   <div id="logo"><!--<img src="<?php echo base_url() ?>assets/site_launch/img/logo-1.png" width="160" height="34" alt="City tours">-->
-                    <h2>Palmyra Hotels</h2>
+                    <h2><b>Palmyra</b>Hotels.tn</h2>
                   </div>
                     <h1>We will be back soon!</h1>
                     <h2>Meanwhile, you can make leave your email. We will advice when we will be online!</h2>
@@ -54,10 +54,10 @@
             <div class="row">
             <div class="col-md-6 col-md-offset-3">
       <div id="newsletter_wp">
-        <form method="post" action="<?php echo base_url() ?>Acceuil/newsletter"  autocomplete="off">
+        <form method="post" action="<?php echo base_url() ?>Contact/newsletter"  autocomplete="off">
               <div class="row">
                               <div class="col-md-9 first-nogutter">
-                                  <input name="email_newsletter" id="email_newsletter" type="email" placeholder="Your Email" class="form-control">
+                                  <input name="email" id="email_newsletter" type="email" placeholder="Your Email" class="form-control">
                                 </div>
                                 <div class="col-md-3 nogutter">
                                       <button type="submit" class="btn-check" id="submit-newsletter">Subscribe</button>

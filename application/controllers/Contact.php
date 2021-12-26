@@ -52,6 +52,31 @@ class Contact extends BaseController
         $this->global['pageTitle'] = 'Contact';
         $this->loadViews("contact/contact", $this->global, null , NULL);
     }
+
+
+
+        /**
+     * This function used to load the first screen of the user
+     */
+    public function newsletter()
+    {
+         $newsInfo = array(
+                            'email' => $this->input->post('email'), 
+                            
+                            'createdBy' => $this->vendorId ,
+                            'createdDTM'=> date('Y-m-d H:i:s'), 
+                            
+                                );
+    
+                            $resultat = $this->categorie_model->addNewsletter($newsInfo);
+
+
+                            $this->session->set_Flashdata ('success' , 'You are subscribed');
+                            redirect('/') ;  
+
+    }
+    
+
     
      
 
