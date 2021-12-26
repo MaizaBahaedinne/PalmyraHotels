@@ -89,7 +89,7 @@ class BaseController extends CI_Controller {
                     $mail->Username = 'aquapark@palmyrahotels.tn';
                     $mail->Password = 'Aquapark2022';
                     $mail->SMTPSecure = 'tls';
-                    $mail->Port     = 587;
+                    $mail->Port     = 25;
                     
                     $mail->setFrom('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park Kantaoui');
                     $mail->addReplyTo('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park Kantaoui');
