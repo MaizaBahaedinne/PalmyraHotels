@@ -68,7 +68,7 @@ class Contact extends BaseController
                             
                                 );
     
-                            $resultat = $this->categorie_model->addNewsletter($newsInfo);
+                            $resultat = $this->contact_model->addNewsletter($newsInfo);
 
 
                             $this->session->set_Flashdata ('success' , 'You are subscribed');

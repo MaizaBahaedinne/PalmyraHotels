@@ -33,7 +33,7 @@ class Contact_model extends CI_Model
     function addNewsletter($contactInfo)
     {
         $this->db->trans_start();
-        $this->db->insert('tbl_contact', $contactInfo);
+        $this->db->insert('tbl_news', $contactInfo);
         $insert_id = $this->db->insert_id();
         $this->db->trans_complete();
         
