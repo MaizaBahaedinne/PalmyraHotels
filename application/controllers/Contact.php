@@ -18,8 +18,7 @@ class Contact extends BaseController
     {
         parent::__construct();
         $this->load->model('hotel_model');
-       
-        
+        $this->load->model('contact_model'); 
         $this->isLoggedIn();   
     }
     
@@ -63,7 +62,7 @@ class Contact extends BaseController
          $newsInfo = array(
                             'email' => $this->input->post('email'), 
                             
-                            'createdBy' => $this->vendorId ,
+                            
                             'createdDTM'=> date('Y-m-d H:i:s'), 
                             
                                 );
