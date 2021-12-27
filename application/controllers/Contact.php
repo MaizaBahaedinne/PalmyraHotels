@@ -69,7 +69,21 @@ class Contact extends BaseController
     
                             $resultat = $this->contact_model->addNewsletter($newsInfo);
 
+                            $this->send_mail($this->input->post('email') , 
+                            "Welcome to PalmyraHotels.tn"  , "" , 
+                            "<h2>Welcome to PalmyraHotels.tn </h2>
+                            <br><br>
+                            You are now part of the Palmyra Hotels family! Get ready to depart on an exciting journey with us!
+                            <br>
+                            To make things extra special for you, starting today, we will send you a series of exclusive emails with amazing tips and tricks to get the most out of our hotels and events .
+                            <br>
+                            <hr>
+                            
+                            Best,
+                            <br>
+                            The Palmyra Hotels team
 
+                            " )   ;
                             $this->session->set_Flashdata ('success' , 'You are subscribed');
                             redirect('/') ;  
 
