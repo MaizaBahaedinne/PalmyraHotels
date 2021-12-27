@@ -149,7 +149,7 @@
                 <div>
                     <h3>BELONG ANYWHERE</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+                     <!--   Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.-->
                     </p>
                     <a href="https://www.youtube.com/watch?v=b0x42ldwzww" class="video"><i class="icon-play-circled2-1"></i></a>
                 </div>
@@ -162,7 +162,7 @@
             <div class="main_title">
                 <h2>Some <span>good</span> reasons</h2>
                 <p>
-                    Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+                  <!--  Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat. -->
                 </p>
             </div>
 
@@ -175,7 +175,7 @@
                         <p>
                             
                         </p>
-                        <a href="about-1.html" class="btn_1 outline">Read more</a>
+                        <a href="<?php echo base_url() ?>About" class="btn_1 outline">Read more</a>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
                         <p>
                             
                         </p>
-                        <a href="about-1.html" class="btn_1 outline">Read more</a>
+                        <a href="<?php echo base_url() ?>About" class="btn_1 outline">Read more</a>
                     </div>
                 </div>
 
@@ -197,7 +197,7 @@
                         <p>
                             
                         </p>
-                        <a href="about-1.html" class="btn_1 outline">Read more</a>
+                        <a href="<?php echo base_url() ?>About" class="btn_1 outline">Read more</a>
                     </div>
                 </div>
 
@@ -211,7 +211,7 @@
                     <img src="<?php echo base_url() ?>assets/img/laptop-1.png" alt="Laptop" class="img-fluid laptop">
                 </div>
                 <div class="col-md-6">
-                    <h3><span>Get started</span> with CityTours</h3>
+                    <h3><span>Get started</span> with PalmyratHotels.tn</h3>
                     <p>
                         
                     </p>
@@ -220,7 +220,7 @@
                         <li><span>2</span>Book Now</li>
                         <li><span>3</span>Print your invoic</li>
                     </ul>
-                    <a href="all_tour_list.html" class="btn_1">Start now</a>
+                    <a href="<?php echo base_url() ?>" class="btn_1">Start now</a>
                 </div>
             </div>
             <!-- End row -->
