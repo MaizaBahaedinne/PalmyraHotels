@@ -1,5 +1,10 @@
 <?php defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' ); 
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
 /**
  * Class : BaseController
  * Base Class to control over all the classes
@@ -8,6 +13,9 @@
  * @since : 15 November 2016
  */
 class BaseController extends CI_Controller {
+
+
+
 	protected $role = '';
 	protected $vendorId = '';
 	protected $HUA = '';
@@ -75,30 +83,31 @@ class BaseController extends CI_Controller {
 
 	public function send_mail($to, $subject  , $data , $content )
     {       
-
+    				
                  // Load PHPMailer library
                     $this->load->library('phpmailer_lib');
                     
                     // PHPMailer object
                     $mail = $this->phpmailer_lib->load();
-                    
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
                     // SMTP configuration
+                 
                     $mail->isSMTP();
-                    $mail->Host     = 'topnet.tn';
-                    $mail->SMTPAuth = true;
+                    $mail->Host     = 'smtp.topnet.tn';
+             
                     $mail->Username = 'aquapark@palmyrahotels.tn';
-                    $mail->Password = 'Aquapark2022';
-                    $mail->SMTPSecure = 'tls';
-                    $mail->Port     = 25;
+                   // $mail->Password = 'Aquapark2022';
+                   // $mail->SMTPAuth = true;
+						 // $mail->SMTPAutoTLS = true; 
+						  $mail->Port = 25; 
+                 
                     
-                    $mail->setFrom('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park Kantaoui');
-                    $mail->addReplyTo('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park Kantaoui');
+                    $mail->setFrom('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park ');
+                    $mail->addReplyTo('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park');
                     
                     // Add a recipient
-                
                     $mail->addAddress($to);
-                    
-                    
+
                     // Email subject
                     $mail->Subject = $subject ;
                     
@@ -111,13 +120,14 @@ class BaseController extends CI_Controller {
 
                     $mail->Body =  $body  ; 
                     
-                    // Send email
-                    if(!$mail->send()){
-                        return false ;
-                        
-                    }else{
-                       return true ;
-                    }
+                 
+
+                 if($mail->send()) {
+						    echo 'Message has been sent';
+						} 
+						else {
+						    echo "Message could not be sent. <br>Mailer Error: $mail->ErrorInfo";
+						}
     }
 
 

@@ -109,7 +109,7 @@
                         </div>
                         <div class="col-lg-9">
                             <p>
-                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+                                <?php echo $hotel->description ?>
                             </p>
                             <h4>Hotel facilities</h4>
                             <p>
