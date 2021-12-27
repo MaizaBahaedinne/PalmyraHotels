@@ -7,6 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Palmyra Hotels ">
     <meta name="author" content="Maiza Bahaedinne">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP7L2TPBWD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KP7L2TPBWD');
+    </script>
+
+
     <title>Palmyra Hotels | <?php echo $pageTitle ?></title>
 
     <!-- Favicons-->
