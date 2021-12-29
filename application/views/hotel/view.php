@@ -46,7 +46,7 @@
 
                 function initMap() {
                   map = new google.maps.Map(document.getElementById("map1"), {
-                    center: { lat: <?php echo $hotel->laltitude ?> ;?>, lng: <?php echo $hotel->longitude ?> },
+                    center: { lat: <?php echo $hotel->laltitude ?> , lng: <?php echo $hotel->longitude ?> },
                     zoom: 20,
                   });
                 }
