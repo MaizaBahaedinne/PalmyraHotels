@@ -9,9 +9,9 @@
                 <div class="col-md-3">
                     <h3>About</h3>
                     <ul>
-                        <li><a href="#">About us</a></li>
+                        <li><a href="<?php echo base_url() ?>About">About us</a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="<?php echo base_url() ?>Login">Login</a></li>
                         <li><a href="#">Register</a></li>
                          <li><a href="#">Terms and condition</a></li>
                     </ul>
@@ -49,13 +49,8 @@
                 <div class="col-md-12">
                     <div id="social_footer">
                         <ul>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-google"></i></a></li>
-                            <li><a href="#"><i class="icon-instagram"></i></a></li>
-                            <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                            <li><a href="#"><i class="icon-vimeo"></i></a></li>
-                            <li><a href="#"><i class="icon-youtube-play"></i></a></li>
+                            <li><a  target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a></li>
+                 
                         </ul>
                         <p>Palmyra Hotels © 2022 Made by Bahaedinne Maiza </p>
                     </div>

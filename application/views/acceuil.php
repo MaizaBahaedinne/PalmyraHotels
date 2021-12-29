@@ -139,7 +139,43 @@
     
     <div class="white_bg">
           
-                
+               <div class="container margin_60">
+            <div class="main_title">
+                <h2>OUR <span>EVENTS</span> BLOG </h2>
+                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+            </div>
+
+            <div class="row">
+                <?php foreach ($events as $event ){  ?>
+                    <div class="col-lg-6">
+                        <a class="box_news" href="#">
+                            <figure><img src="<?php echo base_url() ?>assets/img/events/<?php echo $event->acro ?>/<?php echo $event->affiche?>" alt="">
+                                <figcaption>
+                                    <strong>
+                                        <?php  
+                                        $date = date_create($event->dateDebut);
+                                        echo date_format($date, 'd'); ?>
+                                        </strong>
+                                     <?php  
+                                      
+                                        echo date_format($date, 'M'); ?>
+                                </figcaption>
+                            </figure>
+                            <ul>
+                                <li><?php echo $event->name ?></li>
+                                <li><?php echo date_format($date, 'd M Y H:m');?></li>
+                            </ul>
+                            <h4><?php echo $event->titre ?></h4>
+                            <div style="">
+                                <p ><?php echo $event->description ?></p>
+                            </div>
+                        </a>
+                    </div>
+                <?php }  ?>
+                </div>
+                <!-- /row -->
+                <p class="btn_home_align"><a href="#" class="btn_1 rounded">View all news</a></p>
+        </div>   
            
         </div>
         <!-- End white_bg -->
@@ -156,6 +192,9 @@
             </div>
         </section>
         <!-- End section -->
+
+      
+
 
         <div class="container margin_60">
 

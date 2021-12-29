@@ -32,6 +32,11 @@ class Hotel extends BaseController {
 		                $data['hotel'] =  $this->hotel_model->hotel($hotelId);
 		                $data['medias'] = $this->hotel_model->hotelMediaListing($hotelId) ;
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
+		                foreach ($data['rooms'] as $room ) {
+		                		$room->media = $this->hotel_model->roomMediaListing($room->roomId) ;
+		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("d/m/Y") , date("d/m/Y")   ) ;
+		                		
+		                	}
 
         	$this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
         }

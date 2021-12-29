@@ -54,13 +54,7 @@
     <!-- CUSTOM CSS -->
     <link href="<?php echo base_url() ?>assets/css/custom-1.css" rel="stylesheet">
 
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/common.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/util.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/map.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/marker.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/stats.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/onion.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/47/3/intl/fr_ALL/controls.js"></script>
+
         
 </head>
 <body>
@@ -84,7 +78,7 @@
         <div id="top_line">
             <div class="container">
                 <div class="row">
-                    <div class="col-6"><i class="icon-phone"></i><strong>0045 043204434</strong></div>
+                    <div class="col-6"><i class="icon-phone"></i><strong>+216 58 465 249</strong></div>
                     <div class="col-6">
                         <ul id="top_links">
                             <?php if ($uid == 0 ) { ?>
@@ -97,6 +91,12 @@
                                 </li>
                             <?php } ?>
                                 <li><a href="wishlist-1.html" id="wishlist_link">Wishlist</a></li>
+
+                                <li id="social_top">
+                                <a target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a>
+                               
+                                <a target="_blank" href="https://www.instagram.com/palmyrahotels.tn" ><i class="icon-instagramm"></i></a> 
+                            </li>
                            
                         </ul>
                     </div>
@@ -135,7 +135,8 @@
                                         <?php } ?>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url() ?>About">Services</a></li>
+                            <li><a href="<?php echo base_url() ?>Events">Events</a></li>
+                            
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
                             
                              

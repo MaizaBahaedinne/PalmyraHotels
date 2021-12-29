@@ -7,7 +7,7 @@
                             <i class="icon-star voted"></i>
                             <i class="icon-star voted"></i>
                             <i class="icon-star voted"></i>
-                            <i class="icon-star voted"></i>
+                            <i class="icon-star-empty"></i>
                             <i class="icon-star-empty"></i>
                         </span>
                         <h1>Palmyra <?php echo $hotel->name ?></h1>
@@ -39,7 +39,37 @@
         <!-- End Position -->
 
         <div class="collapse" id="collapseMap">
-            <div id="map" class="map"></div>
+                   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+        <style type="text/css">
+            #map1{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+                height:400px;
+            }
+        </style>
+
+            <div id="map1" class="map"></div>
+             <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+            <script type="text/javascript">
+                    // On initialise la latitude et la longitude de Paris (centre de la carte)
+                    var lat = <?php echo $hotel->laltitude ;?>;
+                    var lon = <?php echo $hotel->longitude ;?>;
+                    var macarte = null;
+                    // Fonction d'initialisation de la carte
+                    function initMap() {
+                        // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+                        macarte = L.map('map1').setView([lat, lon], 11);
+                        // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                            // Il est toujours bien de laisser le lien vers la source des données
+                            attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                            minZoom: 1,
+                            maxZoom: 20
+                        }).addTo(macarte);
+                    }
+                    window.onload = function(){
+                // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+                initMap(); 
+                    };
+                </script>
         </div>
         <!-- End Map -->
 
@@ -66,6 +96,9 @@
                              <?php
                                 $dir = "./assets/img/hotels/".$hotel->acro."/";
                                 $dir1 = base_url()."/assets/img/hotels/".$hotel->acro."/";
+                                $dir2 = "./assets/img/hotels/".$hotel->acro."-room/";
+                                $dir3 = base_url()."/assets/img/hotels/".$hotel->acro."-room/";
+
                                 chdir($dir);
                                 array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
                                 foreach($files as $filename)
@@ -109,7 +142,7 @@
                         </div>
                         <div class="col-lg-9">
                             <p>
-                                <?php echo $hotel->description ?>
+                                <?php  echo $hotel->description ;?>
                             </p>
                             <h4>Hotel facilities</h4>
                             <p>
@@ -118,20 +151,18 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <ul class="list_ok">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>No scripta electram necessitatibus sit</li>
-                                        <li>Quidam percipitur instructior an eum</li>
-                                        <li>Ut est saepe munere ceteros</li>
-                                        <li>No scripta electram necessitatibus sit</li>
-                                        <li>Quidam percipitur instructior an eum</li>
+                                        <li>Secured parking</li>
+                                        <li>Pool</li>
+                                        <li>Wifi</li>
+                                        <li>Children's playground</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="list_ok">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>No scripta electram necessitatibus sit</li>
-                                        <li>Quidam percipitur instructior an eum</li>
-                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Nightclub / DJ</li>
+                                        <li>Bar / lounge</li>
+                                        <li>Pool / beach towels</li>
+                                        <li>Outdoor dining area</li>
                                     </ul>
                                 </div>
                             </div>
@@ -149,7 +180,7 @@
                         </div>
                         <div class="col-lg-9">
                             <?php foreach ($rooms as $room ) { ?> 
-                            <h4><?php echo $room->titre ?></h4>
+                            <h4><?php echo $room->titre ?> <?php for ($i=0; $i<$room->capacity  ; $i++) { echo '<i class="icon-guest"></i>' ; } ?> </h4>
                             <p>
                                 Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
                             </p>
@@ -158,37 +189,45 @@
                                 <div class="col-md-6">
                                     <ul class="list_icons">
                                         <li><i class="icon_set_1_icon-86"></i> Free wifi</li>
-                                        <li><i class="icon_set_2_icon-116"></i> Plasma Tv</li>
-                                        <li><i class="icon_set_2_icon-106"></i> Safety box</li>
+                                        <li><i class="icon_set_2_icon-116"></i> Cable / satellite TV</li>
+                                        <li><i class="icon_set_2_icon-106"></i> Air conditioning</li>
+                                        <li><i class="icon_set_2_icon-106"></i> Refrigerator</li>
+                                        <li><i class="icon_set_2_icon-106"></i> Refrigerator</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="list_ok">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>No scripta electram necessitatibus sit</li>
+                                        <li>Interconnected rooms available</li>
+                                        <li>Complimentary toiletries</li>
                                         <li>Quidam percipitur instructior an eum</li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- End row  -->
                             <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/1.jpg" alt="Image">
+<!--
+                            <?php
+                            
+
+                            
+                    
+                             
+                          
+                            array_multisort(array_map('filemtime', ($filess = glob("*.{jpg,}", GLOB_BRACE))), SORT_DESC, $filess);
+                                foreach($filess as $filenames)
+                                {?>
+                                 <div class="item">
+                                    <a href="<?php echo $dir3.$filenames ?>" data-effect="mfp-zoom-in">
+                                         <img alt="Image" class="sp-thumbnail" src="<?php echo $dir3.$filenames ?>" > 
                                     </a>
-                                </div>
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/2.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/2.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/3.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/3.jpg" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="<?php echo base_url() ?>assets/img/carousel/4.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/carousel/4.jpg" alt="Image">
-                                    </a>
-                                </div>
+                                </div>  
+                                <?php } ?>
+                                
+            
+-->                    
                             </div>
+
+
                             <!-- End photo carousel  -->
 
                             <hr>

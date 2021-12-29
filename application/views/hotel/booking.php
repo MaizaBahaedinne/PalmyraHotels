@@ -92,7 +92,7 @@
                                     0%
                                 </td>
                                 <td>
-                                    <strong>€24,71</strong>
+                                    <strong><?php echo $room->prices->price * $room->capacity ?> DT</strong>
                                 </td>
                                 <td class="options">
                                     <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>

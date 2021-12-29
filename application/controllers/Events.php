@@ -9,7 +9,7 @@ require APPPATH . '/libraries/BaseController.php';
  * @version : 1.1
  * @since : 15 November 2016
  */
-class Contact extends BaseController
+class Events extends BaseController
 {
     /**
      * This is default constructor of the class

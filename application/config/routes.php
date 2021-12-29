@@ -55,13 +55,9 @@ $route['404_override'] = 'My404';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['Cart'] = "Cart/myCart";
-
-$route['About'] = "Acceuil/About";
-
 $route['logout'] = "Acceuil/logout";
 
-
+$route['About'] = "Acceuil/About";
 
 
 
