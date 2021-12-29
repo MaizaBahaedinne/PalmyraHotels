@@ -39,18 +39,9 @@
         <!-- End Position -->
 
         <div class="collapse" id="collapseMap">
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbcsuUCdjnsNdkXX53x9QbUuzeGsvrruE&callback=initMap"></script>
-            <div id="map" class="map"></div>
-            <script type="text/javascript">
-                let map;
-
-                function initMap() {
-                  map = new google.maps.Map(document.getElementById("map1"), {
-                    center: { lat: <?php echo $hotel->laltitude ?> , lng: <?php echo $hotel->longitude ?> },
-                    zoom: 20,
-                  });
-                }
-            </script>
+         
+           
+            <iframe id="map" class="map" src="<?php echo $hotel->longitude ?>" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <!-- End Map -->
 
