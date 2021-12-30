@@ -108,7 +108,7 @@ class Hotel_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
-    function roomMsPrice( $hotelId , $dateDebut  , $dateFin  )
+    function roomMsPrice( $hotelId , $dateDebut   )
     {
 
        
@@ -116,13 +116,23 @@ class Hotel_model extends CI_Model
         $this->db->from('tbl_saison as BaseTbl');
         $this->db->join('tbl_price as prices' , 'BaseTbl.saisonId = prices.saisonId ','Left');
             
-       
+        
         $this->db->where('prices.hotelId = ',$hotelId );
-//  $this->db->where("BaseTbl.date_debut BETWEEN '$dateDebut' AND '$dateFin'" );
+        
+        $this->db->where('BaseTbl.date_fin >= ', $dateDebut );
+        $this->db->where('BaseTbl.date_Debut <= ', $dateDebut );
+
+
+        $this->db->order_by('BaseTbl.date_debut   ASC ');
+        
 
        
         $query = $this->db->get();
+  
         return $query->row();
+
+
+
     }
 
 
@@ -146,7 +156,9 @@ class Hotel_model extends CI_Model
             
        
         $this->db->where('Room.hotel_roomId = ',$roomId );
-    //  $this->db->where("BaseTbl.date_debut BETWEEN '$dateDebut' AND '$dateFin'" );
+           
+        $this->db->where('BaseTbl.date_fin >= ', $dateDebut );
+        $this->db->where('BaseTbl.date_Debut <= ', $dateDebut );
 
        
         $query = $this->db->get();

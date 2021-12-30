@@ -6,7 +6,6 @@
             </ul>
 
             <div class="tab-content">
-               
                 <!-- End rab -->
                 <div class="tab-pane active show" id="hotels">
                     <form method="get" action="<?php echo base_url() ?>Hotel/search">
@@ -54,7 +53,7 @@
                         
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Preferred city area</label>
+                                <label>Preferred Hotel</label>
                                 <div class="styled-select-common">
                                     <select name="hotel">
                                         
@@ -70,14 +69,10 @@
                                 <label>Pension</label>
                                 <div class="styled-select-common">
                                     <select name="pension">
-                                        
-                                        
-                                            <option value="" >L</option>
                                             <option value="" >LP</option>
                                             <option value="" >DP</option>
                                             <option value="" >PC</option>
                                             <option value="" >All inclusive</option>
-                                        
                                     </select>
                                 </div>
                             </div>
