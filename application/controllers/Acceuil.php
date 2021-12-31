@@ -18,7 +18,7 @@ class Acceuil extends BaseController
     {
         parent::__construct();
         $this->load->model('hotel_model');
-      
+         $this->load->model('events_model');
         $this->isLoggedIn();   
     }
     
@@ -32,7 +32,7 @@ class Acceuil extends BaseController
     public function index()
     {
 
-       
+         $data['events'] = $this->events_model->eventsListing() ;
         $data['hotels'] = $this->hotel_model->hotelListing() ;  
 
        foreach ($data['hotels'] as $hotel ) {
