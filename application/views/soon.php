@@ -38,8 +38,9 @@
       
       <div class="row countdown">
               <div class="col-md-12">
-                  <div id="logo"><!--<img src="<?php echo base_url() ?>assets/site_launch/img/logo-1.png" width="160" height="34" alt="City tours">-->
-                    <h2><b>Palmyra</b>Hotels.tn</h2>
+                  <div id="logo">
+                    <img src="<?php echo base_url() ?>assets/img/logo-1.png" width="300"  alt="City tours">
+                    
                   </div>
                     <h1>We will be back soon!</h1>
                     <h2>Meanwhile, you can make leave your email. We will advice when we will be online!</h2>
