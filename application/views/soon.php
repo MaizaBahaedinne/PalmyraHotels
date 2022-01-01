@@ -39,7 +39,7 @@
       <div class="row countdown">
               <div class="col-md-12">
                   <div id="logo">
-                    <img src="<?php echo base_url() ?>assets/img/logo-1.png" width="300"  alt="City tours">
+                    <img src="<?php echo base_url() ?>assets/img/logo-1.png" width="300"  alt="Palmyra Hotels">
                     
                   </div>
                     <h1>We will be back soon!</h1>
