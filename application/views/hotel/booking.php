@@ -58,9 +58,9 @@
                         <thead>
                             <tr>
                                 <th>
-                                    Item
+                                    Room
                                 </th>
-                                <th>
+                                <th width="10%">
                                     Quantity
                                 </th>
                                 <th>
@@ -75,32 +75,58 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($rooms as $room ) { ?>
+                            <?php foreach ($rooms as $room ) { if(!empty($room->prices->price)) {  ?>
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
-                                        <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">
+                                       <!-- <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">-->
                                     </div>
                                     <span class="item_cart"><?php echo $room->titre ?></span>
                                 </td>
                                 <td>
-                                    <div class="numbers-row">
-                                        <input type="text" value="0" id="quantity_1" class="qty2 form-control" name="quantity_1">
+                                    <div class="">
+                                        <input type="number" value="0" id="quantity_<?php echo $room->roomId ?>" class="qty7 form-control" name="quantity_<?php echo $room->roomId ?>" min="0" data-roomid="<?php echo $room->roomId ?>" >
+                                        
                                     </div>
                                 </td>
                                 <td>
                                     0%
                                 </td>
                                 <td>
-                                    <strong><?php echo $room->prices->price * $room->capacity ?> DT</strong>
+                                    <input type="hidden" value="<?php echo $room->capacity ?>" id="capacity_<?php echo $room->roomId ?>" name="capacity_<?php echo $room->roomId ?>" id="capacity_<?php echo $room->roomId ?>" >
+
+                                    <strong id="priceA_<?php echo $room->roomId ?>" >0</strong><strong> DT</strong>
+                                    
+                                    <input type="hidden"  value="<?php echo $room->prices->price * $room->capacity ?>" id="price_<?php echo $room->roomId ?>"  name="price_<?php echo $room->roomId ?>" >
                                 </td>
                                 <td class="options">
                                     <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
                                 </td>
                             </tr>
-                            <?php } ?>
+                            <?php  } } ?>
                         </tbody>
+                        <script type="text/javascript">
+                            $( ".qty7" ).change(function() {
+                               roomId = $(this).data("roomid") ;
+                               
+                                roomPrice =
+                                 (parseInt($("#price_"+roomId ).val())
+                                )
+                                *parseInt($("#quantity_"+roomId ).val()) ; 
+
+                               $("#price_"+roomId ).val(roomPrice) ;  
+                             
+                               $("#priceA_"+roomId ).html(roomPrice) ; 
+
+                               
+                               $("#TotalPrice" ).html() ; 
+
+                            });
+                        </script>
                     </table>
+
+              
+
                     <table class="table table-striped options_cart">
                         <thead>
                             <tr>

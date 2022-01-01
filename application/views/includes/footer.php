@@ -120,7 +120,7 @@
     <!-- /Sign In Popup -->
 
     <!-- Common scripts -->
-    <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min-1.js"></script>
+  
     <script src="<?php echo base_url() ?>assets/js/common_scripts_min-1.js"></script>
     <script src="<?php echo base_url() ?>assets/js/functions-1.js"></script>
 

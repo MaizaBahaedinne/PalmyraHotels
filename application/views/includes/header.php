@@ -55,7 +55,7 @@
     <link href="<?php echo base_url() ?>assets/css/custom-1.css" rel="stylesheet">
 
 
-        
+          <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min-1.js"></script>
 </head>
 <body>
 
