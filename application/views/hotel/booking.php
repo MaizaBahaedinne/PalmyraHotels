@@ -75,17 +75,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($rooms as $room ) { if(!empty($room->prices->price)) {  ?>
+                            <?php foreach ($rooms as $room ) { 
+                                if(!empty($room->prices->price)) {
+                                 if($room->capacity <= ($this->input->get("adults_2") + $this->input->get("children_2") ) ){  ?>
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
                                        <!-- <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">-->
                                     </div>
-                                    <span class="item_cart"><?php echo $room->titre ?></span>
+                                    <span class="item_cart"><?php echo $room->titre ?> <?php for ($i=0; $i<$room->capacity  ; $i++) { echo '<i class="icon-guest"></i>' ; } ?></span>
                                 </td>
                                 <td>
                                     <div class="">
-                                        <input type="number" value="0" id="quantity_<?php echo $room->roomId ?>" class="qty7 form-control" name="quantity_<?php echo $room->roomId ?>" min="0" data-roomid="<?php echo $room->roomId ?>" >
+                                        <input type="number" 
+                                        value="0" 
+                                        id="quantity_<?php echo $room->roomId ?>" 
+                                        class="qty7 form-control" 
+                                        name="quantity_<?php echo $room->roomId ?>" 
+                                        min="0" 
+                                        data-roomid="<?php echo $room->roomId ?>" >
                                         
                                     </div>
                                 </td>
@@ -93,33 +101,55 @@
                                     0%
                                 </td>
                                 <td>
-                                    <input type="hidden" value="<?php echo $room->capacity ?>" id="capacity_<?php echo $room->roomId ?>" name="capacity_<?php echo $room->roomId ?>" id="capacity_<?php echo $room->roomId ?>" >
+                                    <span  id="priceA_<?php echo $room->roomId ?>" 
+                                           class="priceRomms" 
+                                           data-roomid="<?php echo $room->roomId ?>" >0</span><strong> DT</strong>
 
-                                    <strong id="priceA_<?php echo $room->roomId ?>" >0</strong><strong> DT</strong>
+                                    <input type="hidden" 
+                                            value="<?php echo $room->capacity ?>" 
+                                            id="capacity_<?php echo $room->roomId ?>" 
+                                            name="capacity_<?php echo $room->roomId ?>" 
+                                            data-roomid="capacity_<?php echo $room->roomId ?>"   >
+
                                     
-                                    <input type="hidden"  value="<?php echo $room->prices->price * $room->capacity ?>" id="price_<?php echo $room->roomId ?>"  name="price_<?php echo $room->roomId ?>" >
+                                    
+                                    <input type="hidden"  
+                                           value="<?php echo $room->prices->price * $room->capacity ?>" 
+                                           id="price_<?php echo $room->roomId ?>"  
+                                           name="price_<?php echo $room->roomId ?>" 
+                                           data-roomid="<?php echo $room->roomId ?>" >
                                 </td>
                                 <td class="options">
-                                    <a href="#"><i class=" icon-trash"></i></a><a href="#"><i class="icon-ccw-2"></i></a>
+                                    
                                 </td>
                             </tr>
-                            <?php  } } ?>
+                            <?php  } } } ?>
                         </tbody>
                         <script type="text/javascript">
                             $( ".qty7" ).change(function() {
                                roomId = $(this).data("roomid") ;
                                
-                                roomPrice =
-                                 (parseInt($("#price_"+roomId ).val())
-                                )
-                                *parseInt($("#quantity_"+roomId ).val()) ; 
+                                roomPrice =  (parseInt($("#price_"+roomId ).val())) * parseInt($("#quantity_"+roomId ).val()) ; 
 
                                $("#price_"+roomId ).val(roomPrice) ;  
                              
                                $("#priceA_"+roomId ).html(roomPrice) ; 
 
+                               var calculated_total_sum = 0 ; 
+                               var calculated_taxe_sum = 0 ; 
                                
-                               $("#TotalPrice" ).html() ; 
+                               $(".priceRomms").each(function () {
+                                    calculated_total_sum += parseInt( $(this).html());
+                                    calculated_taxe_sum +=  
+                                         parseInt($("#capacity_"+$(this).data('roomid') ).val()) 
+                                       * parseInt($("#quantity_"+$(this).data('roomid') ).val()) ;
+                                
+                                      }                  
+                                    );
+                              
+                               var calculated_taxe_sum = 2 * calculated_taxe_sum  ;
+                               $("#taxe" ).html(calculated_taxe_sum)  ;
+                               $("#Cost" ).html(calculated_total_sum + calculated_taxe_sum) ; 
 
                             });
                         </script>
@@ -292,32 +322,25 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Dedicated tour guide
+                                        Taxe
                                     </td>
                                     <td class="text-right">
-                                        $34
+                                         <span id="taxe">0</span> <sup>DT</sup>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        Insurance
-                                    </td>
-                                    <td class="text-right">
-                                        $34
-                                    </td>
-                                </tr>
+                                
                                 <tr class="total">
                                     <td>
                                         Total cost
                                     </td>
-                                    <td class="text-right">
-                                        $154
+                                    <td class="text-right" >
+                                        <span id="Cost">0</span> <sup>DT</sup>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                         <a class="btn_full" href="payment-1.html">Check out</a>
-                        <a class="btn_full_outline" href="#"><i class="icon-right"></i> Continue shopping</a>
+                        
                     </div>
                     <div class="box_style_4">
                         <i class="icon_set_1_icon-57"></i>
