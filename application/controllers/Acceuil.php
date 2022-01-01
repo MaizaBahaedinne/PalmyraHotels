@@ -37,7 +37,7 @@ class Acceuil extends BaseController
 
        foreach ($data['hotels'] as $hotel ) {
                 
-                $hotel->prices = $this->hotel_model->roomMsPrice($hotel->hotelId,  date("d/m/Y") , date("d/m/Y")   ) ;
+                $hotel->prices = $this->hotel_model->roomMsPrice($hotel->hotelId,  date("Y-m-d")    ) ;
                 
             }
 
