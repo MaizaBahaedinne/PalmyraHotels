@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-md-4">
                         <div id="price_single_main" class="hotel">
-                            from/per night <span><sup>$</sup>95</span>
+                            from/per night <span><?php if(!empty($rooms[0]->prices->price)){ echo $rooms[0]->prices->price ; } else{ echo "0"; } ?><sup>DT</sup></span>
                         </div>
                     </div>
                 </div>

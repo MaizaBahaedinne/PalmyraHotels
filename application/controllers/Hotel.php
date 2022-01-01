@@ -34,7 +34,7 @@ class Hotel extends BaseController {
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
 		                foreach ($data['rooms'] as $room ) {
 		                		$room->media = $this->hotel_model->roomMediaListing($room->roomId) ;
-		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("d/m/y")  ) ;
+		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d")  ) ;
 		                		            	}
 
         	$this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
@@ -49,7 +49,7 @@ class Hotel extends BaseController {
 		               
 		                	foreach ($data['rooms'] as $room ) {
 		                		$room->media = $this->hotel_model->roomMediaListing($room->roomId) ;
-		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("d/m/Y") , date("d/m/Y")   ) ;
+		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d")   ) ;
 		                		
 		                	}
  
