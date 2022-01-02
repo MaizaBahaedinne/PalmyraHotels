@@ -80,7 +80,7 @@
                         <tbody>
                             <?php foreach ($rooms as $room ) { 
                                 if(!empty($room->prices->price)) {
-                                 if($room->capacity <= ($this->input->get("adults_2") + $this->input->get("children_2") ) ){  ?>
+                                 if($room->capacity <= ($search->adult + $search->children ) ){  ?>
                             <tr>
                                 <td>
                                     <div class="thumb_cart">
@@ -135,10 +135,12 @@
 
                             $( ".qty7" ).bind('keyup mouseup', function() {
                                 
-                                <?php 
-                                $date1 = new DateTime( $this->input->get("checkin") );
-                                $date2 = new DateTime($this->input->get("checkout") ) ;
-                                $interval = $date1->diff($date2);
+                                <?php
+
+                                    $date1 = new DateTime( $search->checkin  );
+                                    $date2 = new DateTime( $search->checkout ) ;
+                                    $interval = $date1->diff($date2);
+
                                 ?>
 
                                 days = <?php echo $interval->d ; ?> ;
@@ -232,7 +234,7 @@
                                         Adults
                                     </td>
                                     <td class="text-right">
-                                        <?php echo $this->input->get("adults_2") ?>
+                                        <?php echo $search->adult ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -240,7 +242,7 @@
                                         Children
                                     </td>
                                     <td class="text-right">
-                                        <?php echo $this->input->get("children_2") ?>
+                                        <?php echo $search->children ?>
                                     </td>
                                 </tr>
                                 <tr>

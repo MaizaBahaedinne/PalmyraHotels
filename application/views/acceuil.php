@@ -8,7 +8,7 @@
             <div class="tab-content">
                 <!-- End rab -->
                 <div class="tab-pane active show" id="hotels">
-                    <form method="get" action="<?php echo base_url() ?>Hotel/search">
+                    <form method="post" action="<?php echo base_url() ?>Hotel/search">
                     <h3>Search Hotels in PalmyraHotels.tn</h3>
                     <div class="row">
                         <div class="col-md-3">
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label>Adults</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="1" id="adults" class="qty2 form-control" name="adults_2">
+                                    <input type="text" value="1" id="adults" class="qty2 form-control" name="adult">
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label>Children</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children_2">
+                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children">
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label>Rooms</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="1" id="children" class="qty2 form-control" name="rooms">
+                                    <input type="text" value="1" id="children" class="qty2 form-control" name="room">
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <label>Preferred Hotel</label>
                                 <div class="styled-select-common">
-                                    <select name="hotel">
+                                    <select name="hotelId">
                                         
                                         <?php foreach ($hotels as $hotel ) { ?> 
                                             <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
@@ -69,10 +69,10 @@
                                 <label>Pension</label>
                                 <div class="styled-select-common">
                                     <select name="pension">
-                                            <option value="" >LP</option>
-                                            <option value="" >DP</option>
-                                            <option value="" >PC</option>
-                                            <option value="" >All inclusive</option>
+                                            <option value="LP" >LP</option>
+                                            <option value="DP" >DP</option>
+                                            <option value="PC" >PC</option>
+                                            <option value="AALS" >All inclusive</option>
                                     </select>
                                 </div>
                             </div>

@@ -10,6 +10,7 @@ class Hotel extends BaseController {
     {
         parent::__construct();
         $this->load->model('hotel_model');
+        $this->load->model('search_model');
        
         
         $this->isLoggedIn();   
@@ -28,19 +29,35 @@ class Hotel extends BaseController {
         		
         public function search( )
         {				
-
-
-        		
-        				$hotelId = $this->input->get('hotel') ;
-
+        				$hotelId = $this->input->post('hotelId') ;
 		                $data['hotel'] =  $this->hotel_model->hotel($hotelId);
 		                $data['medias'] = $this->hotel_model->hotelMediaListing($hotelId) ;
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
 		                foreach ($data['rooms'] as $room ) {
 		                		$room->media = $this->hotel_model->roomMediaListing($room->roomId) ;
 		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d")  ) ;
-		        }
+		        		}
 
+
+
+		        		 $searchInfo = array(  
+                            'hotelId' => $this->input->post('hotelId'),
+                            
+                            'checkin' => $this->input->post('checkin'),
+                            'checkout' => $this->input->post('checkout'),
+                            'room' => $this->input->post('room'), 
+                            'adult' => $this->input->post('adult'), 
+                            'children' => $this->input->post('children'), 
+                            'pension'	=> $this->input->post('pension'), 
+
+                            'createdBy' => $this->vendorId ,
+                            'createdDTM'=> date('Y-m-d H:i:s'), 
+                            
+                                );
+    
+                            $resultat = $this->search_model->addNewSearch($searchInfo) ;
+
+                            $data['search'] = $this->search_model->getSearchInfo($resultat) ; 
 		       		
 		                $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;  		            	
 
