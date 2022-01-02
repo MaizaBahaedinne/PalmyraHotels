@@ -76,45 +76,94 @@
         <div class="small-dialog-header">
             <h3>Sign In</h3>
         </div>
-        <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
-            <div class="sign-in-wrapper">
-                <a href="#0" class="social_bt facebook">Login with Facebook</a>
-                <a href="#0" class="social_bt google">Login with Google</a>
-                <div class="divider"><span>Or</span></div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" id="email">
-                    <i class="icon_mail_alt"></i>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control" name="password" id="password" value="">
-                    <i class="icon_lock_alt"></i>
-                </div>
-                <div class="clearfix add_bottom_15">
-                    <div class="checkboxes float-left">
-                        <label class="container_check">Remember me
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
+        
+            <div   >
+               
+                <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" id="email">
+                        <i class="icon_mail_alt"></i>
                     </div>
-                    <div class="float-right"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
-                </div>
-                <div class="text-center"><input type="submit" value="Log In" class="btn_login"></div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" id="password" >
+                        <i class="icon_lock_alt"></i>
+                    </div>
+                    <div class="clearfix add_bottom_15">
+                        <div class="checkboxes float-left">
+                            <label class="container_check">Remember me
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="float-right"><a id="forgot">Forgot Password?</a></div>
+                    </div>
+                    <div class="text-center">
+                        <input type="submit" value="Log In" class="btn_login">
+                    </div>
+                </form>
                 <div class="text-center">
-                    Don’t have an account? <a href="javascript:void(0);">Sign up</a>
+                    Don’t have an account? <a>Sign up</a>
                 </div>
-                <div id="forgot_pw">
+                
+
+
+                <div style="display:none;">
+                    <form>
                     <div class="form-group">
                         <label>Please confirm login email below</label>
                         <input type="email" class="form-control" name="email_forgot" id="email_forgot">
                         <i class="icon_mail_alt"></i>
                     </div>
+
                     <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
                     <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                    </form>
                 </div>
+
+                <div id="signup_form"  style="display:none;"  >
+                    <form >
+                        <div class="form-group">
+                            <label>First name</label>
+                            <input type="text" class=" form-control" placeholder="first name">
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" class=" form-control" placeholder="last name">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="country" class=" form-control" placeholder="country">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-6" >
+                                <label>Code Country</label>
+                                <input type="code" class=" form-control" placeholder="code country">
+                            </div class="col-md-6" >
+                                <label>mobile</label>
+                                <input type="mobile" class=" form-control" placeholder="mobile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class=" form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class=" form-control" id="password1" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input type="password" class=" form-control" id="password2" placeholder="Confirm password">
+                        </div>
+                        <div id="pass-info" class="clearfix"></div>
+                        <button class="btn_full">Create an account</button>
+                    </form>
+                </div>
+
             </div>
-        </form>
+        
         <!--form -->
     </div>
     <!-- /Sign In Popup -->
@@ -181,10 +230,10 @@
           minDate:new Date(),
           showCustomRangeLabel: false,
           locale: {
-            format: 'DD-MM-YYYY'
+            format: 'YYYY-MM-DD'
           }
           }, function(start, end, label) {
-          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('DD-MM-YYYY') + ' (predefined range: ' + label + ')');
+          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
     });
     </script>

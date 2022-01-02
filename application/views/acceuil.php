@@ -80,8 +80,11 @@
                     </div>
                     <!-- End row -->
                     <hr>
-                    <button class="btn_1 green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
-                </form>
+
+                        <button class="btn_1 green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
+                    </form>
+
+                
                 </div>
 
             </div>
