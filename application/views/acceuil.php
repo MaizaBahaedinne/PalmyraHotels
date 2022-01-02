@@ -20,7 +20,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check out</label>
-                                <input class="date-pick form-control" type="text" name="checkout">
+                                <input class="date-pick-out form-control" type="text" name="checkout">
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-3 col-6">

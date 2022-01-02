@@ -72,13 +72,13 @@
     </div><!-- End Search Menu -->
     
     <!-- Sign In Popup -->
-    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+    <div id="sign-in-dialog" >
         <div class="small-dialog-header">
             <h3>Sign In</h3>
         </div>
         
             <div   >
-               
+               <div id="signinForm" >
                 <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
                     <div class="form-group">
                         <label>Email</label>
@@ -104,12 +104,12 @@
                     </div>
                 </form>
                 <div class="text-center">
-                    Don’t have an account? <a>Sign up</a>
+                    Don’t have an account? <a id="signupBtn" >Sign up</a>
+                </div>
                 </div>
                 
 
-
-                <div style="display:none;">
+                <div id="passwordForm" style="display:none;">
                     <form>
                     <div class="form-group">
                         <label>Please confirm login email below</label>
@@ -122,7 +122,7 @@
                     </form>
                 </div>
 
-                <div id="signup_form"  style="display:none;"  >
+                <div id="signupForm"  style="display:none;"  >
                     <form >
                         <div class="form-group">
                             <label>First name</label>
@@ -136,14 +136,14 @@
                             <label>Country</label>
                             <input type="country" class=" form-control" placeholder="country">
                         </div>
-                        <div class="form-group row">
-                            <div class="col-md-6" >
+                        <div class="form-group ">
+                            
                                 <label>Code Country</label>
                                 <input type="code" class=" form-control" placeholder="code country">
-                            </div class="col-md-6" >
-                                <label>mobile</label>
+                           
+                         <div class="form-group">
+                            <label>mobile</label>
                                 <input type="mobile" class=" form-control" placeholder="mobile">
-                            </div>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -163,6 +163,11 @@
                 </div>
 
             </div>
+            <script type="text/javascript">
+                    $("#signupBtn").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ; $("#signupForm").show() ;  }) ; 
+                    $("#forgot").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ;  $("#passwordForm").show() ;  }) ; 
+
+            </script>
         
         <!--form -->
     </div>
@@ -222,6 +227,9 @@
 
     <!-- Specific scripts -->
     <script>
+        const date = new Date();
+        date.setDate(date.getDate() + 1);
+
     $(function() {
       $('input.date-pick').daterangepicker({
           autoUpdateInput: true,
@@ -235,7 +243,24 @@
           }, function(start, end, label) {
           console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
-    });
+
+       $('input.date-pick-out').daterangepicker({
+          autoUpdateInput: true,
+          singleDatePicker: true,
+          autoApply: true,
+          minDate:date ,
+          showCustomRangeLabel: false,
+          locale: {
+            format: 'YYYY-MM-DD'
+          }
+          }, function(start, end, label) {
+          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+
+        });
+
+
+
     </script>
     <script>
         $('input.time-pick').timepicker({
