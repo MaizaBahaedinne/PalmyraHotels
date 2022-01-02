@@ -41,18 +41,11 @@ class Hotel extends BaseController {
 		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d")  ) ;
 		        }
 
-		        if($this->vendorId != 0 )
-		        {       		
+		       		
 		                $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;  		            	
 
         			    $this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
-        		}
-        		else
-        		{	
-        			 $data['hotel'] =  $this->hotel_model->hotel($hotelId);
-        			 $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;  
-        			 $this->loadViews("login" , $this->global, $data  , NULL ) ;
-        		} 
+        
 
 
         }
