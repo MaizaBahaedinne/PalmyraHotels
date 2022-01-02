@@ -155,7 +155,7 @@
                                var calculated_total_sum = 0 ; 
                                var calculated_taxe_sum = 0 ; 
                                
-                               $(".z").each(function () {
+                               $(".priceRomms").each(function () {
                                     calculated_total_sum += parseInt( $(this).html());
                                     calculated_taxe_sum +=parseInt($("#capacity_"+$(this).data('roomid') ).val()) * parseInt($("#quantity_"+$(this).data('roomid') ).val()) ;
                                 
