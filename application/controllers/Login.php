@@ -70,7 +70,7 @@ class Login extends CI_Controller
                                         'roleText'=>$result->role,
                                         'name'=>$result->name,
                                         'isDeleted' => $result->isDeleted ,
-                                        'SA' => $result->SA ,
+                                        
                                         'isLoggedIn' => TRUE ,
                                     );
 
@@ -78,13 +78,13 @@ class Login extends CI_Controller
                 $this->session->set_userdata($sessionArray);
 
                 $this->session->set_flashdata('success', 'Bienvenue '.$result->name);
-               redirect('') ;   
+              echo 1; ; 
                 
             }
             else
             {
                 $this->session->set_flashdata('error', 'adresse e-mail introuvable');
-                redirect('') ;  
+                echo 0 ; 
             }
         
     }

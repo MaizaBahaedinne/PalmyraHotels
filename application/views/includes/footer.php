@@ -84,10 +84,12 @@
           <div class="modal-body">
             
                <div id="signinForm" >
-                <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
+             
+                    <div id="ack" style="display : none "></div>
+
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" id="email">
+                        <input type="email" class="form-control" name="email" id="login-email">
                         
                     </div>
                     <div class="form-group">
@@ -105,9 +107,35 @@
                         <div class="float-right"><a  data-toggle="modal" data-target="#passwordForm" >Forgot Password?</a></div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" value="Log In" class="btn_login">
+                        <button  class="btn_login" id="btn_login"> Log In </button>
                     </div>
-                </form>
+               
+                <script type="text/javascript">
+                      $(document).ready(function (){
+                              $("#btn_login").click(function(){
+                                    var username = $("#login-email").val().trim();
+                                    var password = $("#password").val().trim();
+
+                                    if( username != "" && password != "" ){
+                                        $.ajax({
+                                            url:'<?php echo base_url() ?>Login/loginMe',
+                                            type:'post',
+                                            data:{email:username,password:password},
+                                            success:function(response){
+                                                var msg = "";
+                                                console.log (response) ; 
+                                                if(response == 1 ){
+                                                    location.reload() ;
+                                                }else{
+                                                    msg = "Invalid username and password!";
+                                                }
+                                                $("#ack").show().html(msg);
+                                            }
+                                        });
+                                    }
+                                });
+                        });
+                </script>
                 <div class="text-center">
                     Don’t have an account? <a data-toggle="modal" data-target="#signupForm" >Sign up</a>
                 </div>
