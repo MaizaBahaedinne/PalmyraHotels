@@ -9,7 +9,7 @@
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="Palmyra Hotels Coming soon" />
     <meta property="og:description"        content="Meanwhile, you can make leave your email. We will advice when we will be online!" />
-    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/golden.jpg" />
+    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/logo-1.jpg" />
 
 
     <!-- Favicons-->
