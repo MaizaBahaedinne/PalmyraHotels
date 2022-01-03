@@ -72,23 +72,28 @@
     </div><!-- End Search Menu -->
     
     <!-- Sign In Popup -->
-    <div id="sign-in-dialog" >
-        <div class="small-dialog-header">
-            <h3>Sign In</h3>
-        </div>
-        
-            <div   >
+    <<div class="modal fade" id="signinForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
                <div id="signinForm" >
                 <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-control" name="email" id="email">
-                        <i class="icon_mail_alt"></i>
+                        
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <input type="password" class="form-control" name="password" id="password" >
-                        <i class="icon_lock_alt"></i>
+                        
                     </div>
                     <div class="clearfix add_bottom_15">
                         <div class="checkboxes float-left">
@@ -97,71 +102,103 @@
                               <span class="checkmark"></span>
                             </label>
                         </div>
-                        <div class="float-right"><a id="forgot">Forgot Password?</a></div>
+                        <div class="float-right"><a  data-toggle="modal" data-target="#passwordForm" >Forgot Password?</a></div>
                     </div>
                     <div class="text-center">
                         <input type="submit" value="Log In" class="btn_login">
                     </div>
                 </form>
                 <div class="text-center">
-                    Don’t have an account? <a id="signupBtn" >Sign up</a>
+                    Don’t have an account? <a data-toggle="modal" data-target="#signupForm" >Sign up</a>
                 </div>
                 </div>
-                
+  
+                <div class="modal fade" id="passwordForm"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">              
 
-                <div id="passwordForm" style="display:none;">
-                    <form>
-                    <div class="form-group">
-                        <label>Please confirm login email below</label>
-                        <input type="email" class="form-control" name="email_forgot" id="email_forgot">
-                        <i class="icon_mail_alt"></i>
-                    </div>
+                       
+                            <form>
+                            <div class="form-group">
+                                <label>Please confirm login email below</label>
+                                <input type="email" class="form-control" name="email_forgot" id="email_forgot">
+                                <i class="icon_mail_alt"></i>
+                            </div>
 
-                    <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-                    <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-                    </form>
-                </div>
-
-                <div id="signupForm"  style="display:none;"  >
-                    <form >
-                        <div class="form-group">
-                            <label>First name</label>
-                            <input type="text" class=" form-control" placeholder="first name">
-                        </div>
-                        <div class="form-group">
-                            <label>Last name</label>
-                            <input type="text" class=" form-control" placeholder="last name">
-                        </div>
-                        <div class="form-group">
-                            <label>Country</label>
-                            <input type="country" class=" form-control" placeholder="country">
-                        </div>
-                        <div class="form-group ">
+                            <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+                            <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                            </form>
+                       
                             
-                                <label>Code Country</label>
-                                <input type="code" class=" form-control" placeholder="code country">
-                           
-                         <div class="form-group">
-                            <label>mobile</label>
-                                <input type="mobile" class=" form-control" placeholder="mobile">
                         </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class=" form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class=" form-control" id="password1" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label>Confirm password</label>
-                            <input type="password" class=" form-control" id="password2" placeholder="Confirm password">
-                        </div>
-                        <div id="pass-info" class="clearfix"></div>
-                        <button class="btn_full">Create an account</button>
-                    </form>
+                      </div>
+                    </div>
                 </div>
 
+                <div class="modal fade" id="signupForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                          <div class="modal-body">     
+                    
+                        <form >
+                            <div class="form-group">
+                                <label>First name</label>
+                                <input type="text" class=" form-control" placeholder="first name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last name</label>
+                                <input type="text" class=" form-control" placeholder="last name">
+                            </div>
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="country" class=" form-control" placeholder="country">
+                            </div>
+                            <div class="form-group ">
+                                
+                                    <label>Code Country</label>
+                                    <input type="code" class=" form-control" placeholder="code country">
+                               
+                             <div class="form-group">
+                                <label>mobile</label>
+                                    <input type="mobile" class=" form-control" placeholder="mobile">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class=" form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class=" form-control" id="password1" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm password</label>
+                                <input type="password" class=" form-control" id="password2" placeholder="Confirm password">
+                            </div>
+                            <div id="pass-info" class="clearfix"></div>
+                            <button class="btn_full">Create an account</button>
+                        </form>
+                    
+
+                      
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
             </div>
             <script type="text/javascript">
                     $("#signupBtn").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ; $("#signupForm").show() ;  }) ; 

@@ -28,25 +28,30 @@ class Reservation extends BaseController
      */
     public function addNewReservation($searchId)
     {
-        $newsInfo = array(  
+        $reservationInfo = array(  
                             'searchId' => $searchId,
-                            'lastname' => $this->input->post('lastname'),
-                            'code' => $this->input->post('code'),
-                            'phone' => $this->input->post('phone'),
-                            'email' => $this->input->post('email'), 
-                            'message' => $this->input->post('message'), 
 
+
+                            'hotelId' => $this->input->post('hotelId'),
+                            'checkin' => $this->input->post('checkin'),
+                            'checkout' => $this->input->post('checkout'),
+                            'room' => $this->input->post('room'), 
+                            'adult' => $this->input->post('adult'), 
+                            'children' => $this->input->post('children'), 
+                            'pension'   => $this->input->post('pension'), 
+                            'nights'    => $this->input->post('nights'), 
+                            'createdBy' => $this->vendorId ,
                             'createdDTM'=> date('Y-m-d H:i:s'), 
                             
                                 );
     
-                            $resultat = $this->contact_model->addNewContact($newsInfo);
+                            $resultat = $this->reservation_model->addNewReservation($reservationInfo);
 
                             
                             
                             
                             $this->global['pageTitle'] = 'Details';
-                            $this->loadViews("contact/contact", $this->global, null , NULL);
+                            $this->loadViews("reservation/details", $this->global, null , NULL);
     }
 
 

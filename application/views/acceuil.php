@@ -69,10 +69,10 @@
                                 <label>Pension</label>
                                 <div class="styled-select-common">
                                     <select name="pension">
-                                            <option value="LP" >LP</option>
+                                            <option value="PD" >LP</option>
                                             <option value="DP" >DP</option>
                                             <option value="PC" >PC</option>
-                                            <option value="AALS" >All inclusive</option>
+                                            <option value="ALLS" >All inclusive</option>
                                     </select>
                                 </div>
                             </div>

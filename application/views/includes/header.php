@@ -117,7 +117,7 @@
                     <div class="col-6">
                         <ul id="top_links">
                             <?php if ($uid == 0 ) { ?>
-                                <li><a href="#sign-in-dialog" id="access_link">Sign in</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#signinForm" >Sign in</a></li>
                             <?php } else {?>
                                 <li><?php echo $name ?>  
                                     <a style="color: red;" href="<?php echo base_url() ?>logout" >

@@ -108,31 +108,27 @@ class Hotel_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
-    function roomMsPrice( $hotelId , $dateDebut   )
+    function roomMsPrice( $hotelId , $dateDebut , $pension = ""  )
     {
 
-       
-        $this->db->select('BaseTbl.* , prices.* ');
+       if($pension == "" ){ 
+            $this->db->select("BaseTbl.* , prices.*  ");
+        }
+        else 
+        {
+          $this->db->select("BaseTbl.* , prices.* , (prices.price + prices.".$pension.") as pensionPrice ");  
+        }
+
         $this->db->from('tbl_saison as BaseTbl');
         $this->db->join('tbl_price as prices' , 'BaseTbl.saisonId = prices.saisonId ','Left');
-            
-        
         $this->db->where('prices.hotelId = ',$hotelId );
-        
         $this->db->where('BaseTbl.date_fin >= ', $dateDebut );
         $this->db->where('BaseTbl.date_Debut <= ', $dateDebut );
-
-
         $this->db->order_by('BaseTbl.date_debut   ASC ');
         
-
-       
         $query = $this->db->get();
-  
+        
         return $query->row();
-
-
-
     }
 
 

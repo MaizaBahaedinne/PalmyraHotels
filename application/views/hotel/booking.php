@@ -57,6 +57,16 @@
             <form method="post" action="<?php echo base_url() ?>Reservation/addNewReservation/<?php echo $search->searchId ?>">
             <div class="row">
                 <div class="col-lg-8">
+                   
+                    <input type="hidden" value="<?php echo $search->checkin ?>" name="checkin" >
+                    <input type="hidden" value="<?php echo $search->checkout ?>" name="checkout" >
+                    <input type="hidden" value="<?php echo $search->hotelId ?>" name="hotelId" >
+                    <input type="hidden" value="<?php echo $search->room ?>" name="room" >
+                    <input type="hidden" value="<?php echo $search->adult ?>" name="adult" >
+                    <input type="hidden" value="<?php echo $search->children ?>" name="children" >
+                    <input type="hidden" value="<?php echo $search->pension  ?>" name="pension">
+                    
+                                               
                     <table class="table table-striped cart-list add_bottom_30">
                         <thead>
                             <tr>
@@ -103,7 +113,7 @@
                                 <td>
                                     0%
                                 </td>
-                                <td>
+                                <td id="pricess" >
                                     <span  id="priceA_<?php echo $room->roomId ?>" 
                                            class="priceRomms" 
                                            data-roomid="<?php echo $room->roomId ?>" >0</span><strong> DT</strong><small>/Per night</small>
@@ -113,11 +123,10 @@
                                             id="capacity_<?php echo $room->roomId ?>" 
                                             name="capacity_<?php echo $room->roomId ?>" 
                                             data-roomid="capacity_<?php echo $room->roomId ?>"   >
-
-                                    
+                                 
                                     
                                     <input type="hidden"  
-                                           value="<?php echo $room->prices->price * $room->capacity ?>" 
+                                           value="<?php echo $room->prices->pensionPrice * $room->capacity ?>" 
                                            id="price_<?php echo $room->roomId ?>"  
                                            name="price_<?php echo $room->roomId ?>" 
                                            data-roomid="<?php echo $room->roomId ?>" >
@@ -131,6 +140,9 @@
                             <?php  } } } ?>
                         </tbody>
                         <script type="text/javascript">
+
+                           
+
 
 
                             $( ".qty7" ).bind('keyup mouseup', function() {
@@ -148,7 +160,7 @@
 
                                roomId = $(this).data("roomid") ;
                                
-                               roomPrice =  (parseInt($("#price_"+roomId ).val())) * parseInt($("#quantity_"+roomId ).val()) ; 
+                               roomPrice =  (parseInt($("#price_"+roomId ).val())  ) * parseInt($("#quantity_"+roomId ).val()) ; 
 
                                
                              
@@ -173,6 +185,7 @@
 
                             });
                         </script>
+                        <input type="hidden" name="nights" value="<?php echo $interval->d ; ?> ">
                     </table>
 
               
@@ -284,7 +297,7 @@
                         </script>
                         <br>
                         <div class="alert alert-danger" id="LoginAlert" style="display: none;" >
-                          <strong>Info!</strong> you must <a href="#sign-in-dialog" id="access_link">Sign in</a> before launching a search.
+                          <strong>Info!</strong> you must <button type="button" data-toggle="modal" data-target="#signinForm" >Sign in</button> before launching a search.
                         </div>
                                 
                         

@@ -33,27 +33,23 @@ class Hotel extends BaseController {
 		                $data['hotel'] =  $this->hotel_model->hotel($hotelId);
 		                $data['medias'] = $this->hotel_model->hotelMediaListing($hotelId) ;
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
-		                foreach ($data['rooms'] as $room ) {
-		                		$room->media = $this->hotel_model->roomMediaListing($room->roomId) ;
-		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d")  ) ;
+		                foreach ($data['rooms'] as $room ) 
+		                {		
+		                	$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d"), $this->input->post('pension')   ) ;
 		        		}
-
-
 
 		        		 $searchInfo = array(  
                             'hotelId' => $this->input->post('hotelId'),
-                            
                             'checkin' => $this->input->post('checkin'),
                             'checkout' => $this->input->post('checkout'),
                             'room' => $this->input->post('room'), 
                             'adult' => $this->input->post('adult'), 
                             'children' => $this->input->post('children'), 
                             'pension'	=> $this->input->post('pension'), 
-
+                            
                             'createdBy' => $this->vendorId ,
                             'createdDTM'=> date('Y-m-d H:i:s'), 
-                            
-                                );
+                            );
     
                             $resultat = $this->search_model->addNewSearch($searchInfo) ;
 
