@@ -1,4 +1,6 @@
-<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>assets/img/slide_hero_2.jpg)" style="background-image: url(&quot;<?php echo base_url() ?>assets/img/slide_hero_2.jpg&quot;);">
+
+
+<section  id="hero_2" class="background-image" data-background="url(./assets/img/slide_hero_2.jpg)" style="background-image: url(./assets/img/slide_hero_2.jpg&quot;);">
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)" style="background-color: rgba(0, 0, 0, 0.6);">
     		<div class="intro_title">
     			<h1>Place your order</h1>
@@ -9,7 +11,7 @@
     					<div class="progress">
     						<div class="progress-bar"></div>
     					</div>
-    					<a href="cart_hotel-1.html" class="bs-wizard-dot"></a>
+    					<a  class="bs-wizard-dot"></a>
     				</div>
 
     				<div class="col-4 bs-wizard-step active">
@@ -17,7 +19,7 @@
     					<div class="progress">
     						<div class="progress-bar"></div>
     					</div>
-    					<a href="#" class="bs-wizard-dot"></a>
+    					<a class="bs-wizard-dot"></a>
     				</div>
 
     				<div class="col-4 bs-wizard-step disabled">
@@ -25,7 +27,7 @@
     					<div class="progress">
     						<div class="progress-bar"></div>
     					</div>
-    					<a href="confirmation_hotel-1.html" class="bs-wizard-dot"></a>
+    					<a class="bs-wizard-dot"></a>
     				</div>
 
     			</div>

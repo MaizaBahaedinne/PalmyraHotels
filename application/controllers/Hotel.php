@@ -29,24 +29,24 @@ class Hotel extends BaseController {
         		
         public function search( )
         {				
-        				$hotelId = $this->input->post('hotelId') ;
+        				$hotelId = $this->input->get('hotelId') ;
 		                $data['hotel'] =  $this->hotel_model->hotel($hotelId);
 		                $data['medias'] = $this->hotel_model->hotelMediaListing($hotelId) ;
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
 		                foreach ($data['rooms'] as $room ) 
 		                {		
-		                	$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d"), $this->input->post('pension')   ) ;
+		                	$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d"), $this->input->get('pension')   ) ;
 		        		}
 
 		        		 $searchInfo = array(  
-                            'hotelId' => $this->input->post('hotelId'),
-                            'checkin' => $this->input->post('checkin'),
-                            'checkout' => $this->input->post('checkout'),
-                            'room' => $this->input->post('room'), 
-                            'adult' => $this->input->post('adult'), 
-                            'children' => $this->input->post('children'), 
-                            'pension'	=> $this->input->post('pension'), 
-                            
+                            'hotelId' => $this->input->get('hotelId'),
+                            'checkin' => $this->input->get('checkin'),
+                            'checkout' => $this->input->get('checkout'),
+                            'room' => $this->input->get('room'), 
+                            'adult' => $this->input->get('adult'), 
+                            'children' => $this->input->get('children'), 
+                            'pension'	=> $this->input->get('pension'), 
+
                             'createdBy' => $this->vendorId ,
                             'createdDTM'=> date('Y-m-d H:i:s'), 
                             );

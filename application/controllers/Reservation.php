@@ -47,7 +47,7 @@ class Reservation extends BaseController
     
                             $resultat = $this->reservation_model->addNewReservation($reservationInfo);
 
-                            
+                            $data['hotel'] =  $this->input->post('hotelId') ;
                             
                             
                             $this->global['pageTitle'] = 'Details';
