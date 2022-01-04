@@ -62,43 +62,76 @@
                                                 </p>
                                         </div>
                                         <div class="step">
+                                                <style type="text/css">
+                                                       fieldset
+                                                        {
+                                                          background-color:#fbe8aa75 ;
+                                                         
+                                                          padding:16px; 
+                                                        }
+                                                        legend
+                                                        {
+                                                          margin-bottom:0px;
+                                                          margin-left:16px;
+                                                        }
+
+                                                </style>
+                                                
+                                        <?php foreach ($reservation->details as $detail) {  ?>
+                                                 <legend><small>Room N°<?php echo $detail->detailId ?></small></legend>
+                                        <fieldset style="">
+                                               
+                                                
                                                 <div class="row">
+                                                        <?php for ($i=0; $i <  $detail->adult ; $i++) {  ?>
                                                         <div class="col-sm-6">
                                                                 <div class="form-group">
-                                                                        <label>First name</label>
-                                                                        <input type="text" class="form-control" id="firstname_booking" name="firstname_booking">
+                                                                        <label>Guest <?php echo $i+1 ?>
+                                                                        <input type="checkbox" name="child_" class="child" > <small>children</small>  
+                                                                        </label>
+                                                                        <input type="text" class="form-control" id="guest_" name="firstname_booking">
                                                                 </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Last name</label>
-                                                                        <input type="text" class="form-control" id="lastname_booking" name="lastname_booking">
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="row">
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Email</label>
-                                                                        <input type="email" id="email_booking" name="email_booking" class="form-control">
-                                                                </div>
-                                                        </div>
+                                                        </div> 
+                                                        <?php } ?>
+                                                       
                                                         
                                                 </div>
-                                                <div class="row">
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>code country</label>
-                                                                        <input type="email" id="code" name="code" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Telephone</label>
-                                                                        <input type="text" id="telephone_booking" name="telephone_booking" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                </div>
+
+                                        <table class="table table-striped options_cart">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="3">
+                                                            Add options / Services
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                        <?php foreach ($detail->options as $option) {?>
+                                                               <?php echo $option->option ?>
+                                                                 <tr>
+                                                                <td style="width:10%">
+                                                                     <?php echo $option->icon ?> 
+                                                                </td>
+                                                                <td style="width:60%">
+                                                                    <?php echo $option->option ?> <strong>+<?php echo $option->price ?><sup>DT</sup></strong>
+                                                                </td>
+                                                                <td style="width:35%">
+                                                                    <label class="switch-light switch-ios float-right">
+                                                                        <input type="checkbox" name="option_1" id="option_1"  value="">
+                                                                        <span>
+                                                                        <span>No</span>
+                                                                        <span>Yes</span>
+                                                                        </span>
+                                                                        <a></a>
+                                                                    </label>
+                                                                </td>
+                                                            </tr>
+                                                        <?php  } ?>
+                                                </tbody>
+                                        </table>
+                                                
+                                        </fieldset>
+                                                <?php  } ?>
                                         </div>
                                         <!--End step -->
 
@@ -160,74 +193,18 @@
 
                                                 <hr>
 
-                                                <h4>Or checkout with Paypal</h4>
+                                                <h4>Or Bank Transfer</h4>
                                                 <p>
                                                         Lorem ipsum dolor sit amet, vim id accusata sensibus, id ridens quaeque qui. Ne qui vocent ornatus molestie, reque fierent dissentiunt mel ea.
                                                 </p>
                                                 <p>
-                                                        <img src="<?php echo base_url() ?>assets/img/paypal_bt-1.png" alt="Image">
+                                                       
                                                 </p>
                                         </div>
                                         <!--End step -->
 
-                                        <div class="form_title">
-                                                <h3><strong>3</strong>Billing Address</h3>
-                                                <p>
-                                                        Mussum ipsum cacilds, vidis litro abertis.
-                                                </p>
-                                        </div>
-                                        <div class="step">
-                                                <div class="row">
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Country</label>
-                                                                         <div class="styled-select-common">
-                                        <select name="country" id="country">
-                                            <option value="" selected="">Select your country</option>
-                                            <option value="Europe">Europe</option>
-                                            <option value="United states">United states</option>
-                                            <option value="Asia">Asia</option>
-                                        </select>
-                                    </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="row">
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Street line 1</label>
-                                                                        <input type="text" id="street_1" name="street_1" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Street line 2</label>
-                                                                        <input type="text" id="street_2" name="street_2" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="row">
-                                                        <div class="col-md-6 col-sm-12">
-                                                                <div class="form-group">
-                                                                        <label>City</label>
-                                                                        <input type="text" id="city_booking" name="city_booking" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>State</label>
-                                                                        <input type="text" id="state_booking" name="state_booking" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Postal code</label>
-                                                                        <input type="text" id="postal_code" name="postal_code" class="form-control">
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <!--End row -->
-                                        </div>
+                                    
+                                        
                                         <!--End step -->
 
                                         <div id="policy">
@@ -239,9 +216,9 @@
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                                                <a href="confirmation_hotel-1.html" class="btn_1 green medium">Book now</a>
-                                        </div>
-                                </div>
+                        <a href="confirmation_hotel-1.html" class="btn_1 green medium">Book now</a>
+                </div>
+        </div>
 
                                 <aside class="col-lg-4">
                                         <div class="box_style_1">
@@ -266,6 +243,14 @@
                                                                 </tr>
                                                                 <tr>
                                                                         <td>
+                                                                                Pension
+                                                                        </td>
+                                                                        <td class="text-right">
+                                                                                 <?php echo $reservation->pension ?>
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                        <td>
                                                                                 Rooms
                                                                         </td>
                                                                         <td class="text-right">
@@ -284,17 +269,56 @@
                                                                         <td>
                                                                                 Adults
                                                                         </td>
-                                                                        <td class="text-right">
+                                                                        <td class="text-right" id="nbAdult" >
                                                                                 <?php echo $reservation->adult ?>
                                                                         </td>
+                                                                        
                                                                 </tr>
                                                                 <tr>
                                                                         <td>
                                                                                 Children (2-12 ago)
                                                                         </td>
-                                                                        <td class="text-right">
-                                                                                <?php echo $reservation->children ?>
+                                                                        <td class="text-right" id="nbChild" >
+                                                                              0  
                                                                         </td>
+                                                                         <script type="text/javascript">
+                                                                                      
+                                                                                        var child = 0 ;
+                                                                                        $(".child").each( function(){
+                                                                                                if( $(this).is(":checked")  ){ child += 1 ; 
+                                                                                             }
+                                                                                             $("#nbChild").html(child) ;
+                                                                                        });
+
+                                                                                        var adult = 0 ;
+                                                                                        $(".child").each( function(){
+                                                                                                if( !($(this).is(":checked"))  )
+                                                                                                        { adult += 1 ; 
+                                                                                                                                                                                                     }
+                                                                                             $("#nbAdult").html(adult) ;
+                                                                                        });
+
+                                                                                        $(".child").click( function() {
+                                                                                        var child = 0 ;
+                                                                                        $(".child").each( function(){
+                                                                                                if( $(this).is(":checked")  ){ 
+                                                                                                        child += 1 ; 
+                                                                                                        
+                                                                                             }
+                                                                                             $("#nbChild").html(child) ;
+                                                                                        });
+
+                                                                                        var adult = 0 ;
+                                                                                        $(".child").each( function(){
+                                                                                                if( !($(this).is(":checked"))  )
+                                                                                                        { adult += 1 ; 
+                                                                                                         
+                                                                                             }
+                                                                                              $("#nbAdult").html(adult) ;
+                                                                                        });   
+                                                                                }); 
+
+                                                                                </script>
                                                                 </tr>
                                                                 <tr>
                                                                         <td>
@@ -315,7 +339,7 @@
                                                         </tbody>
                                                 </table>
                                                 <a class="btn_full" href="confirmation_hotel-1.html">Book now</a>
-                                                <a class="btn_full_outline" href="single_hotel-1.html"><i class="icon-right"></i> Modify your search</a>
+                                                
                                         </div>
                                         <div class="box_style_4">
                                                 <i class="icon_set_1_icon-57"></i>

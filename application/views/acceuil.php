@@ -11,6 +11,19 @@
                     <form method="GET" action="<?php echo base_url() ?>Hotel/search">
                     <h3>Search Hotels in PalmyraHotels.tn</h3>
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Preferred Hotel</label>
+                                <div class="styled-select-common">
+                                    <select name="hotelId">
+                                        
+                                        <?php foreach ($hotels as $hotel ) { ?> 
+                                            <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
@@ -23,44 +36,27 @@
                                 <input class="date-pick-out form-control" type="text" name="checkout">
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-3 col-6">
+                        <div class="col-md-2">
                             <div class="form-group">
                                 <label>Adults</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="1" id="adults" class="qty2 form-control" name="adult">
+                                    <input type="text" value="1" min="1" id="adults" class="qty2 form-control" name="adult">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-3 col-6">
+                        <div class="col-md-2">
                             <div class="form-group">
-                                <label>Children</label>
+                                <label>Children (2-12 ago)</label>
                                 <div class="numbers-row">
                                     <input type="text" value="0" id="children" class="qty2 form-control" name="children">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-3 col-12">
+                        <div class="col-md-2">
                             <div class="form-group">
                                 <label>Rooms</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="1" id="children" class="qty2 form-control" name="room">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
-                    <div class="row">
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Preferred Hotel</label>
-                                <div class="styled-select-common">
-                                    <select name="hotelId">
-                                        
-                                        <?php foreach ($hotels as $hotel ) { ?> 
-                                            <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input type="text" value="1" min="1" id="room" class="qty2 form-control" name="room">
                                 </div>
                             </div>
                         </div>
@@ -77,7 +73,10 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
+                    <!-- End row -->
+                   
                     <!-- End row -->
                     <hr>
 

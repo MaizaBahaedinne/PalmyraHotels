@@ -25,6 +25,20 @@ class Reservation_model extends CI_Model
         return $insert_id;
     }
 
+        /**
+     * This function is used to add new user to system
+     * @return number $insert_id : This is last inserted id
+     */
+    function addNewReservationDetaiils($reservationInfo)
+    {
+        $this->db->trans_start();
+        $this->db->insert('tbl_reservation_details', $reservationInfo);
+        $insert_id = $this->db->insert_id();
+        $this->db->trans_complete();
+        
+        return $insert_id;
+    }
+
 
 
 
@@ -54,6 +68,22 @@ class Reservation_model extends CI_Model
 
         $query = $this->db->get();
         return $query->row();
+    }
+
+      /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function reservationDetails($reservationId )
+    {
+        $this->db->from('tbl_reservation_details as BaseTbl');
+        $this->db->join('tbl_hotel_room as Room' , 'BaseTbl.roomId = Room.roomId ','Left');
+        $this->db->where('BaseTbl.reservationId =', $reservationId );        
+        
+
+        $query = $this->db->get();
+        return $query->result();
     }
 
 

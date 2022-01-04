@@ -90,7 +90,7 @@ class Hotel extends BaseController {
 		             $data['price'] = $this->hotel_model->roomPrice($hotelId , $roomId , date("d/m/Y") , date("d/m/Y")   ) ;	
 
 		                
-		             $data['opts'] 	= $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $data['price']->options )  )  ;	
+		             $data['opts'] 	= $this->hotel_model->roomOptionsListing(  $data['price']->options   )  ;	
 
 		             
 

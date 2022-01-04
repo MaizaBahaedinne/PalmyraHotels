@@ -28,10 +28,10 @@ class Reservation extends BaseController
      */
     public function addNewReservation($searchId)
     {
-        $reservationInfo = array(  
+
+
+            $reservationInfo = array(  
                             'searchId' => $searchId,
-
-
                             'hotelId' => $this->input->post('hotelId'),
                             'checkin' => $this->input->post('checkin'),
                             'checkout' => $this->input->post('checkout'),
@@ -42,21 +42,69 @@ class Reservation extends BaseController
                             'nights'    => $this->input->post('nights'), 
                             'createdBy' => $this->vendorId ,
                             'createdDTM'=> date('Y-m-d H:i:s'), 
-                            
-                                );
+                              );
     
-                            $resultat = $this->reservation_model->addNewReservation($reservationInfo);
+            $resultat = $this->reservation_model->addNewReservation($reservationInfo);
+            $data['hotel'] =  $this->input->post('hotelId') ;
+           
+           
+            $rooms = $this->hotel_model->hotelRoomsListing($this->input->post('hotelId') ) ;
+            foreach ($rooms as $room ) 
+            {  
 
-                            $data['reservation'] =  $this->reservation_model->reservation($resultat);
-                            $data['hotel'] =  $this->input->post('hotelId') ;
-                            
-                            
-                            $this->global['pageTitle'] = 'Details';
-                            $this->loadViews("reservation/details", $this->global, $data , NULL);
+            echo "<br> <b>Romm </b>".$room->titre ; 
+
+                $prices = $this->hotel_model->roomMsPrice(
+                        $this->input->post('hotelId') ,  
+                        $this->input->post('checkin'), 
+                        $this->input->get('pension')   ) ;
+                echo "<br> quantité ".$this->input->post("quantity_".$room->roomId) ;
+                if (  $this->input->post("quantity_".$room->roomId) > 0 )
+                {   
+                    
+                    for ($i=0; $i <  $this->input->post('quantity_'.$room->roomId) ; $i++) 
+                    { 
+                       $reservationInfo1 = array(  
+                        'reservationId' => $resultat ,
+                        'roomId' => $room->roomId  ,
+                        'adult' =>  $room->capacity  ,
+                        'createdBy' => $this->vendorId ,
+                        'createdDTM'=> date('Y-m-d H:i:s'), 
+                      );
+                      $r = $this->reservation_model->addNewReservationDetaiils($reservationInfo1); 
+                      echo   "<br>".$r." saved >>>>>>> " ;
+                    }
+                    
+                }
+           
+            
+          
     }
+      redirect('Reservation/CompletReservationDetails/'.$resultat) ;
+}
+
+    public function CompletReservationDetails($reservationId) 
+     {
+            $this->global['pageTitle'] = 'Details';
+
+            
+
+            $data['reservation'] =  $this->reservation_model->reservation($reservationId);
+
+            $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
+
+            foreach ($data['reservation']->details as $detail ) {
 
 
+                $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
+            }
+                    
+           
 
+       $this->loadViews("reservation/details", $this->global, $data , NULL);
+     }
+
+ 
 
     
 

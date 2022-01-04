@@ -54,7 +54,7 @@
         <!-- End position -->
 
         <div class="container margin_60">
-            <form method="post" action="<?php echo base_url() ?>Reservation/addNewReservation/<?php echo $search->searchId ?>">
+            <form method="post"  action="<?php echo base_url() ?>Reservation/addNewReservation/<?php echo $search->searchId ?>">
             <div class="row">
                 <div class="col-lg-8">
                    
@@ -67,7 +67,7 @@
                     <input type="hidden" value="<?php echo $search->pension  ?>" name="pension">
                     
                                                
-                    <table class="table table-striped cart-list add_bottom_30">
+                    <table class="table table-striped cart-list add_bottom_30" >
                         <thead>
                             <tr>
                                 <th>
@@ -138,15 +138,14 @@
                                 
                             </tr>
                             <?php  } } } ?>
+                            <tr id="details_<?php echo $room->roomId ?>" >
+
+
+                            </tr>
+                           
                         </tbody>
                         <script type="text/javascript">
-
-                           
-
-
-
                             $( ".qty7" ).bind('keyup mouseup', function() {
-                                
                                 <?php
 
                                     $date1 = new DateTime( $search->checkin  );
@@ -180,8 +179,14 @@
                                $("#taxe" ).html(calculated_taxe_sum)  ;
                                $("#Cost" ).html((calculated_total_sum * days) + calculated_taxe_sum) ; 
 
+                                if( parseInt($("#Cost").html()) > 0){
 
-                               
+                                    $("#btnsub").show() ;
+                                }
+                                else
+                                {
+                                    $("#btnsub").hide() ;
+                                }
 
                             });
                         </script>
@@ -228,10 +233,10 @@
                 </div>
                 <!-- End col -->
 
-                <aside class="col-lg-4">
-                    <div class="box_style_1">
+                <aside class="col-lg-4" >
+                    <div class="box_style_1" >
                         <h3 class="inner">- Summary -</h3>
-                        <table class="table table_summary">
+                        <table class="table table_summary" >
                             <tbody>
                                
                                 <tr>
@@ -242,7 +247,7 @@
                                          <?php echo $interval->d ; ?>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="display: none;">
                                     <td>
                                         Adults
                                     </td>
@@ -250,7 +255,7 @@
                                         <?php echo $search->adult ?>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="display: none;" >
                                     <td>
                                         Children
                                     </td>
@@ -258,7 +263,7 @@
                                         <?php echo $search->children ?>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr style="display: none;" >
                                     <td>
                                         Taxe
                                     </td>
@@ -266,7 +271,14 @@
                                          <span id="taxe">0</span> <sup>DT</sup>
                                     </td>
                                 </tr>
-                                
+                                 <tr class="">
+                                    <td>
+                                       Pension
+                                    </td>
+                                    <td class="text-right" >
+                                        <span ><?php echo $search->pension ?></span> 
+                                    </td>
+                                </tr>
                                 <tr class="total">
                                     <td>
                                         Total cost
@@ -279,7 +291,9 @@
                         </table>
                        
                         <?php if($uid !=0 ) { ?>
-                             <button class="btn_full " type="submit"  >Check out</button>
+                            <div style="display:none" id="btnsub" >
+                                <button class="btn_full " type="submit"  >Check out</button>
+                            </div>
                             </form>
                         <?php } else { ?>
                             </form>
@@ -292,6 +306,8 @@
                             $("#LoginAlertBtn").click(function() { 
                                 
                                $("#LoginAlert").show() ; 
+
+                               $
                                   
                             });
                         </script>
