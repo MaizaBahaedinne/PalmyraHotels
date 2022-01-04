@@ -1,6 +1,6 @@
 
 
-<section  id="hero_2" class="background-image" data-background="url(./assets/img/slide_hero_2.jpg)" style="background-image: url(./assets/img/slide_hero_2.jpg&quot;);">
+<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>/assets/img/facade/aqua.jpg)" >
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)" style="background-color: rgba(0, 0, 0, 0.6);">
     		<div class="intro_title">
     			<h1>Place your order</h1>
@@ -83,14 +83,15 @@
                                                                         <input type="email" id="email_booking" name="email_booking" class="form-control">
                                                                 </div>
                                                         </div>
-                                                        <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                        <label>Confirm email</label>
-                                                                        <input type="email" id="email_booking_2" name="email_booking_2" class="form-control">
-                                                                </div>
-                                                        </div>
+                                                        
                                                 </div>
                                                 <div class="row">
+                                                        <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                        <label>code country</label>
+                                                                        <input type="email" id="code" name="code" class="form-control">
+                                                                </div>
+                                                        </div>
                                                         <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                         <label>Telephone</label>
@@ -252,7 +253,7 @@
                                                                                 Check in
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                10 April 2015
+                                                                                <?php echo $reservation->checkin ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>
@@ -260,7 +261,7 @@
                                                                                 Check out
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                12 April 2015
+                                                                                 <?php echo $reservation->checkout ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>
@@ -276,7 +277,7 @@
                                                                                 Nights
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                2
+                                                                                 <?php echo $reservation->nights ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>
@@ -284,15 +285,15 @@
                                                                                 Adults
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                2
+                                                                                <?php echo $reservation->adult ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>
                                                                         <td>
-                                                                                Children
+                                                                                Children (2-12 ago)
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                0
+                                                                                <?php echo $reservation->children ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>

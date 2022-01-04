@@ -41,6 +41,21 @@ class Reservation_model extends CI_Model
         return TRUE;
     }
 
+  /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function reservation($reservationId )
+    {
+        $this->db->select('BaseTbl.*  ');
+        $this->db->from('tbl_reservation as BaseTbl');
+        $this->db->where('BaseTbl.reservationId =', $reservationId );        
+
+        $query = $this->db->get();
+        return $query->row();
+    }
+
 
 
       /**
@@ -52,10 +67,7 @@ class Reservation_model extends CI_Model
     {
         $this->db->select('BaseTbl.* , Hotel.* , BaseTbl.description ');
         $this->db->from('tbl_reservation as BaseTbl');
-    
-
-   
-         
+     
         $query = $this->db->get();
         return $query->result();
     }

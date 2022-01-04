@@ -47,11 +47,12 @@ class Reservation extends BaseController
     
                             $resultat = $this->reservation_model->addNewReservation($reservationInfo);
 
+                            $data['reservation'] =  $this->reservation_model->reservation($resultat);
                             $data['hotel'] =  $this->input->post('hotelId') ;
                             
                             
                             $this->global['pageTitle'] = 'Details';
-                            $this->loadViews("reservation/details", $this->global, null , NULL);
+                            $this->loadViews("reservation/details", $this->global, $data , NULL);
     }
 
 
