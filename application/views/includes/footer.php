@@ -341,10 +341,7 @@
                 showSelectedHTML: true
             });
         });
-    </script>   
-
-
-
+    </script>
     
-  </body>
+
 </html>

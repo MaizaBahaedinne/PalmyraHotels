@@ -12822,7 +12822,7 @@ h3#pop_msg strong {
 }
 .owl-carousel .owl-item img {
         display: block;
-        width: 90%;
+        width: 100%;
 }
 .owl-carousel .owl-dots.disabled,
 .owl-carousel .owl-nav.disabled {

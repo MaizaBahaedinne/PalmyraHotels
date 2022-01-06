@@ -145,8 +145,30 @@
       animation: 'fade'
     });
 </script>
+
+
+
 <!-- OTHER JS --> 
 <script src="<?php echo base_url() ?>assets/site_launch/js/functions-1.js"></script>
 <script src="<?php echo base_url() ?>assets/site_launch/assets/validate-1.js"></script>
   </body>
+
+  <script type="text/javascript" src="<?php echo base_url() ?>assets/js/pop_up.min-1.js"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0&appId=661929371607230&autoLogAppEvents=1" nonce="eMo3aoX1"></script>
+    <script type="text/javascript">
+         $(window).on('load',function() {
+                new $.popup({                
+                    title       : 'Follow us on Facebook',
+                    content         : '<div class="fb-page" data-href="https://www.facebook.com/palmyrahotels.tn" data-tabs="events" data-width="" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/palmyrahotels.tn" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/palmyrahotels.tn">Palmyra Hotels</a></blockquote></div>', 
+                    html: true,
+                    autoclose   : true,
+                    closeOverlay:true,
+                    closeEsc: true,
+                    buttons     : false,
+                    timeout     : 10000 
+                });
+            });
+    </script>
+    
 </html>
