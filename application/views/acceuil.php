@@ -15,8 +15,8 @@
                             <div class="form-group">
                                 <label>Preferred Hotel</label>
                                 <div class="styled-select-common">
-                                    <select name="hotelId">
-                                        
+                                    <select name="hotelId" required class="form-control">
+                                        <option value="">Chose your hotel</option>
                                         <?php foreach ($hotels as $hotel ) { ?> 
                                             <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
                                         <?php } ?>
@@ -27,20 +27,20 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="date-pick form-control" type="text" name="checkin">
+                                <input class="date-pick form-control" type="text" name="checkin" required>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check out</label>
-                                <input class="date-pick-out form-control" type="text" name="checkout">
+                                <input class="date-pick-out form-control" type="text" name="checkout" required>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label>Adults</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="1" min="1" id="adults" class="qty2 form-control" name="adult">
+                                    <input type="text" value="1" min="1" id="adults" class="qty2 form-control" name="adult" required>
                                 </div>
                             </div>
                         </div>
@@ -56,19 +56,20 @@
                             <div class="form-group">
                                 <label>Rooms</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="1" min="1" id="room" class="qty2 form-control" name="room">
+                                    <input type="text" value="1" min="1" id="room" class="qty2 form-control" name="room" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pension</label>
-                                <div class="styled-select-common">
+                                <div class="styled-select-common" class="form-control" required >
                                     <select name="pension">
-                                            <option value="PD" >LP</option>
-                                            <option value="DP" >DP</option>
-                                            <option value="PC" >PC</option>
-                                            <option value="ALLS" >All inclusive</option>
+                                            
+                                            <option value="PD" >Continental breakfast included</option>
+                                            <option value="DP" >Breakfast & dinner included</option>
+                                            <option value="PC" >Breakfast, lunch & dinner included</option>
+                                            <option value="ALLS" >All inclusive Soft</option>
                                     </select>
                                 </div>
                             </div>

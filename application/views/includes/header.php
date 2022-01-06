@@ -91,6 +91,25 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>
 
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '661929371607230',
+          xfbml      : true,
+          version    : 'v12.0'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
     <div id="preloader">
         <div class="sk-spinner sk-spinner-wave">
@@ -129,9 +148,10 @@
 
                                 <li id="social_top">
                                 <a target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a>
-                               
+
                                 <a target="_blank" href="https://www.instagram.com/palmyrahotels.tn" ><i class="icon-instagramm"></i></a> 
                             </li>
+                           
                            
                         </ul>
                     </div>
@@ -183,12 +203,12 @@
                            
                         </ul>
                     </div><!-- End main-menu -->
-                    <!--
+                   
                     <ul id="top_tools">
                         <li>
-                            <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a>
+                            <div class="fb-like" data-href="https://www.facebook.com/palmyrahotels.tn" data-width="" data-layout="button" data-action="like" data-size="small" data-share="false"></div>
                         </li>
-                        <li>
+                     <!--   <li>
                             <div class="dropdown dropdown-cart">
                                 <a href="#" data-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong>3</strong></a>
                                 <ul class="dropdown-menu" id="cart_items">

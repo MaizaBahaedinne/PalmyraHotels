@@ -58,7 +58,7 @@
                                         <div class="form_title">
                                                 <h3><strong>1</strong>Your Details</h3>
                                                 <p>
-                                                        Mussum ipsum cacilds, vidis litro abertis.
+                                                        Name of guests 
                                                 </p>
                                         </div>
                                         <div class="step">
@@ -83,13 +83,15 @@
                                                
                                                 
                                                 <div class="row">
-                                                        <?php for ($i=0; $i <  $detail->adult ; $i++) {  ?>
+                                                        <?php for ($i=0 ; $i <  $detail->adult ; $i++) {  ?>
                                                         <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                         <label>Guest <?php echo $i+1 ?>
-                                                                        <input type="checkbox" name="child_" class="child" > <small>children</small>  
+                                                                        
+                                                                        <input type="checkbox" name="child_" class="child" <?php if ($i == 0 ) {  echo 'style="display: none;" '; } ?> > <small>children</small>  
+                                                                        
                                                                         </label>
-                                                                        <input type="text" class="form-control" id="guest_" name="firstname_booking">
+                                                                        <input type="text" class="form-control" id="guest_" name="guest_<?php echo $detail->detailId ?>_<?php echo $i+1 ?>">
                                                                 </div>
                                                         </div> 
                                                         <?php } ?>
@@ -117,7 +119,7 @@
                                                                 </td>
                                                                 <td style="width:35%">
                                                                     <label class="switch-light switch-ios float-right">
-                                                                        <input type="checkbox" name="option_1" id="option_1"  value="">
+                                                                        <input type="checkbox" class="option_" id="option_1" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>">
                                                                         <span>
                                                                         <span>No</span>
                                                                         <span>Yes</span>
@@ -163,7 +165,7 @@
                                                                 <div class="row">
                                                                         <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                        <input type="text" id="expire_month" name="expire_month" class="form-control" placeholder="MM">
+                                                                                        <input type="text" id="expire_month" name="expire_month" class="form-control"  placeholder="MM">
                                                                                 </div>
                                                                         </div>
                                                                         <div class="col-md-6">
@@ -281,51 +283,14 @@
                                                                         <td class="text-right" id="nbChild" >
                                                                               0  
                                                                         </td>
-                                                                         <script type="text/javascript">
-                                                                                      
-                                                                                        var child = 0 ;
-                                                                                        $(".child").each( function(){
-                                                                                                if( $(this).is(":checked")  ){ child += 1 ; 
-                                                                                             }
-                                                                                             $("#nbChild").html(child) ;
-                                                                                        });
 
-                                                                                        var adult = 0 ;
-                                                                                        $(".child").each( function(){
-                                                                                                if( !($(this).is(":checked"))  )
-                                                                                                        { adult += 1 ; 
-                                                                                                                                                                                                     }
-                                                                                             $("#nbAdult").html(adult) ;
-                                                                                        });
-
-                                                                                        $(".child").click( function() {
-                                                                                        var child = 0 ;
-                                                                                        $(".child").each( function(){
-                                                                                                if( $(this).is(":checked")  ){ 
-                                                                                                        child += 1 ; 
-                                                                                                        
-                                                                                             }
-                                                                                             $("#nbChild").html(child) ;
-                                                                                        });
-
-                                                                                        var adult = 0 ;
-                                                                                        $(".child").each( function(){
-                                                                                                if( !($(this).is(":checked"))  )
-                                                                                                        { adult += 1 ; 
-                                                                                                         
-                                                                                             }
-                                                                                              $("#nbAdult").html(adult) ;
-                                                                                        });   
-                                                                                }); 
-
-                                                                                </script>
                                                                 </tr>
                                                                 <tr>
                                                                         <td>
-                                                                                Welcome bottle
+                                                                                Options
                                                                         </td>
-                                                                        <td class="text-right">
-                                                                                $34
+                                                                        <td class="text-right" >
+                                                                               <span id="price_total" > 0</span><sup>DT</sup>
                                                                         </td>
                                                                 </tr>
                                                                 <tr class="total">
@@ -333,7 +298,7 @@
                                                                                 Total cost
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                $154
+                                                                               <span id="cost" > 0</span><sup>DT</sup>
                                                                         </td>
                                                                 </tr>
                                                         </tbody>
@@ -344,7 +309,7 @@
                                         <div class="box_style_4">
                                                 <i class="icon_set_1_icon-57"></i>
                                                 <h4>Need <span>Help?</span></h4>
-                                                <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                                                <a href="tel://00216<?php echo $hotel->phone ?>" class="phone">+216<?php echo $hotel->phone ?></a>
                                                 <small>Monday to Friday 9.00am - 7.30pm</small>
                                         </div>
                                 </aside>
@@ -354,3 +319,56 @@
                 </div>
                 <!--End container -->
         </main>
+
+
+
+        <script type="text/javascript">
+                                                                                      
+                var child = 0 ;
+                $(".child").each( function(){
+                        if( $(this).is(":checked")  ){ child += 1 ; 
+                     }
+                     $("#nbChild").html(child) ;
+                });
+
+                var adult = 0 ;
+                $(".child").each( function(){
+                        if( !($(this).is(":checked"))  )
+                                { adult += 1 ; 
+                                                                                                                             }
+                     $("#nbAdult").html(adult) ;
+                });
+
+                $(".child").click( function() {
+                var child = 0 ;
+                $(".child").each( function(){
+                        if( $(this).is(":checked")  ){ 
+                                child += 1 ; 
+                                
+                     }
+                     $("#nbChild").html(child) ;
+                });
+
+                var adult = 0 ;
+                $(".child").each( function(){
+                        if( !($(this).is(":checked"))  )
+                                { adult += 1 ; 
+                                 
+                     }
+                      $("#nbAdult").html(adult) ;
+                        });   
+                });
+
+
+                $(".option_").click( function() {
+                        var optionsPrice = 0 ;
+                        $(".option_").each( function(){
+                                if( $(this).is(":checked")  ){ 
+                                        optionsPrice += $(this).data("price") ; 
+                             }
+                             $("#price_total").html(optionsPrice) ;
+                        });
+
+                });
+
+        </script>

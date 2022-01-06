@@ -28,8 +28,6 @@ class Reservation extends BaseController
      */
     public function addNewReservation($searchId)
     {
-
-
             $reservationInfo = array(  
                             'searchId' => $searchId,
                             'hotelId' => $this->input->post('hotelId'),
@@ -73,12 +71,8 @@ class Reservation extends BaseController
                       );
                       $r = $this->reservation_model->addNewReservationDetaiils($reservationInfo1); 
                       echo   "<br>".$r." saved >>>>>>> " ;
-                    }
-                    
+                    }   
                 }
-           
-            
-          
     }
       redirect('Reservation/CompletReservationDetails/'.$resultat) ;
 }
@@ -86,22 +80,13 @@ class Reservation extends BaseController
     public function CompletReservationDetails($reservationId) 
      {
             $this->global['pageTitle'] = 'Details';
-
-            
-
             $data['reservation'] =  $this->reservation_model->reservation($reservationId);
-
             $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
-
+            $data['hotel'] =  $this->hotel_model->hotel($data['reservation']->hotelId); 
             foreach ($data['reservation']->details as $detail ) {
-
-
                 $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
             }
-                    
-           
-
-       $this->loadViews("reservation/details", $this->global, $data , NULL);
+      $this->loadViews("reservation/details", $this->global, $data , NULL);
      }
 
  

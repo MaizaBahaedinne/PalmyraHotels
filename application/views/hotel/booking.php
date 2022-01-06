@@ -116,7 +116,7 @@
                                 <td id="pricess" >
                                     <span  id="priceA_<?php echo $room->roomId ?>" 
                                            class="priceRomms" 
-                                           data-roomid="<?php echo $room->roomId ?>" >0</span><strong> DT</strong><small>/Per night</small>
+                                           data-roomid="<?php echo $room->roomId ?>" ><?php echo $room->prices->pensionPrice * $room->capacity ?></span><strong> DT</strong><small>/Per night</small>
 
                                     <input type="hidden" 
                                             value="<?php echo $room->capacity ?>" 
@@ -159,7 +159,7 @@
 
                                roomId = $(this).data("roomid") ;
                                
-                               roomPrice =  (parseInt($("#price_"+roomId ).val())  ) * parseInt($("#quantity_"+roomId ).val()) ; 
+                               roomPrice =  (parseInt($("#price_"+roomId ).val())  ) ; 
 
                                
                              
@@ -170,7 +170,7 @@
                                
                                $(".priceRomms").each(function () {
                                     calculated_total_sum += parseInt( $(this).html());
-                                    calculated_taxe_sum +=parseInt($("#capacity_"+$(this).data('roomid') ).val()) * parseInt($("#quantity_"+$(this).data('roomid') ).val()) ;
+                                    calculated_taxe_sum += $(this).data('roomid')  ;
                                 
                                       }                  
                                     );
@@ -323,7 +323,7 @@
                     <div class="box_style_4">
                         <i class="icon_set_1_icon-57"></i>
                         <h4>Need <span>Help?</span></h4>
-                        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
+                        <a href="tel://00<?php echo $hotel->phone ?>" class="phone">+216<?php echo $hotel->phone ?></a>
                         <small>Monday to Friday 9.00am - 7.30pm</small>
                     </div>
                 </aside>

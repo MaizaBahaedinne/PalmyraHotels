@@ -79,7 +79,8 @@ class Reservation_model extends CI_Model
     {
         $this->db->from('tbl_reservation_details as BaseTbl');
         $this->db->join('tbl_hotel_room as Room' , 'BaseTbl.roomId = Room.roomId ','Left');
-        $this->db->where('BaseTbl.reservationId =', $reservationId );        
+        $this->db->where('BaseTbl.reservationId =', $reservationId ); 
+        $this->db->group_by('BaseTbl.detailId ' );        
         
 
         $query = $this->db->get();
