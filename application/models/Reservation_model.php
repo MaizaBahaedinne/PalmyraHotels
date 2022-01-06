@@ -94,10 +94,13 @@ class Reservation_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
-    function reservationListing($limit = '' )
+    function reservationListing($userId = '' )
     {
-        $this->db->select('BaseTbl.* , Hotel.* , BaseTbl.description ');
+        $this->db->select('BaseTbl.* ');
         $this->db->from('tbl_reservation as BaseTbl');
+        if($userId != ''){ 
+            $this->db->where('BaseTbl.createdBy =', $userId );
+        }
      
         $query = $this->db->get();
         return $query->result();

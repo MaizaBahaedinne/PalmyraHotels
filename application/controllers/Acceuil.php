@@ -19,6 +19,7 @@ class Acceuil extends BaseController
         parent::__construct();
         $this->load->model('hotel_model');
          $this->load->model('events_model');
+         $this->load->model('reservation_model');
         $this->isLoggedIn();   
     }
     
@@ -40,6 +41,8 @@ class Acceuil extends BaseController
                 $hotel->prices = $this->hotel_model->roomMsPrice($hotel->hotelId,  date("Y-m-d")   ) ;
                 
             }
+
+          
 
         $this->global['pageTitle'] = 'Home';
         if($this->input->get("a") == "1"){

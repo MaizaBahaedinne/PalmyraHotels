@@ -205,32 +205,21 @@
                    
                     <ul id="top_tools">
                         <li>
-                            <div class="fb-like" data-href="https://www.facebook.com/palmyrahotels.tn" data-width="" data-layout="button" data-action="like" data-size="small" data-share="false"></div>
+                          
                         </li>
-                     <!--   <li>
+                        <li>
                             <div class="dropdown dropdown-cart">
-                                <a href="#" data-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong>3</strong></a>
+                                <a href="#" data-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong><?php echo  count($MyReservations)?></strong></a>
                                 <ul class="dropdown-menu" id="cart_items">
+                                    
+                                    <?php foreach ($MyReservations as $reservation ) {?>
                                     <li>
-                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="image"></div>
+                                        <div class="image"></div>
                                         <strong><a href="#">Louvre museum</a>1x $36.00 </strong>
                                         <a href="#" class="action"><i class="icon-trash"></i></a>
                                     </li>
-                                    <li>
-                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_2-1.jpg" alt="image"></div>
-                                        <strong><a href="#">Versailles tour</a>2x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
-                                    </li>
-                                    <li>
-                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_3-1.jpg" alt="image"></div>
-                                        <strong><a href="#">Versailles tour</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
-                                    </li>
-                                    <li>
-                                        <div>Total: <span>$120.00</span></div>
-                                        <a href="cart-1.html" class="button_drop">Go to cart</a>
-                                        <a href="payment-1.html" class="button_drop outline">Check out</a>
-                                    </li>
+                                    <?php  } ?>
+                                
                                 </ul>
                             </div><!-- End dropdown-cart-->
                         </li>
