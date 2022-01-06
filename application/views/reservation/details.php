@@ -91,14 +91,25 @@
                                                                         <input type="checkbox" name="child_" class="child" <?php if ($i == 0 ) {  echo 'style="display: none;" '; } ?> > <small>children</small>  
                                                                         
                                                                         </label>
-                                                                        <input type="text" class="form-control" id="guest_" name="guest_<?php echo $detail->detailId ?>_<?php echo $i+1 ?>">
+                                                                        <input 
+                                                                        type="text" 
+                                                                        class="form-control" 
+                                                                        id="guest_" 
+                                                                        name="guest_<?php echo $detail->detailId ?>_<?php echo $i+1 ?>"
+                                                                        >
                                                                 </div>
                                                         </div> 
+
                                                         <?php } ?>
-                                                       
+                                                       <input 
+                                                        type="hidden" 
+                                                        class="roomP" 
+                                                        id="roomPrice_<?php echo $detail->detailId ?>" 
+                                                        value="<?php echo ($detail->prices->price * $detail->adult) ?>" 
+                                                        >
                                                         
                                                 </div>
-
+                                                
                                         <table class="table table-striped options_cart">
                                                 <thead>
                                                     <tr>
@@ -119,7 +130,7 @@
                                                                 </td>
                                                                 <td style="width:35%">
                                                                     <label class="switch-light switch-ios float-right">
-                                                                        <input type="checkbox" class="option_" id="option_1" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>">
+                                                                        <input type="checkbox" class="option_" id="option_1" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>" data-detail="<?php echo $detail->detailId ?>">
                                                                         <span>
                                                                         <span>No</span>
                                                                         <span>Yes</span>
@@ -218,7 +229,7 @@
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                        <a href="confirmation_hotel-1.html" class="btn_1 green medium">Book now</a>
+                      
                 </div>
         </div>
 
@@ -290,7 +301,7 @@
                                                                                 Options
                                                                         </td>
                                                                         <td class="text-right" >
-                                                                               <span id="price_total" > 0</span><sup>DT</sup>
+                                                                               <span id="priceOptions_total" > 0</span><sup>DT</sup>
                                                                         </td>
                                                                 </tr>
                                                                 <tr class="total">
@@ -303,7 +314,7 @@
                                                                 </tr>
                                                         </tbody>
                                                 </table>
-                                                <a class="btn_full" href="confirmation_hotel-1.html">Book now</a>
+                                                <button type="submit" class="btn_full" >Book now</a>
                                                 
                                         </div>
                                         <div class="box_style_4">
@@ -323,6 +334,14 @@
 
 
         <script type="text/javascript">
+
+                var roomsPrice = 0 ;
+                        $(".roomP").each( function(){
+                                
+                                        roomsPrice += parseInt($(this).val()) ; 
+                                         $("#cost").html( parseInt(roomsPrice)  )  ;
+                        });
+                        
                                                                                       
                 var child = 0 ;
                 $(".child").each( function(){
@@ -338,6 +357,8 @@
                                                                                                                              }
                      $("#nbAdult").html(adult) ;
                 });
+
+                /*Prices*/
 
                 $(".child").click( function() {
                 var child = 0 ;
@@ -361,12 +382,21 @@
 
 
                 $(".option_").click( function() {
+
+                        var roomsPrice = 0 ;
+                        $(".roomP").each( function(){
+                                
+                                        roomsPrice += parseInt($(this).val()) ; 
+                        });
+                         
+
                         var optionsPrice = 0 ;
                         $(".option_").each( function(){
                                 if( $(this).is(":checked")  ){ 
-                                        optionsPrice += $(this).data("price") ; 
+                                        optionsPrice += parseInt($(this).val()) ; 
                              }
-                             $("#price_total").html(optionsPrice) ;
+                             $("#priceOptions_total").html(optionsPrice) ;
+                             $("#cost").html( ( parseInt(roomsPrice) + parseInt(optionsPrice) ) *<?php echo $reservation->nights ?> )  ;
                         });
 
                 });

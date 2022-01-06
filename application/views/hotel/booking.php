@@ -97,6 +97,7 @@
                                        <!-- <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">-->
                                     </div>
                                     <span class="item_cart"><?php echo $room->titre ?> <?php for ($i=0; $i<$room->capacity  ; $i++) { echo '<i class="icon-guest"></i>' ; } ?></span>
+                                        
                                 </td>
                                 <td>
                                     <div class="">
@@ -116,7 +117,9 @@
                                 <td id="pricess" >
                                     <span  id="priceA_<?php echo $room->roomId ?>" 
                                            class="priceRomms" 
-                                           data-roomid="<?php echo $room->roomId ?>" ><?php echo $room->prices->pensionPrice * $room->capacity ?></span><strong> DT</strong><small>/Per night</small>
+                                           data-roomid="<?php echo $room->roomId ?>" >
+                                           <?php if($room->capacity > 1) { echo $room->prices->pensionPrice * $room->capacity ; } else { echo $room->prices->pensionPrice + $room->prices->supS ; }  ?></span><strong> DT</strong><small>/Per night</small>
+                                           
 
                                     <input type="hidden" 
                                             value="<?php echo $room->capacity ?>" 
@@ -236,9 +239,25 @@
                 <aside class="col-lg-4" >
                     <div class="box_style_1" >
                         <h3 class="inner">- Summary -</h3>
+                        <b style="text-align: center;">Hotel Palmyra <?php echo $hotel->name ?></b>
                         <table class="table table_summary" >
                             <tbody>
-                               
+                                                           <tr >
+                                    <td>
+                                        check in
+                                    </td>
+                                    <td class="text-right">
+                                        <?php echo $search->checkin ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        check out
+                                    </td>
+                                    <td class="text-right">
+                                        <?php echo $search->checkout ?>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         Nights
@@ -279,11 +298,19 @@
                                         <span ><?php echo $search->pension ?></span> 
                                     </td>
                                 </tr>
-                                <tr class="total">
+                                <tr class="">
+                                    <td>
+                                       PAX/night
+                                    </td>
+                                    <td class="text-right" >
+                                        <span ><?php echo $room->prices->pensionPrice ?><sup>DT</sup></span> 
+                                    </td>
+                                </tr>
+                                <tr class="total"  style="display: none;" >
                                     <td>
                                         Total cost
                                     </td>
-                                    <td class="text-right" >
+                                    <td class="text-right"  >
                                         <span id="Cost">0</span> <sup>DT</sup>
                                     </td>
                                 </tr>

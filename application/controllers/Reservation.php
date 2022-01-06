@@ -82,6 +82,12 @@ class Reservation extends BaseController
             $this->global['pageTitle'] = 'Details';
             $data['reservation'] =  $this->reservation_model->reservation($reservationId);
             $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
+            foreach ($data['reservation']->details as $room ) 
+                {       
+                    $room->prices = $this->hotel_model->roomMsPrice($data['reservation']->hotelId ,  $data['reservation']->checkin ,  $data['reservation']->pension   ) ;
+                    $room->room = $this->hotel_model->Room( $room->roomId ) ;
+                }
+
             $data['hotel'] =  $this->hotel_model->hotel($data['reservation']->hotelId); 
             foreach ($data['reservation']->details as $detail ) {
                 $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;

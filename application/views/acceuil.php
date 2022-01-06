@@ -266,3 +266,49 @@
         <!-- End container -->
     </main>
     <!-- End main -->
+
+
+<main>
+    <div class="container margin_60">
+    
+        <div class="main_title">
+            <h2>Our client</h2>
+            <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+        </div>
+        
+        <div class="row">
+            <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
+                                <div class="item">
+                                    <a href="img/carousel/1-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="img/carousel/2-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="img/carousel/3-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/rotaract.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="img/carousel/4-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
+                                    </a>
+                                </div>
+                                 <div class="item">
+                                    <a href="img/carousel/4-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="img/carousel/1-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image">
+                                    </a>
+                                </div>
+                            </div>
+            
+        </div><!-- End row -->
+        <!--
+        <p class="text-center nopadding">
+            <a href="#" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
+        </p>
+        -->
+    </div><!-- End container -->
+</main>
