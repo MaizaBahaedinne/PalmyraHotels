@@ -165,8 +165,18 @@
                             </ul>
                             <h4><?php echo $event->titre ?></h4>
                             <div style="">
-                                <p ><?php echo $event->description ?></p>
+                                <p style="width: auto;
+                                          height: 100px;
+                                          white-space: nowrap;
+                                          overflow: hidden;
+                                          text-overflow: ellipsis;
+                                          
+                                          
+                                         
+                                          resize: vertical;" ><?php echo $event->description ?> </p>
+
                             </div>
+                            
                         </a>
                     </div>
                 <?php }  ?>
@@ -268,12 +278,12 @@
     <!-- End main -->
 
 
-<main>
-    <div class="container margin_60">
+<main class="white_bg">
+    <div class="container margin_60 ">
     
         <div class="main_title">
-            <h2>Our client</h2>
-            <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+            <h2>Our <span>loyal</span> client</h2>
+            <p></p>
         </div>
         
         <div class="row">
@@ -294,14 +304,7 @@
                                     <a href="img/carousel/4-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
                                     </a>
                                 </div>
-                                 <div class="item">
-                                    <a href="img/carousel/4-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="img/carousel/1-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image">
-                                    </a>
-                                </div>
+      
                             </div>
             
         </div><!-- End row -->

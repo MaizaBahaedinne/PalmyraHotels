@@ -56,7 +56,7 @@ h3 span,
 h4 span,
 h5 span,
 h6 span {
-    color: #e04f67;
+    color: #fae144;
 }
 .box_style_1 h3.inner {
     margin: -30px -30px 20px -30px;
@@ -104,7 +104,7 @@ a.button_intro {
     font-family: inherit;
     font-size: inherit;
     color: #fff !important;
-    background: #e04f67;
+    background: #fae144;
     cursor: pointer;
     padding: 8px 25px;
     display: inline-block;
@@ -124,7 +124,7 @@ a.button_intro {
 .button_intro:hover,
 a.button_intro:hover {
     background: #fff;
-    color: #e04f67 !important;
+    color: #fae144 !important;
 }
 .button_intro.outline,
 a.button_intro.outilne {
@@ -136,14 +136,14 @@ a.button_intro.outilne {
 .button_intro:hover,
 a.button_intro:hover {
     background: #fff;
-    color: #e04f67;
+    color: #fae144;
 }
 .button_drop,
 a.button_drop {
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: #e04f67 !important;
+    color: #fae144 !important;
     background: #ededed;
     cursor: pointer;
     padding: 5px 15px !important;
@@ -165,7 +165,7 @@ a.button_drop {
 .button_drop.outline,
 a.button_drop.outilne {
     border: 2px solid #ededed;
-    color: #e04f67;
+    color: #fae144;
     background: 0 0;
     padding: 3px 23px !important;
 }
@@ -207,7 +207,7 @@ a.btn_1.green {
 .btn_1.white,
 a.btn_1.white {
     background: #fff;
-    color: #e04f67;
+    color: #fae144;
 }
 .btn_1.white a:hover,
 a.btn_1.white:hover {
@@ -226,8 +226,8 @@ input .btn_1.outiline {
 a.btn_1.outline:hover,
 input .btn_1.outiline:hover {
     color: #fff;
-    background: #e04f67;
-    border: 2px solid #e04f67;
+    background: #fae144;
+    border: 2px solid #fae144;
 }
 .btn_1.medium,
 a.btn_1.medium {
@@ -251,7 +251,7 @@ a.btn_map {
     font-family: inherit;
     font-size: inherit;
     color: #fff;
-    background: #e04f67;
+    background: #fae144;
     cursor: pointer;
     padding: 12px 20px;
     display: inline-block;
@@ -465,7 +465,7 @@ ul#top_tools a {
     color: #fff;
 }
 ul#top_tools a:hover {
-    color: #e04f67;
+    color: #fae144;
 }
 .sticky ul#top_tools a {
     color: #333;
@@ -577,9 +577,9 @@ header#plain ul#top_links :hover a {
     margin-top: 60px;
 }
 header#colored.sticky {
-    background-color: #e04f67;
+    background-color: #fae144;
     padding-bottom: 0;
-    border-bottom: 2px solid #e04f67;
+    border-bottom: 2px solid #fae144;
 }
 header#colored.sticky ul#top_tools a {
     color: #fff;
@@ -598,7 +598,7 @@ header#colored.sticky ul#top_tools a {
     font-weight: 400;
     text-shadow: none;
     text-transform: none !important;
-    border-top: 2px solid #e04f67;
+    border-top: 2px solid #fae144;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
@@ -611,7 +611,7 @@ header#colored.sticky ul#top_tools a {
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-bottom-color: #e04f67;
+    border-bottom-color: #fae144;
     border-width: 7px;
     margin-left: -7px;
 }
@@ -626,7 +626,7 @@ a.cart_bt strong {
     width: 15px;
     height: 15px;
     display: block;
-    background-color: #e04f67;
+    background-color: #fae144;
     color: #fff;
     text-align: center;
     position: absolute;
@@ -681,7 +681,7 @@ ul#cart_items li strong > a {
     display: block;
 }
 ul#cart_items li strong > a:hover {
-    color: #e04f67;
+    color: #fae144;
 }
 ul#cart_items li a.action {
     color: #999;
@@ -854,13 +854,13 @@ a#email_footer:before {
     color: #333;
 }
 .sticky .main-menu > ul > li:hover > a {
-    color: #e04f67;
+    color: #fae144;
 }
 header#plain .main-menu > ul > li > a {
     color: #333;
 }
 header#plain .main-menu > ul > li:hover > a {
-    color: #e04f67;
+    color: #fae144;
 }
 header#colored.sticky .main-menu > ul > li > a {
     color: #fff;
@@ -924,7 +924,7 @@ a.dropdown-toggle.icon-search {
     .main-menu ul li .menu-wrapper,
     .main-menu ul ul {
         position: absolute;
-        border-top: 2px solid #e04f67;
+        border-top: 2px solid #fae144;
         z-index: 1;
         visibility: hidden;
         left: 3px;
@@ -987,7 +987,7 @@ a.dropdown-toggle.icon-search {
         font-weight: 500;
     }
     .main-menu ul ul li:hover > a {
-        color: #e04f67;
+        color: #fae144;
         padding-left: 15px;
     }
     .main-menu ul li.megamenu {
@@ -1041,7 +1041,7 @@ a.dropdown-toggle.icon-search {
         width: 0;
         position: absolute;
         pointer-events: none;
-        border-bottom-color: #e04f67;
+        border-bottom-color: #fae144;
         border-width: 7px;
         margin-left: -7px;
     }
@@ -1050,7 +1050,7 @@ a.dropdown-toggle.icon-search {
         margin-left: 0;
     }
     .main-menu ul ul li.third-level > a:hover {
-        color: #e04f67;
+        color: #fae144;
         padding-left: 18px;
         opacity: 1;
     }
@@ -1075,7 +1075,7 @@ a.dropdown-toggle.icon-search {
     a.show-submenu-mega:hover,
     a.show-submenu:focus,
     a.show-submenu:hover {
-        color: #e04f67 !important;
+        color: #fae144 !important;
         background-color: #f9f9f9;
     }
     .main-menu ul li {
@@ -1106,7 +1106,7 @@ a.dropdown-toggle.icon-search {
         position: relative;
     }
     .main-menu a:hover {
-        color: #e04f67 !important;
+        color: #fae144 !important;
     }
     .main-menu ul > li {
         padding-bottom: 0;
@@ -1322,7 +1322,7 @@ a.dropdown-toggle.icon-search {
 }
 .other_tours ul li a:hover {
     background-color: #f9f9f9;
-    color: #e04f67;
+    color: #fae144;
 }
 .other_tours ul li a i {
     font-size: 22px;
@@ -1847,7 +1847,7 @@ a#filters_col_bt .icon_set_1_icon-65 {
     display: inline-block;
 }
 #Img_carousel .sp-selected-thumbnail {
-    border-bottom: 2px solid #e04f67;
+    border-bottom: 2px solid #fae144;
 }
 .parallax-content-2 {
     position: absolute;
@@ -1951,7 +1951,7 @@ a#filters_col_bt .icon_set_1_icon-65 {
     width: 50%;
 }
 .table.table_summary tr.total {
-    color: #e04f67;
+    color: #fae144;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2103,7 +2103,7 @@ a#filters_col_bt .icon_set_1_icon-65 {
     content: " ";
     width: 14px;
     height: 14px;
-    background: #e04f67;
+    background: #fae144;
     border-radius: 50px;
     position: absolute;
     top: 8px;
@@ -2155,7 +2155,7 @@ a#filters_col_bt .icon_set_1_icon-65 {
     margin-bottom: 10px;
 }
 .form_title h3 strong {
-    background-color: #e04f67;
+    background-color: #fae144;
     text-align: center;
     width: 40px;
     height: 40px;
@@ -2350,7 +2350,7 @@ input.qty2:focus {
     position: relative;
     padding: 11% 100px 10% 100px;
     height: 400px;
-    background-color: #e04f67;
+    background-color: #fae144;
     color: #fff;
     font-size: 14px;
 }
@@ -2405,7 +2405,7 @@ input.qty2:focus {
     height: 450px;
 }
 #directions {
-    background-color: #e04f67;
+    background-color: #fae144;
     padding: 22px 0;
 }
 ul#contact-info {
@@ -2508,7 +2508,7 @@ a.bt_filters {
     display: inline-block;
 }
 a.bt_filters:hover {
-    color: #e04f67;
+    color: #fae144;
 }
 .transfer_container {
     background-color: #fff;
@@ -2748,7 +2748,7 @@ ul.list_icons li i {
     font-family: fontello;
     font-size: 14px;
     content: "\ecea";
-    color: #e04f67;
+    color: #fae144;
     position: absolute;
     left: 15px;
     top: 7px;
@@ -2995,7 +2995,7 @@ ul.list_ok li:before {
     font-family: icon_set_1;
     font-size: 14px;
     content: "\6c";
-    color: #e04f67;
+    color: #fae144;
     position: absolute;
     left: 0;
     top: 0;
@@ -3013,7 +3013,7 @@ ul.list_order li {
     margin-bottom: 10px;
 }
 ul.list_order li span {
-    background-color: #e04f67;
+    background-color: #fae144;
     color: #fff;
     position: absolute;
     left: 0;
@@ -3511,7 +3511,7 @@ ul.list_order li span {
     transition: transform 0.3s;
 }
 .tooltip-back {
-    background: #e04f67;
+    background: #fae144;
     font-size: 12px;
     font-weight: 500;
     line-height: 14px;
@@ -3633,7 +3633,7 @@ ul.list_order li span {
     font-size: 32px;
     margin: 0;
     padding: 0;
-    color: #e04f67;
+    color: #fae144;
     font-family: "Gochi Hand", cursive;
 }
 .banner h4 span {
@@ -3645,7 +3645,7 @@ ul.list_order li span {
     padding: 0;
 }
 .banner.colored {
-    background: #e04f67 url(../img/banner_bg_colored-1.png) no-repeat center bottom;
+    background: #fae144 url(../img/banner_bg_colored-1.png) no-repeat center bottom;
     color: #fff;
 }
 .banner.colored h4 {
@@ -3756,7 +3756,7 @@ ul.list_order li span {
     border-top: 1px solid #ddd;
 }
 .card-header a .indicator {
-    color: #e04f67;
+    color: #fae144;
 }
 .card-header a:hover .indicator {
     color: #333;
@@ -3823,7 +3823,7 @@ blockquote.styled {
     cursor: pointer;
 }
 .container_check input:checked ~ .checkmark {
-    background-color: #e04f67;
+    background-color: #fae144;
     border: 1px solid transparent;
 }
 .container_check .checkmark {
@@ -3903,7 +3903,7 @@ blockquote.styled {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #e04f67;
+    background: #fae144;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -4466,7 +4466,7 @@ ul.plan-features {
 #map_filter ul li a.active,
 #map_filter ul li a:hover {
     background-color: #fff;
-    color: #e04f67;
+    color: #fae144;
 }
 #map_filter ul li a i {
     display: block;
@@ -4712,7 +4712,7 @@ footer .gallery-image img {
     font-weight: 400;
     text-shadow: none;
     text-transform: none !important;
-    border-top: 2px solid #e04f67;
+    border-top: 2px solid #fae144;
     -webkit-border-bottom-right-radius: 5px;
     -webkit-border-bottom-left-radius: 5px;
     -moz-border-radius-bottomright: 5px;
@@ -4731,7 +4731,7 @@ footer .gallery-image img {
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-bottom-color: #e04f67;
+    border-bottom-color: #fae144;
     border-width: 7px;
     margin-left: -7px;
 }
@@ -4755,7 +4755,7 @@ footer .gallery-image img {
     font-weight: 500;
 }
 .dropdown-mini .dropdown-menu ul#lang_menu li a:hover {
-    color: #e04f67 !important;
+    color: #fae144 !important;
     padding-left: 15px;
 }
 a#currency_link,
@@ -4858,7 +4858,7 @@ a.btn_infobox_phone:before {
 a.btn_infobox_phone {
     border: none;
     display: inline-block;
-    color: #e04f67;
+    color: #fae144;
     background: 0 0;
     cursor: pointer;
     margin: 0 5px;
@@ -5077,7 +5077,7 @@ main {
     outline: 0;
 }
 .search-overlay-menu form button:hover {
-    color: #e04f67;
+    color: #fae144;
 }
 .search-overlay-menu .search-overlay-close {
     position: absolute;
@@ -5088,7 +5088,7 @@ main {
     color: #c6c6c6;
 }
 .search-overlay-menu .search-overlay-close:hover {
-    color: #e04f67;
+    color: #fae144;
     cursor: pointer;
 }
 body.has-fullscreen-modal {
@@ -5250,7 +5250,7 @@ header.sticky nav.full-horizontal {
     font-weight: 600;
 }
 .list_tours_tabs ul li a:hover {
-    color: #e04f67;
+    color: #fae144;
 }
 .list_tours_tabs ul li a small {
     color: #777;
@@ -5285,7 +5285,7 @@ header.sticky nav.full-horizontal {
     padding: 0;
 }
 .list_tours_tabs ul li:hover h3 {
-    color: #e04f67;
+    color: #fae144;
 }
 .list_tours_tabs ul li:hover {
     background-color: #f8f8f8;
@@ -5666,7 +5666,7 @@ a.social_bt.linkedin:before {
     cursor: pointer;
 }
 .default {
-    background: #e04f67;
+    background: #fae144;
 }
 .aqua {
     background: #1cbbb4;

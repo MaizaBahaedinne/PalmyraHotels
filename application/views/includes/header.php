@@ -137,11 +137,14 @@
                             <?php if ($uid == 0 ) { ?>
                                 <li><a href="#" data-toggle="modal" data-target="#signinForm" >Sign in</a></li>
                             <?php } else {?>
-                                <li><?php echo $name ?>  
-                                    <a style="color: red;" href="<?php echo base_url() ?>logout" >
+                                <li >
+                                    <span class="" ><?php echo $name ?></span>  
+
+                                    <a style="color: #fae144;" href="<?php echo base_url() ?>logout" class=" ">
                                         Sign out
                                     </a>
                                 </li>
+                                
                             <?php } ?>
                                 <li><a href="wishlist-1.html" id="wishlist_link">Wishlist</a></li>
 
@@ -150,6 +153,7 @@
 
                                 <a target="_blank" href="https://www.instagram.com/palmyrahotels.tn" ><i class="icon-instagramm"></i></a> 
                             </li>
+
                            
                            
                         </ul>
@@ -173,14 +177,16 @@
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                           <!-- <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" height="34" alt="Palmyra Hotels"> 
-                           <h2>Palmyra <small>Hotels</small></h2> -->
-                           <h1><a href="<?php echo base_url() ?>" title="PalmyraHotels.tn"><h2>Palmyra <small>Hotels</small></h2></a></h1>
+                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" height="34" alt="Palmyra Hotels"> 
+                             
+                                
+                          
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                          <ul>
                             <li><a href="<?php echo base_url() ?>" class="show-submenu">Home</a></li>                            
                             <li><a href="<?php echo base_url() ?>About">About</a></li>
+                            
                              <li class="submenu">
                                 <a href="javascript:void(0);" class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a>
                                 <ul>
@@ -197,6 +203,19 @@
                             <li><a href="<?php echo base_url() ?>Events">Events</a></li>
                             
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
+
+                            <?php if ($uid == 0 ) { ?>
+                               
+                                <?php } else {?>
+                          
+                                <li class=""> 
+                                    <a href="#" data-toggle="dropdown" class="cart_bt">My Bookings<sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>
+                                <li> 
+                            <?php } ?>
+                            
+
+                        
+                       
                             
                              
                            
@@ -204,23 +223,13 @@
                     </div><!-- End main-menu -->
                    
                     <ul id="top_tools">
+                       
                         <li>
-                          
-                        </li>
-                        <li>
-                            <div class="dropdown dropdown-cart">
-                                <a href="#" data-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong><?php echo  count($MyReservations)?></strong></a>
-                                <ul class="dropdown-menu" id="cart_items">
-                                    
-                                    <?php foreach ($MyReservations as $reservation ) {?>
-                                    <li>
-                                        <div class="image"></div>
-                                        <strong><a href="#">Louvre museum</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
-                                    </li>
-                                    <?php  } ?>
+                            <div class="dropdown dropdown-cart ">
                                 
-                                </ul>
+                                
+
+                               
                             </div><!-- End dropdown-cart-->
                         </li>
                     </ul>
