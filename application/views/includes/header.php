@@ -201,6 +201,8 @@
                                 </ul>
                             </li>
                             <li><a href="<?php echo base_url() ?>Events">Events</a></li>
+
+                            <li><a href="<?php echo base_url() ?>Blog">Blog</a></li>
                             
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
 
