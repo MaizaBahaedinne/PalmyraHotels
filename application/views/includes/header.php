@@ -209,7 +209,7 @@
                                 <?php } else {?>
                           
                                 <li class=""> 
-                                    <a href="#" data-toggle="dropdown" class="cart_bt">My Bookings<sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>
+                                    <a href="<?php echo base_url() ?>Reservation/mybookings">My Bookings<sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>
                                 <li> 
                             <?php } ?>
                             

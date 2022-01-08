@@ -95,7 +95,14 @@ class Reservation extends BaseController
       $this->loadViews("reservation/details", $this->global, $data , NULL);
      }
 
- 
+     public function mybookings() 
+     {
+            $this->global['pageTitle'] = 'My Bookings';
+
+            $data['reservation'] =   $this->reservation_model->reservationListing($this->vendorId );
+            
+            $this->loadViews("reservation/mybookings", $this->global, $data , NULL);
+     }
 
     
 
