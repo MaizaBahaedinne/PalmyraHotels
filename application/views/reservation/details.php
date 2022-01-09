@@ -37,7 +37,7 @@
         </div>
         <!-- End opacity-mask-->
 	</section>
-
+<form>
 <main style="margin-bottom: 392.094px;">
                 <div id="position">
                         <div class="container">
@@ -96,6 +96,7 @@
                                                                         class="form-control" 
                                                                         id="guest_" 
                                                                         name="guest_<?php echo $detail->detailId ?>_<?php echo $i+1 ?>"
+                                                                        required
                                                                         >
                                                                 </div>
                                                         </div> 
@@ -130,7 +131,7 @@
                                                                 </td>
                                                                 <td style="width:35%">
                                                                     <label class="switch-light switch-ios float-right">
-                                                                        <input type="checkbox" class="option_" id="option_1" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>" data-detail="<?php echo $detail->detailId ?>">
+                                                                        <input type="checkbox" class="option_" id="option_<?php echo $detail->detailId ?>" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>" data-detail="<?php echo $detail->detailId ?>">
                                                                         <span>
                                                                         <span>No</span>
                                                                         <span>Yes</span>
@@ -157,17 +158,17 @@
                                         <div class="step">
                                                 <div class="form-group">
                                                         <label>Name on card</label>
-                                                        <input type="text" class="form-control" id="name_card_bookign" name="name_card_bookign">
+                                                        <input class="form-control" id="name_card_bookign" name="name_card_bookign" required>
                                                 </div>
                                                 <div class="row">
                                                         <div class="col-md-6 col-sm-12">
                                                                 <div class="form-group">
                                                                         <label>Card number</label>
-                                                                        <input type="text" id="card_number" name="card_number" class="form-control">
+                                                                        <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"  id="card_number" name="card_number" class="form-control" required>
                                                                 </div>
                                                         </div>
                                                         <div class="col-md-6 col-sm-12">
-                                                                <img src="<?php echo base_url() ?>assets/img/cards-1.png" width="207" height="43" alt="Cards" class="cards">
+                                                                <img src="<?php echo base_url() ?>assets/img/cards-1.png" width="207" height="43" alt="Cards" class="cards" required>
                                                         </div>
                                                 </div>
                                                 <div class="row">
@@ -176,12 +177,12 @@
                                                                 <div class="row">
                                                                         <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                        <input type="text" id="expire_month" name="expire_month" class="form-control"  placeholder="MM">
+                                                                                        <input type="number" pattern="[0-9\s]{13,19}" maxlength="4" min="<?php echo date('m') ?>" id="expire_month" name="expire_month" class="form-control"  placeholder="MM" required>
                                                                                 </div>
                                                                         </div>
                                                                         <div class="col-md-6">
                                                                                 <div class="form-group">
-                                                                                        <input type="text" id="expire_year" name="expire_year" class="form-control" placeholder="Year">
+                                                                                        <input type="number" pattern="[0-9\s]{13,19}" maxlength="4" min="<?php echo date('Y') ?>" id="expire_year" name="expire_year" class="form-control" placeholder="Year" required>
                                                                                 </div>
                                                                         </div>
                                                                 </div>
@@ -192,7 +193,7 @@
                                                                         <div class="row">
                                                                                 <div class="col-4">
                                                                                         <div class="form-group">
-                                                                                                <input type="text" id="ccv" name="ccv" class="form-control" placeholder="CCV">
+                                                                                                <input type="number" pattern="[0-9\s]{13,19}" maxlength="3" id="ccv" name="ccv" class="form-control" placeholder="CCV" required>
                                                                                         </div>
                                                                                 </div>
                                                                                 <div class="col-8">
@@ -225,7 +226,7 @@
                                                 <div class="form-group">
                             <label class="container_check">
                                 I accept terms and conditions and general policy.
-                                <input type="checkbox">
+                                <input type="checkbox" required>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -267,7 +268,7 @@
                                                                                 Rooms
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                1 double room
+                                                                                <?php echo COUNT($reservation->details) ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>
@@ -314,7 +315,7 @@
                                                                 </tr>
                                                         </tbody>
                                                 </table>
-                                                <button type="submit" class="btn_full" >Book now</a>
+                                                <button type="submit" class="btn_full" >Book now</button>
                                                 
                                         </div>
                                         <div class="box_style_4">
@@ -330,7 +331,7 @@
                 </div>
                 <!--End container -->
         </main>
-
+</form>
 
 
         <script type="text/javascript">

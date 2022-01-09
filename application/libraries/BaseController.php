@@ -196,6 +196,7 @@ class BaseController extends CI_Controller {
     
     			 $headerInfo['hotels'] = $this->hotel_model->hotelListing() ;
     	  		 $headerInfo['MyReservations'] =  $this->reservation_model->reservationListing($this->vendorId );
+    	  		 $headerInfo['bars'] = $this->hotel_model->hotelListing() ;
 
 				$this->load->view('includes/header', $headerInfo);
 	        	$this->load->view($viewName, $pageInfo);

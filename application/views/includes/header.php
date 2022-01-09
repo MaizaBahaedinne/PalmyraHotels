@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Palmyra Hotels ">
     <meta name="author" content="Maiza Bahaedinne">
+    <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP7L2TPBWD"></script>
@@ -56,6 +57,7 @@
 
 
           <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min-1.js"></script>
+
 </head>
 <body>
 
@@ -138,15 +140,16 @@
                                 <li><a href="#" data-toggle="modal" data-target="#signinForm" >Sign in</a></li>
                             <?php } else {?>
                                 <li >
-                                    <span class="" ><?php echo $name ?></span>  
+                                    <a class="" href="<?php echo base_url() ?>Reservation/mybookings" ><?php echo $name ?><sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>  
 
-                                    <a style="color: #fae144;" href="<?php echo base_url() ?>logout" class=" ">
-                                        Sign out
-                                    </a>
+                                    
                                 </li>
                                 
                             <?php } ?>
-                                <li><a href="wishlist-1.html" id="wishlist_link">Wishlist</a></li>
+                                <li><a  href="<?php echo base_url() ?>logout" class=" ">
+                                        Sign out
+                                    </a>
+                                </li>
 
                                 <li id="social_top">
                                 <a target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a>
@@ -200,20 +203,28 @@
                                         <?php } ?>
                                 </ul>
                             </li>
+
+                             <li class="submenu">
+                                <a href="javascript:void(0);" class="show-submenu">Bar/Restaurant <i class="icon-down-open-mini"></i></a>
+                                <ul>
+                                    <?php foreach ($bars as $bar ) { ?> 
+                                            <li> 
+                                                <a href="<?php echo base_url() ?>Hotel/view/<?php echo $bar->hotelId ?>" >
+                                                    Palmyra <?php echo $bar->name ?>
+                                                        
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                </ul>
+                            </li>
+
                             <li><a href="<?php echo base_url() ?>Events">Events</a></li>
 
                             <li><a href="<?php echo base_url() ?>Blog">Blog</a></li>
                             
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
 
-                            <?php if ($uid == 0 ) { ?>
-                               
-                                <?php } else {?>
-                          
-                                <li class=""> 
-                                    <a href="<?php echo base_url() ?>Reservation/mybookings">My Bookings<sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>
-                                <li> 
-                            <?php } ?>
+                      
                             
 
                         
