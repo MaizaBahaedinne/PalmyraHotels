@@ -9,7 +9,26 @@
  */
 class User_model extends CI_Model
 {
+    
+
+          /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function user($userId = '' )
+    {
+        $this->db->select('BaseTbl.* ');
+        $this->db->from('tbl_users as BaseTbl');
+        if($userId != '' ){
+            $this->db->where('BaseTbl.userId = ',$userId );
+        }
         
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+
    
     
         /**

@@ -257,23 +257,13 @@
 							<div class="col-md-6">
 								<h4>Your profile</h4>
 								<ul id="profile_summary">
-									<li>Username <span>info@clara.com</span>
+									<li>Username <span><?php echo $user->email ?></span>
 									</li>
-									<li>First name <span>Clara</span>
+									<li>First name <span><?php echo $user->first_name ?></span>
 									</li>
-									<li>Last name <span>Tomson</span>
+									<li>Last name <span><?php echo $user->last_name ?></span>
 									</li>
-									<li>Phone number <span>+00 032 42366</span>
-									</li>
-									<li>Date of birth <span>13/04/1975</span>
-									</li>
-									<li>Street address <span>24 Rue de Rivoli</span>
-									</li>
-									<li>Town/City <span>Paris</span>
-									</li>
-									<li>Zip code <span>002843</span>
-									</li>
-									<li>Country <span>France</span>
+									<li>Phone number <span>+<?php echo $user->country_code ?> <?php echo $user->phone ?></span>
 									</li>
 								</ul>
 							</div>

@@ -109,7 +109,7 @@
          js.src = "https://connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-</script>
+    </script>
 
 
     <div id="preloader">
@@ -167,7 +167,7 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
@@ -176,7 +176,7 @@
                         <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="180"  alt="City tours" class="logo_sticky"></a>
                     </div>
                 </div>
-                <nav class="col-8">
+                <nav class="col-9">
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
@@ -205,11 +205,11 @@
                             </li>
 
                              <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Bar/Restaurant <i class="icon-down-open-mini"></i></a>
+                                <a href="javascript:void(0);" class="show-submenu">Bar & Resto <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <?php foreach ($bars as $bar ) { ?> 
                                             <li> 
-                                                <a href="<?php echo base_url() ?>Hotel/view/<?php echo $bar->hotelId ?>" >
+                                                <a href="<?php echo base_url() ?>Bars/view/<?php echo $bar->barId ?>" >
                                                     Palmyra <?php echo $bar->name ?>
                                                         
                                                 </a>

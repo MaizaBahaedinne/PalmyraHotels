@@ -191,12 +191,13 @@ class BaseController extends CI_Controller {
     function loadViews($viewName = "", $headerInfo = NULL, $pageInfo = NULL, $footerInfo = NULL){
 
     	$this->load->model('hotel_model');
+    	$this->load->model('bar_model');
       
          $this->load->model('reservation_model');
     
     			 $headerInfo['hotels'] = $this->hotel_model->hotelListing() ;
     	  		 $headerInfo['MyReservations'] =  $this->reservation_model->reservationListing($this->vendorId );
-    	  		 $headerInfo['bars'] = $this->hotel_model->hotelListing() ;
+    	  		 $headerInfo['bars'] = $this->bar_model->barListing() ;
 
 				$this->load->view('includes/header', $headerInfo);
 	        	$this->load->view($viewName, $pageInfo);

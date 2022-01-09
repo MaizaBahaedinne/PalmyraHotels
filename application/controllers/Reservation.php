@@ -19,6 +19,7 @@ class Reservation extends BaseController
         parent::__construct();
         $this->load->model('hotel_model');
         $this->load->model('reservation_model'); 
+        $this->load->model('user_model');  
         $this->isLoggedIn();   
     }
     
@@ -100,6 +101,8 @@ class Reservation extends BaseController
             $this->global['pageTitle'] = 'My Bookings';
 
             $data['reservation'] =   $this->reservation_model->reservationListing($this->vendorId );
+            $data['user'] =   $this->user_model->user($this->vendorId );
+            
             
             $this->loadViews("reservation/mybookings", $this->global, $data , NULL);
      }
