@@ -10,7 +10,7 @@
     <meta property="og:title"              content="Palmyra Hotels Coming soon" />
     <meta property="og:description"        content="Meanwhile, you can make leave your email. We will advice when we will be online!" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/logo-1.jpg" />
-
+    <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/site_launch/img/favicon-1.ico" type="image/x-icon">
