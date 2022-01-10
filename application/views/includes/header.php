@@ -144,12 +144,13 @@
 
                                     
                                 </li>
-                                
-                            <?php } ?>
-                                <li><a  href="<?php echo base_url() ?>logout" class=" ">
+                                 <li><a  href="<?php echo base_url() ?>logout" class=" ">
                                         Sign out
                                     </a>
                                 </li>
+                                
+                            <?php } ?>
+                               
 
                                 <li id="social_top">
                                 <a target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a>

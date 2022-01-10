@@ -51,13 +51,13 @@ class Reservation extends BaseController
             foreach ($rooms as $room ) 
             {  
 
-            echo "<br> <b>Romm </b>".$room->titre ; 
+           
 
                 $prices = $this->hotel_model->roomMsPrice(
                         $this->input->post('hotelId') ,  
                         $this->input->post('checkin'), 
                         $this->input->get('pension')   ) ;
-                echo "<br> quantité ".$this->input->post("quantity_".$room->roomId) ;
+                
                 if (  $this->input->post("quantity_".$room->roomId) > 0 )
                 {   
                     
@@ -71,7 +71,7 @@ class Reservation extends BaseController
                         'createdDTM'=> date('Y-m-d H:i:s'), 
                       );
                       $r = $this->reservation_model->addNewReservationDetaiils($reservationInfo1); 
-                      echo   "<br>".$r." saved >>>>>>> " ;
+                      
                     }   
                 }
     }
@@ -90,8 +90,12 @@ class Reservation extends BaseController
                 }
 
             $data['hotel'] =  $this->hotel_model->hotel($data['reservation']->hotelId); 
-            foreach ($data['reservation']->details as $detail ) {
-                $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
+
+            foreach ($data['reservation']->details as $detail ) 
+            {
+               
+                   $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
+                
             }
       $this->loadViews("reservation/details", $this->global, $data , NULL);
      }

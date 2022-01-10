@@ -88,7 +88,15 @@
                                                                 <div class="form-group">
                                                                         <label>Guest <?php echo $i+1 ?>
                                                                         
-                                                                        <input type="checkbox" name="child_" class="child" <?php if ($i == 0 ) {  echo 'style="display: none;" '; } ?> > <small>children</small>  
+                                                                        <input type="checkbox" 
+                                                                        name="child_" 
+                                                                        
+                                                                        class="child child_<?php echo $detail->detailId ?>" 
+                                                                        <?php if ($i == 0 ) {  echo 'style="display: none;" '; } ?> 
+                                                                        onclick="childPerRoom(<?php echo $detail->detailId ?>);child() ;"
+                                                                        data-detail="<?php echo $detail->detailId ?>" >
+
+                                                                        <small <?php if ($i == 0 ) {  echo 'style="display: none;" '; } ?>>children</small>  
                                                                         
                                                                         </label>
                                                                         <input 
@@ -101,16 +109,28 @@
                                                                 </div>
                                                         </div> 
 
+
                                                         <?php } ?>
+
+
                                                        <input 
                                                         type="hidden" 
-                                                        class="roomP" 
-                                                        id="roomPrice_<?php echo $detail->detailId ?>" 
-                                                        value="<?php echo ($detail->prices->price * $detail->adult) ?>" 
+                                                        class="Pax Pax_<?php echo $detail->detailId ?>" 
+                                                        id="Pax_<?php echo $detail->detailId ?>" 
+                                                        value="<?php echo ( ($detail->prices->price + $detail->prices->supS) ) ?>"
+                                                        data-capacity = "<?php echo $detail->adult + $detail->children  ?>"
+                                                        data-currentPrice = "<?php echo ( $detail->prices->price + $detail->prices->supS )*( $detail->adult + $detail->children )  ?>" 
                                                         >
-                                                        
+
+                                                        <input 
+                                                        type="hidden" 
+                                                        class="rommP roomP_<?php echo $detail->detailId ?>" 
+                                                        id="rommP_<?php echo $detail->detailId ?>" 
+                                                        value="<?php echo( $detail->prices->price + $detail->prices->supS )*( $detail->adult + $detail->children ) ?>" 
+                                                        >
+                                                     
                                                 </div>
-                                                
+                                         <?php if (!empty($detail->options) ) {  ?>       
                                         <table class="table table-striped options_cart">
                                                 <thead>
                                                     <tr>
@@ -120,7 +140,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                        <?php foreach ($detail->options as $option) {?>
+                                                        <?php foreach ($detail->options as $option) {  ?>
                                                                <?php echo $option->option ?>
                                                                  <tr>
                                                                 <td style="width:10%">
@@ -131,7 +151,7 @@
                                                                 </td>
                                                                 <td style="width:35%">
                                                                     <label class="switch-light switch-ios float-right">
-                                                                        <input type="checkbox" class="option_" id="option_<?php echo $detail->detailId ?>" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>" data-detail="<?php echo $detail->detailId ?>">
+                                                                        <input type="checkbox" class="option_" id="option_<?php echo $detail->detailId ?>" data-price="<?php echo $option->price ?>" value="<?php echo $option->price ?>" data-detail="<?php echo $detail->detailId ?>" onclick="calculate() " >
                                                                         <span>
                                                                         <span>No</span>
                                                                         <span>Yes</span>
@@ -140,10 +160,31 @@
                                                                     </label>
                                                                 </td>
                                                             </tr>
-                                                        <?php  } ?>
+                                                        <?php  }  ?>
                                                 </tbody>
                                         </table>
-                                                
+                                        <?php  }  ?>
+                                                <div class="text-right">
+
+                                                        <span> Adult :
+                                                                <strong id="nbAdult_<?php echo $detail->detailId ?>" >
+                                                                        <?php echo $detail->adult ?>
+                                                                </strong>   
+                                                        </span>
+                                                       <br>
+                                                       <span>   Children
+                                                                <strong id="nbChild_<?php echo $detail->detailId ?>" >
+                                                                         <?php echo $detail->children ?>
+                                                                </strong>   
+                                                        </span>
+                                                       <br>
+                                                       <span class="bg-white text-right">  Price : 
+                                                                        <strong id="detailPrice_<?php echo $detail->detailId ?>" >
+                                                                                <?php echo ( ($detail->prices->price + $detail->prices->supS) * $detail->adult) ?>
+                                                                        </strong>   
+                                                                        <sup>DT</sup>
+                                                                </span> 
+                                                </div>  
                                         </fieldset>
                                                 <?php  } ?>
                                         </div>
@@ -336,60 +377,16 @@
 
         <script type="text/javascript">
 
-                var roomsPrice = 0 ;
-                        $(".roomP").each( function(){
-                                
-                                        roomsPrice += parseInt($(this).val()) ; 
-                                         $("#cost").html( parseInt(roomsPrice)  )  ;
-                        });
-                        
-                                                                                      
-                var child = 0 ;
-                $(".child").each( function(){
-                        if( $(this).is(":checked")  ){ child += 1 ; 
-                     }
-                     $("#nbChild").html(child) ;
-                });
+                child() ;
 
-                var adult = 0 ;
-                $(".child").each( function(){
-                        if( !($(this).is(":checked"))  )
-                                { adult += 1 ; 
-                                                                                                                             }
-                     $("#nbAdult").html(adult) ;
-                });
-
-                /*Prices*/
-
-                $(".child").click( function() {
-                var child = 0 ;
-                $(".child").each( function(){
-                        if( $(this).is(":checked")  ){ 
-                                child += 1 ; 
-                                
-                     }
-                     $("#nbChild").html(child) ;
-                });
-
-                var adult = 0 ;
-                $(".child").each( function(){
-                        if( !($(this).is(":checked"))  )
-                                { adult += 1 ; 
-                                 
-                     }
-                      $("#nbAdult").html(adult) ;
-                        });   
-                });
-
-
-                $(".option_").click( function() {
+               function calculate () {
 
                         var roomsPrice = 0 ;
-                        $(".roomP").each( function(){
-                                
-                                        roomsPrice += parseInt($(this).val()) ; 
+                        $(".rommP").each( function(){                                
+                                roomsPrice +=  parseInt( $(this).val() )  ; 
+                                $("#cost").html( parseInt(roomsPrice)  )  ;
                         });
-                         
+                        
 
                         var optionsPrice = 0 ;
                         $(".option_").each( function(){
@@ -397,9 +394,87 @@
                                         optionsPrice += parseInt($(this).val()) ; 
                              }
                              $("#priceOptions_total").html(optionsPrice) ;
-                             $("#cost").html( ( parseInt(roomsPrice) + parseInt(optionsPrice) ) *<?php echo $reservation->nights ?> )  ;
+                             $("#cost").html( ( parseInt(roomsPrice) + parseInt(optionsPrice) ) * <?php echo $reservation->nights ?> )  ;
                         });
+                        
+                }
 
-                });
+                
+                function child()
+                {
+                
+                var child = 0 ;
+                 var adult = 0 ;
+                
+                $(".child").each( function(){
+                        if( $(this).is(":checked")  ){ 
+                                child += 1 ;           
+                     }
+                     $("#nbChild").html(child) ;
+                       
+                       if( !($(this).is(":checked"))  )
+                                { adult += 1 ; 
+                                 
+                     }
+                      $("#nbAdult").html(adult) ;
+                        });  
+
+                       calculate () ;
+                }
+
+                function childPerRoom(detailId)
+                {
+                
+                var child = 0 ;
+                 var adult = 0 ;
+                
+                $(".child_"+detailId).each( function(){
+                        if( $(this).is(":checked")  ){ 
+                                child += 1 ;           
+                     }
+                     $("#nbChild_"+detailId).html(child) ;
+                       
+                       if( !($(this).is(":checked"))  )
+                                { adult += 1 ; 
+                                 
+                     }
+                      $("#nbAdult_"+detailId).html(adult) ;
+                        });   
+
+                price = 0 ; 
+                        
+                        if(child ==0 )
+                                {
+                                price= adult * parseInt( $(".Pax_"+detailId).val() )  ;
+                                }
+                        if(adult == 1 && child == 1  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.3) ) ) ;  
+                                }
+                        if(adult == 2 && child == 1  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                }
+                        if(adult == 1 & child == 2  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
+                                }
+
+
+                
+                 $(".roomP_"+detailId).val(price)   ;
+                 $("#detailPrice_"+detailId).html(price) ;
+                 
+                     
+                calculate () ;
+                }
+                                                             
+
+               
+                      
+                 
+                
+                
+                
 
         </script>
