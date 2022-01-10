@@ -182,7 +182,7 @@
                                                                         <strong id="detailPrice_<?php echo $detail->detailId ?>" >
                                                                                 <?php echo ( ($detail->prices->price + $detail->prices->supS) * $detail->adult) ?>
                                                                         </strong>   
-                                                                        <sup>DT</sup>
+                                                                        <sup>DT/Per night</sup>
                                                                 </span> 
                                                 </div>  
                                         </fieldset>
@@ -387,15 +387,16 @@
                                 $("#cost").html( parseInt(roomsPrice)  )  ;
                         });
                         
-
+                        
                         var optionsPrice = 0 ;
                         $(".option_").each( function(){
                                 if( $(this).is(":checked")  ){ 
                                         optionsPrice += parseInt($(this).val()) ; 
                              }
                              $("#priceOptions_total").html(optionsPrice) ;
-                             $("#cost").html( ( parseInt(roomsPrice) + parseInt(optionsPrice) ) * <?php echo $reservation->nights ?> )  ;
+                             $("#cost").html( ( parseInt(roomsPrice) + parseInt(optionsPrice) ) * parseInt(<?php echo $reservation->nights ?>) )  ;
                         });
+
                         
                 }
 

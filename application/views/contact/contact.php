@@ -288,7 +288,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="number" id="phone_contact" name="phone" class="form-control" placeholder="Enter Phone number">
+                                        <input type="number" id="phone_contact" maxlength="10" name="phone" class="form-control" placeholder="Enter Phone number">
                                     </div>
                                 </div>
                             </div>
