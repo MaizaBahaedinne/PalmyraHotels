@@ -309,41 +309,56 @@
     </script>
 
     <!-- Specific scripts -->
-    <script>
-        const date = new Date();
-        date.setDate(date.getDate() + 1);
-
+  <script>
     $(function() {
-      $('input.date-pick').daterangepicker({
-          autoUpdateInput: true,
-          singleDatePicker: true,
-          autoApply: true,
+      'use strict';
+      $('input[name="dates"]').daterangepicker({
+          autoUpdateInput: false,
           minDate:new Date(),
-          showCustomRangeLabel: false,
           locale: {
-            format: 'YYYY-MM-DD'
+              cancelLabel: 'Clear'
           }
-          }, function(start, end, label) {
-          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-
-       $('input.date-pick-out').daterangepicker({
-          autoUpdateInput: true,
-          singleDatePicker: true,
-          autoApply: true,
-          minDate:date ,
-          showCustomRangeLabel: false,
-          locale: {
-            format: 'YYYY-MM-DD'
-          }
-          }, function(start, end, label) {
-          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-
-        });
+      });
+      $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+          $(this).val(' from ' + picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD'));
+          $('input[name="checkin"]').val(picker.startDate.format('YYYY-MM-DD')) ;
+          $('input[name="checkout"]').val(picker.endDate.format('YYYY-MM-DD')) ;
 
 
+      });
+      $('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+      });
+    });
+    </script>
+    
+    <!-- Input quantity  -->
+    <script src="js/input_qty-1.js"></script>
 
+    <!-- Autocomplete -->
+    <script>
+    function initMap() {
+      var input = document.getElementById('autocomplete');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+     
+      autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          window.alert("Autocomplete's returned place contains no geometry");
+          return;
+        }
+
+        var address = '';
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] && place.address_components[0].short_name || ''),
+            (place.address_components[1] && place.address_components[1].short_name || ''),
+            (place.address_components[2] && place.address_components[2].short_name || '')
+          ].join(' ');
+        } 
+      });
+    }
+    </script>
     </script>
     <script>
         $('input.time-pick').timepicker({

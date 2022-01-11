@@ -1,4 +1,4 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade ?>" data-natural-width="1400" data-natural-height="600">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" >
         <div class="parallax-content-2">
             <div class="container">
                 <div class="row">

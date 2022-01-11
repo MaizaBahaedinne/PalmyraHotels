@@ -211,7 +211,7 @@
                                     <?php foreach ($bars as $bar ) { ?> 
                                             <li> 
                                                 <a href="<?php echo base_url() ?>Bars/view/<?php echo $bar->barId ?>" >
-                                                    Palmyra <?php echo $bar->name ?>
+                                                    <?php echo $bar->name ?>
                                                         
                                                 </a>
                                             </li>

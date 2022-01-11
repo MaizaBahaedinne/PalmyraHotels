@@ -18,24 +18,21 @@
                                     <select name="hotelId" required class="form-control">
                                         <option value="">Chose your hotel</option>
                                         <?php foreach ($hotels as $hotel ) { ?> 
-                                            <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
+                                            <option value="<?php echo $hotel->hotelId ?>" <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="date-pick form-control" type="text" name="checkin" required>
+                                <input class="form-control date-pick" type="text" name="dates" placeholder="When..">
+                                <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When..">
+                                <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When..">
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label><i class="icon-calendar-7"></i> Check out</label>
-                                <input class="date-pick-out form-control" type="text" name="checkout" required>
-                            </div>
-                        </div>
+                        
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label>Adults</label>
@@ -104,10 +101,12 @@
         <?php foreach ($hotels as $hotel ) { ?> 
             <div class="col-lg-6 col-md-6 wow zoomIn" data-wow-delay="0.1s">
                 <div class="tour_container">
-                    <div class="ribbon_3 popular"><span>Popular</span></div>
+                    <?php if($hotel->statut == 1 ) { ?>  
+                     <div class="ribbon_3 popular"><span>Closed</span></div>
+                    <?php } ?>
                     <div class="img_container">
                         <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId?>">
-                        <img src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade?>" width="800" height="533" class="img-fluid" alt="Image">
+                        <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price ; } else{ echo "0" ; } ?><sup>DT</sup></span>
                         </div>
