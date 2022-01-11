@@ -286,6 +286,7 @@
                         <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
                     </p>
                     <div class="box_style_1 expose">
+                        <form method="GET" action="<?php echo base_url() ?>Hotel/search" >
                         <h3 class="inner">Check Availability</h3>
                         <div class="row">
                         <div class="col-md-12" style="display: none;">
@@ -354,6 +355,7 @@
 
                         <button class="btn_full" type="submit" >Check now</button>
                      <!--   <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a> -->
+                 </form>
                     </div>
                     <!--/box_style_1 -->
 
