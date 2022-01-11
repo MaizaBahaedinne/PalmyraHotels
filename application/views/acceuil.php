@@ -288,21 +288,27 @@
         <div class="row">
             <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
                                 <div class="item">
-                                    <a href="img/carousel/1-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image">
+                                    <a href="<?php echo base_url() ?>assets/img/client/tunivisions.png" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image">
                                     </a>
                                 </div>
                                 <div class="item">
-                                    <a href="img/carousel/2-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Image">
+                                    <a href="<?php echo base_url() ?>assets/img/client/aiesec.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Image">
                                     </a>
                                 </div>
                                 <div class="item">
-                                    <a href="img/carousel/3-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/rotaract.png" alt="Image">
+                                    <a href="<?php echo base_url() ?>assets/img/client/rotaract.png" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/rotaract.png" alt="Image">
                                     </a>
                                 </div>
                                 <div class="item">
-                                    <a href="img/carousel/4-1.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
+                                    <a href="<?php echo base_url() ?>assets/img/client/junior.png" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
                                     </a>
                                 </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/client/AFALF.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/AFALF.jpg" alt="Image">
+                                    </a>
+                                </div>
+
+                                
       
                             </div>
             

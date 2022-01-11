@@ -288,35 +288,72 @@
                     <div class="box_style_1 expose">
                         <h3 class="inner">Check Availability</h3>
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label><i class="icon-calendar-7"></i> Check in / Check out</label>
-                                    <input class="date-pick form-control" type="text" placeholder="Select dates">
+                        <div class="col-md-12" style="display: none;">
+                            <div class="form-group">
+                                <label>Preferred Hotel</label>
+                                <div class="styled-select-common"> 
+                                    <select name="hotelId" required class="form-control" >
+                                        <option value="">Chose your hotel</option>
+                                        <?php foreach ($hotels as $hotelC ) { ?> 
+                                            <option value="<?php echo $hotel->hotelId ?>" <?php if($hotel->hotelId == $hotelC->hotelId ) { ?> selected <?php } ?> >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label>Adults</label>
-                                    <div class="numbers-row">
-                                        <input type="text" value="1" id="adults" class="qty2 form-control" name="quantity">
-                                    </div>
-                                </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label><i class="icon-calendar-7"></i> Check in</label>
+                                <input class="form-control date-pick" type="text" name="dates" placeholder="When.." readonly>
+                                <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When..">
+                                <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When..">
                             </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label>Children</label>
-                                    <div class="numbers-row">
-                                        <input type="text" value="0" id="children" class="qty2 form-control" name="quantity">
-                                    </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Adults</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="1" min="1" id="adults" class="qty2 form-control" name="adult" required>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Children (2-12 ago)</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Rooms</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="1" min="1" id="room" class="qty2 form-control" name="room" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Pension</label>
+                                <div class="styled-select-common" class="form-control" required >
+                                    <select name="pension">
+                                            
+                                            <option value="PD" >Continental breakfast included</option>
+                                            <option value="DP" >Breakfast & dinner included</option>
+                                            <option value="PC" >Breakfast, lunch & dinner included</option>
+                                            <option value="ALLS" >All inclusive Soft</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                         <br>
 
-                        <a class="btn_full" href="cart_hotel.html">Check now</a>
-                        <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a>
+                        <button class="btn_full" type="submit" >Check now</button>
+                     <!--   <a class="btn_full_outline" href="#"><i class=" icon-heart"></i> Add to whislist</a> -->
                     </div>
                     <!--/box_style_1 -->
 

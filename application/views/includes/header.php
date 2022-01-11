@@ -236,12 +236,13 @@
                         </ul>
                     </div><!-- End main-menu -->
                    
-                    <ul id="top_tools">
-                       
-                        <li>
-                            <div class="dropdown dropdown-cart ">
-                                
-                                
+                                <ul id="top_tools">
+
+                                    <li>
+                                        <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a>
+                                    </li>
+                                    
+                                </ul>
 
                                
                             </div><!-- End dropdown-cart-->
