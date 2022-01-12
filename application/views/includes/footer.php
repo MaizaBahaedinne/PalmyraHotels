@@ -91,7 +91,7 @@
             
                <div id="signinForm" >
              
-                    <div id="ack" style="display : none "></div>
+                    <div id="ack" style="display : none " class="alert alert-danger" role="alert" ></div>
 
                     <div class="form-group">
                         <label>Email</label>

@@ -42,52 +42,7 @@
 				<div class="col-lg-8" id="single_tour_desc">
 
 					<div id="single_tour_feat">
-						<ul>
-							<li><i class="icon_set_3_restaurant-1"></i>Pizza /Italian</li>
-							<li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
-							<li><i class="icon_set_1_icon-82"></i>144 Likes</li>
-							<li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
-							<li><i class="icon_set_1_icon-27"></i>Parking</li>
-							<li><i class="icon_set_1_icon-47"></i>No smoking area</li>
-						</ul>
-					</div>
-
-					<p class="d-none d-md-block d-block d-lg-none"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a></p>
-					<!-- Map button for tablets/mobiles -->
-
-					<div class="row">
-						<div class="col-lg-3">
-							<h3>Description</h3>
-						</div>
-						<div class="col-lg-9">
-							<h4>About us</h4>
-							<p>
-								<?php echo $bar->description ?>
-							</p>
-							<div class="row">
-								<div class="col-md-6">
-									<ul class="list_ok">
-										<li>Lorem ipsum dolor sit amet</li>
-										<li>No scripta electram necessitatibus sit</li>
-										<li>Quidam percipitur instructior an eum</li>
-										<li>Ut est saepe munere ceteros</li>
-										<li>No scripta electram necessitatibus sit</li>
-										<li>Quidam percipitur instructior an eum</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<ul class="list_ok">
-										<li>Lorem ipsum dolor sit amet</li>
-										<li>No scripta electram necessitatibus sit</li>
-										<li>Quidam percipitur instructior an eum</li>
-										<li>No scripta electram necessitatibus sit</li>
-									</ul>
-								</div>
-							</div>
-							<!-- End row  -->
-						</div>
-						<div class="col-md-12">
-							<div id="Img_carousel" class="slider-pro">
+						<div id="Img_carousel" class="slider-pro">
                         <div class="sp-slides">
 
                              <?php
@@ -129,6 +84,44 @@
                         </div>
                         
                     </div>
+					</div>
+
+					<p class="d-none d-md-block d-block d-lg-none"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a></p>
+					<!-- Map button for tablets/mobiles -->
+					<hr>
+					<div class="row" >
+						<div class="col-lg-3">
+							<h3>Description</h3>
+						</div>
+						<div class="col-lg-9">
+							<h4>About us</h4>
+							<p>
+								<?php echo $bar->description ?>
+							</p>
+							<div class="row">
+								<div class="col-md-6">
+									<ul class="list_ok">
+										<li>Lorem ipsum dolor sit amet</li>
+										<li>No scripta electram necessitatibus sit</li>
+										<li>Quidam percipitur instructior an eum</li>
+										<li>Ut est saepe munere ceteros</li>
+										<li>No scripta electram necessitatibus sit</li>
+										<li>Quidam percipitur instructior an eum</li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<ul class="list_ok">
+										<li>Lorem ipsum dolor sit amet</li>
+										<li>No scripta electram necessitatibus sit</li>
+										<li>Quidam percipitur instructior an eum</li>
+										<li>No scripta electram necessitatibus sit</li>
+									</ul>
+								</div>
+							</div>
+							<!-- End row  -->
+						</div>
+						<div class="col-md-12">
+							
 							
 						</div>
 					</div>
