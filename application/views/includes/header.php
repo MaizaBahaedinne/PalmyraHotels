@@ -24,10 +24,7 @@
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/apple-touch-icon-57x57-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/img/apple-touch-icon-72x72-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/img/apple-touch-icon-114x114-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/img/apple-touch-icon-144x144-precomposed-1.png">
+
 
     <!-- GOOGLE WEB FONT -->
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text:400">
@@ -192,7 +189,7 @@
                             <li><a href="<?php echo base_url() ?>About">About</a></li>
                             
                              <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a>
+                                <a  class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <?php foreach ($hotels as $hotel ) { ?> 
                                             <li> 
@@ -204,9 +201,9 @@
                                         <?php } ?>
                                 </ul>
                             </li>
-
+                           
                              <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Bar & Resto <i class="icon-down-open-mini"></i></a>
+                                <a href="javascript:void(0);" class="show-submenu">Services <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <?php foreach ($bars as $bar ) { ?> 
                                             <li> 
@@ -219,7 +216,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="<?php echo base_url() ?>Events">Events</a></li>
+                            
 
                             <li><a href="<?php echo base_url() ?>Blog">Blog</a></li>
                             
@@ -231,15 +228,15 @@
                                 <ul id="top_tools">
 
                                     <li>
-                                        <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a>
+                                     <!--   <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a> -->
                                     </li>
                                     
                                 </ul>
 
                                
-                            </div><!-- End dropdown-cart-->
-                        </li>
-                    </ul>
+                   
+                    
+                   
                 </nav>
             </div>
         </div><!-- container -->

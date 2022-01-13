@@ -9,7 +9,7 @@
 					</div>
 					<div class="col-md-4">
 						<div id="price_single_main">
-							from/per person <span><sup>$</sup>52</span>
+		<!--					from/per person <span> <sup>$</sup>52</span>  -->
 						</div>
 					</div>
 				</div>
