@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Palmyra Hotels Coming soon</title>
+    <title>Palmyra Hotels - Coming soon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
    <meta property="og:url"                 content="<?php echo base_url() ?>" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="Coming soon PalmyraHotels.tn " />
+    <meta property="og:title"              content="PalmyraHotels.tn | Coming soon " />
     <meta property="og:description"        content="Meanwhile, you can make leave your email. We will advice when we will be online!" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/baro.jpg" />
     <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
