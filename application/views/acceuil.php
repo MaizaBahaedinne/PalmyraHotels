@@ -27,7 +27,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="form-control date-pick" type="text" name="dates" placeholder="When..">
+                                <input class="form-control date-pick" type="text" name="dates" placeholder="When.." autocomplete="off">
                                 <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When..">
                                 <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When..">
                             </div>

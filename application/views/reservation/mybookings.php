@@ -1,7 +1,7 @@
 	<!-- SPECIFIC CSS -->
 	<link href="<?php echo base_url() ?>assets/css/admin-1.css" rel="stylesheet">
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/aqua.jpg" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/hotel/golden.jpg" >
 		<div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.4)">
 			<div class="animated fadeInDown">
 				<h1>Hello <?php echo $name?>!</h1>

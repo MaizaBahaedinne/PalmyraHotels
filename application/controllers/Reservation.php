@@ -104,7 +104,7 @@ class Reservation extends BaseController
      {
             $this->global['pageTitle'] = 'My Bookings';
 
-            $data['reservation'] =   $this->reservation_model->reservationListing($this->vendorId );
+            $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId );
             $data['user'] =   $this->user_model->user($this->vendorId );
             
             

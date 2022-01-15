@@ -13,11 +13,11 @@
     <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/site_launch/img/favicon-1.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-57x57-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-72x72-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-114x114-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-144x144-precomposed-1.png">
+    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css-3.css?family=Montserrat:400,700" rel="stylesheet">

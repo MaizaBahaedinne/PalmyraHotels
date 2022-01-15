@@ -169,7 +169,7 @@
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="180"  alt="City tours" class="logo_normal"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="200"  alt="City tours" class="logo_normal"></a>
                       <a href="<?php echo base_url() ?>">
                         <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="180"  alt="City tours" class="logo_sticky"></a>
                     </div>
@@ -178,7 +178,7 @@
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" height="34" alt="Palmyra Hotels"> 
+                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" alt="Palmyra Hotels"> 
                              
                                 
                           
