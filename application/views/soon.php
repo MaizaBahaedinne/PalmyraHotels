@@ -9,7 +9,7 @@
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="PalmyraHotels.tn | Coming soon " />
     <meta property="og:description"        content="Meanwhile, you can make leave your email. We will advice when we will be online!" />
-    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/bar/baro.jpg" />
+    <meta property="og:image"              content="<?php echo base_url() ?>assets\img\facade\bar/baro.jpg" />
     <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
     <!-- Favicons-->
