@@ -2,22 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Palmyra Hotels Coming soon</title>
+    <title>Palmyra Hotels - Coming soon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
    <meta property="og:url"                 content="<?php echo base_url() ?>" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="Palmyra Hotels Coming soon" />
+    <meta property="og:title"              content="PalmyraHotels.tn | Coming soon " />
     <meta property="og:description"        content="Meanwhile, you can make leave your email. We will advice when we will be online!" />
-    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/golden.jpg" />
-
+    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/baro.jpg" />
+    <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/site_launch/img/favicon-1.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-57x57-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-72x72-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-114x114-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/site_launch/img/apple-touch-icon-144x144-precomposed-1.png">
+    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/img/favicon-1.ico">
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css-3.css?family=Montserrat:400,700" rel="stylesheet">
@@ -31,6 +31,38 @@
 
   </head>
   <body>
+
+        <!-- Messenger Plugin de discussion Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin de discussion code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103054498919121");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
   
 <div id="wrapper">
   <div id="main">
@@ -39,7 +71,7 @@
       <div class="row countdown">
               <div class="col-md-12">
                   <div id="logo">
-                    <img src="<?php echo base_url() ?>assets/img/logo-1.png" width="300"  alt="City tours">
+                    <img src="<?php echo base_url() ?>assets/img/logo-1.png" width="300"  alt="Palmyra Hotels">
                     
                   </div>
                     <h1>We will be back soon!</h1>
@@ -58,7 +90,7 @@
         <form method="post" action="<?php echo base_url() ?>Contact/newsletter"  autocomplete="off">
               <div class="row">
                               <div class="col-md-9 first-nogutter">
-                                  <input name="email" id="email_newsletter" type="email" placeholder="Your Email" class="form-control">
+                                  <input name="email" id="email_newsletter" type="email" placeholder="Your Email" required class="form-control">
                                 </div>
                                 <div class="col-md-3 nogutter">
                                       <button type="submit" class="btn-check" id="submit-newsletter">Subscribe</button>
@@ -94,10 +126,13 @@
 
 <div id="slides">
   <ul class="slides-container">
-    <li><img src="<?php echo base_url() ?>assets/img/facade/aqua.jpg" alt="Image"></li>
-    <li><img src="<?php echo base_url() ?>assets/img/facade/golden.jpg" alt="Image"></li>
-    <li><img src="<?php echo base_url() ?>assets/img/facade/holiday.jpg" alt="Image"></li>
-    <li><img src="<?php echo base_url() ?>assets/img/facade/club.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/hotel/aqua.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/hotel/golden.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/hotel/holiday.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/hotel/club.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/baro.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/talamnca.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/myway.jpg" alt="Image"></li>
   </ul>
 </div><!-- End background slider -->
 
@@ -113,8 +148,30 @@
       animation: 'fade'
     });
 </script>
+
+
+
 <!-- OTHER JS --> 
 <script src="<?php echo base_url() ?>assets/site_launch/js/functions-1.js"></script>
 <script src="<?php echo base_url() ?>assets/site_launch/assets/validate-1.js"></script>
   </body>
+
+  <script type="text/javascript" src="<?php echo base_url() ?>assets/js/pop_up.min-1.js"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0&appId=661929371607230&autoLogAppEvents=1" nonce="eMo3aoX1"></script>
+    <script type="text/javascript">
+         $(window).on('load',function() {
+                new $.popup({                
+                    title       : 'Follow us on Facebook',
+                    content         : '<div class="fb-page" data-href="https://www.facebook.com/palmyrahotels.tn" data-tabs="events" data-width="" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/palmyrahotels.tn" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/palmyrahotels.tn">Palmyra Hotels</a></blockquote></div>', 
+                    html: true,
+                    autoclose   : true,
+                    closeOverlay:true,
+                    closeEsc: true,
+                    buttons     : false,
+                    timeout     : 10000 
+                });
+            });
+    </script>
+    
 </html>

@@ -8,57 +8,17 @@
             <div class="tab-content">
                 <!-- End rab -->
                 <div class="tab-pane active show" id="hotels">
-                    <form method="get" action="<?php echo base_url() ?>Hotel/search">
+                    <form method="GET" action="<?php echo base_url() ?>Hotel/search">
                     <h3>Search Hotels in PalmyraHotels.tn</h3>
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="date-pick form-control" type="text" name="checkin">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label><i class="icon-calendar-7"></i> Check out</label>
-                                <input class="date-pick form-control" type="text" name="checkout">
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-6">
-                            <div class="form-group">
-                                <label>Adults</label>
-                                <div class="numbers-row">
-                                    <input type="text" value="1" id="adults" class="qty2 form-control" name="adults_2">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-6">
-                            <div class="form-group">
-                                <label>Children</label>
-                                <div class="numbers-row">
-                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children_2">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-3 col-12">
-                            <div class="form-group">
-                                <label>Rooms</label>
-                                <div class="numbers-row">
-                                    <input type="text" value="1" id="children" class="qty2 form-control" name="rooms">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End row -->
-                    <div class="row">
-                        
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Preferred Hotel</label>
                                 <div class="styled-select-common">
-                                    <select name="hotel">
-                                        
+                                    <select name="hotelId" required class="form-control">
+                                        <option value="">Chose your hotel</option>
                                         <?php foreach ($hotels as $hotel ) { ?> 
-                                            <option value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
+                                            <option value="<?php echo $hotel->hotelId ?>" <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -66,22 +26,62 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label><i class="icon-calendar-7"></i> Check in</label>
+                                <input class="form-control date-pick" type="text" name="dates" placeholder="When.." autocomplete="off">
+                                <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When..">
+                                <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When..">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Adults</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="1" min="1" id="adults" class="qty2 form-control" name="adult" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Children (2-12 ago)</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Rooms</label>
+                                <div class="numbers-row">
+                                    <input type="text" value="1" min="1" id="room" class="qty2 form-control" name="room" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label>Pension</label>
-                                <div class="styled-select-common">
+                                <div class="styled-select-common" class="form-control" required >
                                     <select name="pension">
-                                            <option value="" >LP</option>
-                                            <option value="" >DP</option>
-                                            <option value="" >PC</option>
-                                            <option value="" >All inclusive</option>
+                                            
+                                            <option value="PD" >Continental breakfast included</option>
+                                            <option value="DP" >Breakfast & dinner included</option>
+                                            <option value="PC" >Breakfast, lunch & dinner included</option>
+                                            <option value="ALLS" >All inclusive Soft</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <!-- End row -->
+                   
+                    <!-- End row -->
                     <hr>
-                    <button class="btn_1 green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
-                </form>
+
+                        <button class="btn_1 green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
+                    </form>
+
+                
                 </div>
 
             </div>
@@ -101,10 +101,12 @@
         <?php foreach ($hotels as $hotel ) { ?> 
             <div class="col-lg-6 col-md-6 wow zoomIn" data-wow-delay="0.1s">
                 <div class="tour_container">
-                    <div class="ribbon_3 popular"><span>Popular</span></div>
+                    <?php if($hotel->statut == 1 ) { ?>  
+                     <div class="ribbon_3 popular"><span>Closed</span></div>
+                    <?php } ?>
                     <div class="img_container">
                         <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId?>">
-                        <img src="<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade?>" width="800" height="533" class="img-fluid" alt="Image">
+                        <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price ; } else{ echo "0" ; } ?><sup>DT</sup></span>
                         </div>
@@ -162,8 +164,18 @@
                             </ul>
                             <h4><?php echo $event->titre ?></h4>
                             <div style="">
-                                <p ><?php echo $event->description ?></p>
+                                <p style="width: auto;
+                                          height: 100px;
+                                          white-space: nowrap;
+                                          overflow: hidden;
+                                          text-overflow: ellipsis;
+                                          
+                                          
+                                         
+                                          resize: vertical;" ><?php echo $event->description ?> </p>
+
                             </div>
+                            
                         </a>
                     </div>
                 <?php }  ?>
@@ -263,3 +275,48 @@
         <!-- End container -->
     </main>
     <!-- End main -->
+
+
+<main class="white_bg">
+    <div class="container margin_60 ">
+    
+        <div class="main_title">
+            <h2>Our <span>loyal</span> client</h2>
+            <p></p>
+        </div>
+        
+        <div class="row">
+            <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/client/tunivisions.png" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/client/aiesec.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/client/rotaract.png" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/rotaract.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/client/junior.png" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="<?php echo base_url() ?>assets/img/client/AFALF.jpg" data-effect="mfp-zoom-in"><img src="<?php echo base_url() ?>assets/img/client/AFALF.jpg" alt="Image">
+                                    </a>
+                                </div>
+
+                                
+      
+                            </div>
+            
+        </div><!-- End row -->
+        <!--
+        <p class="text-center nopadding">
+            <a href="#" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
+        </p>
+        -->
+    </div><!-- End container -->
+</main>

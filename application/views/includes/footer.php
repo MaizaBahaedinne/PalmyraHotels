@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3>Need help?</h3>
-                    <a href="tel://004542344599" id="phone">+45 423 445 99</a>
+                    <a href="tel://+21658465249" id="phone">+216 58 465 249</a>
                     <a href="mailto:help@citytours.com" id="email_footer">contact@palmyrahotels.tn</a>
                 </div>
                 <div class="col-md-3">
@@ -17,12 +17,17 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h3>Discover</h3>
+                    <h3>Hotels</h3>
                     <ul>
-                        <li><a href="#">Community blog</a></li>
-                        <li><a href="#">Tour guide</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                         <li><a href="#">Gallery</a></li>
+                      
+                         <?php foreach ($hotels as $hotel ) { ?> 
+                                            <li> 
+                                                <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId ?>" >
+                                                    Palmyra <?php echo $hotel->name ?>
+                                                        
+                                                </a>
+                                            </li>
+                                        <?php } ?>
                     </ul>
                 </div>
                 <div class="col-md-2">
@@ -30,17 +35,18 @@
                     <div class="styled-select">
                         <select name="lang" id="lang">
                             <option value="English" selected="">English</option>
-                            <option value="French">French</option>
+                           <!-- <option value="French">French</option>
                             <option value="Spanish">Spanish</option>
-                            <option value="Russian">Russian</option>
+                            <option value="Russian">Russian</option> -->
                         </select>
                     </div>
                     <div class="styled-select">
                         <select name="currency" id="currency">
-                            <option value="USD" selected="">USD</option>
+                            <option value="USD" selected="">DT</option>
+                          <!--  <option value="USD" selected="">DT</option>
                             <option value="EUR">EUR</option>
                             <option value="GBP">GBP</option>
-                            <option value="RUB">RUB</option>
+                            <option value="RUB">RUB</option> -->
                         </select>
                     </div>
                 </div>
@@ -72,55 +78,192 @@
     </div><!-- End Search Menu -->
     
     <!-- Sign In Popup -->
-    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-        <div class="small-dialog-header">
-            <h3>Sign In</h3>
-        </div>
-        <form action="<?php echo base_url() ?>Login/loginMe" method="post" >
-            <div class="sign-in-wrapper">
-                <a href="#0" class="social_bt facebook">Login with Facebook</a>
-                <a href="#0" class="social_bt google">Login with Google</a>
-                <div class="divider"><span>Or</span></div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" name="email" id="email">
-                    <i class="icon_mail_alt"></i>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-control" name="password" id="password" value="">
-                    <i class="icon_lock_alt"></i>
-                </div>
-                <div class="clearfix add_bottom_15">
-                    <div class="checkboxes float-left">
-                        <label class="container_check">Remember me
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="float-right"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
-                </div>
-                <div class="text-center"><input type="submit" value="Log In" class="btn_login"></div>
-                <div class="text-center">
-                    Don’t have an account? <a href="javascript:void(0);">Sign up</a>
-                </div>
-                <div id="forgot_pw">
+    <<div class="modal fade" id="signinForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+               <div id="signinForm" >
+             
+                    <div id="ack" style="display : none " class="alert alert-danger" role="alert" ></div>
+
                     <div class="form-group">
-                        <label>Please confirm login email below</label>
-                        <input type="email" class="form-control" name="email_forgot" id="email_forgot">
-                        <i class="icon_mail_alt"></i>
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" id="login-email">
+                        
                     </div>
-                    <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-                    <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" id="password" >
+                        
+                    </div>
+                    <div class="clearfix add_bottom_15">
+                        <div class="checkboxes float-left">
+                            <label class="container_check">Remember me
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="float-right"><a  data-toggle="modal" data-target="#passwordForm" >Forgot Password?</a></div>
+                    </div>
+                    <div class="text-center">
+                        <button  class="btn_login" id="btn_login"> Log In </button>
+                    </div>
+               
+                <script type="text/javascript">
+                      $(document).ready(function (){
+                              $("#btn_login").click(function(){
+                                    var username = $("#login-email").val().trim();
+                                    var password = $("#password").val().trim();
+
+                                    if( username != "" && password != "" ){
+                                        $.ajax({
+                                            url:'<?php echo base_url() ?>Login/loginMe',
+                                            type:'post',
+                                            data:{email:username,password:password},
+                                            success:function(response){
+                                                var msg = "";
+                                                console.log (response) ; 
+                                                if(response == 1 ){
+                                                    location.reload() ;
+                                                }else{
+                                                    msg = "Invalid username and password!";
+                                                }
+                                                $("#ack").show().html(msg);
+                                            }
+                                        });
+                                    }
+                                });
+                        });
+                </script>
+                <div class="text-center">
+                    Don’t have an account? <a data-toggle="modal"  data-target=".bd-example-modal-lg" >Sign up</a>
                 </div>
+                </div>
+  
+                <div class="modal fade" id="passwordForm"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">              
+
+                       
+                            <form>
+                            <div class="form-group">
+                                <label>Please confirm login email below</label>
+                                <input type="email" class="form-control" name="email_forgot" id="email_forgot">
+                                <i class="icon_mail_alt"></i>
+                            </div>
+
+                            <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
+                            <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                            </form>
+                       
+                            
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="modal fade bd-example-modal-lg"  id="signupForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Signin to PalmyraHotels.tn</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                          <div class="modal-body">     
+                    
+                        <form >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>First name</label>
+                                        <input type="text" class=" form-control" placeholder="first name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last name</label>
+                                        <input type="text" class=" form-control" placeholder="last name">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">    
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="country" class=" form-control" placeholder="country">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group ">
+                                        
+                                            <label>Code Country</label>
+                                            <input  type="number" class=" form-control" placeholder="code country">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                               
+                             <div class="form-group">
+                                <label>mobile</label>
+                                    <input type="tel" class=" form-control" placeholder="mobile">
+                            </div>
+                            </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" class=" form-control" placeholder="Email">
+                                    </div>
+                            </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" class=" form-control" id="password1" placeholder="Password">
+                                    </div>
+                            </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Confirm password</label>
+                                        <input type="password" class=" form-control" id="password2" placeholder="Confirm password">
+                                    </div>
+                            </div>
+                            </div>
+                            <div id="pass-info" class="clearfix"></div>
+                            <button class="btn_full">Create an account</button>
+                        </form>
+                    
+
+                      
+                  <div class="modal-footer">
+                        *required
+                  </div>
+                </div>
+              </div>
             </div>
-        </form>
+            <script type="text/javascript">
+                    $("#signupBtn").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ; $("#signupForm").show() ;  }) ; 
+                    $("#forgot").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ;  $("#passwordForm").show() ;  }) ; 
+
+            </script>
+        
         <!--form -->
     </div>
     <!-- /Sign In Popup -->
 
     <!-- Common scripts -->
-    <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min-1.js"></script>
+  
     <script src="<?php echo base_url() ?>assets/js/common_scripts_min-1.js"></script>
     <script src="<?php echo base_url() ?>assets/js/functions-1.js"></script>
 
@@ -172,21 +315,56 @@
     </script>
 
     <!-- Specific scripts -->
-    <script>
+  <script>
     $(function() {
-      $('input.date-pick').daterangepicker({
-          autoUpdateInput: true,
-          singleDatePicker: true,
-          autoApply: true,
+      'use strict';
+      $('input[name="dates"]').daterangepicker({
+          autoUpdateInput: false,
           minDate:new Date(),
-          showCustomRangeLabel: false,
           locale: {
-            format: 'DD-MM-YYYY'
+              cancelLabel: 'Clear'
           }
-          }, function(start, end, label) {
-          console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('DD-MM-YYYY') + ' (predefined range: ' + label + ')');
-        });
+      });
+      $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+          $(this).val(' from ' + picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD'));
+          $('input[name="checkin"]').val(picker.startDate.format('YYYY-MM-DD')) ;
+          $('input[name="checkout"]').val(picker.endDate.format('YYYY-MM-DD')) ;
+
+
+      });
+      $('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+      });
     });
+    </script>
+    
+    <!-- Input quantity  -->
+    <script src="js/input_qty-1.js"></script>
+
+    <!-- Autocomplete -->
+    <script>
+    function initMap() {
+      var input = document.getElementById('autocomplete');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+     
+      autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          window.alert("Autocomplete's returned place contains no geometry");
+          return;
+        }
+
+        var address = '';
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] && place.address_components[0].short_name || ''),
+            (place.address_components[1] && place.address_components[1].short_name || ''),
+            (place.address_components[2] && place.address_components[2].short_name || '')
+          ].join(' ');
+        } 
+      });
+    }
+    </script>
     </script>
     <script>
         $('input.time-pick').timepicker({
@@ -202,39 +380,7 @@
                 showSelectedHTML: true
             });
         });
-    </script>   
-
-
-    <!-- Messenger Plugin de discussion Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin de discussion code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "103054498919121");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v12.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
     </script>
     
-  </body>
+
 </html>

@@ -95,15 +95,15 @@ class BaseController extends CI_Controller {
                     $mail->isSMTP();
                     $mail->Host     = 'smtp.topnet.tn';
              
-                    $mail->Username = 'aquapark@palmyrahotels.tn';
-                    $mail->Password = 'Aquapark2022';
+                    $mail->Username = 'contact@palmyrahotels.tn';
+                    $mail->Password = 'Palmyra2022';
                    // $mail->SMTPAuth = true;
 						 // $mail->SMTPAutoTLS = true; 
 						  $mail->Port = 25; 
                  
                     
-                    $mail->setFrom('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park ');
-                    $mail->addReplyTo('aquapark@palmyrahotels.tn', 'Palmyra Aqua Park');
+                    $mail->setFrom('contact@palmyrahotels.tn', 'Palmyra Hotels ');
+                    $mail->addReplyTo('contact@palmyrahotels.tn', 'Palmyra Hotels');
                     
                     // Add a recipient
                     $mail->addAddress($to);
@@ -189,9 +189,18 @@ class BaseController extends CI_Controller {
      * @return {null} $result : null
      */
     function loadViews($viewName = "", $headerInfo = NULL, $pageInfo = NULL, $footerInfo = NULL){
+
+    	$this->load->model('hotel_model');
+    	$this->load->model('bar_model');
+      
+         $this->load->model('reservation_model');
     
     			 $headerInfo['hotels'] = $this->hotel_model->hotelListing() ;
-    	  	
+    			 $footerInfo['hotels'] = $this->hotel_model->hotelListing() ;
+    			 
+    	  		 $headerInfo['MyReservations'] =  $this->reservation_model->myReservationListing($this->vendorId );
+
+    	  		 $headerInfo['bars'] = $this->bar_model->barListing() ;
 
 				$this->load->view('includes/header', $headerInfo);
 	        	$this->load->view($viewName, $pageInfo);

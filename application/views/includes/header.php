@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Palmyra Hotels ">
     <meta name="author" content="Maiza Bahaedinne">
+    <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP7L2TPBWD"></script>
@@ -23,10 +24,7 @@
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="<?php echo base_url() ?>assets/img/apple-touch-icon-57x57-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<?php echo base_url() ?>assets/img/apple-touch-icon-72x72-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo base_url() ?>assets/img/apple-touch-icon-114x114-precomposed-1.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo base_url() ?>assets/img/apple-touch-icon-144x144-precomposed-1.png">
+
 
     <!-- GOOGLE WEB FONT -->
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text:400">
@@ -55,9 +53,61 @@
     <link href="<?php echo base_url() ?>assets/css/custom-1.css" rel="stylesheet">
 
 
-        
+          <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min-1.js"></script>
+
 </head>
 <body>
+
+        <!-- Messenger Plugin de discussion Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin de discussion code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103054498919121");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '661929371607230',
+          xfbml      : true,
+          version    : 'v12.0'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 
     <div id="preloader">
         <div class="sk-spinner sk-spinner-wave">
@@ -69,6 +119,8 @@
         </div>
     </div>
     <!-- End Preload -->
+
+
 
     <div class="layer"></div>
     <!-- Mobile menu overlay mask -->
@@ -82,21 +134,28 @@
                     <div class="col-6">
                         <ul id="top_links">
                             <?php if ($uid == 0 ) { ?>
-                                <li><a href="#sign-in-dialog" id="access_link">Sign in</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#signinForm" >Sign in</a></li>
                             <?php } else {?>
-                                <li><?php echo $name ?>  
-                                    <a style="color: red;" href="<?php echo base_url() ?>logout" >
+                                <li >
+                                    <a class="" href="<?php echo base_url() ?>Reservation/mybookings" ><?php echo $name ?><sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>  
+
+                                    
+                                </li>
+                                 <li><a  href="<?php echo base_url() ?>logout" class=" ">
                                         Sign out
                                     </a>
                                 </li>
+                                
                             <?php } ?>
-                                <li><a href="wishlist-1.html" id="wishlist_link">Wishlist</a></li>
+                               
 
                                 <li id="social_top">
                                 <a target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a>
-                               
+
                                 <a target="_blank" href="https://www.instagram.com/palmyrahotels.tn" ><i class="icon-instagramm"></i></a> 
                             </li>
+
+                           
                            
                         </ul>
                     </div>
@@ -110,7 +169,7 @@
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="180"  alt="City tours" class="logo_normal"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="200"  alt="City tours" class="logo_normal"></a>
                       <a href="<?php echo base_url() ?>">
                         <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="180"  alt="City tours" class="logo_sticky"></a>
                     </div>
@@ -119,16 +178,18 @@
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                           <!-- <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" height="34" alt="Palmyra Hotels"> 
-                           <h2>Palmyra <small>Hotels</small></h2> -->
-                           <h1><a href="<?php echo base_url() ?>" title="PalmyraHotels.tn"><h2>Palmyra <small>Hotels</small></h2></a></h1>
+                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="160" alt="Palmyra Hotels"> 
+                             
+                                
+                          
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                          <ul>
                             <li><a href="<?php echo base_url() ?>" class="show-submenu">Home</a></li>                            
                             <li><a href="<?php echo base_url() ?>About">About</a></li>
+                            
                              <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a>
+                                <a  class="show-submenu">Hotels <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <?php foreach ($hotels as $hotel ) { ?> 
                                             <li> 
@@ -140,47 +201,42 @@
                                         <?php } ?>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url() ?>Events">Events</a></li>
+                           
+                             <li class="submenu">
+                                <a href="javascript:void(0);" class="show-submenu">Services <i class="icon-down-open-mini"></i></a>
+                                <ul>
+                                    <?php foreach ($bars as $bar ) { ?> 
+                                            <li> 
+                                                <a href="<?php echo base_url() ?>Bars/view/<?php echo $bar->barId ?>" >
+                                                    <?php echo $bar->name ?>
+                                                        
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                </ul>
+                            </li>
+
+                            
+
+                            <li><a href="<?php echo base_url() ?>Blog">Blog</a></li>
                             
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
-                            
-                             
                            
                         </ul>
                     </div><!-- End main-menu -->
-                    <!--
-                    <ul id="top_tools">
-                        <li>
-                            <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a>
-                        </li>
-                        <li>
-                            <div class="dropdown dropdown-cart">
-                                <a href="#" data-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong>3</strong></a>
-                                <ul class="dropdown-menu" id="cart_items">
+                   
+                                <ul id="top_tools">
+
                                     <li>
-                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="image"></div>
-                                        <strong><a href="#">Louvre museum</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
+                                     <!--   <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a> -->
                                     </li>
-                                    <li>
-                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_2-1.jpg" alt="image"></div>
-                                        <strong><a href="#">Versailles tour</a>2x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
-                                    </li>
-                                    <li>
-                                        <div class="image"><img src="<?php echo base_url() ?>assets/img/thumb_cart_3-1.jpg" alt="image"></div>
-                                        <strong><a href="#">Versailles tour</a>1x $36.00 </strong>
-                                        <a href="#" class="action"><i class="icon-trash"></i></a>
-                                    </li>
-                                    <li>
-                                        <div>Total: <span>$120.00</span></div>
-                                        <a href="cart-1.html" class="button_drop">Go to cart</a>
-                                        <a href="payment-1.html" class="button_drop outline">Check out</a>
-                                    </li>
+                                    
                                 </ul>
-                            </div><!-- End dropdown-cart-->
-                        </li>
-                    </ul>
+
+                               
+                   
+                    
+                   
                 </nav>
             </div>
         </div><!-- container -->

@@ -1,4 +1,4 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/holiday.jpg" data-natural-width="1400" data-natural-height="470">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/hotel/holiday.jpg" >
         <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="animated fadeInDown">
                 <h1>Contact us</h1>
@@ -288,7 +288,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="number" id="phone_contact" name="phone" class="form-control" placeholder="Enter Phone number">
+                                        <input type="number" id="phone_contact" maxlength="10" name="phone" class="form-control" placeholder="Enter Phone number">
                                     </div>
                                 </div>
                             </div>

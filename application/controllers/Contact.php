@@ -61,7 +61,7 @@ class Contact extends BaseController
     
                             $resultat = $this->contact_model->addNewContact($newsInfo);
 
-                            $this->send_mail("maizakoussai@gmail.com", 
+                            $this->send_mail($this->input->post('email')."; admin@palmyrahotels.tn", 
                             "Welcome to PalmyraHotels.tn"  , "" , 
                             "<h2>Welcome to PalmyraHotels.tn </h2>
                             <br><br>
