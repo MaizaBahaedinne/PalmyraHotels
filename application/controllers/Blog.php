@@ -32,13 +32,13 @@ class Blog extends BaseController {
 		public function view($barId)
 		        {
 		              
-		                $data['bar'] = $this->bar_model->bar($barId) ;
+		                $data['blog'] = $this->blog_model->blog($blogId) ;
 
 		               
 		               
 
-		                 $this->global['pageTitle'] = $data['bar']->name  ;
-		        		 $this->loadViews("bar/view", $this->global, $data  , NULL); 
+		                 $this->global['pageTitle'] = $data['blog']->titre  ;
+		        		 $this->loadViews("blog/view", $this->global, $data  , NULL); 
 		        }  
 		
 		

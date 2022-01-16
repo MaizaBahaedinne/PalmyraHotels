@@ -123,10 +123,10 @@ class BaseController extends CI_Controller {
                  
 
                  if($mail->send()) {
-						    echo 'Message has been sent';
+						   return true ;
 						} 
 						else {
-						    echo "Message could not be sent. <br>Mailer Error: $mail->ErrorInfo";
+						   return false ;
 						}
     }
 
