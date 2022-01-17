@@ -9,7 +9,7 @@
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="<?php echo $pageTitle ?>" />
     <meta property="og:description"        content="" />
-    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" />
+    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
     <meta property="fb:app_id"             content="673400070509276" />
 
 
