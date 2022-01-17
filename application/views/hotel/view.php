@@ -1,7 +1,7 @@
 <head>
     
      <meta property="og:url"                content="<?php echo base_url() ?>" />
-    <meta property="og:type"               content="article" />
+    <meta property="og:type"          content="website" />
     <meta property="og:title"              content="Palmyra <?php echo $hotel->name ?>" />
     <meta property="og:description"        content="<?php echo $hotel->description ?>" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" />
