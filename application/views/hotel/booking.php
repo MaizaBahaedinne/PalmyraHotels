@@ -166,7 +166,7 @@
 
                                
                              
-                               $("#priceA_"+roomId ).html(roomPrice) ; 
+                               
 
                                var calculated_total_sum = 0 ; 
                                var calculated_taxe_sum = 0 ; 
