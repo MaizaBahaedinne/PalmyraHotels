@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  prefix="og: http://ogp.me/ns#">
   <head>
     
     <title>Palmyra Hotels - Coming soon</title>
-       <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Palmyra Hotels ">
@@ -11,10 +11,11 @@
 
 
     <meta property="og:url"                content="<?php echo base_url() ?>" />
-    <meta property="og:type"          content="website" />
+    <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Palmyra Hotels | Soon " />
     <meta property="og:description"        content="WE WILL BE BACK SOON!" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
+    <meta property="fb:app_id"             content="673400070509276" />
 
 
     <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
