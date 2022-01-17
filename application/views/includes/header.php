@@ -2,6 +2,22 @@
 <html lang="en">
 
 <head>
+
+   
+    
+     <meta property="og:url"                content="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId ?>" />
+    <meta property="og:type"                content="website" />
+    <meta property="og:title"              content="Palmyra <?php echo $hotel->name ?>" />
+    <meta property="og:description"        content="<?php echo $hotel->description ?>" />
+    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" />
+
+    <meta property="fb:app_id"             content="673400070509276" />
+
+
+
+
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
