@@ -5,17 +5,6 @@
 
    
     
-     <meta property="og:url"                content="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId ?>" />
-    <meta property="og:type"                content="website" />
-    <meta property="og:title"              content="Palmyra <?php echo $hotel->name ?>" />
-    <meta property="og:description"        content="<?php echo $hotel->description ?>" />
-    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" />
-
-    <meta property="fb:app_id"             content="673400070509276" />
-
-
-
-
 
 
     <meta charset="utf-8">
@@ -108,7 +97,7 @@
     <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '661929371607230',
+          appId      : '673400070509276',
           xfbml      : true,
           version    : 'v12.0'
         });
