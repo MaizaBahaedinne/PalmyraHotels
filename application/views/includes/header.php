@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  prefix="og: http://ogp.me/ns#">
 
 <head>
 
-   
-    
     <meta property="og:url"                content="<?php echo base_url() ?>" />
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="<?php echo $pageTitle ?>" />
