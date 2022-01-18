@@ -21,6 +21,7 @@ class Hotel extends BaseController {
 		        {    
             			 
 		                $this->global['pageTitle'] = 'Hotel';
+
  						
 		            	$data['hotels'] = $this->hotel_model->hotelListing() ;
 		                
@@ -77,7 +78,8 @@ class Hotel extends BaseController {
 		                	}
  
 		               
-
+		                 $this->global['type'] = 'hotel';	
+		                 $this->global['hotelDetails'] =  $data['hotel'] ;
 		                 $this->global['pageTitle'] = $data['hotel']->name  ;
 		        		 $this->loadViews("hotel/view", $this->global, $data  , NULL); 
 		        }  
