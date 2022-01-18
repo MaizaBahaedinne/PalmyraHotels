@@ -4,13 +4,13 @@
 <head>
 
    
-    <?php if ($type=="hotel" && !(empty($hotelDetails)) ) { ?>
+    <?php if(!empty($type) ){ if ($type=="hotel" && !(empty($hotelDetails)) ) { ?>
     <meta property="og:url"                content="<?php echo base_url() ?>Hotel/view/<?php echo $hotelDetails->hotelId ?>" />
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="Palmyra <?php echo $pageTitle ?>" />
     <meta property="og:description"        content="<?php echo $hotelDetails->description ?>" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotelDetails->facade ?>" />
-    <?php  }else{ ?>
+    <?php } }else{ ?>
         <meta property="og:url"                content="<?php echo base_url() ?>" />
         <meta property="og:type"               content="website" />
         <meta property="og:title"              content="Palmyra Hotels | <?php echo $pageTitle ?>" />
