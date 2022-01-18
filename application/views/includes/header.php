@@ -15,7 +15,7 @@
         <meta property="og:type"               content="website" />
         <meta property="og:title"              content="Palmyra Hotels | <?php echo $pageTitle ?>" />
         <meta property="og:description"        content="Palmyra Hotels" />
-        <meta property="og:image"              content="<?php echo base_url() ?>assets/img/logo_600.jpg" />
+        <meta property="og:image"              content="<?php echo base_url() ?>assets/img/logo_600.png" />
     <?php  }?>    
     <meta property="fb:app_id"             content="673400070509276" />
 
