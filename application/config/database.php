@@ -80,7 +80,7 @@ $db['default'] = array(
 	'password' => '5iHse5%7',
 	'database' => 'palmyrabd',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => '' ,
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
