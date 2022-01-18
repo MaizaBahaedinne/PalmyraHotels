@@ -10,8 +10,13 @@
     <meta property="og:title"              content="Palmyra <?php echo $pageTitle ?>" />
     <meta property="og:description"        content="<?php echo $hotelDetails->description ?>" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotelDetails->facade ?>" />
-    <?php  } ?>
-
+    <?php  }else{ ?>
+        <meta property="og:url"                content="<?php echo base_url() ?>" />
+        <meta property="og:type"               content="website" />
+        <meta property="og:title"              content="Palmyra Hotels | <?php echo $pageTitle ?>" />
+        <meta property="og:description"        content="Palmyra Hotels" />
+        <meta property="og:image"              content="<?php echo base_url() ?>assets/img/logo_600.jpg" />
+    <?php  }?>    
     <meta property="fb:app_id"             content="673400070509276" />
 
 
