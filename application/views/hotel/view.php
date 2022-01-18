@@ -1,9 +1,10 @@
 
 <script type="text/javascript">
     
-    $('meta[name=og\\:image]').attr('content', "<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" );
-    $('meta[name=og\\:url]').attr('content', window.location.href );
-    $('meta[name=og\\:description]').attr('content', <?php echo $hotel->description ?> );
+    $('#ogImage').attr('content', "<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" );
+    $('#ogURL').attr('content', window.location.href );
+    $('#ogDescription').attr('content', "<?php echo $hotel->description ?>" );
+    $('#ogTitle').attr('content', "Palmyra <?php echo $hotel->name ?>" );
 
 </script>
 
