@@ -23,7 +23,7 @@
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="<?php echo $pageTitle ?>" />
     <meta property="og:description"        content="<?php echo $barDetails->description ?>" />
-    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $barDetails->facade ?>" />
+    <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $barDetails->repo ?>" />
     <?php 
     }
 
