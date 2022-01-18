@@ -29,6 +29,25 @@ class User_model extends CI_Model
     }
 
 
+             /**
+     * This function is used to get the user listing count
+     * @param string $searchText : This is optional search text
+     * @return number $count : This is row count
+     */
+    function checkEmail($email = '' )
+    {
+        $this->db->select('BaseTbl.* ');
+        $this->db->from('tbl_users as BaseTbl');
+        if($email != '' ){
+            $this->db->where('BaseTbl.email = ',$email );
+        }
+
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+
+
    
     
         /**

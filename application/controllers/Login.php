@@ -23,8 +23,10 @@ class Login extends CI_Controller
      * Index Page for this controller.
      */
     public function index()
-    {
+    {   
+
         $this->isLoggedIn();
+
     }
     
     /**
@@ -36,13 +38,23 @@ class Login extends CI_Controller
         
         if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
         {       
-                     
-             $this->load->view('Login');
+            
+                 $headerInfo['hotels'] = $this->hotel_model->hotelListing() ;
+                 $footerInfo['hotels'] = $this->hotel_model->hotelListing() ;
+                 
+                 $headerInfo['MyReservations'] =  $this->reservation_model->myReservationListing($this->vendorId );
+
+                 $headerInfo['bars'] = $this->bar_model->barListing() ;
+
+                $this->load->view('includes/header', $headerInfo);
+                $this->load->view('Login', $pageInfo);
+                $this->load->view('includes/footer', $footerInfo);        
+          
 
         }
         else
         {           
-            redirect('Posts/Acceuil');
+            redirect('/');
         }
     }
     

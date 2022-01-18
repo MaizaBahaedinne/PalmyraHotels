@@ -143,7 +143,7 @@
                         });
                 </script>
                 <div class="text-center">
-                    Don’t have an account? <a data-toggle="modal"  data-target=".bd-example-modal-lg" >Sign up</a>
+                    Don’t have an account? <a href="<?php echo base_url() ?>Register" >Sign up</a>
                 </div>
                 </div>
   
@@ -176,90 +176,7 @@
                     </div>
                 </div>
 
-                <div class="modal fade bd-example-modal-lg"  id="signupForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Signin to PalmyraHotels.tn</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                          <div class="modal-body">     
-                    
-                        <form >
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>First name</label>
-                                        <input type="text" class=" form-control" placeholder="first name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Last name</label>
-                                        <input type="text" class=" form-control" placeholder="last name">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">    
-                                    <div class="form-group">
-                                        <label>Country</label>
-                                        <input type="country" class=" form-control" placeholder="country">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group ">
-                                        
-                                            <label>Code Country</label>
-                                            <input  type="number" class=" form-control" placeholder="code country">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                               
-                             <div class="form-group">
-                                <label>mobile</label>
-                                    <input type="tel" class=" form-control" placeholder="mobile">
-                            </div>
-                            </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" class=" form-control" placeholder="Email">
-                                    </div>
-                            </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" class=" form-control" id="password1" placeholder="Password">
-                                    </div>
-                            </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Confirm password</label>
-                                        <input type="password" class=" form-control" id="password2" placeholder="Confirm password">
-                                    </div>
-                            </div>
-                            </div>
-                            <div id="pass-info" class="clearfix"></div>
-                            <button class="btn_full">Create an account</button>
-                        </form>
-                    
-
-                      
-                  <div class="modal-footer">
-                        *required
-                  </div>
-                </div>
-              </div>
-            </div>
-            <script type="text/javascript">
-                    $("#signupBtn").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ; $("#signupForm").show() ;  }) ; 
-                    $("#forgot").click(function() { $("#signinForm").hide() ; $("#signupForm").hide() ;  $("#passwordForm").show() ;  }) ; 
-
-            </script>
-        
-        <!--form -->
-    </div>
+              
     <!-- /Sign In Popup -->
 
     <!-- Common scripts -->
