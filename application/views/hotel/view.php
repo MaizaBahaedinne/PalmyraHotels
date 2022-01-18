@@ -3,7 +3,8 @@
    $('head').append(
     "<meta property='og:title' content='Palmyra <?php echo $hotel->name ?>'/> " +
     " <meta property='og:url' content='"+window.location.href+"' />"+
-     " <meta property='og:description' content='<?php echo $hotel->description ?>' />"); 
+     " <meta property='og:description' content='<?php echo $hotel->description ?>' />"+
+     " <meta property='og:image' content='<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>' />"); 
  
 
 </script>
