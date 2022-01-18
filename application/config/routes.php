@@ -59,7 +59,6 @@ $route['logout'] = "Acceuil/logout";
 
 $route['About'] = "Acceuil/About";
 
-$route['Register'] = "Users/register";
 
 
 

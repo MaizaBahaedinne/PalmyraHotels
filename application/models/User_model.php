@@ -29,25 +29,6 @@ class User_model extends CI_Model
     }
 
 
-
-          /**
-     * This function is used to get the user listing count
-     * @param string $searchText : This is optional search text
-     * @return number $count : This is row count
-     */
-    function checkEmail($email = '' )
-    {
-        $this->db->select('BaseTbl.* ');
-        $this->db->from('tbl_users as BaseTbl');
-        if($email != '' ){
-            $this->db->where('BaseTbl.email = ',$email );
-        }
-        
-        $query = $this->db->get();
-        return $query->row();
-    }
-
-
    
     
         /**
@@ -103,7 +84,18 @@ class User_model extends CI_Model
 
    
     
- 
+    /**
+     * This function is used to change users password
+     * @param number $userId : This is user id
+     * @param array $userInfo : This is user updation info
+     */
+    function changePassword($userId, $userInfo)
+    {
+        $this->db->where('userId', $userId);
+        $this->db->update('tbl_users', $userInfo);
+        
+        return $this->db->affected_rows();
+    }
 
 
   
