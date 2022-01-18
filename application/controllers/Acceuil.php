@@ -45,14 +45,14 @@ class Acceuil extends BaseController
           
 
         $this->global['pageTitle'] = 'Home';
-        if($this->input->get("a") == "1"){
+    //    if($this->input->get("a") == "1"){
             $this->loadViews("acceuil", $this->global,  $data , NULL);
         }
-        else 
-        {
-         $this->load->view ("soon") ;
+     //   else 
+     //   {
+      //   $this->load->view ("soon") ;
        //   $this->send_mail("maizabahaedinne@gmail.com", "Testo"  , "" , "Test Mail" )   ;
-        }
+    //}
 
     }
 
