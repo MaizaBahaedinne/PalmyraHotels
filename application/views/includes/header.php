@@ -188,8 +188,10 @@
 
                                 <li id="social_top">
                                 <a target="_blank" href="https://www.facebook.com/palmyrahotels.tn" ><i class="icon-facebook"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/palmyrahotels.tn" ><i class="icon-instagramm"></i></a>
+                                <a target="_blank" href="https://www.youtube.com/channel/UCw27RP8ckwy9ym4_vIW7YFQ" ><i class="icon-youtube"></i></a>
+                                
 
-                                <a target="_blank" href="https://www.instagram.com/palmyrahotels.tn" ><i class="icon-instagramm"></i></a> 
                             </li>
 
                            
