@@ -3,20 +3,20 @@
 
 <head>
 
-    <meta property="og:url"     id="ogURL"           content="<?php echo base_url() ?>" />
+    <meta property="og:url"              content="<?php echo base_url() ?>" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"   id="ogTitle"           content="<?php echo $pageTitle ?>" />
-    <meta property="og:description" id="ogDescription"       content="" />
-    <meta property="og:image"      id="ogImage"        content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
+    <meta property="og:title"              content="<?php echo $pageTitle ?>" />
+    <meta property="og:description"       content="" />
+    <meta property="og:image"            content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
     <meta property="fb:app_id"             content="673400070509276" />
 
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta property="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="description" content="Palmyra Hotels ">
-    <meta property="author" content="Maiza Bahaedinne">
-    <meta property="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Palmyra Hotels ">
+    <meta name="author" content="Maiza Bahaedinne">
+    <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP7L2TPBWD"></script>
