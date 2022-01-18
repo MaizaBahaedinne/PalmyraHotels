@@ -35,7 +35,8 @@ class Bars extends BaseController {
 		                $data['bar'] = $this->bar_model->bar($barId) ;
 
 		               
-		               
+		               	 $this->global['type'] = 'bar';	
+		                 $this->global['barDetails'] =  $data['bar'] ;
 
 		                 $this->global['pageTitle'] = $data['bar']->name  ;
 		        		 $this->loadViews("bar/view", $this->global, $data  , NULL); 
