@@ -12,7 +12,7 @@
 
     <meta property="og:url"                content="<?php echo base_url() ?>" />
     <meta property="og:type"               content="website" />
-    <meta property="og:title"  name="og:title"            content="Palmyra Hotels | Soon " />
+    <meta property="og:title"            content="Palmyra Hotels | Soon " />
     <meta property="og:description"        content="WE WILL BE BACK SOON!" />
     <meta property="og:image"              content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
     <meta property="fb:app_id"             content="673400070509276" />
