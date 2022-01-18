@@ -4,8 +4,8 @@
 <head>
 
     <meta property="og:url"     id="ogURL"           content="<?php echo base_url() ?>" />
-    <meta property="og:type"               content="website" />
-    <meta property="og:title"   id="ogTitle"           content="<?php echo $pageTitle ?>" />
+    <meta property="og:type"                   content="article" />
+    <meta property="og:title"   id="ogTitle"           content="Palmyra Hotels | <?php echo $pageTitle ?>" />
     <meta property="og:description" id="ogDescription"       content="" />
     <meta property="og:image"      id="ogImage"        content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
     <meta property="fb:app_id"             content="673400070509276" />
