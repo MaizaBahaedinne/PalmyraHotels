@@ -1,10 +1,10 @@
 
 <script type="text/javascript">
-    
-    $('#ogImage').attr('content', "<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>" );
-    $('#ogURL').attr('content', window.location.href );
-    $('#ogDescription').attr('content', "<?php echo $hotel->description ?>" );
-    $('#ogTitle').attr('content', "Palmyra <?php echo $hotel->name ?>" );
+   $('head').append(
+    "<meta property='og:title' content='Palmyra <?php echo $hotel->name ?>'/> " +
+    " <meta property='og:url' content='"+window.location.href+"' />"+
+     " <meta property='og:description' content='<?php echo $hotel->description ?>' />"); 
+ 
 
 </script>
 
