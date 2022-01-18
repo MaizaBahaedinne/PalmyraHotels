@@ -17,16 +17,17 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->model('login_model');
         $this->load->model('user_model');
+         $this->load->model('hotel_model');
+          $this->load->model('reservation_model');
+          $this->load->model('bar_model');
     }
 
     /**
      * Index Page for this controller.
      */
     public function index()
-    {   
-
+    {
         $this->isLoggedIn();
-
     }
     
     /**
@@ -38,18 +39,19 @@ class Login extends CI_Controller
         
         if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
         {       
-            
-                 $headerInfo['hotels'] = $this->hotel_model->hotelListing() ;
+                     
+             $headerInfo['hotels'] = $this->hotel_model->hotelListing() ;
                  $footerInfo['hotels'] = $this->hotel_model->hotelListing() ;
                  
-                 $headerInfo['MyReservations'] =  $this->reservation_model->myReservationListing($this->vendorId );
+                 
 
                  $headerInfo['bars'] = $this->bar_model->barListing() ;
+                 $headerInfo['pageTitle'] = "Login" ;
+                 $headerInfo['uid'] = 0 ;
 
                 $this->load->view('includes/header', $headerInfo);
-                $this->load->view('Login', $pageInfo);
-                $this->load->view('includes/footer', $footerInfo);        
-          
+                $this->load->view("login", null);
+                $this->load->view('includes/footer', $footerInfo);
 
         }
         else

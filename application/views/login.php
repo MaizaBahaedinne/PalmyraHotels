@@ -4,25 +4,24 @@
         	<div class="row justify-content-center">
             	<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
                 	<div id="login">
-                    		<div class="text-center"><img src="img/logo_sticky-1.png" alt="Image" width="160" height="34"></div>
+                    		<div class="text-center"><img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" alt="Image" width="200" ></div>
                             <hr>
                             <form>
-                            <a href="#0" class="social_bt facebook">Login with Facebook</a>
-							<a href="#0" class="social_bt google">Login with Google</a>
-							<div class="divider"><span>Or</span></div>
+                      
+							
                                 <div class="form-group">
                                     <label>Username</label>
-                                    <input type="text" class=" form-control " placeholder="Username">
+                                    <input  type="email"  id="email"  class=" form-control " placeholder="Username" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class=" form-control" placeholder="Password">
+                                    <input type="password" id="password"  class=" form-control" placeholder="Password"> required
                                 </div>
                                 <p class="small">
                                     <a href="#">Forgot Password?</a>
                                 </p>
-                                <a href="#" class="btn_full">Sign in</a>
-                                <a href="register-1.html" class="btn_full_outline">Register</a>
+                                <button id="btn_login" class="btn_full">Sign in</button>
+                                <a href="<?php echo base_url() ?>Register" class="btn_full_outline">Register</a>
                             </form>
                         </div>
                 </div>
@@ -30,3 +29,32 @@
         </div>
     </section>
 	</main>
+
+
+    <script type="text/javascript">
+                      $(document).ready(function (){
+                              $("#btn_login").click(function(){
+                                    var username = $("#email").val().trim();
+                                    var password = $("#password").val().trim();
+
+                                    if( username != "" && password != "" ){
+                                        $.ajax({
+                                            url:'<?php echo base_url() ?>Login/loginMe',
+                                            type:'post',
+                                            data:{email:username,password:password},
+                                            success:function(response){
+                                                var msg = "";
+                                                console.log (response) ; 
+                                                if(response == 1 ){
+                                                    location.reload() ;
+                                                }else{
+                                                    msg = "Invalid username and password!";
+                                                     $("#ack").show().html(msg);
+                                                }
+                                               
+                                            }
+                                        });
+                                    }
+                                });
+                        });
+                </script>

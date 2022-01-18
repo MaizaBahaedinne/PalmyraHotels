@@ -134,8 +134,9 @@
                                                     location.reload() ;
                                                 }else{
                                                     msg = "Invalid username and password!";
+                                                    $("#ack").show().html(msg);
                                                 }
-                                                $("#ack").show().html(msg);
+                                                
                                             }
                                         });
                                     }
