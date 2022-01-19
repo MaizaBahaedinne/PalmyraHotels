@@ -32,9 +32,9 @@
         <div id="position">
             <div class="container">
                 <ul>
-                    <li><a href="#">Home</a>
+                    <li><a >Home</a>
                     </li>
-                    <li><a href="#">Hotel</a>
+                    <li><a >Hotel</a>
                     </li>
                     <li><?php echo $hotel->name ?></li>
                 </ul>

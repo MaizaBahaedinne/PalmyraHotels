@@ -22,11 +22,11 @@
 		<div id="position">
 			<div class="container">
 				<ul>
-					<li><a href="#">Home</a>
+					<li><a >Home</a>
 					</li>
-					<li><a href="#">Category</a>
+					<li><a >Bars</a>
 					</li>
-					<li>Page active</li>
+					<li><?php echo $bar->name ?></li>
 				</ul>
 			</div>
 		</div>
