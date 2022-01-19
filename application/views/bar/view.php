@@ -33,7 +33,7 @@
 		<!-- End Position -->
 
 		<div class="collapse" id="collapseMap">
-			<div id="map" class="map"></div>
+			 <iframe id="map" class="map" src="<?php echo $bar->localisation ?>" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
 		<!-- End Map -->
 
