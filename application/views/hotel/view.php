@@ -1,4 +1,124 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.fa {
+  padding: 20px;
+  font-size: 18px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px;
+}
 
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+</style>
 
 
 
@@ -14,12 +134,18 @@
                             <i class="icon-star-empty"></i>
                             <i class="icon-star-empty"></i>
                         </span>
-                        <h1>Palmyra <?php echo $hotel->name ?></h1>
+                        <h1>Palmyra <?php echo $hotel->name ?> </h1>
+                        
+                            
+  
+                            
+                            
+
                         <span><?php echo $hotel->location ?></span>
                     </div>
                     <div class="col-md-4">
                         <div id="price_single_main" class="hotel">
-                            from/per night <span><?php if(!empty($rooms[0]->prices->price)){ echo $rooms[0]->prices->price ; } else{ echo "0"; } ?><sup>DT</sup></span>
+                            from <span><?php if(!empty($rooms[0]->prices->price)){ echo $rooms[0]->prices->price ; } else{ echo "0"; } ?><sup>DT</sup></span> /per night 
                         </div>
                     </div>
                 </div>
@@ -113,6 +239,7 @@
                     <hr>
 
                     <div class="row">
+                        
                         <div class="col-lg-3">
                             <h3>Description</h3>
                         </div>
@@ -287,7 +414,11 @@
 
                 <aside class="col-lg-4">
                     <p class="d-none d-xl-block d-lg-block d-xl-none">
+
                         <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+                        <strong>social links : </strong>
+                         <a href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
+                            <a href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
                     </p>
                     <div class="box_style_1 expose">
                         <form method="GET" action="<?php echo base_url() ?>Hotel/search" >
