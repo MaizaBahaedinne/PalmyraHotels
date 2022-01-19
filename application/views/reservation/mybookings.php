@@ -18,9 +18,9 @@
 				<ul>
 					<li><a href="#">Home</a>
 					</li>
-					<li><a href="#">Category</a>
+					<li><a href="#">Reservation</a>
 					</li>
-					<li>Page active</li>
+					<li></li>
 				</ul>
 			</div>
 		</div>

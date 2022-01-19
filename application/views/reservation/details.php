@@ -1,6 +1,6 @@
 
 
-<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>/assets/img/facade/aqua.jpg)" >
+<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>/assets/img/facade/hotel/<?php echo $hotel->facade ?>" >
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)" style="background-color: rgba(0, 0, 0, 0.6);">
     		<div class="intro_title">
     			<h1>Place your order</h1>
@@ -44,7 +44,7 @@
                                 <ul>
                                         <li><a href="#">Home</a>
                                         </li>
-                                        <li><a href="#">Category</a>
+                                        <li><a href="#">Booking</a>
                                         </li>
                                         <li>Page active</li>
                                 </ul>
@@ -112,7 +112,24 @@
 
                                                         <?php } ?>
 
+                                                <?php if ($detail->adult == 1 ) { ?> 
+                                                       <input 
+                                                        type="hidden" 
+                                                        class="Pax Pax_<?php echo $detail->detailId ?>" 
+                                                        id="Pax_<?php echo $detail->detailId ?>" 
+                                                        value="<?php echo ( ($detail->prices->pensionPrice + $detail->prices->supS) ) ?>"
+                                                        data-capacity = "<?php echo $detail->adult + $detail->children  ?>"
+                                                        data-currentPrice = "<?php echo ( $detail->prices->pensionPrice + $detail->prices->supS )*( $detail->adult + $detail->children )  ?>" 
+                                                        >
 
+                                                        <input 
+                                                        type="hidden" 
+                                                        class="rommP roomP_<?php echo $detail->detailId ?>" 
+                                                        id="rommP_<?php echo $detail->detailId ?>" 
+                                                        value="<?php echo( $detail->prices->pensionPrice + $detail->prices->supS )*( $detail->adult + $detail->children ) ?>" 
+                                                        >
+                                                 <?php } ?> 
+                                                 <?php if ($detail->adult > 1 ) { ?> 
                                                        <input 
                                                         type="hidden" 
                                                         class="Pax Pax_<?php echo $detail->detailId ?>" 
@@ -128,7 +145,9 @@
                                                         id="rommP_<?php echo $detail->detailId ?>" 
                                                         value="<?php echo( $detail->prices->price + $detail->prices->supS )*( $detail->adult + $detail->children ) ?>" 
                                                         >
-                                                     
+                                                 <?php } ?>
+
+
                                                 </div>
                                          <?php if (!empty($detail->options) ) {  ?>       
                                         <table class="table table-striped options_cart">
@@ -140,6 +159,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                        
                                                         <?php foreach ($detail->options as $option) {  ?>
                                                                <?php echo $option->option ?>
                                                                  <tr>
@@ -180,7 +200,12 @@
                                                        <br>
                                                        <span class="bg-white text-right">  Price : 
                                                                         <strong id="detailPrice_<?php echo $detail->detailId ?>" >
-                                                                                <?php echo ( ($detail->prices->price + $detail->prices->supS) * $detail->adult) ?>
+                                                                                <?php if ($detail->adult == 1 ) { 
+                                                                                        echo ( ($detail->prices->pensionPrice + $detail->prices->supS) * $detail->adult) ;
+                                                                                }
+                                                                                elseif ($detail->adult > 1 ) { 
+                                                                                 echo ( ($detail->prices->price + $detail->prices->supS) * $detail->adult) ;
+                                                                                 }  ?>
                                                                         </strong>   
                                                                         <sup>DT/Per night</sup>
                                                                 </span> 

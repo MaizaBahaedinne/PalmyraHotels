@@ -93,9 +93,7 @@ class Reservation extends BaseController
 
             foreach ($data['reservation']->details as $detail ) 
             {
-               
                    $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
-                
             }
       $this->loadViews("reservation/details", $this->global, $data , NULL);
      }
