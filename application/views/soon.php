@@ -115,9 +115,9 @@
                     <div id="social_footer">
                         <ul>
                             <li><a  target="_blank" href="https://www.facebook.com/palmyrahotels.tn"><i class="icon-facebook"></i></a></li>
-                            <li><a  target="_blank" href="#"><i class="icon-google"></i></a></li>
+                            
                             <li><a  target="_blank" href="https://www.instagram.com/palmyrahotels.tn"><i class="icon-instagram"></i></a></li>
-                            <li><a  target="_blank" href="#"><i class="icon-youtube-play"></i></a></li>
+                            <li><a  target="_blank" href="https://www.youtube.com/channel/UCw27RP8ckwy9ym4_vIW7YFQ"><i class="icon-youtube-play"></i></a></li>
                             <li><a  target="_blank" href="https://www.linkedin.com/company/palmyra-hotels"><i class="icon-linkedin"></i></a></li>
                         </ul>
                         <p>Palmyra Hotels © 2022 Made by Bahaedinne Maiza</p>
