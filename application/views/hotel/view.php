@@ -417,8 +417,8 @@
 
                         <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
                         <strong>social links : </strong>
-                         <a href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
-                            <a href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
+                         <a target="_blank" href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
+                         <a target="_blank" href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
                     </p>
                     <div class="box_style_1 expose">
                         <form method="GET" action="<?php echo base_url() ?>Hotel/search" >
