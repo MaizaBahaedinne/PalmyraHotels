@@ -413,7 +413,7 @@
                                 </p>
                                 <div class="rating">
                                     <?php for ($i=0; $i < round($avi->moyenne) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
-                                    <?php for ($i=1; $i < 5-round($avi->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                                    <?php for ($i=0; $i < 5-round($avi->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
                                     <?php echo round($avi->moyenne) ?>
                                 </div>
                             </div>
