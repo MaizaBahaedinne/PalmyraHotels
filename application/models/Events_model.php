@@ -55,8 +55,8 @@ class Events_model extends CI_Model
         if($limit != '' ){
             $this->db->limit($limit);
         }
-
-     
+        $this->db->order_by('BaseTbl.dateDebut DESC');
+        
          
         $query = $this->db->get();
         return $query->result();
