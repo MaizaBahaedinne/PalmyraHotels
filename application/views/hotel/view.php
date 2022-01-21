@@ -352,7 +352,12 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <h3>Reviews</h3>
+                            <?php if($uid != 0 ) { ?>
                             <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
+                            <?php } else {  ?>
+                            <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#signinForm">Leave a review</a>
+                            <?php } ?>
+
                         </div>
                         <div class="col-lg-9">
                            
