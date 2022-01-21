@@ -101,7 +101,7 @@ class Reservation_model extends CI_Model
 
         $this->db->join('tbl_hotels Hotel','Hotel.hotelId = BaseTbl.hotelId')  ;
 
-          //  $this->db->where('BaseTbl.checkin >= now()'  );
+            $this->db->where('BaseTbl.checkin >= CURDATE()'  );
             $this->db->where('BaseTbl.createdBy =', $userId );
 
              

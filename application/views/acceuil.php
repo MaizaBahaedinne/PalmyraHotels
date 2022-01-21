@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <label>Children (2-12 ago)</label>
+                                <label>Children <small>(2-12 ago)</small></label>
                                 <div class="numbers-row">
                                     <input type="text" value="0" id="children" class="qty2 form-control" name="children">
                                 </div>
