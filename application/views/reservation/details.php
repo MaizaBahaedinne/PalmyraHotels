@@ -409,7 +409,7 @@
                         var roomsPrice = 0 ;
                         $(".rommP").each( function(){                                
                                 roomsPrice +=  parseInt( $(this).val() )  ; 
-                                $("#cost").html( parseInt(roomsPrice)  )  ;
+                                $("#cost").html( parseInt(roomsPrice) * parseInt(<?php echo $reservation->nights ?>)  )  ;
                         });
                         
                         
