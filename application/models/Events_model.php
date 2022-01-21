@@ -57,7 +57,7 @@ class Events_model extends CI_Model
         }
 
         $this->db->join('tbl_hotels Hotel','Hotel.hotelId = BaseTbl.hotelId')  ;
-        $this->db->join('tbl_hotels Bar','Hotel.barId = BaseTbl.barId')  ;
+        $this->db->join('tbl_hotels Bar','Bar.barId = BaseTbl.barId')  ;
          
          
         $query = $this->db->get();
