@@ -115,8 +115,8 @@
                     <div class="tour_title">
                         <h3>Palmyra <strong><?php echo $hotel->name ?></strong></h3>
                         <div class="rating">
-                            <?php for ($i=0; $i < $hotel->avisHotel->moyenne ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
-                            <?php for ($i=1; $i < 5-round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                            <?php for ($i=0; $i < round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                            <?php for ($i=0; $i < 5-round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
                             <small>(<?php echo count($hotel->avis) ?>)</small>
                         </div><!-- end rating -->
                         <div class="wishlist">
