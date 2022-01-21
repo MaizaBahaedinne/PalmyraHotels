@@ -410,7 +410,7 @@
                             <?php foreach ($avis as $avi) {  ?>
                           
                             <div class="review_strip_single">
-                                <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
+                                <img src="<?php echo base_url() ?>assets/img/user.png" width="75px" alt="Image" class="rounded-circle">
                                 <small> - <?php echo $avi->createdDTM ?> -</small>
                                 <h4><?php echo $avi->user->name ; ?></h4>
                                 <p>
