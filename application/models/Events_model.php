@@ -50,15 +50,13 @@ class Events_model extends CI_Model
      */
     function eventsListing($limit = '' )
     {
-        $this->db->select('BaseTbl.* , Hotel.* , Bar.* , BaseTbl.description ');
+        $this->db->select('BaseTbl.*  ');
         $this->db->from('tbl_events as BaseTbl');
         if($limit != '' ){
             $this->db->limit($limit);
         }
 
-        $this->db->join('tbl_hotels Hotel','Hotel.hotelId = BaseTbl.hotelId')  ;
-        $this->db->join('tbl_bar Bar','Bar.barId = BaseTbl.barId')  ;
-         
+     
          
         $query = $this->db->get();
         return $query->result();

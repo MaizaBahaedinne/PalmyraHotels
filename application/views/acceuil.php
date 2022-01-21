@@ -148,7 +148,7 @@
                 <?php foreach ($events as $event ){  ?>
                     <div class="col-lg-6">
                         <a class="box_news" href="#">
-                            <figure><img src="<?php echo base_url() ?>assets/img/events/<?php echo $event->acro ?>/<?php echo $event->affiche?>" alt="">
+                            <figure><img src="<?php echo base_url() ?>assets/img/events/<?php echo $event->affiche?>" alt="">
                                 <figcaption>
                                     <strong>
                                         <?php  
@@ -161,7 +161,7 @@
                                 </figcaption>
                             </figure>
                             <ul>
-                                <li><?php echo $event->name ?></li>
+                                <li><?php echo $event->location->name ?></li>
                                 <li><?php echo date_format($date, 'd M Y H:m');?></li>
                             </ul>
                             <h4><?php echo $event->titre ?></h4>

@@ -20,6 +20,8 @@ class Acceuil extends BaseController
         $this->load->model('hotel_model');
          $this->load->model('events_model');
          $this->load->model('reservation_model');
+         $this->load->model('bar_model');
+         
          $this->load->model('avis_model');
         $this->isLoggedIn();   
     }
@@ -35,6 +37,16 @@ class Acceuil extends BaseController
     {
 
          $data['events'] = $this->events_model->eventsListing() ;
+         foreach ($data['events']  as $event) {
+             if($event->barId != null ){ 
+                $event->location = $this->bar_model->bar($event->barId)  ;
+             }
+             else
+            {
+                $event->location = $this->bar_model->bar($event->hotelId)  ;  
+            }
+
+         }
         $data['hotels'] = $this->hotel_model->hotelListing() ;  
 
        foreach ($data['hotels'] as $hotel ) {
