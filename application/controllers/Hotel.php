@@ -11,6 +11,8 @@ class Hotel extends BaseController {
         parent::__construct();
         $this->load->model('hotel_model');
         $this->load->model('search_model');
+         $this->load->model('avis_model');
+         $this->load->model('user_model');
        
         
         $this->isLoggedIn();   
@@ -76,7 +78,16 @@ class Hotel extends BaseController {
 		                		$room->prices = $this->hotel_model->roomMsPrice($hotelId,  date("Y-m-d")   ) ;
 		                		
 		                	}
- 
+		                	
+		                $data['avisHotel'] = $this->avis_model->avisByHotel($hotelId) ;
+		                $data['avis'] = $this->avis_model->avisByHotelListing($hotelId) ;
+		                if( ! empty($data['avis']) ) 
+		                {
+ 						foreach ($data['avis'] as $avi ) 
+ 							{
+		                	 $avi->user = $this->user_model->user($avi->createdBy) ; 
+		                	}
+		                }
 		               
 		                 $this->global['type'] = 'hotel';	
 		                 $this->global['hotelDetails'] =  $data['hotel'] ;

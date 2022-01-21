@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .fa {
-  padding: 20px;
-  font-size: 18px;
-  width: 50px;
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
   text-align: center;
   text-decoration: none;
   margin: 4px;
@@ -134,10 +134,12 @@
                             <i class="icon-star-empty"></i>
                             <i class="icon-star-empty"></i>
                         </span>
-                        <h1>Palmyra <?php echo $hotel->name ?> </h1>
+                        <h2 style="color:white">Palmyra <?php echo $hotel->name ?> 
+                        </h2>
+
                         
                             
-  
+    
                             
                             
 
@@ -145,7 +147,9 @@
                     </div>
                     <div class="col-md-4">
                         <div id="price_single_main" class="hotel">
-                            from <span><?php if(!empty($rooms[0]->prices->price)){ echo $rooms[0]->prices->price ; } else{ echo "0"; } ?><sup>DT</sup></span> /per night 
+                            <a target="_blank" href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
+                         <a target="_blank" href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
+                      <!--      from <span><?php if(!empty($rooms[0]->prices->price)){ echo $rooms[0]->prices->price ; } else{ echo "0"; } ?><sup>DT</sup></span> /per night  -->
                         </div>
                     </div>
                 </div>
@@ -180,11 +184,10 @@
                 <div class="col-lg-8" id="single_tour_desc">
                     <div id="single_tour_feat">
                         <ul>
-                            <li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
+                            <li><i class="icon_set_2_icon-116"></i>TV</li>
                             <li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
                             <li><i class="icon_set_2_icon-110"></i>Poll</li>
                             <li><i class="icon_set_1_icon-59"></i>Breakfast</li>
-                            <li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
                             <li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
                             <li><i class="icon_set_1_icon-27"></i>Parking</li>
                         </ul>
@@ -244,12 +247,15 @@
                             <h3>Description</h3>
                         </div>
                         <div class="col-lg-9">
+                            <strong>social links : </strong>
+                         <a target="_blank" href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
+                         <a target="_blank" href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
                             <p>
                                 <?php  echo $hotel->description ;?>
                             </p>
                             <h4>Hotel facilities</h4>
                             <p>
-                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                                
                             </p>
                             <div class="row">
                                 <div class="col-md-6">
@@ -285,7 +291,7 @@
                             <?php foreach ($rooms as $room ) { ?> 
                             <h4><?php echo $room->titre ?> <?php for ($i=0; $i<$room->capacity  ; $i++) { echo '<i class="icon-guest"></i>' ; } ?> </h4>
                             <p>
-                                Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+                                
                             </p>
 
                             <div class="row">
@@ -295,7 +301,7 @@
                                         <li><i class="icon_set_2_icon-116"></i> Cable / satellite TV</li>
                                         <li><i class="icon_set_2_icon-106"></i> Air conditioning</li>
                                         <li><i class="icon_set_2_icon-106"></i> Refrigerator</li>
-                                        <li><i class="icon_set_2_icon-106"></i> Refrigerator</li>
+                                        
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
@@ -349,23 +355,27 @@
                             <a href="#" class="btn_1 add_bottom_30" data-toggle="modal" data-target="#myReview">Leave a review</a>
                         </div>
                         <div class="col-lg-9">
-                        <!--    
-                            <div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
+                           
+                            <div id="score_detail"><span><?php echo  round($avisHotel->moyenne, 1) ?></span>Good <small>(Based on <?php echo count($avis) ; ?> reviews)</small>
                             </div>
-                        -->
+                        
                             <!-- End general_rating -->
-                        <!--
+                        
                             <div class="row" id="rating_summary">
                                 <div class="col-md-6">
                                     <ul>
-                                        <li>Position
+                                        <li>Location
                                             <div class="rating">
-                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                                <?php $i=0 ; for ($i=0; $i < round($avisHotel->location) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                                                <?php $i=0 ; for ($i=0; $i < 5-round($avisHotel->location) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                                                <?php echo round($avisHotel->location) ?>
                                             </div>
                                         </li>
-                                        <li>Comfort
+                                        <li>Service
                                             <div class="rating">
-                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
+                                                <?php $i=0 ; for ($i=0; $i < round($avisHotel->service) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                                                <?php $i=0 ; for ($i=0; $i < 5-round($avisHotel->service) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                                                <?php echo round($avisHotel->service) ?>
                                             </div>
                                         </li>
                                     </ul>
@@ -374,33 +384,40 @@
                                     <ul>
                                         <li>Price
                                             <div class="rating">
-                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                               <?php $i=0 ; for ($i=0; $i < round($avisHotel->price) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                                                <?php $i=0 ; for ($i=0; $i < 5-round($avisHotel->price) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                                                <?php  echo round($avisHotel->price) ?>
                                             </div>
                                         </li>
-                                        <li>Quality
+                                        <li>Cleanliness
                                             <div class="rating">
-                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+                                                <?php  $i=0 ; for ($i=0; $i < round($avisHotel->cleanliness) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                                                <?php $i=0 ; for ($i=0; $i < 5-round($avisHotel->cleanliness) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                                                <?php echo round($avisHotel->cleanliness) ?>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        -->
+                       
                             <!-- End row -->
                             <hr>
-                        <!--
+                            <?php foreach ($avis as $avi) {  ?>
+                          
                             <div class="review_strip_single">
                                 <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
-                                <small> - 10 March 2015 -</small>
-                                <h4>Jhon Doe</h4>
+                                <small> - <?php echo $avi->createdDTM ?> -</small>
+                                <h4><?php echo $avi->user->name ; ?></h4>
                                 <p>
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                                    "<?php echo $avi->review ; ?>"
                                 </p>
                                 <div class="rating">
-                                    <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                    <?php for ($i=0; $i < $avi->moyenne ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                                    <?php for ($i=1; $i < 5-$avi->moyenne ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                                    <?php echo round($avi->moyenne) ?>
                                 </div>
                             </div>
-                        -->
+                         <?php } ?>
                             <!-- End review strip -->
 
               
@@ -416,9 +433,7 @@
                     <p class="d-none d-xl-block d-lg-block d-xl-none">
 
                         <a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
-                        <strong>social links : </strong>
-                         <a target="_blank" href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
-                         <a target="_blank" href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
+                        
                     </p>
                     <div class="box_style_1 expose">
                         <form method="GET" action="<?php echo base_url() ?>Hotel/search" >
@@ -440,7 +455,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="form-control date-pick" type="text" name="dates" placeholder="When.." readonly>
+                                <input class="form-control date-pick" type="text" name="dates" placeholder="When.." readonly required>
                                 <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When..">
                                 <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When..">
                             </div>
@@ -458,7 +473,7 @@
                             <div class="form-group">
                                 <label>Children (2-12 ago)</label>
                                 <div class="numbers-row">
-                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children">
+                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children" >
                                 </div>
                             </div>
                         </div>
@@ -475,7 +490,7 @@
                                 <label>Pension</label>
                                 <div class="styled-select-common" class="form-control" required >
                                     <select name="pension">
-                                            
+                                            <option value="" ></option>
                                             <option value="PD" >Continental breakfast included</option>
                                             <option value="DP" >Breakfast & dinner included</option>
                                             <option value="PC" >Breakfast, lunch & dinner included</option>
@@ -518,3 +533,91 @@
     
     </main>
     <!-- End main -->
+
+
+        <!-- Modal Review -->
+    <div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myReviewLabel">Write your review</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div id="message-review">
+                    </div>
+                    <form method="post" action="<?php echo base_url() ?>Avis/addNewAvisHotel" name="review_restaurant" id="review_restaurant">
+                        <input name="hotelId"  type="hidden" value="<?php echo $hotel->hotelId ?>">
+                        
+                        <!-- End row -->
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Location</label>
+                                    <select class="form-control" name="location"  required>
+                                        <option value="">Please review</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Sufficient</option>
+                                        <option value="3">Good</option>
+                                        <option value="4">Excellent</option>
+                                        <option value="5">Super</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Service</label>
+                                    <select class="form-control" name="service" id="service_review" required>
+                                        <option value="">Please review</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Sufficient</option>
+                                        <option value="3">Good</option>
+                                        <option value="4">Excellent</option>
+                                        <option value="5">Super</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Price</label>
+                                    <select class="form-control" name="price" id="price_review" required >
+                                        <option value="">Please review</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Sufficient</option>
+                                        <option value="3">Good</option>
+                                        <option value="4">Excellent</option>
+                                        <option value="5">Super</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Cleanliness</label>
+                                    <select class="form-control" name="cleanliness" id="quality_review" required>
+                                        <option value="">Please review</option>
+                                        <option value="1">Low</option>
+                                        <option value="2">Sufficient</option>
+                                        <option value="3">Good</option>
+                                        <option value="4">Excellent</option>
+                                        <option value="5">Super</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+                        <div class="form-group">
+                            <textarea required name="review" id="review_text" class="form-control" style="height:100px" placeholder="Write your review"></textarea>
+                        </div>
+                        
+                        <input type="submit" value="Submit" class="btn_1" id="submit-review">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal review -->

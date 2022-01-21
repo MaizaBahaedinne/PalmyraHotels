@@ -20,6 +20,7 @@ class Acceuil extends BaseController
         $this->load->model('hotel_model');
          $this->load->model('events_model');
          $this->load->model('reservation_model');
+         $this->load->model('avis_model');
         $this->isLoggedIn();   
     }
     
@@ -39,6 +40,8 @@ class Acceuil extends BaseController
        foreach ($data['hotels'] as $hotel ) {
                 
                 $hotel->prices = $this->hotel_model->roomMsPrice($hotel->hotelId,  date("Y-m-d")   ) ;
+                $hotel->avisHotel = $this->avis_model->avisByHotel($hotel->hotelId) ;
+                $hotel->avis = $this->avis_model->avisByHotelListing($hotel->hotelId) ;
                 
             }
 

@@ -94,7 +94,7 @@
     
         <div class="main_title">
             <h2>Palmyra <span>Top</span> Hotels</h2>
-            <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+            <p></p>
         </div>
         
         <div class="row">
@@ -115,7 +115,9 @@
                     <div class="tour_title">
                         <h3>Palmyra <strong><?php echo $hotel->name ?></strong></h3>
                         <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+                            <?php for ($i=0; $i < $hotel->avisHotel->moyenne ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                            <?php for ($i=1; $i < 5-round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                            <small>(<?php echo count($hotel->avis) ?>)</small>
                         </div><!-- end rating -->
                         <div class="wishlist">
                             <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
@@ -139,7 +141,7 @@
                <div class="container margin_60">
             <div class="main_title">
                 <h2>OUR <span>EVENTS</span> BLOG </h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <p></p>
             </div>
 
             <div class="row">

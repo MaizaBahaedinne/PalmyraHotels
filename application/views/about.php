@@ -2,7 +2,7 @@
         <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="animated fadeInDown">
                 <h1>About us</h1>
-                <p>Cursus neque cursus curae ante scelerisque vehicula</p>
+                <p></p>
             </div>
         </div>
     </section>
@@ -26,7 +26,7 @@
 
             <div class="main_title">
                 <h2>Some <span>good </span>reasons</h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <p></p>
             </div>
 
             <div class="row">
@@ -65,30 +65,23 @@
             <!-- End row -->
             <hr>
             <div class="row">
-                <div class="col-lg-6">
-                    <h4>Pertinax elaboraret sed</h4>
-                    <p>Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut <a href="#">utamur antiopam inciderint</a> sed. Ut iriure perpetua voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at. </p>
+                <div class="col-lg-12">
+                    <h4>Palmyra Hotels Group</h4>
+                    <p>Palmyra Hotels traces its roots back to the privately owned Blue Star Hotels, which was founded by Hassen Belkhiria in 2019 when he opened his first hotel in Sousse. The name was apparently inspired by the feeding Palms and summer sun how its simple movements reflected the hotel’s theme of food served as quickly as possible. </p>
                     <div class="general_icons">
                         <ul>
                             <li><i class="icon_set_1_icon-59"></i>Breakfast</li>
                             <li><i class="icon_set_1_icon-8"></i>Dinner</li>
                             <li><i class="icon_set_1_icon-32"></i>Photo collection</li>
                             <li><i class="icon_set_1_icon-50"></i>Personal shopper</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h4>Mel at vide soluta</h4>
-                    <p>Ad cum movet fierent assueverit, mei stet legere ne. Mel at vide soluta, ut <strong>utamur antiopam inciderint</strong> sed. Ut iriure perpetua voluptaria has, vim postea denique in, mollis pertinax elaboraret sed in. Per no vidit timeam, quis omittam sed at. </p>
-                    <div class="general_icons">
-                        <ul>
-                            <li><i class="icon_set_1_icon-98"></i>Audio guide</li>
+                            
                             <li><i class="icon_set_1_icon-27"></i>Parking</li>
                             <li><i class="icon_set_1_icon-36"></i>Exchange</li>
                             <li><i class="icon_set_1_icon-63"></i>Mobile</li>
                         </ul>
                     </div>
                 </div>
+                
             </div>
             <!-- End row -->
         </div>
@@ -103,10 +96,11 @@
                 </div>
                 <div class="col-lg-6 nopadding">
                     <div class="features-content">
-                        <h3>"Ex vero mediocrem"</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                        <p><a href="#" class=" btn_1 white">Read more</a>
-                        </p>
+                        <h3>"PALMYRA HOTELS EXPERIENCES"</h3><br>
+                        <p>Go where others don't go.<br> See what others don't see.<br> Let Palmyra Hotels take you on journeys of adventure and discovery in the world's most captivating destinations. Dive deep with mantas in Sousse, Monastir and Nabeul waters. 
+                           <br> 
+                        From journeys of discovery to journeys of serenity, Palmyra Hotels invites you to immerse yourself in each of our destinations with our Signature Experiences..</p>
+                       
                     </div>
                 </div>
             </div>
@@ -117,19 +111,19 @@
 
             <div class="main_title">
                 <h2>What <span>customers </span>says</h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <p></p>
             </div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="review_strip">
-                        <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
-                        <h4>Jhon Doe</h4>
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-t/1a/f6/e3/6a/default-avatar-2020-47.jpg" alt="Image" class="rounded-circle">
+                        <h4>Olga I </h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                            "Great hotel, great sea, great food and good staff. Animators are another story! 😊 Excellent composition. Best Animator Ouss! 🤪🤪🤪 Cheerful, positive and very cute! Crazy guy😂 Thanks for the emotions❤️"
                         </p>
                         <div class="rating">
-                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
+                            <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i>
                         </div>
                     </div>
                     <!-- End review strip -->
@@ -137,10 +131,10 @@
 
                 <div class="col-lg-6">
                     <div class="review_strip">
-                        <img src="<?php echo base_url() ?>assets/img/avatar2.jpg" alt="Image" class="rounded-circle">
-                        <h4>Frank Rosso</h4>
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-l/1a/f6/eb/e3/default-avatar-2020-59.jpg" width="60px" alt="Image" class="rounded-circle">
+                        <h4>Таисия</h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                            "We express our gratitude to the hotel staff. I would like to note that everyone is very friendly and polite, so an atmosphere of good rest and great mood is created. The food is delicious, varied, room cleaning every day. Thank you very much for the hospitality and great stay!!!"
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
@@ -153,10 +147,15 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="review_strip">
-                        <img src="<?php echo base_url() ?>assets/img/avatar3.jpg" alt="Image" class="rounded-circle">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-t/1a/f6/ef/73/default-avatar-2020-13.jpg" alt="Image" class="rounded-circle">
                         <h4>Marc twain</h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                            "I have been to this hotel many times , despite the challenges Tunisia has had to overcome in recent years this hotel remains solid and reliable
+                            The environment , the hotel facilities , cleanliness and the amazing friendly staff in all areas
+                            Lovely pool and pool area , great snack bar / outside restaurant and small clean private beach area
+                            Security patrolled for privacy
+                            Great animation team led by Hasan who has been a key team member for many years
+                            Very comfortable and family orientated and although it develops with the times and guests needs it remains a beautiful well managed gem"
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
@@ -167,10 +166,10 @@
 
                 <div class="col-lg-6">
                     <div class="review_strip">
-                        <img src="<?php echo base_url() ?>assets/img/avatar1.jpg" alt="Image" class="rounded-circle">
-                        <h4>Peter Gabriel</h4>
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-t/1a/f6/f0/d5/default-avatar-2020-17.jpg" alt="Image" class="rounded-circle">
+                        <h4>Donna McNeill </h4>
                         <p>
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+                            "We stayed here for a week in September (2 adults 2 kids aged 14 and 12) and had an amazing time. The hotel staff from receptionists, cleaners, bar staff to managers are all very professional and helpful. Big thanks to Shedli (forgive spelling) the restaurant manager for giving us a brilliant evening and always looking out for us. Thanks to the lovely, smiley pool bar guy for the beers. I can't write a review without mentioning the Animation lads - legends every single one. Rio, Dofi, Zizou, Arkem and not forgetting DJ Madi. Such talented and friendly lads. Do not hesitate to book here it is utterly brilliant."
                         </p>
                         <div class="rating">
                             <i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i><i class=" icon-star-empty"></i>
