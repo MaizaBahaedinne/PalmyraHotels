@@ -148,7 +148,7 @@
                             
                             
 
-                        <span><?php echo $hotel->location ?></span>
+                        <span><?php echo $hotel->Adresse ?></span>
                     </div>
                     <div class="col-md-4">
                         <div id="price_single_main" class="hotel">
