@@ -255,8 +255,8 @@
             <hr>
 
             <div class="row">
-                <div class="col-md-6">
-                    <img src="<?php echo base_url() ?>assets/img/laptop-1.png" alt="Laptop" class="img-fluid laptop">
+                <div class="col-md-6" style="text-align: center;"> 
+                    <img src="<?php echo base_url() ?>assets/img/logopage.png" alt="Laptop" width='300px'  class="img-fluid laptop">
                 </div>
                 <div class="col-md-6">
                     <h3><span>Get started</span> with PalmyratHotels.tn</h3>
