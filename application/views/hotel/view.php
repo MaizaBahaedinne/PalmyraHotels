@@ -2,7 +2,7 @@
 <style>
 .fa {
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   width: 40px;
   text-align: center;
   text-decoration: none;
@@ -118,6 +118,11 @@
   background: #ff6600;
   color: white;
 }
+
+.fa-tripadvisor {
+  background: #00aa6c;
+  color: white;
+}
 </style>
 
 
@@ -148,7 +153,8 @@
                     <div class="col-md-4">
                         <div id="price_single_main" class="hotel">
                             <a target="_blank" href="<?php echo $hotel->facebook ?>" class="fa fa-facebook"></a>
-                         <a target="_blank" href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
+                            <a target="_blank" href="<?php echo $hotel->instagram ?>" class="fa fa-instagram"></a>
+                            <a target="_blank" href="<?php echo $hotel->tripadvisor ?>" class="fa fa-tripadvisor" ></a>
                       <!--      from <span><?php if(!empty($rooms[0]->prices->price)){ echo $rooms[0]->prices->price ; } else{ echo "0"; } ?><sup>DT</sup></span> /per night  -->
                         </div>
                     </div>
