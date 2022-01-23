@@ -28,8 +28,8 @@
                             <div class="form-group">
                                 <label><i class="icon-calendar-7"></i> Check in</label>
                                 <input class="form-control date-pick" type="text" name="dates" placeholder="When.." autocomplete="off" required readonly>
-                                <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When..">
-                                <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When..">
+                                <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When.." required>
+                                <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When.." required>
                             </div>
                         </div>
                         
