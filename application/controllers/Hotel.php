@@ -54,16 +54,26 @@ class Hotel extends BaseController {
                             'createdDTM'=> date('Y-m-d H:i:s'), 
                             );
     
-                            $resultat = $this->search_model->addNewSearch($searchInfo) ;
-
-                            $data['search'] = $this->search_model->getSearchInfo($resultat) ; 
-		       		
-		                $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;  		            	
-
-        			    $this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
+                        $resultat = $this->search_model->addNewSearch($searchInfo) ;
+			                 		            	
+	        			 redirect("Hotel/searchHotel/".$resultat  ) ;
+       }
         
 
 
+        
+
+        public function searchHotel ($searchId){
+
+        	  				$data['search'] = $this->search_model->getSearchInfo($searchId) ; 
+        	  				$data['hotel'] =  $this->hotel_model->hotel($data['search']->hotelId) ;
+        	  				$data['rooms'] = $this->hotel_model->hotelRoomsListing($data['search']->hotelId) ;
+		                foreach ($data['rooms'] as $room ) 
+		                {		
+		                	$room->prices = $this->hotel_model->roomMsPrice($data['search']->hotelId , $data['search']->checkin , $data['search']->pension   ) ;
+		        		}
+			  	             $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;  		            	
+	        			    $this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
         }
 
 		public function view($hotelId)
