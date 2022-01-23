@@ -105,7 +105,7 @@
                      <div class="ribbon_3 popular"><span>Closed</span></div>
                     <?php } ?>
                     <div class="img_container">
-                        <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId?>">
+                        <a href="<?php echo base_url() ?>Hotel/<?php echo $hotel->acro ?>">
                         <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price ; } else{ echo "0" ; } ?><sup>DT</sup></span>
