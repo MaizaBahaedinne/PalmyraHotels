@@ -232,7 +232,7 @@
                                 <ul>
                                     <?php foreach ($hotels as $hotel ) { ?> 
                                             <li> 
-                                                <a href="<?php echo base_url() ?>Hotel/view/<?php echo $hotel->hotelId ?>" >
+                                                <a href="<?php echo base_url() ?>Hotel/<?php echo $hotel->acro ?>" >
                                                     Palmyra <?php echo $hotel->name ?>
                                                         
                                                 </a>

@@ -60,7 +60,10 @@ $route['logout'] = "Acceuil/logout";
 $route['About'] = "Acceuil/About";
 $route['Register'] = "Users/register";
 
-
+$route['Hotel/AquaparkKantoui'] ="Hotel/view/1" ; 
+$route['Hotel/HolidayResortAndSpa'] ="Hotel/view/3" ; 
+$route['Hotel/ClubNabeul'] ="Hotel/view/5" ; 
+$route['Hotel/GoldenBeach'] ="Hotel/view/4" ; 
 
 
 
