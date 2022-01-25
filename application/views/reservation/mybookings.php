@@ -30,7 +30,9 @@
 			<div id="tabs" class="tabs">
 				<nav>
 					<ul>
-						<li><a href="#section-1" class="icon-booking"><span>Bookings</span></a>
+						<li><a href="#section-1" class="icon-booking"><span>Pending bookings</span></a>
+						</li>
+						<li><a href="#section-11" class="icon-booking"><span>Bookings</span></a>
 						</li>
 						<li><a href="#section-2" class="icon-wishlist"><span>Wishlist</span></a>
 						</li>
@@ -79,7 +81,49 @@
 
 						<?php } ?>
 
+									
+
+					</section>
+					<!-- End section 1 -->
+
+					<section id="section-11">
+						<?php foreach ($reservationC as $booking ){ ?>
+							
 						
+						<div class="strip_booking">
+							<div class="row">
+								<div class="col-lg-2 col-md-2">
+									<div class="date">
+										<span class="month"><?php  
+                                        $date = date_create($booking->checkin);
+                                        echo date_format($date, 'M'); ?></span>
+										<span class="day"><strong><?php echo date_format($date, 'd'); ?></strong><?php  
+                                        echo date_format($date, 'l'); ?></span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-5">
+									<h3 class="hotel_booking">Palmyra <?php echo $booking->name ?><span><?php echo $booking->adult ?> Adults / <?php echo $booking->nights ?> Nights</span></h3>
+								</div>
+								<div class="col-lg-2 col-md-3">
+									<ul class="info_booking">
+										<li><strong>Booking id</strong> <?php echo $booking->reservationId ?></li>
+										<li><strong>Booked on</strong> <?php echo $booking->checkin ?></li>
+									</ul>
+								</div>
+								<div class="col-lg-2 col-md-2">
+									<div class="booking_buttons">
+										<a target="_blank" href="<?php echo base_url() ?>Reservation/view/<?php echo $booking->reservationId ?>" class="btn_2">View</a>
+										
+									</div>
+								</div>
+							</div>
+							<!-- End row -->
+						</div>
+						<!-- End strip booking -->
+
+						<?php } ?>
+
+									
 
 					</section>
 					<!-- End section 1 -->

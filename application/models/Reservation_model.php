@@ -94,15 +94,23 @@ class Reservation_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
-    function myReservationListing($userId )
+    function myReservationListing($userId , $statut = '' )
     {
         $this->db->select('BaseTbl.* , Hotel.* ');
         $this->db->from('tbl_reservation as BaseTbl');
 
         $this->db->join('tbl_hotels Hotel','Hotel.hotelId = BaseTbl.hotelId')  ;
 
-            $this->db->where('BaseTbl.checkin >= CURDATE()'  );
+            
             $this->db->where('BaseTbl.createdBy =', $userId );
+            if($statut != '')
+            {
+                $this->db->where('BaseTbl.statut =', $statut );
+            }
+            else
+            {
+                $this->db->where('BaseTbl.checkin >= CURDATE()'  );
+            }
 
              
         

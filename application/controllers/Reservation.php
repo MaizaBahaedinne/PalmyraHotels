@@ -102,11 +102,32 @@ class Reservation extends BaseController
      {
             $this->global['pageTitle'] = 'My Bookings';
 
-            $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId );
+            $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId , 0 );
+             $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , 2 );
             $data['user'] =   $this->user_model->user($this->vendorId );
             
             
             $this->loadViews("reservation/mybookings", $this->global, $data , NULL);
+     }
+
+
+    public function view($reservationId) 
+     {
+            $this->global['pageTitle'] = 'My Bookings';
+
+            $data['reservation'] =  $this->reservation_model->reservation($reservationId);
+            $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
+            foreach ($data['reservation']->details as $room ) 
+                {       
+                    $room->prices = $this->hotel_model->roomMsPrice($data['reservation']->hotelId ,  $data['reservation']->checkin ,  $data['reservation']->pension   ) ;
+                    $room->room = $this->hotel_model->Room( $room->roomId ) ;
+                }
+            $data['reservation']->client = $this->user_model->user($data['reservation']->createdBy);
+            
+            $data['user'] =   $this->user_model->user($this->vendorId );
+            
+            
+            $this->loadViews("reservation/facture", $this->global, $data , NULL);
      }
 
     
