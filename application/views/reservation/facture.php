@@ -1,5 +1,9 @@
 <!-- SPECIFIC CSS -->
     <link href="<?php echo base_url() ?>assets/css/admin-1.css" rel="stylesheet">
+    <link href="https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
+     
+    <script src="<?php echo base_url() ?>assets/js/qrcode.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
 
     <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/hotel/golden.jpg" >
         <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.4)">
@@ -28,50 +32,83 @@
 
                             <div class="margin_60 container">
                                 <div id="tabs" class="tabs">
-                                   
-                                <div class="content" style="background-color: white; padding: 50px;border-radius: 30px;">
+                                    <button type="button" onclick="printJS('ivoic', 'html')">
+                                        Print Form
+                                     </button>
+
+                                <div class="content" style=" padding: 35px;border-radius: 30px;   background: url('<?php echo base_url() ?>assets/img/logopageBG.png') ; background-repeat: no-repeat ; background-size: 50% auto; background-color: white; background-position: center; "  id="ivoic">
 
 
                                   <div class="container">
                                     <div class="row">
                                         <div class="col-12">
                                     		<div class="invoice-title">
-                                    			<img src="<?php echo base_url() ?>assets/img/logopage.png" width="200px">
+                                                <table width="100%">
+                                                    <tr>
+                                                        <td width="30%" ><img src="<?php echo base_url() ?>assets/img/logopage.png" width="150px"></td>
+                                                        <td></td>
+                                                        <td width="30%">
+                                                            <div id="qrcode" style="float:right;"></div>
+                                                
+                                                                <script type="text/javascript">
+                                                                    var qrcode = new QRCode("qrcode", {
+                                                                                        text: "<?php echo $reservation->reservationId ?>",
+                                                                                        width: 128,
+                                                                                        height: 128,
+                                                                                        colorDark : "#000000",
+                                                                                        colorLight : "#ffffff",
+                                                                                        correctLevel : QRCode.CorrectLevel.H
+                                                                                    });
+                                                                    qrcode.clear(); // clear the code.
+                                                                    qrcode.makeCode("<?php echo $reservation->reservationId ?>"); // make another code.
+                                                                </script>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                
+                                    			
                                                 <h3 class="pull-right">Order # <?php echo $reservation->reservationId ?></h3>
+                                                <h3 class="pull-right">Palmyra <?php echo $hotel->name ?></h3>
+                                                <span class="pull-right"><?php echo $hotel->Adresse ?></h3>
+
                                     		</div>
                                     		<hr>
-                                    		<div class="row">
-                                    			<div class="col-6">
+                                    		<table width="100%">
+                                                <tr>
+                                                    <td>
                                     				<address>
-                                    				<strong>Pension:</strong><br>
-                                                    <strong>Nights:</strong><br>
-
+                                    				<strong>From :</strong> <?php echo $reservation->checkin ?> 14:00 <br>
+                                                    <strong>To :</strong> <?php echo $reservation->checkout ?> 12:00 <br>
+                                                    <strong>Stay :</strong> <?php echo $reservation->nights ?> nghits <br>
+                                                    <strong>Pension:</strong> <?php echo $reservation->pension ?><br>
                                     				</address>
-                                    			</div>
-                                    			<div class="col-6 text-right">
+                                                </td>
+                                    			<td> 
                                     				<address>
                                         			<strong>Shipped To:</strong><br>
                                     					<?php echo $reservation->client->name ?><br>
                                                         <?php echo $reservation->client->address ?><br>
-                                                        <?php echo $reservation->client->city ?><br>
+                                                        <?php echo $reservation->client->city ?> <?php echo $reservation->client->country ?><br>
                                                         <?php echo $reservation->client->zip ?>
                                     				</address>
-                                    			</div>
-                                    		</div>
-                                    		<div class="row">
-                                    			<div class="col-6">
-                                    				<address>
-                                    					<strong>Payment Method:</strong><br>
-                                    					Visa ending **** 4242<br>
-                                    					 <?php echo $reservation->client->email ?>
-                                    				</address>
-                                    			</div>
-                                    			<div class="col-6 text-right">
-                                    				<address>
-                                    					<strong>Order Date:</strong><br>
-                                    					March 7, 2014<br><br>
-                                    				</address>
-                                    			</div>
+                                        		</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                        				<address>
+                                        					<strong>Payment Method:</strong><br>
+                                        					Visa ending **** 4242<br>
+                                        					 <?php echo $reservation->client->email ?>
+                                        				</address>
+                                        		</td>
+                                                <td width="30%">	
+                                        				<address>
+                                        					<strong>Order Date:</strong><br>
+                                        					<?php echo $reservation->createdDTM ?><br><br>
+                                        				</address>
+                                                </td>
+                                                </tr>
+                                    		</table>
                                     		</div>
                                     	</div>
                                     </div>
@@ -84,24 +121,34 @@
                                     			</div>
                                     			<div class="panel-body">
                                     				<div class="table-responsive">
-                                    					<table class="table table-condensed">
+                                    					<table class="table table-condensed" border="1px" width="100%">
                                     						<thead>
                                                                 <tr>
-                                        							<td><strong>Item</strong></td>                                       							
-                                                                    <td class="text-center"><strong>Adult</strong></td>
-                                                                    <td class="text-center"><strong>child</strong></td>
-                                                                    <td class="text-center"><strong>Price</strong></td>
-                                        							<td class="text-right"><strong>Totals</strong></td>
+                                                                    <td width="5%"><strong>N°</strong></td>   
+                                        							<td width="20%"><strong>Item</strong></td>                                       							
+                                                                    <td class="text-center" width="5%"><strong>Adult</strong></td>
+                                                                    <td class="text-center" width="5%"><strong>child</strong></td>
+                                                                    <td class="text-center" width="20%"><strong>Guests</strong></td>
+                                                                    <td class="text-center" width="10%" ><strong>Price</strong></td>
+                                                                    <td class="text-center" width="25%"><strong>Options</strong></td>  
+                                        							
                                                                 </tr>
                                     						</thead>
                                     						<tbody>
                                     							<!-- foreach ($order->lineItems as $line) or some such thing here -->
                                                                 <?php foreach ( $reservation->details as $detail ) {  ?>
                                     							<tr>
+                                                                    <td><?php echo $detail->detailId ?></td>
                                     								<td><?php echo $detail->room->titre ?></td>
                                     								<td class="text-center"><?php echo $detail->adult ?></td>
                                     								<td class="text-center"><?php echo $detail->children ?></td>
-                                                                    <td class="text-center"><?php echo $detail->price ?></td>
+                                                                    <td> <?php echo $detail->guest1 ?> <br> <?php echo $detail->guest2 ?> <br> <?php echo $detail->guest3 ?> <br> <?php echo $detail->guest4 ?>  </td>
+                                                                    <td class="text-center"><?php echo $detail->price ?> <sup>DT</sup></td>
+                                                                    <td >
+                                                                        <ul>
+                                                                            <?php foreach ($detail->opts as $option ){ echo "<li>".$option->option."</li>" ; } ?>
+                                                                        </ul>
+                                                                    </td>
                                     								
                                     							</tr>
                                                                 <?php } ?>

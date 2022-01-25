@@ -8,9 +8,12 @@
             <div class="tab-content">
                 <!-- End rab -->
                 <div class="tab-pane active show" id="hotels">
-                    <form  action="<?php echo base_url() ?>Hotel/search">
+                    <form  action="<?php echo base_url() ?>Hotel/search" method="get" >
                     <h3>Search Hotels in PalmyraHotels.tn</h3>
                     <div class="row">
+                        <div class="error col-md-12 alert alert-danger">
+                            Please fill in all field and submit the form again:
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Preferred Hotel</label>
@@ -26,8 +29,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label><i class="icon-calendar-7"></i> Check in</label>
-                                <input class="form-control date-pick" type="text" name="dates" placeholder="When.." autocomplete="off" required readonly>
+                                <label><i class="icon-calendar-7"></i> Check in / check out</label>
+                                <input class="form-control date-pick required" type="text" name="dates" placeholder="When.." autocomplete="off" required readonly>
                                 <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When.." required>
                                 <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When.." required>
                             </div>
@@ -78,8 +81,27 @@
                     <!-- End row -->
                     <hr>
 
-                        <button class="btn_1 green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
+                        <button class="btn_1 submit green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
                     </form>
+
+                    <script type="text/javascript" charset="utf-8">
+                        $(document).ready(function() {
+                            $('.error').hide();
+                            $('.submit').click(function(event) {
+                                $('.required').each(function (i, el) {
+                                    var data = $(el).val();
+                                    // console.log(i + ': ' + data);
+                                    var len = data.length;
+                                    if (len<1) {
+                                        $('.error').show();
+                                        $('html, body').animate({scrollTop:0}, 'slow');
+                                        event.preventDefault();
+                                        return;
+                                    }
+                                });
+                            });
+                        });
+                    </script>
 
                 
                 </div>
