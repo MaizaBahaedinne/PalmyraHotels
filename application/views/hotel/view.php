@@ -181,7 +181,7 @@
         <div class="collapse" id="collapseMap">
          
            
-            <iframe  class="map" src="<?php echo $hotel->longitude ?>" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe id="map"  class="map" src="<?php echo $hotel->longitude ?>" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
         </div>
         <!-- End Map -->

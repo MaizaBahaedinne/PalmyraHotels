@@ -12,7 +12,7 @@
                     <h3>Search Hotels in PalmyraHotels.tn</h3>
                     <div class="row">
                         <div class="error col-md-12 alert alert-danger">
-                            Please fill in all field and submit the form again:
+                            Please fill in all field and submit the form again
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -93,6 +93,7 @@
                                     // console.log(i + ': ' + data);
                                     var len = data.length;
                                     if (len<1) {
+                                        $('.error').html("Please fill in all field and submit the form again");
                                         $('.error').show();
                                         $('html, body').animate({scrollTop:0}, 'slow');
                                         event.preventDefault();

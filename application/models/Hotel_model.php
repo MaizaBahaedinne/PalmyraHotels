@@ -163,7 +163,7 @@ class Hotel_model extends CI_Model
         $opts = str_replace("'", "", $opts)  ;
         $this->db->select('BaseTbl.*  ');
         $this->db->from('tbl_option as  BaseTbl');
-        $this->db->where('BaseTbl.optionId in '.$opts     );
+        $this->db->where('BaseTbl.optionId in ('.$opts.')'     );
         $query = $this->db->get();
      
          return $query->result();

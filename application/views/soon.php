@@ -139,9 +139,10 @@
     <li><img src="<?php echo base_url() ?>assets/img/facade/hotel/golden.jpg" alt="Image"></li>
     <li><img src="<?php echo base_url() ?>assets/img/facade/hotel/holiday.jpg" alt="Image"></li>
     <li><img src="<?php echo base_url() ?>assets/img/slides/club.jpg" alt="Image"></li>
-    <li><img src="<?php echo base_url() ?>assets/img/slides/baro.jpg" alt="Image"></li>
-    <li><img src="<?php echo base_url() ?>assets/img/slides/talamnca.jpg" alt="Image"></li>
-    <li><img src="<?php echo base_url() ?>assets/img/slides/myway.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/baro.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/talamnca.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/myway.jpg" alt="Image"></li>
+    <li><img src="<?php echo base_url() ?>assets/img/facade/bar/nautika.jpg" alt="Image"></li>
   </ul>
 </div><!-- End background slider -->
 
