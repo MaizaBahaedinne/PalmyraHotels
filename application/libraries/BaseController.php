@@ -81,7 +81,7 @@ class BaseController extends CI_Controller {
 
 	
 
-	public function send_mail($to, $subject  , $data , $content )
+	public function send_mail($to, $subject  , $data , $content , $from = "contact@palmyrahotels.tn" , $password = "Palmyra2022"  )
     {       
     				
                  // Load PHPMailer library
@@ -95,15 +95,15 @@ class BaseController extends CI_Controller {
                     $mail->isSMTP();
                     $mail->Host     = 'smtp.topnet.tn';
              
-                    $mail->Username = 'contact@palmyrahotels.tn';
-                    $mail->Password = 'Palmyra2022';
+                    $mail->Username = $from ;
+                    $mail->Password = $password;
                    // $mail->SMTPAuth = true;
 						 // $mail->SMTPAutoTLS = true; 
 						  $mail->Port = 25; 
                  
                     
-                    $mail->setFrom('contact@palmyrahotels.tn', 'Palmyra Hotels ');
-                    $mail->addReplyTo('contact@palmyrahotels.tn', 'Palmyra Hotels');
+                    $mail->setFrom( $from , 'Palmyra Hotels ');
+                    $mail->addReplyTo($from , 'Palmyra Hotels');
                     
                     // Add a recipient
                     $mail->addAddress($to);
