@@ -81,7 +81,7 @@ class BaseController extends CI_Controller {
 
 	
 
-	public function send_mail($to, $subject  , $data , $content , $from = "contact@palmyrahotels.tn" , $password = "Palmyra2022"  )
+	public function send_mail($to, $subject  , $data , $content , $from = "contact@palmyrahotels.tn" , $password = "PalmyraHotels2022"  )
     {       
     				
                  // Load PHPMailer library
