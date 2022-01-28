@@ -41,9 +41,12 @@ class Users extends BaseController {
 
                 					'country'=> $this->input->post('country'),
                 					'birthday'=> $this->input->post('birthday'),
+                                    'sexe'=> $this->input->post('sexe'),
                                     
                                     'address'=>$this->input->post('address'),
                                     'zip'=>$this->input->post('zip'), 
+
+                                     'isDeleted'=>1 , 
 
                                     'createdBy'=>$this->vendorId, 
                                     'createdDtm'=>date('Y-m-d H:i:s'));
@@ -61,6 +64,28 @@ class Users extends BaseController {
                 {
                    redirect('Login');
                    $this->session->set_flashdata('sucess', 'User creation failed');
+                   $this->send_mail($this->input->post('email')."; admin@palmyrahotels.tn", 
+                            "Welcome to PalmyraHotels.tn"  , "" , 
+                            "<h2>Welcome to PalmyraHotels.tn </h2>
+                            <br><br>
+                                Your Account has been created on our website 
+
+                                To activate your account please click on <a href='".base_url()."User/Active/".$result."/a=1' >this link</a>
+
+
+                                email : ".$this->input->post('email')."<br>
+                                password : ".$this->input->post('password')."<br>''
+                                                         
+
+                            <br>
+                            <hr>
+                            Best,
+                            <br>
+                            The Palmyra Hotels team
+
+                            "  )   ;
+
+                   $this->session->set_flashdata('sucess', 'Your account has been createdplease check your email');
                 }
                 else
                 {
