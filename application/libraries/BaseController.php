@@ -89,7 +89,7 @@ class BaseController extends CI_Controller {
                     
                     // PHPMailer object
                     $mail = $this->phpmailer_lib->load();
-                    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;   
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
                     // SMTP configuration
                  
                     $mail->isSMTP();

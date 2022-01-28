@@ -64,32 +64,44 @@ class Users extends BaseController {
                     if($result > 0)
                     {
                        
-                      
-                       $this->send_mail($this->input->post('email')."; admin@palmyrahotels.tn", 
-                                "Account creation"  , "" , 
+                     
+                     $mail  = $this->send_mail($this->input->post('email')."", 
+                                "Account creation for ".$this->input->post('first_name').' '.$this->input->post('last_name')  , "" , 
                                 "<h2>Welcome to PalmyraHotels.tn </h2>
                                 <br><br>
+                                    congratulation !<br>
                                     Your account has been created
-                                    name : ".$this->input->post('name')."<br>
-                                   
-                                    email : ".$this->input->post('email')."<br>
-                                    Password : <br>".$this->input->post('password')."<br>
+                                    <br>
+                                    To activate your account open this <a href='".base_url()."Users/activate/".$result."' >link</a>    <br>
+                                                               
+                                    <b>email : </b>".$this->input->post('email')."<br>
+                                    <b>Password : </b>".$this->input->post('password')."
 
                                 <br>
                                 <hr>
                                 
                                 Best,
                                 <br>
-                                The Palmyra Hotels team
+                                Palmyra Hotels team" )   ;
+                    
+                   
+                        
+                        
+                            if( $mail ) 
+                            { 
+                                redirect('/');
+                            }
+                            else
+                            {
+                               $this->session->set_flashdata('error', 'User creation failed 100');
+                               redirect('Register') ;
+                            }
 
-                                " )   ;
-
-                       
-                        redirect('/');
+                        
                     }
                     else
                     {
-                        $this->session->set_flashdata('error', 'User creation failed');
+                        $this->session->set_flashdata('error', 'User creation failed 200');
                         redirect('Register');
                     }
 
