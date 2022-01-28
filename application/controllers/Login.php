@@ -97,7 +97,7 @@ class Login extends CI_Controller
             }
             else
             {
-                $this->session->set_flashdata('error', 'adresse e-mail introuvable');
+                $this->session->set_flashdata('error', 'e-mail not exist');
                 echo 0 ; 
             }
         
@@ -209,7 +209,6 @@ class Login extends CI_Controller
      * This function is used to logged out user from system
      */
     function Register () {
-
         
         redirect("/Register");
     }

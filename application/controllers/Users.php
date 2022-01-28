@@ -15,13 +15,29 @@ class Users extends BaseController {
         $this->isLoggedIn();    
     }
     
- 	function register()
+ 	function activate($userId)
     	{
 
-    	  $this->global['pageTitle'] = 'Register';
-          $this->loadViews("register", $this->global, null, NULL);   
+              $userInfo = array(  'mailValid'=>date('Y-m-d H:i:s') , 
+                                  'isDeleted'=>0 , );
+              
+              $this->user_model->editUser($userInfo , $userId) ;
+
+          $this->session->set_flashdata('success', 'You account has been activated');
+    	  $this->global['pageTitle'] = 'Activate';
+            redirect("Login") ;  
              
    	 }   
+
+
+        function register()
+        {
+
+          $this->global['pageTitle'] = 'Register';
+
+          $this->loadViews("register" , $this->global, null  , NULL ) ;
+             
+        }  
         		
     function addNewUser()
     	{
