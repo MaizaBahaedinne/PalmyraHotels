@@ -50,7 +50,8 @@ class Users extends BaseController {
 
                                     'createdBy'=>$this->vendorId, 
                                     'createdDtm'=>date('Y-m-d H:i:s'));
-                if( !empty( $this->user_model->checkEmail($this->input->post('email'))) ){ 
+                if( !empty( $this->user_model->checkEmail($this->input->post('email'))) )
+                { 
 
                 	$this->session->set_flashdata('error', 'User creation failed : Email exist');
                 	redirect('Register');
@@ -60,35 +61,37 @@ class Users extends BaseController {
 
                 	$result = $this->user_model->addNewUser($userInfo);
                 
-                if($result > 0)
-                {
-                   redirect('Login');
-                  
-                   $this->send_mail($this->input->post('email')."; admin@palmyrahotels.tn", 
-                            "Welcome to PalmyraHotels.tn"  , "" , 
-                            "<h2>Welcome to PalmyraHotels.tn </h2>
-                            <br><br>
-                                Your account has been created
-                                name : ".$this->input->post('name')."<br>
-                               
-                                email : ".$this->input->post('email')."<br>
-                                Password : <br>".$this->input->post('password')."<br>
+                    if($result > 0)
+                    {
+                       
+                      
+                       $this->send_mail($this->input->post('email')."; admin@palmyrahotels.tn", 
+                                "Account creation"  , "" , 
+                                "<h2>Welcome to PalmyraHotels.tn </h2>
+                                <br><br>
+                                    Your account has been created
+                                    name : ".$this->input->post('name')."<br>
+                                   
+                                    email : ".$this->input->post('email')."<br>
+                                    Password : <br>".$this->input->post('password')."<br>
 
-                            <br>
-                            <hr>
-                            
-                            Best,
-                            <br>
-                            The Palmyra Hotels team
+                                <br>
+                                <hr>
+                                
+                                Best,
+                                <br>
+                                The Palmyra Hotels team
 
-                            " )   ;
+                                " )   ;
 
-                   $this->session->set_flashdata('sucess', 'Your account has been createdplease check your email');
-                }
-                else
-                {
-                    $this->session->set_flashdata('error', 'User creation failed');
-                }
+                       
+                        redirect('/');
+                    }
+                    else
+                    {
+                        $this->session->set_flashdata('error', 'User creation failed');
+                        redirect('Register');
+                    }
 
                 }
 
