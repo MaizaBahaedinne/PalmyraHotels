@@ -20,7 +20,7 @@ class Users extends BaseController {
 
               $userInfo = array(  'mailValid'=>date('Y-m-d H:i:s') , 
                                   'isDeleted'=>0 , );
-              
+
               $this->user_model->editUser($userInfo , $userId) ;
 
           $this->session->set_flashdata('success', 'You account has been activated');
@@ -98,7 +98,7 @@ class Users extends BaseController {
                                 
                                 Best,
                                 <br>
-                                Palmyra Hotels team" )   ;
+                                Palmyra Hotels team" , "admin@palmyrahotels.tn" )   ;
                     
                    
                         
