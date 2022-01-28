@@ -84,13 +84,12 @@
                                                 
                                                 <div class="row">
                                                         <?php for ($i=0 ; $i <  $detail->adult ; $i++) {  ?>
+                                                       
                                                         <div class="col-sm-6">
                                                                 <div class="form-group">
                                                                         <label>Guest <?php echo $i+1 ?>
                                                                         
                                                                         <input type="checkbox" 
-                                                                        name="child_" 
-                                                                        
                                                                         class="child child_<?php echo $detail->detailId ?>" 
                                                                         <?php if ($i == 0 ) {  echo 'style="display: none;" '; } ?> 
                                                                         onclick="childPerRoom(<?php echo $detail->detailId ?>);child() ;"
@@ -107,45 +106,67 @@
                                                                         required
                                                                         >
                                                                 </div>
-                                                        </div> 
-
+                                                        </div>
 
                                                         <?php } ?>
-
+                                                </div>
+                                                <div >
                                                 <?php if ($detail->adult == 1 ) { ?> 
+                                                        <label>Pax_<?php echo $detail->detailId ?></label>
                                                        <input 
-                                                        type="hidden" 
+                                                        type="" 
                                                         class="Pax Pax_<?php echo $detail->detailId ?>" 
                                                         id="Pax_<?php echo $detail->detailId ?>" 
                                                         value="<?php echo ( ($detail->prices->pensionPrice + $detail->prices->supS) ) ?>"
                                                         data-capacity = "<?php echo $detail->adult + $detail->children  ?>"
-                                                        data-currentPrice = "<?php echo ( $detail->prices->pensionPrice + $detail->prices->supS )*( $detail->adult + $detail->children )  ?>" 
+                                                         
                                                         >
-
+                                                        <br>
+                                                        <label> roomP_<?php echo $detail->detailId ?> </label>
                                                         <input 
-                                                        type="hidden" 
+                                                        type="" 
                                                         class="rommP roomP_<?php echo $detail->detailId ?>" 
                                                         id="rommP_<?php echo $detail->detailId ?>" 
                                                         value="<?php echo( $detail->prices->pensionPrice + $detail->prices->supS )*( $detail->adult + $detail->children ) ?>" 
                                                         >
                                                  <?php } ?> 
-                                                 <?php if ($detail->adult > 1 ) { ?> 
+                                                 <?php if ($detail->adult > 1 &&  $detail->adult < 4 ) { ?> 
+                                                         
                                                        <input 
                                                         type="hidden" 
                                                         class="Pax Pax_<?php echo $detail->detailId ?>" 
                                                         id="Pax_<?php echo $detail->detailId ?>" 
-                                                        value="<?php echo ( ($detail->prices->price + $detail->prices->supS) ) ?>"
+                                                        value="<?php echo ( ($detail->prices->pensionPrice ) ) ?>"
                                                         data-capacity = "<?php echo $detail->adult + $detail->children  ?>"
-                                                        data-currentPrice = "<?php echo ( $detail->prices->price + $detail->prices->supS )*( $detail->adult + $detail->children )  ?>" 
-                                                        >
-
+                                                        ?>
+                                                        <br>
+                                                       
                                                         <input 
                                                         type="hidden" 
                                                         class="rommP roomP_<?php echo $detail->detailId ?>" 
-                                                        id="rommP_<?php echo $detail->detailId ?>" 
-                                                        value="<?php echo( $detail->prices->price + $detail->prices->supS )*( $detail->adult + $detail->children ) ?>" 
+                                                        id="rommP_<?php echo $detail->detailId ?>"  
+                                                        value="<?php echo( $detail->prices->pensionPrice )*( $detail->adult + $detail->children ) ?>" 
                                                         >
                                                  <?php } ?>
+                                                  <?php if ($detail->adult == 4 ) { ?> 
+                                                       
+                                                       <input 
+                                                        type="hidden" 
+                                                        class="Pax Pax_<?php echo $detail->detailId ?>" 
+                                                        id="Pax_<?php echo $detail->detailId ?>" 
+                                                        value="<?php echo ( ($detail->prices->pensionPrice ) ) ?>"
+                                                        data-capacity = "<?php echo $detail->adult + $detail->children  ?>"
+                                                        ?>
+                                                        <br>
+                                                        
+                                                        <input 
+                                                        type="hidden" 
+                                                        class="rommP roomP_<?php echo $detail->detailId ?>" 
+                                                        id="rommP_<?php echo $detail->detailId ?>"  
+                                                        value="<?php echo round( ( ( $detail->prices->pensionPrice  )*4 ) - ( $detail->prices->pensionPrice  )*0.25 ) ?>" 
+                                                        >
+                                                 <?php } ?>
+                                                      
 
 
                                                 </div>
@@ -203,9 +224,13 @@
                                                                                 <?php if ($detail->adult == 1 ) { 
                                                                                         echo ( ($detail->prices->pensionPrice + $detail->prices->supS) * $detail->adult) ;
                                                                                 }
-                                                                                elseif ($detail->adult > 1 ) { 
-                                                                                 echo ( ($detail->prices->price + $detail->prices->supS) * $detail->adult) ;
+                                                                                elseif ($detail->adult > 1 && $detail->adult < 4 ) { 
+                                                                                 echo ( ($detail->prices->pensionPrice ) * $detail->adult) ;
                                                                                  }  ?>
+                                                                                 <?php if ($detail->adult == 4 ) {  
+                                                                                   echo round( ( ($detail->prices->pensionPrice ) * 3) - ($detail->prices->pensionPrice)*0.25 ) ;
+                                                       
+                                                                                } ?>
                                                                         </strong>   
                                                                         <sup>DT/Per night</sup>
                                                                 </span> 
@@ -221,6 +246,7 @@
                                                         Mussum ipsum cacilds, vidis litro abertis.
                                                 </p>
                                         </div>
+
                                         <div class="step">
                                                 <div class="form-group">
                                                         <label>Name on card</label>
@@ -485,6 +511,23 @@
                                 { 
                                 price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
                                 }
+                        if( adult == 4  )
+                                { 
+                                price= Math.round( (adult*parseInt( $(".Pax_"+detailId).val()   ))   - parseInt( $(".Pax_"+detailId).val()/4 )*0.25)  ;
+                                }
+                        if(adult == 3 && child == 1  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.3) ) ) ;  
+                                }
+                        if(adult == 2 && child == 2  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                }
+                        if(adult == 1 & child == 3  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
+                                }
+
 
 
                 
@@ -493,6 +536,8 @@
                  
                      
                 calculate () ;
+
+                
                 }
                                                              
 

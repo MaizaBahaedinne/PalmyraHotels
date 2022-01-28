@@ -1,6 +1,6 @@
 
 
-<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>assets/img/facade/<?php echo $hotel->facade ?>)">
+<section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>)">
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="intro_title">
                 <h1>Place your order</h1>
@@ -82,14 +82,12 @@
                                 <th>
                                     Total
                                 </th>
-                                <th>
-                                    Actions
-                                </th>
+                              
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($rooms as $room ) { 
-                                if(!empty($room->prices->price)) {
+                                if(!EMPTY($room->prices->pensionPrice )) {
                                  if($room->capacity <= ($search->adult + $search->children ) ){  ?>
                             <tr>
                                 <td>
@@ -97,6 +95,12 @@
                                        <!-- <img src="<?php echo base_url() ?>assets/img/thumb_cart_1-1.jpg" alt="Image">-->
                                     </div>
                                     <span class="item_cart"><?php echo $room->titre ?> <?php for ($i=0; $i<$room->capacity  ; $i++) { echo '<i class="icon-guest"></i>' ; } ?></span>
+                                     <div class="add_bottom_15">
+                                        <small> 
+                                            <?php if($room->capacity  == 1 ){echo '* +'.    $room->prices->supS.'<sup>DT</sup> has been added for the singel ' ;} ?> 
+                                            <?php if($room->capacity  == 4  ){echo '* the 4th guest pay only 25% ' ;} ?>
+                                        </small>
+                                    </div>
                                         
                                 </td>
                                 <td>
@@ -118,7 +122,13 @@
                                     <span  id="priceA_<?php echo $room->roomId ?>" 
                                            class="priceRomms" 
                                            data-roomid="<?php echo $room->roomId ?>" >
-                                           <?php if($room->capacity > 1) { echo $room->prices->pensionPrice * $room->capacity ; } else { echo $room->prices->pensionPrice + $room->prices->supS ; }  ?></span><strong> DT</strong><small>/Per night</small>
+                                           <?php if($room->capacity == 1) 
+                                            { echo ($room->prices->pensionPrice + $room->prices->supS ) * $room->capacity ; } 
+                                           elseif($room->capacity < 4 && $room->capacity >1 ) 
+                                            { echo $room->prices->pensionPrice * $room->capacity ;  }
+                                            elseif( $room->capacity == 4 )
+                                            { echo round( ($room->prices->pensionPrice * 3 ) + ($room->prices->pensionPrice * 0.25 )  ) ;  }
+                                            ?></span><strong> DT</strong><small>/Per night</small>
                                            
 
                                     <input type="hidden" 
@@ -134,9 +144,7 @@
                                            name="price_<?php echo $room->roomId ?>" 
                                            data-roomid="<?php echo $room->roomId ?>" >
                                 </td>
-                                <td class="options">
-                                    
-                                </td>
+                               
                           
                                 
                             </tr>
@@ -197,40 +205,7 @@
                     </table>
 
               
-                <!--
-                    <table class="table table-striped options_cart">
-                        <thead>
-                            <tr>
-                                <th colspan="3">
-                                    Add options / Services
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          
-                            <tr>
-                                <td style="width:10%">
-                                    <i class="icon_set_1_icon-16"></i>
-                                </td>
-                                <td style="width:60%">
-                                    Dedicated Tour guide <strong>+$34</strong>
-                                </td>
-                                <td style="width:35%">
-                                    <label class="switch-light switch-ios float-right">
-                                        <input type="checkbox" name="option_1" id="option_1"  value="">
-                                        <span>
-                                        <span>No</span>
-                                        <span>Yes</span>
-                                        </span>
-                                        <a></a>
-                                    </label>
-                                </td>
-                            </tr>
-                          
-                           
-                        </tbody>
-                    </table>
-                -->
+                
                     <div class="add_bottom_15"><small>* Prices for person.</small>
                     </div>
                 </div>
@@ -303,7 +278,7 @@
                                        PAX/night
                                     </td>
                                     <td class="text-right" >
-                                        <span ><?php echo $room->prices->pensionPrice ?><sup>DT</sup></span> 
+                                        <span ><?php if(!empty ( $room->prices->pensionPrice ) ){ echo $room->prices->pensionPrice ; } ?><sup>DT</sup></span> 
                                     </td>
                                 </tr>
                                 <tr class="total"  style="display: none;" >
@@ -340,7 +315,7 @@
                         </script>
                         <br>
                         <div class="alert alert-danger" id="LoginAlert" style="display: none;" >
-                          <strong>Info!</strong> you must <button type="button" data-toggle="modal" data-target="#signinForm" >Sign in</button> before launching a search.
+                          <strong>Info!</strong><br> you must <button type="button" data-toggle="modal" data-target="#signinForm" class="btn" >Sign in</button> before launching a search.
                         </div>
                                 
                         

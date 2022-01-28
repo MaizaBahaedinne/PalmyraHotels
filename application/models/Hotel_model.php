@@ -127,7 +127,7 @@ class Hotel_model extends CI_Model
         $this->db->order_by('BaseTbl.date_debut   ASC ');
         
         $query = $this->db->get();
-        
+       // echo $this->db->last_query() ;
         return $query->row();
     }
 
