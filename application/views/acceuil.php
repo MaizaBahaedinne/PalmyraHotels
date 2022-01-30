@@ -14,7 +14,7 @@
                         <div class="row no-gutters custom-search-input-2">
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Where..." name="hotelId" list="browsers">
+                                    <input class="form-control required" type="text" placeholder="Where..." name="hotelId" list="browsers" required>
 
                                     <datalist id="browsers">
                                      <?php foreach ($hotels as $hotel ) { ?> 
@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <input class="form-control date-pick" type="text" name="dates" placeholder="When.." autocomplete="off">
+                                    <input class="form-control date-pick required" type="text" name="dates" placeholder="When.." autocomplete="off" required>
                                      <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When.." required>
                                 <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When.." required>
                                     <i class="icon_calendar"></i>
@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="qtyButtons tours">
                                             <label>Rooms</label>
-                                            <input type="text" name="room" value="0">
+                                            <input type="text" name="room" value="1">
                                         </div>
                                     </div>
                                 </div>
