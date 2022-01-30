@@ -38,7 +38,7 @@ class Hotel extends BaseController {
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($this->input->get('hotelId')) ;
 		                foreach ($data['rooms'] as $room ) 
 		                {		
-		                	$room->prices = $this->hotel_model->roomMsPrice($this->input->get('hotelId') , $this->input->get('checkin') , $this->input->get('pension')   ) ;
+		                	$room->prices = $this->hotel_model->roomMsPrice($this->input->get('hotelId') , $this->input->get('checkin')    ) ;
 		        		}
 
 		        		 $searchInfo = array(  
@@ -60,7 +60,16 @@ class Hotel extends BaseController {
        }
         
 
+        public function updatePension($searchId , $pension )
+        {				
+        				$searchInfo = array(  
+                            'pension' => $pension,
+                         );
 
+                        $resultat = $this->search_model->editSearch($searchInfo, $searchId) ;
+			                 		            	
+	        			 redirect("Hotel/searchHotel/".$searchId  ) ;
+       }
         
 
         public function searchHotel ($searchId){

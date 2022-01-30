@@ -1,5 +1,6 @@
 
 
+
 <section id="hero_2" class="background-image" data-background="url(<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade ?>)">
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="intro_title">
@@ -267,7 +268,8 @@
                                 </tr>
                                  <tr class="">
                                     <td>
-                                       Pension
+                                       Pension<br>
+                                       <small><a onclick="GoPension ()">Change</a></small>
                                     </td>
                                     <td class="text-right" >
                                         <span ><?php echo $search->pension ?></span> 
@@ -309,7 +311,7 @@
                                 
                                $("#LoginAlert").show() ; 
 
-                               $
+                               
                                   
                             });
                         </script>
@@ -337,3 +339,49 @@
         <!--End container -->
     </main>
     <!-- End main -->
+
+      <script type="text/javascript">
+
+    const inputOptions = new Promise((resolve) => {
+          setTimeout(() => {
+            resolve({
+             <?php if($room->prices->PD != null ){ ?> 'PD': 'PD <small>+<?php echo $room->prices->PD ?> <sup>DT</sup></small>', <?php } ?>
+             <?php if($room->prices->DP != null ){ ?> 'DP': 'DP <small>+<?php echo $room->prices->DP ?> <sup>DT</sup></small>', <?php } ?>
+             <?php if($room->prices->PC != null ){ ?> 'PC': 'PC  <small>+<?php echo $room->prices->PC ?> <sup>DT</sup></small>', <?php } ?>
+             <?php if($room->prices->ALLS != null ){ ?> 'ALLS': 'ALLS  <small>+<?php echo $room->prices->ALLS ?> <sup>DT</sup></small>', <?php } ?>
+             <?php if($room->prices->ALLH != null ){ ?> 'ALLH': 'ALLH  <small>+<?php echo $room->prices->ALLH ?> <sup>DT</sup></small>', <?php } ?>
+            
+            })
+          }, 1000)
+        })
+    
+    function GoPension (){
+          const { value: color } =  Swal.fire({
+              title: 'Select pension',
+              input: 'select',
+              inputOptions: {
+                <?php if($room->prices->PD != null ){ ?> 'PD': 'PD <small>+<?php echo $room->prices->PD ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->DP != null ){ ?> 'DP': 'DP <small>+<?php echo $room->prices->DP ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->PC != null ){ ?> 'PC': 'PC  <small>+<?php echo $room->prices->PC ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->ALLS != null ){ ?> 'ALLS': 'ALLS  <small>+<?php echo $room->prices->ALLS ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->ALLH != null ){ ?> 'ALLH': 'ALLH  <small>+<?php echo $room->prices->ALLH ?> <sup>DT</sup></small>', <?php } ?>
+              },
+              inputValidator: (value) => {
+                if (!value) {
+                  return 'You need to choose something!'
+                }else{
+                    
+                 window.location.replace("<?php echo base_url() ?>Hotel/updatePension/<?php echo $search->searchId ?>/"+value ) ;
+            
+                }
+              }        
+            })
+    }
+    
+    <?php if($search->pension == null){  ?>
+        GoPension () ;
+    <?php } ?>
+
+
+      
+  </script>

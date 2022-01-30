@@ -1,90 +1,81 @@
-    <section id="search_container">
-        <div id="search">
-            <ul class="nav nav-tabs">
-                <li><a href="#hotels" data-toggle="tab">Hotels</a></li>
 
+    
+   <div id="search_container_2">
+        <div id="search_2">
+            <ul class="nav nav-tabs">
+                <li><a href="#hotelsTavb" data-toggle="tab" class="active show" id="tab_bt_1"><span>Hotels</span></a></li>
+               
+               
             </ul>
 
             <div class="tab-content">
-                <!-- End rab -->
-                <div class="tab-pane active show" id="hotels">
-                    <form  action="<?php echo base_url() ?>Hotel/search" method="get" >
-                    <h3>Search Hotels in PalmyraHotels.tn</h3>
-                    <div class="row">
-                        <div class="error col-md-12 alert alert-danger">
-                            Please fill in all field and submit the form again
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Preferred Hotel</label>
-                                <div class="styled-select-common">
-                                    <select name="hotelId" required class="form-control">
-                                        <option value="">Chose your hotel</option>
-                                        <?php foreach ($hotels as $hotel ) { ?> 
-                                            <option value="<?php echo $hotel->hotelId ?>" <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
-                                        <?php } ?>
-                                    </select>
+                <div class="tab-pane fade active show" id="hotelsTavb">
+                   <form action="<?php echo base_url() ?>Hotel/search" method="get">
+                        <div class="row no-gutters custom-search-input-2">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Where..." name="hotelId" list="browsers">
+
+                                    <datalist id="browsers">
+                                     <?php foreach ($hotels as $hotel ) { ?> 
+                                            <option value="<?php echo $hotel->hotelId ?>" <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> >
+                                                Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?>        
+                                            </option>
+                                    <?php } ?>
+                                    </datalist>
+                                    <i class="icon_pin_alt"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label><i class="icon-calendar-7"></i> Check in / check out</label>
-                                <input class="form-control date-pick required" type="text" name="dates" placeholder="When.." autocomplete="off" required readonly>
-                                <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When.." required>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <input class="form-control date-pick" type="text" name="dates" placeholder="When.." autocomplete="off">
+                                     <input class="form-control date-pick" type="hidden" name="checkin" placeholder="When.." required>
                                 <input class="form-control date-pick" type="hidden" name="checkout" placeholder="When.." required>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label>Adults</label>
-                                <div class="numbers-row">
-                                    <input type="text" value="1" min="1" id="adults" class="qty2 form-control" name="adult" required>
+                                    <i class="icon_calendar"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label>Children <small>(2-12 ago)</small></label>
-                                <div class="numbers-row">
-                                    <input type="text" value="0" id="children" class="qty2 form-control" name="children">
+                            <div class="col-lg-3">
+                                <div class="panel-dropdown">
+                                    <a href="#">Guests <span class="qtyTotal tours">1</span></a>
+                                    <div class="panel-dropdown-content">
+                                        <!-- Quantity Buttons -->
+                                        <div class="qtyButtons tours">
+                                            <label>Adults</label>
+                                            <input type="text" name="adult" value="1">
+                                        </div>
+                                        <div class="qtyButtons tours">
+                                            <label>Childrens</label>
+                                            <input type="text" name="children" value="0">
+                                        </div>
+                                        <div class="qtyButtons tours">
+                                            <label>Rooms</label>
+                                            <input type="text" name="room" value="0">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label>Rooms</label>
-                                <div class="numbers-row">
-                                    <input type="text" value="1" min="1" id="room" class="qty2 form-control" name="room" required>
-                                </div>
+                            <div class="col-lg-2">
+                                <input type="submit" class="btn_search submit" value="Search">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Pension</label>
-                                <div class="styled-select-common" class="form-control" required >
-                                    <select name="pension">
-                                            
-                                            <option value="PD" >Continental breakfast included</option>
-                                            <option value="DP" >Breakfast & dinner included</option>
-                                            <option value="PC" >Breakfast, lunch & dinner included</option>
-                                            <option value="ALLS" >All inclusive Soft</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <!-- End row -->
-                   
-                    <!-- End row -->
-                    <hr>
-
-                        <button class="btn_1 submit green btn-block" type="submit" ><i class="icon-search"></i>Search now</button>
+                        <!-- /row -->
                     </form>
-
-                    <script type="text/javascript" charset="utf-8">
+                </div>
+                <!-- End tab -->
+                <div class="tab-pane fade" id="hotels">
+                    
+                </div>
+                <!-- End tab -->
+                <div class="tab-pane" id="restaurants">
+                   
+                </div>
+                <!-- End tab -->
+            </div>
+        </div>
+        <!-- End search_container_2 -->
+    </div>
+    <!-- End search_container -->
+    <script type="text/javascript" charset="utf-8">
                         $(document).ready(function() {
                             $('.error').hide();
                             $('.submit').click(function(event) {
@@ -104,13 +95,8 @@
                         });
                     </script>
 
-                
-                </div>
 
-            </div>
-        </div>
-    </section>
-    <!-- End hero -->
+  
 
     <main>
     <div class="container margin_60">
@@ -345,3 +331,9 @@
         -->
     </div><!-- End container -->
 </main>
+
+
+    <!-- Input quantity  -->
+    <script src="<?php echo base_url() ?>assets/js/input_qty-1.js"></script>
+
+

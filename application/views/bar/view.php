@@ -1,5 +1,5 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $bar->repo ?>" >
-		<div class="parallax-content-2">
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $bar->repo ?>"  >
+		<div class="parallax-content-2"  >
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
@@ -41,55 +41,59 @@
 			<div class="row">
 				<div class="col-lg-8" id="single_tour_desc">
 
-					<div id="single_tour_feat">
-						<div id="Img_carousel" class="slider-pro">
-                        <div class="sp-slides">
-
-                             <?php
-                                $dir = "./assets/img/bars/".$bar->acro."/";
-                                $dir1 = base_url()."/assets/img/bars/".$bar->acro."/";
-                              
-
-                                chdir($dir);
-                                array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
-                                foreach($files as $filename)
-                                {?>
-                                <div class="sp-slide">
-                                    <img alt="Image" class="sp-image" 
-                                    src="<?php echo $dir1.$filename ?>" 
-                                    data-src="<?php echo $dir1.$filename ?>" 
-                                    data-small="<?php echo $dir1.$filename ?>"
-                                    data-medium="<?php echo $dir1.$filename ?>" 
-                                    data-large="<?php echo $dir1.$filename ?>" 
-                                    data-retina="<?php echo $dir1.$filename ?>" >
-
-                                </div>   
-                                <?php } 
-                            ?>
-
-                            
-                            
-
-                          
-                        </div>
-                        
-                        <div class="sp-thumbnails">
-                            <?php
-                                array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
-                                foreach($files as $filename)
-                                {?>
-                                <img alt="Image" class="sp-thumbnail" src="<?php echo $dir1.$filename ?>" width="40px">   
-                                <?php } 
-                            ?>
-                        </div>
-                        
-                    </div>
-					</div>
+					
 
 					<p class="d-none d-md-block d-block d-lg-none"><a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a></p>
 					<!-- Map button for tablets/mobiles -->
 					<hr>
 					<div class="row" >
+						<div class="col-lg-12">
+							<div id="single_tour_feat">
+								<div id="Img_carousel" class="slider-pro">
+		                        <div class="sp-slides">
+
+		                             <?php
+		                                $dir = "./assets/img/bars/".$bar->acro."/";
+		                                $dir1 = base_url()."/assets/img/bars/".$bar->acro."/";
+		                              
+
+		                                chdir($dir);
+		                                array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
+		                                foreach($files as $filename)
+		                                {?>
+		                                <div class="sp-slide">
+		                                    <img alt="Image" class="sp-image" 
+		                                    src="<?php echo $dir1.$filename ?>" 
+		                                    data-src="<?php echo $dir1.$filename ?>" 
+		                                    data-small="<?php echo $dir1.$filename ?>"
+		                                    data-medium="<?php echo $dir1.$filename ?>" 
+		                                    data-large="<?php echo $dir1.$filename ?>" 
+		                                    data-retina="<?php echo $dir1.$filename ?>" >
+
+		                                </div>   
+		                                <?php } 
+		                            ?>
+
+		                            
+		                            
+
+		                          
+		                        </div>
+		                        
+		                        <div class="sp-thumbnails">
+		                            <?php
+		                                array_multisort(array_map('filemtime', ($files = glob("*.{jpg,png,gif}", GLOB_BRACE))), SORT_DESC, $files);
+		                                foreach($files as $filename)
+		                                {?>
+		                                <img alt="Image" class="sp-thumbnail" src="<?php echo $dir1.$filename ?>" width="40px">   
+		                                <?php } 
+		                            ?>
+		                        </div>
+		                        
+		                    </div>
+							</div>
+							<hr>
+						</div>
 						<div class="col-lg-3">
 							<h3>Description</h3>
 						</div>
@@ -134,6 +138,7 @@
 						</div>
 						<div class="col-lg-9">
 							<div class="table-responsive">
+								<!--
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -201,6 +206,7 @@
 										</tr>
 									</tbody>
 								</table>
+								-->
 							</div>
 
 						</div>
@@ -221,6 +227,7 @@
 							</div>
 							<!-- End general_rating -->
 							<div class="row" id="rating_summary">
+								<!--
 								<div class="col-md-6">
 									<ul>
 										<li>Position
@@ -249,9 +256,11 @@
 										</li>
 									</ul>
 								</div>
+								-->
 							</div>
 							<!-- End row -->
 							<hr>
+							<!--
 							<div class="review_strip_single">
 								<img src="img/avatar1-1.jpg" alt="Image" class="rounded-circle">
 								<small> - 10 March 2015 -</small>
@@ -265,31 +274,8 @@
 							</div>
 							<!-- End review strip -->
 
-							<div class="review_strip_single">
-								<img src="img/avatar3-1.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
-							</div>
-							<!-- End review strip -->
-
-							<div class="review_strip_single last">
-								<img src="img/avatar2-1.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
-							</div>
-							<!-- End review strip -->
+						
+						
 						</div>
 					</div>
 				</div>

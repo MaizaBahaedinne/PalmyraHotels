@@ -92,6 +92,9 @@
 
           <script src="<?php echo base_url() ?>assets/js/jquery-3.6.0.min-1.js"></script>
 
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.10/sweetalert2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.10/sweetalert2.min.js"></script>
+
 </head>
 <body>
 
