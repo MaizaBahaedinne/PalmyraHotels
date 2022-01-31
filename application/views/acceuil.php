@@ -32,7 +32,7 @@
                                                     
                                                     if( $(this).html()  ==   $("#hotelsname").val()  )
                                                     {
-                                                            alert("Done");
+                                                            
                                                           $("input[name=hotelId]").val( $(this).data("hotel")) ;
                                                           
                                                     } 
