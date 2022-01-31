@@ -1,5 +1,5 @@
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets\img\hotels\golden\GB30.jpg" >
+	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets\img\hotels\GoldenBeach\GB30.jpg" >
 		<div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
 			<div class="animated fadeInDown">
 				<h1>Palmyra Hotels Blogs</h1>
