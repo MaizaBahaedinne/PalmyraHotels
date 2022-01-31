@@ -182,21 +182,21 @@
 
             <hr>
 
-            <div class="row">
-                 <div class="col-md-6" style="text-align: center;"> 
+             <div class="row">
+                <div class="col-md-6" style="text-align: center;"> 
                     <img src="<?php echo base_url() ?>assets/img/logopage.png" alt="Laptop" width='300px'  class="img-fluid laptop">
                 </div>
                 <div class="col-md-6">
-                    <h3><span>Get started</span> with CityTours</h3>
+                    <h3><span>Get started</span> with PalmyratHotels.tn</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                        
                     </p>
                     <ul class="list_order">
-                        <li><span>1</span>Select your preferred tours</li>
-                        <li><span>2</span>Purchase tickets and options</li>
-                        <li><span>3</span>Pick them directly from your office</li>
+                        <li><span>1</span>Select your preferred Hotel</li>
+                        <li><span>2</span>Book Now</li>
+                        <li><span>3</span>Print your invoic</li>
                     </ul>
-                    <a href="all_tour_list.html" class="btn_1">Start now</a>
+                    <a href="<?php echo base_url() ?>" class="btn_1">Start now</a>
                 </div>
             </div>
             <!-- End row -->
