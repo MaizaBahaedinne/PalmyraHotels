@@ -226,7 +226,7 @@
                           
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
-                         <ul>
+                         <ul style="padding-top: 16px;" >
                             <li><a href="<?php echo base_url() ?>" class="show-submenu">Home</a></li>                            
                             <li><a href="<?php echo base_url() ?>About">About</a></li>
                             
