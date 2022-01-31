@@ -124,6 +124,17 @@ class Reservation extends BaseController
                        $this->reservation_model->editreservationDetails($reservationInfo1 , $room->detailId);   
                 }
 
+
+                $reservationInfo = array(  
+                        'adult' =>  $this->input->post("TTadults")  ,
+                        'children'  =>  $this->input->post("TTchilds" )  ,
+                        'price'  =>  $this->input->post("TTprice")  ,
+                        'statut' =>  1 ,
+                        'createdBy' => $this->vendorId ,
+                        'createdDTM'=> date('Y-m-d H:i:s'), 
+                      );
+                 $this->reservation_model->editContact($reservationInfo , $reservationId); 
+
         redirect('Reservation/mybookings');
 
             

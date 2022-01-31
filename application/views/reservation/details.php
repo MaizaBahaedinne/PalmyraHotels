@@ -430,6 +430,10 @@
                 </div>
                 <!--End container -->
         </main>
+
+        <input type="hidden" name="TTadults" id="TTadults" >
+        <input type="hidden" name="TTchilds" id="TTchilds" >
+        <input type="hidden" name="TTprice"  id="TTprice"  >
 </form>
 
 
@@ -443,6 +447,7 @@
                         $(".rommP").each( function(){                                
                                 roomsPrice +=  parseInt( $(this).val() )  ; 
                                 $("#cost").html( parseInt(roomsPrice) * parseInt(<?php echo $reservation->nights ?>)  )  ;
+                                $("#TTprice").val( parseInt(roomsPrice) * parseInt(<?php echo $reservation->nights ?>)  )  ;
                         });
                         
                         
@@ -453,6 +458,7 @@
                              }
                              $("#priceOptions_total").html(optionsPrice) ;
                              $("#cost").html( ( parseInt(roomsPrice) + parseInt(optionsPrice) ) * parseInt(<?php echo $reservation->nights ?>) )  ;
+                             $("#TTprice").val( parseInt(roomsPrice) * parseInt(<?php echo $reservation->nights ?>)  )  ;
                         });
 
                         
@@ -470,13 +476,17 @@
                                 child += 1 ;           
                      }
                      $("#nbChild").html(child) ;
+                     $("#TTchilds").val(child) ;
+
                        
                        if( !($(this).is(":checked"))  )
                                 { adult += 1 ; 
                                  
                      }
                       $("#nbAdult").html(adult) ;
+                      $("#TTadults").val(adult) ;
                         });  
+
 
                        calculate () ;
                 }
