@@ -12,6 +12,7 @@ class Blog extends BaseController {
         $this->load->model('hotel_model');
         $this->load->model('search_model');
        	$this->load->model('blog_model');
+       		$this->load->model('user_model');
         
         $this->isLoggedIn();   
     }
@@ -29,12 +30,12 @@ class Blog extends BaseController {
         		
 
 
-		public function view($barId)
+		public function view($blogId)
 		        {
-		              
+		              $data['blogs'] = $this->blog_model->blogListing() ;
 		                $data['blog'] = $this->blog_model->blog($blogId) ;
 
-		               
+		                $data['blog']->createdBy  = $this->user_model->user($data['blog']->createdBy) ;
 		               
 
 		                 $this->global['pageTitle'] = $data['blog']->titre  ;
