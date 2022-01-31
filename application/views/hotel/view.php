@@ -497,20 +497,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Pension</label>
-                                <div class="styled-select-common" class="form-control" required >
-                                    <select name="pension">
-                                            <option value="" ></option>
-                                            <option value="PD" >Continental breakfast included</option>
-                                            <option value="DP" >Breakfast & dinner included</option>
-                                            <option value="PC" >Breakfast, lunch & dinner included</option>
-                                            <option value="ALLS" >All inclusive Soft</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                       
                         
                     </div>
                         <br>

@@ -14,16 +14,33 @@
                         <div class="row no-gutters custom-search-input-2">
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <input class="form-control required" type="text" placeholder="Where..." name="hotelId" list="browsers" required>
+                                    <input class="form-control required" type="text" placeholder="Where..." id="hotelsname" name="hotelsname"  list="browsers" required>
 
                                     <datalist id="browsers">
                                      <?php foreach ($hotels as $hotel ) { ?> 
-                                            <option value="<?php echo $hotel->hotelId ?>" <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> >
-                                                Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?>        
-                                            </option>
+                                            <option class="hots" data-hotel="<?php echo $hotel->hotelId ?>" <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> >Palmyra <?php echo $hotel->name ?> <?php echo $hotel->location ?></option>
                                     <?php } ?>
                                     </datalist>
                                     <i class="icon_pin_alt"></i>
+                                    <input class="form-control required" type="hidden" placeholder="hotelId" name="hotelId" id="hotelId"  required>
+                                    <script type="text/javascript">
+                                        $("input[name=hotelsname]").focusout(function(){
+
+                                         
+                                            $( ".hots" ).each(function() {                                                    
+                                                       // alert($(this).data("hotel"));
+                                                    
+                                                    if( $(this).html()  ==   $("#hotelsname").val()  )
+                                                    {
+                                                            alert("Done");
+                                                          $("input[name=hotelId]").val( $(this).data("hotel")) ;
+                                                          
+                                                    } 
+                                                });
+                                            
+                                            
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="col-lg-3">
