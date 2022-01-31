@@ -1,8 +1,8 @@
-<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/hotel/holiday.jpg" >
+<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url() ?>assets/img/facade/hotel/aqua.jpg" >
         <div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
             <div class="animated fadeInDown">
                 <h1>Contact us</h1>
-                <p>Cursus neque cursus curae ante scelerisque vehicula.</p>
+                
             </div>
         </div>
     </section>
@@ -12,7 +12,7 @@
         <div id="position">
             <div class="container">
                 <ul>
-                    <li><a href="#">Home</a>
+                    <li><a href="<?php echo base_url() ?>">Home</a>
                     </li>
                     <li><a href="#">Contact</a>
                     </li>
@@ -28,7 +28,7 @@
                     <div class="form_title">
                         <h3><strong><i class="icon-pencil"></i></strong>Fill the form below</h3>
                         <p>
-                            Mussum ipsum cacilds, vidis litro abertis.
+                           
                         </p>
                     </div>
                     <div class="step">
@@ -318,7 +318,7 @@
                         <hr>
                         <h4>Help center <span><i class="icon-help pull-right"></i></span></h4>
                         <p>
-                            Lorem ipsum dolor sit amet, vim id accusata sensibus, id ridens quaeque qui. Ne qui vocent ornatus molestie.
+                          
                         </p>
                         <ul id="contact-info">
                             <li>+216 73 246 145</li>
@@ -330,7 +330,7 @@
                         <i class="icon_set_1_icon-57"></i>
                         <h4>Need <span>Help?</span></h4>
                         <a href="tel://0073246145" class="phone">+216 73 246 145</a>
-                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                        <small>Monday to Friday 9.00am - 8.000pm</small>
                     </div>
                 </div>
                 <!-- End col-md-4 -->
