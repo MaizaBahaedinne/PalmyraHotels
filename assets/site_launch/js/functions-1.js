@@ -1,5 +1,5 @@
 	setInterval(function() {
-		var target = new Date("2022/02/01 21:00:00 GMT+0100"); //replace with YOUR DATE
+		var target = new Date("2022-02-01T22:00:00"); //replace with YOUR DATE
 		var now = new Date();
 		var difference = Math.floor((target.getTime() - now.getTime()) / 1000);
 
