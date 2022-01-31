@@ -98,6 +98,38 @@ class Reservation extends BaseController
       $this->loadViews("reservation/details", $this->global, $data , NULL);
      }
 
+
+
+
+         public function  BookNow       ($reservationId) 
+     {
+            
+            $data['reservation'] =  $this->reservation_model->reservation($reservationId);
+            $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
+           
+            foreach ($data['reservation']->details as $room ) 
+                {       
+                    
+                       $reservationInfo1 = array(  
+                        'guests' =>  json_encode($this->input->post("guest".$room->detailId ) )  ,
+                        'adult' =>  $this->input->post("adult".$room->detailId )  ,
+                        'children'  =>  $this->input->post("children".$room->detailId )  ,
+                        'price'  =>  $this->input->post("rommP".$room->detailId )  ,
+                        'createdBy' => $this->vendorId ,
+                        'createdDTM'=> date('Y-m-d H:i:s'), 
+                      );
+
+                    
+
+                       $this->reservation_model->editreservationDetails($reservationInfo1 , $room->detailId);   
+                }
+
+        redirect('Reservation/mybookings');
+
+            
+     // $this->loadViews("reservation/details", $this->global, $data , NULL);
+     }
+
      public function mybookings() 
      {
             $this->global['pageTitle'] = 'My Bookings';

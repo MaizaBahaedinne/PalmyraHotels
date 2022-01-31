@@ -37,7 +37,7 @@
         </div>
         <!-- End opacity-mask-->
 	</section>
-<form>
+<form action="<?php echo base_url() ?>Reservation/BookNow/<?php echo $reservation->reservationId ?>" method="post">
 <main style="margin-bottom: 392.094px;">
                 <div id="position">
                         <div class="container">
@@ -46,7 +46,7 @@
                                         </li>
                                         <li><a href="#">Booking</a>
                                         </li>
-                                        <li>Page active</li>
+                                        <li><?php echo $hotel->name ?></li>
                                 </ul>
                         </div>
                 </div>
@@ -102,7 +102,7 @@
                                                                         type="text" 
                                                                         class="form-control" 
                                                                         id="guest_" 
-                                                                        name="guest_<?php echo $detail->detailId ?>_<?php echo $i+1 ?>"
+                                                                        name="guest<?php echo $detail->detailId ?>[]"
                                                                         required
                                                                         >
                                                                 </div>
@@ -112,9 +112,9 @@
                                                 </div>
                                                 <div >
                                                 <?php if ($detail->adult == 1 ) { ?> 
-                                                        <label>Pax_<?php echo $detail->detailId ?></label>
+                                                        
                                                        <input 
-                                                        type="" 
+                                                        type="hidden" 
                                                         class="Pax Pax_<?php echo $detail->detailId ?>" 
                                                         id="Pax_<?php echo $detail->detailId ?>" 
                                                         value="<?php echo ( ($detail->prices->pensionPrice + $detail->prices->supS) ) ?>"
@@ -122,10 +122,11 @@
                                                          
                                                         >
                                                         <br>
-                                                        <label> roomP_<?php echo $detail->detailId ?> </label>
+                                                       
                                                         <input 
-                                                        type="" 
-                                                        class="rommP roomP_<?php echo $detail->detailId ?>" 
+                                                        type="hidden" 
+                                                        class="rommP roomP_<?php echo $detail->detailId ?>"
+                                                        name="rommP<?php echo $detail->detailId ?>" 
                                                         id="rommP_<?php echo $detail->detailId ?>" 
                                                         value="<?php echo( $detail->prices->pensionPrice + $detail->prices->supS )*( $detail->adult + $detail->children ) ?>" 
                                                         >
@@ -144,7 +145,8 @@
                                                         <input 
                                                         type="hidden" 
                                                         class="rommP roomP_<?php echo $detail->detailId ?>" 
-                                                        id="rommP_<?php echo $detail->detailId ?>"  
+                                                        id="rommP_<?php echo $detail->detailId ?>" 
+                                                        name="rommP<?php echo $detail->detailId ?>"  
                                                         value="<?php echo( $detail->prices->pensionPrice )*( $detail->adult + $detail->children ) ?>" 
                                                         >
                                                  <?php } ?>
@@ -163,10 +165,23 @@
                                                         type="hidden" 
                                                         class="rommP roomP_<?php echo $detail->detailId ?>" 
                                                         id="rommP_<?php echo $detail->detailId ?>"  
-                                                        value="<?php echo round( ( ( $detail->prices->pensionPrice  )*4 ) - ( $detail->prices->pensionPrice  )*0.25 ) ?>" 
+                                                        name="rommP<?php echo $detail->detailId ?>"  
+                                                        value="<?php echo round( ( ( $detail->prices->pensionPrice  )*3 ) + ( $detail->prices->pensionPrice  )*0.25 ) ?>" 
                                                         >
                                                  <?php } ?>
-                                                      
+
+                                                  <input 
+                                                        type="hidden" 
+                                                       
+                                                        id="adult<?php echo $detail->detailId ?>"  
+                                                        name="adult<?php echo $detail->detailId ?>"  
+                                                       value ="<?php echo $detail->adult ?>" > 
+                                                   <input 
+                                                        type="hidden" 
+                                                       
+                                                        id="children<?php echo $detail->detailId ?>"  
+                                                        name="children<?php echo $detail->detailId ?>"  
+                                                       value ="<?php echo $detail->children ?>" >   
 
 
                                                 </div>
@@ -228,7 +243,7 @@
                                                                                  echo ( ($detail->prices->pensionPrice ) * $detail->adult) ;
                                                                                  }  ?>
                                                                                  <?php if ($detail->adult == 4 ) {  
-                                                                                   echo round( ( ($detail->prices->pensionPrice ) * 3) - ($detail->prices->pensionPrice)*0.25 ) ;
+                                                                                   echo round( ( ($detail->prices->pensionPrice ) * 3) + ($detail->prices->pensionPrice)*0.25 ) ;
                                                        
                                                                                 } ?>
                                                                         </strong>   
@@ -246,7 +261,7 @@
                                                         Mussum ipsum cacilds, vidis litro abertis.
                                                 </p>
                                         </div>
-
+                                        <!--
                                         <div class="step">
                                                 <div class="form-group">
                                                         <label>Name on card</label>
@@ -295,17 +310,9 @@
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <!--End row -->
-
-                                                <hr>
-
-                                                <h4>Or Bank Transfer</h4>
-                                                <p>
-                                                        Lorem ipsum dolor sit amet, vim id accusata sensibus, id ridens quaeque qui. Ne qui vocent ornatus molestie, reque fierent dissentiunt mel ea.
-                                                </p>
-                                                <p>
+                                                
                                                        
-                                                </p>
+                                                
                                         </div>
                                         <!--End step -->
 
@@ -485,12 +492,14 @@
                                 child += 1 ;           
                      }
                      $("#nbChild_"+detailId).html(child) ;
+                     $("#children"+detailId).val(child) ;
                        
                        if( !($(this).is(":checked"))  )
                                 { adult += 1 ; 
                                  
                      }
                       $("#nbAdult_"+detailId).html(adult) ;
+                      $("#adult"+detailId).val(adult) ;
                         });   
 
                 price = 0 ; 

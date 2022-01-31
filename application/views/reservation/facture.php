@@ -129,8 +129,9 @@
                                                                     <td class="text-center" width="5%"><strong>Adult</strong></td>
                                                                     <td class="text-center" width="5%"><strong>child</strong></td>
                                                                     <td class="text-center" width="20%"><strong>Guests</strong></td>
+                                                                    <td class="text-center" width="25%"><strong>Options</strong></td>
                                                                     <td class="text-center" width="10%" ><strong>Price</strong></td>
-                                                                    <td class="text-center" width="25%"><strong>Options</strong></td>  
+                                                                      
                                         							
                                                                 </tr>
                                     						</thead>
@@ -142,13 +143,14 @@
                                     								<td><?php echo $detail->room->titre ?></td>
                                     								<td class="text-center"><?php echo $detail->adult ?></td>
                                     								<td class="text-center"><?php echo $detail->children ?></td>
-                                                                    <td> <?php echo $detail->guest1 ?> <br> <?php echo $detail->guest2 ?> <br> <?php echo $detail->guest3 ?> <br> <?php echo $detail->guest4 ?>  </td>
-                                                                    <td class="text-center"><?php echo $detail->price ?> <sup>DT</sup></td>
+                                                                    <td> <?php foreach ( json_decode($detail->guests) as $gt) { echo '<li>'.$gt.'</li>' ; }  ?>   </td>
                                                                     <td >
                                                                         <ul>
                                                                             <?php foreach ($detail->opts as $option ){ echo "<li>".$option->option."</li>" ; } ?>
                                                                         </ul>
                                                                     </td>
+                                                                    <td class="text-center"><?php echo $detail->price ?> <sup>DT</sup></td>
+                                                                    
                                     								
                                     							</tr>
                                                                 <?php } ?>
