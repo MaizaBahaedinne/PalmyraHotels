@@ -82,6 +82,8 @@ class Reservation extends BaseController
      {
             $this->global['pageTitle'] = 'Details';
             $data['reservation'] =  $this->reservation_model->reservation($reservationId);
+    if( (!empty($data['reservation'])) && $data['reservation']->createdBy == $this->vendorId  ) { 
+
             $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
             foreach ($data['reservation']->details as $room ) 
                 {       
@@ -96,6 +98,12 @@ class Reservation extends BaseController
                    $detail->options  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
             }
       $this->loadViews("reservation/details", $this->global, $data , NULL);
+         }else{
+                 $this->global['pageTitle'] = '404';
+             $this->loadViews("404", $this->global, null , NULL); 
+         }
+            
+
      }
 
 
@@ -155,30 +163,35 @@ class Reservation extends BaseController
 
 
     public function invoic($reservationId) 
-     {
+     {      
+            $data['reservation'] =  $this->reservation_model->reservation($reservationId);
+            
+            
+            if( (!empty($data['reservation'])) && $data['reservation']->createdBy == $this->vendorId  ) { 
+
             $this->global['pageTitle'] = 'My Bookings';
 
             $data['reservation'] =  $this->reservation_model->reservation($reservationId);
+
             $data['reservation']->details =  $this->reservation_model->reservationDetails($reservationId);
                 foreach ($data['reservation']->details as $detail ) 
                     {       
                         $detail->prices = $this->hotel_model->roomMsPrice($data['reservation']->hotelId ,  $data['reservation']->checkin ,  $data['reservation']->pension   ) ;
                         $detail->room = $this->hotel_model->Room( $detail->roomId ) ;
                         $detail->opts  = $this->hotel_model->roomOptionsListing(  str_replace("\"", "", $detail->options )  )  ;
-                        $detail->guest1  =  ""  ;
-                        $detail->guest2  =  ""  ;
-                        $detail->guest3  =  ""  ;
-                        $detail->guest4  =  ""  ;
 
                     }
             $data['reservation']->client = $this->user_model->user($data['reservation']->createdBy);
              $data['hotel'] =  $this->hotel_model->hotel($data['reservation']->hotelId);
             
+           
             $data['user'] =   $this->user_model->user($this->vendorId );
             
-            
             $this->loadViews("reservation/facture", $this->global, $data , NULL);
-     }
+            }else{
+                 $this->global['pageTitle'] = '404';
+             $this->loadViews("404", $this->global, null , NULL); }
+            }
 
     
 
