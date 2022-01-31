@@ -6801,14 +6801,14 @@ a.box_news ul li:after {
     header #logo img.logo_normal,
     header #logo img.logo_sticky {
         width: auto;
-        height: 30px;
+        height: 55px;
     }
     #logo_home h1 a,
     header#colored #logo_home h1 a,
     header#plain #logo_home h1 a,
     header.sticky #logo_home h1 a {
         width: 180px;
-        height: 30px;
+        height: 55px;
         background-size: auto 30px;
     }
     .main-menu ul li.megamenu .menu-wrapper {

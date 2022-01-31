@@ -67,7 +67,12 @@
                     <input type="hidden" value="<?php echo $search->children ?>" name="children" >
                     <input type="hidden" value="<?php echo $search->pension  ?>" name="pension">
                     
-                                               
+                   
+                           <strong>Pension :</strong> <span ><?php echo $search->pension ?></span> <a class="btn_1 green" onclick="GoPension ()">Change</a>
+                           
+                      
+                            
+                                              
                     <table class="table table-striped cart-list add_bottom_30" >
                         <thead>
                             <tr>
@@ -268,14 +273,14 @@
                                 </tr>
                                  <tr class="">
                                     <td>
-                                       Pension<br>
-                                       <small><a onclick="GoPension ()">Change</a></small>
+                                       Pension 
+                                      
                                     </td>
                                     <td class="text-right" >
                                         <span ><?php echo $search->pension ?></span> 
                                     </td>
                                 </tr>
-                                <tr class="">
+                                <tr class=""  style="display:none">
                                     <td>
                                        PAX/night
                                     </td>
@@ -328,7 +333,7 @@
                         <i class="icon_set_1_icon-57"></i>
                         <h4>Need <span>Help?</span></h4>
                         <a href="tel://00<?php echo $hotel->phone ?>" class="phone">+216<?php echo $hotel->phone ?></a>
-                        <small>Monday to Friday 9.00am - 7.30pm</small>
+                        <small>Monday to Friday 9.00am - 6.00pm</small>
                     </div>
                 </aside>
                 <!-- End aside -->
