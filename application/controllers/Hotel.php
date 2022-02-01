@@ -13,6 +13,7 @@ class Hotel extends BaseController {
         $this->load->model('search_model');
          $this->load->model('avis_model');
          $this->load->model('user_model');
+         $this->load->model('view_model') ;
        
         
         $this->isLoggedIn();   
@@ -86,7 +87,7 @@ class Hotel extends BaseController {
         }
 
 		public function view($hotelId)
-		        {
+		        {	
 		                $data['hotel'] =  $this->hotel_model->hotel($hotelId);
 		                $data['medias'] = $this->hotel_model->hotelMediaListing($hotelId) ;
 		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($hotelId) ;
@@ -107,12 +108,24 @@ class Hotel extends BaseController {
 		                	 $avi->user = $this->user_model->user($avi->createdBy) ; 
 		                	}
 		                }
+
+		                 
+
+		                
 		               
 		                 $this->global['type'] = 'hotel';	
 		                 $this->global['hotelDetails'] =  $data['hotel'] ;
 		                 $this->global['pageTitle'] = $data['hotel']->name  ;
-		        		 $this->loadViews("hotel/view", $this->global, $data  , NULL); 
+
+		                
+
+		                 $this->loadViews("hotel/view", $this->global, $data  , NULL); 
+		                  
+		        		 
 		        }  
+
+		     
+
 
 
 
