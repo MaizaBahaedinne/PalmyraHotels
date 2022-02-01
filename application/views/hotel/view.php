@@ -307,7 +307,7 @@
                                         <li><i class="icon_set_1_icon-86"></i> Free wifi</li>
                                         <li><i class="icon_set_2_icon-116"></i> Cable / satellite TV</li>
                                         <li><i class="icon_set_2_icon-106"></i> Air conditioning</li>
-                                        <li><i class="icon_set_2_icon-106"></i> Refrigerator</li>
+                                        <li><i class="ion ion-md-wine me-2"></i> Refrigerator</li>
                                         
                                     </ul>
                                 </div>
@@ -315,7 +315,7 @@
                                     <ul class="list_ok">
                                         <li>Interconnected rooms available</li>
                                         <li>Complimentary toiletries</li>
-                                        <li>Quidam percipitur instructior an eum</li>
+                                       
                                     </ul>
                                 </div>
                             </div>
