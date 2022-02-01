@@ -157,7 +157,7 @@ class Reservation extends BaseController
                  $this->reservation_model->editreservation($reservationInfo , $reservationId); 
 
                  $content =
-                 "Hello ".$data['reservation']->client->name.", <br><br> your booking request N".$data['reservation']->reservationId." for the hotel <b>".$data['reservation']->hotel->name."</b> has been sent to the administration <br> To confirm your order please contact the hotel by telephone at <a href='tel:+216".$data['reservation']->hotel->phone."' >+216".$data['reservation']->hotel->phone."</a>  
+                 "Hello ".$data['reservation']->client->name.", <br><br> Welcome to palmyra Hotels, Your booking request N".$data['reservation']->reservationId." for the hotel <b>".$data['reservation']->hotel->name."</b> has been sent to the administration <br> To confirm your order please contact us at <a href='tel:+216".$data['reservation']->hotel->phone."' >+216".$data['reservation']->hotel->phone."</a>  
                 <br><br>
                 <hr>
                 
