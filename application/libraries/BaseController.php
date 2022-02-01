@@ -81,7 +81,7 @@ class BaseController extends CI_Controller {
 
 	
 
-	public function send_mail($to, $subject  , $data , $content , $from = "contact@palmyrahotels.tn" , $password = "PalmyraHotels2022"  )
+	public function send_mail($to, $subject  , $data , $content , $from = "contact@palmyrahotels.tn" , $password = "PalmyraHotels2022" , $cc ="" )
     {       
     				
                  // Load PHPMailer library
@@ -105,6 +105,11 @@ class BaseController extends CI_Controller {
                     $mail->setFrom( $from , 'Palmyra Hotels ');
                     $mail->addReplyTo($from , 'Palmyra Hotels');
                     
+                    if($cc != ""){ 
+                    $mail->addCC($cc);
+                    $mail->addBCC($from);
+                    }
+                    
                     // Add a recipient
                     $mail->addAddress($to);
 
@@ -112,7 +117,7 @@ class BaseController extends CI_Controller {
                     $mail->Subject = $subject ;
                     
                     // Set email format to HTML
-                    $mail->isHTML();
+                    $mail->isHTML(true);
                     
                     // Email body content
                     
