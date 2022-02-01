@@ -48,7 +48,7 @@ class Reservation_model extends CI_Model
      * @param array $userInfo : This is users updated information
      * @param number $userId : This is user id
      */
-    function editContact($reservationInfo, $reservationId)
+    function editreservation($reservationInfo, $reservationId)
     {
         $this->db->where('reservationId', $reservationId);
         $this->db->update('tbl_reservation', $reservationInfo);
@@ -97,7 +97,7 @@ class Reservation_model extends CI_Model
      */
     function myReservationListing($userId , $statut = '' )
     {
-        $this->db->select('BaseTbl.* , Hotel.* ');
+        $this->db->select('BaseTbl.* , Hotel.* , BaseTbl.statut statutRes ');
         $this->db->from('tbl_reservation as BaseTbl');
 
         $this->db->join('tbl_hotels Hotel','Hotel.hotelId = BaseTbl.hotelId')  ;
@@ -106,7 +106,7 @@ class Reservation_model extends CI_Model
             $this->db->where('BaseTbl.createdBy =', $userId );
             if($statut != '')
             {
-                $this->db->where('BaseTbl.statut =', $statut );
+                $this->db->where('BaseTbl.statut in ('.$statut.')' );
             }
             else
             {

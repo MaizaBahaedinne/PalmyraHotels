@@ -34,7 +34,7 @@
 				<nav>
 					<ul>
 						
-						<li><a href="#section-11" class="icon-booking"><span>Bookings</span></a>
+						<li><a  href="#section-11" class="icon-booking"><span>Bookings</span></a>
 						</li>
 						<li><a href="#section-1" class="icon-booking"><span>Pending bookings</span></a>
 						</li>
@@ -55,7 +55,7 @@
 						
 						<div class="strip_booking">
 							<div class="row">
-								<div class="col-lg-2 col-md-2">
+								<div class="col-lg-2 col-md-2"  >
 									<div class="date">
 										<span class="month"><?php  
                                         $date = date_create($booking->checkin);
@@ -95,14 +95,14 @@
 						<?php foreach ($reservation as $booking ){ ?>
 							
 						
-						<div class="strip_booking">
+						<div class="strip_booking" >
 							<div class="row">
-								<div class="col-lg-2 col-md-2">
+								<div class="col-lg-2 col-md-2" >
 									<div class="date">
-										<span class="month"><?php  
+										<span class="month" <?php if  ($booking->statutRes == 1 ){ ?> style="background-color: #f90 ;" <?php } ?> ><?php  
                                         $date = date_create($booking->checkin);
                                         echo date_format($date, 'M'); ?></span>
-										<span class="day"><strong><?php echo date_format($date, 'd'); ?></strong><?php  
+										<span class="day"><strong <?php if  ($booking->statutRes == 1 ){ ?> style="color: #f90 ;" <?php } ?>  ><?php echo date_format($date, 'd'); ?></strong><?php  
                                         echo date_format($date, 'l'); ?></span>
 									</div>
 								</div>
@@ -116,8 +116,12 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<div class="booking_buttons">
-										<a href="<?php echo base_url() ?>Reservation/CompletReservationDetails/<?php echo $booking->reservationId ?>" class="btn_2">Edit</a>
+									<div class="booking_buttons" >
+										<?php if  ($booking->statutRes == 0 ){  ?> 
+											<a href="<?php echo base_url() ?>Reservation/CompletReservationDetails/<?php echo $booking->reservationId ?>" class="btn_2">Edit</a>
+										<?php }if  ($booking->statutRes == 1 ){ ?> 
+											<a  class="btn_2 btn-warning" style="background-color: #f90;" >In progress </a>
+										<?php }?> 										
 										<a href="" class="btn_3">Cancel</a>
 									</div>
 								</div>

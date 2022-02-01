@@ -154,30 +154,40 @@ class Reservation extends BaseController
                         'createdBy' => $this->vendorId ,
                         'createdDTM'=> date('Y-m-d H:i:s'), 
                       );
-                 $this->reservation_model->editContact($reservationInfo , $reservationId); 
+                 $this->reservation_model->editreservation($reservationInfo , $reservationId); 
 
-                $content = $this->load->view('reservation/printFacture', $data , true);
+                 $content =
+                 "Hello ".$data['reservation']->client->name.", <br><br> your booking request N".$data['reservation']->reservationId." for the hotel <b>".$data['reservation']->hotel->name."</b> has been sent to the administration <br> To confirm your order please contact the hotel by telephone at <a href='tel:+216".$data['reservation']->hotel->phone."' >+216".$data['reservation']->hotel->phone."</a>  
+                <br><br>
+                <hr>
+                
+                Best,
+                <br>
+                Palmyra Hotels team";
 
-                 if( $this->send_mail(
+               if( $this->send_mail(
                     $data['reservation']->client->email  , 
                     "Booking N".$data['reservation']->reservationId." [Palmyra ".$data['reservation']->hotel->name."] " ,
                      ""  ,
                     $content ,  "booking@palmyrahotels.tn" ,  
                     "Booking2022" , 
-                    $data['reservation']->hotel->mail ) ) { 
+                    $data['reservation']->hotel->mail ) ) 
+                 { 
 
                         redirect('Reservation/mybookings');
-                        }
-            
+                 }
      
      }
+
+
+    
 
      public function mybookings() 
      {
             $this->global['pageTitle'] = 'My Bookings';
 
-            $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId , 0 );
-             $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , 2 );
+            $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId , '0,1' );
+             $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , '2' );
             $data['user'] =   $this->user_model->user($this->vendorId );
             
             
