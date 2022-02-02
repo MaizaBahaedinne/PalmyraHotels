@@ -68,7 +68,12 @@
                     <input type="hidden" value="<?php echo $search->pension  ?>" name="pension">
                     
                    
-                           <strong>Pension :</strong> <span ><?php echo $search->pension ?></span> <a class="btn_1 green" onclick="GoPension ()">Change</a>
+                           <strong>Pension :</strong> 
+                                <span>  <?php if($search->pension == 'PD'  ){ echo 'Continental breakfast included' ;  } ?>
+                                        <?php if($search->pension == 'DP'  ){ echo 'Continental breakfast & dinner included' ;  } ?>
+                                        <?php if($search->pension == 'PC'  ){ echo 'Continental breakfast , lunch & dinner included' ;  } ?>
+                                        <?php if($search->pension == 'ALLS'  ){ echo 'All in soft' ;  } ?>
+                                        <?php if($search->pension == 'ALLH'  ){ echo 'All in hard' ;  } ?></span> <a class="btn_1 green" onclick="GoPension ()">Change</a>
                            
                       
                             
@@ -277,7 +282,13 @@
                                       
                                     </td>
                                     <td class="text-right" >
-                                        <span ><?php echo $search->pension ?></span> 
+                                        <span > 
+                                        <?php if($search->pension == 'PD'  ){ echo 'Continental breakfast included' ;  } ?>
+                                        <?php if($search->pension == 'DP'  ){ echo 'Continental breakfast & dinner included' ;  } ?>
+                                        <?php if($search->pension == 'PC'  ){ echo 'Continental breakfast , lunch & dinner included' ;  } ?>
+                                        <?php if($search->pension == 'ALLS'  ){ echo 'All in soft' ;  } ?>
+                                        <?php if($search->pension == 'ALLH'  ){ echo 'All in hard' ;  } ?>
+                                        </span> 
                                     </td>
                                 </tr>
                                 <tr class=""  style="display:none">
@@ -322,7 +333,7 @@
                         </script>
                         <br>
                         <div class="alert alert-danger" id="LoginAlert" style="display: none;" >
-                          <strong>Info!</strong><br> you must <button type="button" data-toggle="modal" data-target="#signinForm" class="btn" >Sign in</button> before launching a search.
+                          <strong>Info!</strong><br> you must <button type="button" data-toggle="modal" data-target="#signinForm" class="btn_1 green" >Sign in</button> before launching a search.
                         </div>
                                 
                         
@@ -365,11 +376,11 @@
               title: 'Select pension',
               input: 'select',
               inputOptions: {
-                <?php if($room->prices->PD != null ){ ?> 'PD': 'PD <small>+<?php echo $room->prices->PD ?> <sup>DT</sup></small>', <?php } ?>
-                 <?php if($room->prices->DP != null ){ ?> 'DP': 'DP <small>+<?php echo $room->prices->DP ?> <sup>DT</sup></small>', <?php } ?>
-                 <?php if($room->prices->PC != null ){ ?> 'PC': 'PC  <small>+<?php echo $room->prices->PC ?> <sup>DT</sup></small>', <?php } ?>
-                 <?php if($room->prices->ALLS != null ){ ?> 'ALLS': 'ALLS  <small>+<?php echo $room->prices->ALLS ?> <sup>DT</sup></small>', <?php } ?>
-                 <?php if($room->prices->ALLH != null ){ ?> 'ALLH': 'ALLH  <small>+<?php echo $room->prices->ALLH ?> <sup>DT</sup></small>', <?php } ?>
+                <?php if($room->prices->PD != null ){ ?> 'PD': 'Continental breakfast included <small>+<?php echo $room->prices->PD ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->DP != null ){ ?> 'DP': 'Breakfast, dinner included <small>+<?php echo $room->prices->DP ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->PC != null ){ ?> 'PC': 'Breakfast, lunch & dinner included  <small>+<?php echo $room->prices->PC ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->ALLS != null ){ ?> 'ALLS': 'Alll in soft  <small>+<?php echo $room->prices->ALLS ?> <sup>DT</sup></small>', <?php } ?>
+                 <?php if($room->prices->ALLH != null ){ ?> 'ALLH': 'All in hard  <small>+<?php echo $room->prices->ALLH ?> <sup>DT</sup></small>', <?php } ?>
               },
               inputValidator: (value) => {
                 if (!value) {

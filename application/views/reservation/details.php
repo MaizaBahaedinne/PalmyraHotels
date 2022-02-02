@@ -359,7 +359,11 @@
                                                                                 Pension
                                                                         </td>
                                                                         <td class="text-right">
-                                                                                 <?php echo $reservation->pension ?>
+                                                                                <?php if($reservation->pension == 'PD'  ){ echo 'Continental breakfast included' ;  } ?>
+                                                                                <?php if($reservation->pension == 'DP'  ){ echo 'Continental breakfast & dinner included' ;  } ?>
+                                                                                <?php if($reservation->pension == 'PC'  ){ echo 'Continental breakfast , lunch & dinner included' ;  } ?>
+                                                                                <?php if($reservation->pension == 'ALLS'  ){ echo 'All in soft' ;  } ?>
+                                                                                <?php if($reservation->pension == 'ALLH'  ){ echo 'All in hard' ;  } ?>
                                                                         </td>
                                                                 </tr>
                                                                 <tr>

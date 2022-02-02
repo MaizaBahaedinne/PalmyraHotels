@@ -68,7 +68,11 @@
                                  <strong>From :</strong> <?php echo $reservation->checkin ?> 14:00 <br>
                                  <strong>To :</strong> <?php echo $reservation->checkout ?> 12:00 <br>
                                  <strong>Stay :</strong> <?php echo $reservation->nights ?> nghits <br>
-                                 <strong>Pension:</strong> <?php echo $reservation->pension ?><br>
+                                 <strong>Pension:</strong> <?php if($reservation->pension == 'PD'  ){ echo 'Continental breakfast included' ;  } ?>
+                                                                                <?php if($reservation->pension == 'DP'  ){ echo 'Continental breakfast & dinner included' ;  } ?>
+                                                                                <?php if($reservation->pension == 'PC'  ){ echo 'Continental breakfast , lunch & dinner included' ;  } ?>
+                                                                                <?php if($reservation->pension == 'ALLS'  ){ echo 'All in soft' ;  } ?>
+                                                                                <?php if($reservation->pension == 'ALLH'  ){ echo 'All in hard' ;  } ?><br>
                               </address>
                            </td>
                            <td>
