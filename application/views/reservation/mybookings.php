@@ -38,12 +38,8 @@
 						</li>
 						<li><a href="#section-1" class="icon-booking"><span>Pending bookings</span></a>
 						</li>
-						<li><a href="#section-2" class="icon-wishlist"><span>Wishlist</span></a>
-						</li>
-						<li><a href="#section-3" class="icon-settings"><span>Settings</span></a>
-						</li>
-						<li><a href="#section-4" class="icon-profile"><span>Profile</span></a>
-						</li>
+
+					
 					</ul>
 				</nav>
 				<div class="content">
