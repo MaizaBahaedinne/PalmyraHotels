@@ -212,9 +212,9 @@
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="320"  alt="Palmyra Hotels" class="logo_normal"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="320"  alt="Palmyra Hotels" class="logo_sticky"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="250"  alt="Palmyra Hotels" class="logo_sticky"></a>
                     </div>
                 </div>
                 <nav class="col-8" style="padding-top:2px ">
@@ -279,7 +279,7 @@
                                     
                                    <?php if ($uid == 0 ) { ?>
                                         <li><a href="<?php echo base_url() ?>Login" ><i class="icon-login-2"></i> Sign in</a></li>
-                                       
+
                                     <?php } else {?>
                                         <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings"  >My bookings</a></li>
                                         
