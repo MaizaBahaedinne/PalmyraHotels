@@ -6066,7 +6066,7 @@ a.box_news {
     }
 }
 a.box_news figure {
-    width: 150px;
+    width: 200px;
     height: 150px;
     overflow: hidden;
     -webkit-border-radius: 5px;
