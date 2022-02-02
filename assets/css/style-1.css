@@ -6801,7 +6801,7 @@ a.box_news ul li:after {
     header #logo img.logo_normal,
     header #logo img.logo_sticky {
         width: auto;
-        height: 55px;
+        height: 50px;
     }
     #logo_home h1 a,
     header#colored #logo_home h1 a,

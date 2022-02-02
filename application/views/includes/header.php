@@ -3,6 +3,13 @@
 
 <head>
 
+         <style type="text/css">
+       .mobileShow { display: none;}
+       /* Smartphone Portrait and Landscape */
+       @media only screen
+       and (min-device-width : 320px)
+       and (max-device-width : 480px){ .mobileShow { display: inline;}}
+    </style>
    
     <?php if(!empty($type) )
     { 
@@ -94,7 +101,10 @@
 
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.10/sweetalert2.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.3.10/sweetalert2.min.js"></script>
+  
 
+        
+  
 </head>
 <body>
 
@@ -173,20 +183,7 @@
                     <div class="col-6"><i class="icon-phone"></i><strong>+216 58 465 249</strong></div>
                     <div class="col-6">
                         <ul id="top_links">
-                            <?php if ($uid == 0 ) { ?>
-                                <li><a href="#" data-toggle="modal" data-target="#signinForm" >Sign in</a></li>
-                            <?php } else {?>
-                                <li >
-                                    <a class="" href="<?php echo base_url() ?>Reservation/mybookings" ><?php echo $name ?><sup style="background-color:#fae144;color: black ;padding: 2px;"><?php echo  count($MyReservations)?></sup></a>  
-
-                                    
-                                </li>
-                                 <li><a  href="<?php echo base_url() ?>logout" class=" ">
-                                        Sign out
-                                    </a>
-                                </li>
-                                
-                            <?php } ?>
+                            
                                
 
                                 <li id="social_top">
@@ -211,22 +208,23 @@
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="250"  alt="City tours" class="logo_normal"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="250"  alt="City tours" class="logo_sticky"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="200"  alt="Palmyra Hotels" class="logo_sticky"></a>
                     </div>
                 </div>
-                <nav class="col-8">
-                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="<?php echo base_url() ?>"><span>Menu mobile</span></a>
+                <nav class="col-8" style="padding-top:2px ">
+                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close"  ><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
                             <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="200" alt="Palmyra Hotels"> 
                              
-                                
+                               
                           
                         </div>
+
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
-                         <ul style="padding-top: 16px;" >
+                         <ul style="padding-top: 10px;" >
                             <li><a href="<?php echo base_url() ?>" class="show-submenu">Home</a></li>                            
                             <li><a href="<?php echo base_url() ?>About">About</a></li>
                             
@@ -265,16 +263,59 @@
                             <li><a href="<?php echo base_url() ?>Contact">Contact</a></li>
                            
                         </ul>
-                    </div><!-- End main-menu -->
-                   
-                                <ul id="top_tools">
 
-                                    <li>
-                                     <!--   <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a> -->
-                                    </li>
+
+                         <div id="header_menu" style="clear: both;
+                                                        position: relative;
+                                                        height: 25px;
+                                                        margin-top: -10px; text-align: left;" >
+                            
+                             
+                                    <ul>
+                                    
+                                        <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings"  >Profile</a></li>
+                                        
+                                        <li><a  style="color: black" class="dropdown-item" href="<?php echo base_url() ?>logout">logout</a></li>
+                                      </ul>
+                                  
+                          
+                        </div>
+                    </div><!-- End main-menu -->
+
+
+                   
+                                <ul id="top_tools" style="padding-top: 5px;"   >
+
+                                   <?php if ($uid == 0 ) { ?>
+                                <li><a href="#" data-toggle="modal" data-target="#signinForm" ><i class="icon-login-2"></i> Sign in</a></li>
+                            <?php } else {?>
+                                <li  id="userMenu">
+                               
+                                <div class="dropdown" >
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;border-color : transparent;" ><i class="icon-user"></i> <?php echo $name ?></button>  
+                                   
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+                                        <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings" alt="<?php echo $name ; ?>" >Profile</a></li>
+                                        
+                                        <li><a  style="color: black" class="dropdown-item" href="<?php echo base_url() ?>logout">logout</a></li>
+                                      </ul>
+                                 </div>
+                        
+                                </li>
+                                    
+                                
+                            <?php } ?>
                                     
                                 </ul>
 
+<script type="text/javascript">
+$(function() {
+   if( screen.width < 720 ) 
+   {
+   $('#userMenu').hide() ;
+   } 
+}); 
+</script>
                                
                    
                     
