@@ -27,7 +27,18 @@ class Acceuil extends BaseController
     }
     
 
+ /**
+     * This function used to load the first screen of the user
+     */
+    public function trans()
+    {
 
+                
+             $this->global['pageTitle'] = 'Home';
+            $this->loadViews("trans", $this->global,  null , NULL);
+        
+
+    }
     
     
     /**
