@@ -273,7 +273,7 @@
                              
                                     <ul>
                                     
-                                        <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings"  >Profile</a></li>
+                                        <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings"  >My bookings</a></li>
                                         
                                         <li><a  style="color: black" class="dropdown-item" href="<?php echo base_url() ?>logout">logout</a></li>
                                       </ul>
@@ -295,7 +295,7 @@
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;border-color : transparent;" ><i class="icon-user"></i> <?php echo $name ?></button>  
                                    
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
-                                        <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings" alt="<?php echo $name ; ?>" >Profile</a></li>
+                                        <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings" >My bookings</a></li>
                                         
                                         <li><a  style="color: black" class="dropdown-item" href="<?php echo base_url() ?>logout">logout</a></li>
                                       </ul>
