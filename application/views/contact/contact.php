@@ -39,13 +39,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name">
+                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name" required>
                                     </div>
                                 </div>
                             </div>
@@ -54,12 +54,12 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Email</label>
-                                        <input type="email" id="email_contact" name="email" class="form-control" placeholder="Enter Email">
+                                        <input type="email" id="email_contact" name="email" class="form-control" placeholder="Enter Email" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Email</label>
+                                        <label>country code</label>
                                     <select name="code" class="form-control" id="">
                                         <option data-countryCode="TN" value="216">Tunisia (+216)</option>
                                         <option data-countryCode="DZ" value="213">Algeria (+213)</option>
@@ -288,7 +288,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Phone</label>
-                                        <input type="number" id="phone_contact" maxlength="10" name="phone" class="form-control" placeholder="Enter Phone number">
+                                        <input type="number" id="phone_contact" maxlength="10" name="phone" class="form-control" placeholder="Enter Phone number" required>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Message</label>
-                                        <textarea rows="10" id="message_contact" name="message" class="form-control" placeholder="Write your message" style="height:200px;"></textarea>
+                                        <textarea rows="10" id="message_contact" name="message" class="form-control" placeholder="Write your message" style="height:200px;" required></textarea>
                                     </div>
                                 </div>
                             </div>
