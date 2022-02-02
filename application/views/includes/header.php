@@ -3,12 +3,16 @@
 
 <head>
 
-         <style type="text/css">
+    <style type="text/css">
        .mobileShow { display: none;}
        /* Smartphone Portrait and Landscape */
        @media only screen
        and (min-device-width : 320px)
        and (max-device-width : 480px){ .mobileShow { display: inline;}}
+
+       .scroll-container{
+        scroll-behavior: smooth;
+       }
     </style>
    
     <?php if(!empty($type) )
@@ -208,16 +212,16 @@
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="320"  alt="Palmyra Hotels" class="logo_normal"></a>
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="200"  alt="Palmyra Hotels" class="logo_sticky"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="320"  alt="Palmyra Hotels" class="logo_sticky"></a>
                     </div>
                 </div>
                 <nav class="col-8" style="padding-top:2px ">
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close"  ><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="200" alt="Palmyra Hotels"> 
+                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="320" alt="Palmyra Hotels"> 
                              
                                
                           
@@ -273,9 +277,14 @@
                              
                                     <ul>
                                     
+                                   <?php if ($uid == 0 ) { ?>
+                                        <li><a href="<?php echo base_url() ?>Login" ><i class="icon-login-2"></i> Sign in</a></li>
+                                       
+                                    <?php } else {?>
                                         <li><a style="color: black" class="dropdown-item"  href="<?php echo base_url() ?>Reservation/mybookings"  >My bookings</a></li>
                                         
                                         <li><a  style="color: black" class="dropdown-item" href="<?php echo base_url() ?>logout">logout</a></li>
+                                         <?php } ?>
                                       </ul>
                                   
                           
@@ -287,9 +296,9 @@
                                 <ul id="top_tools" style="padding-top: 5px;"   >
 
                                    <?php if ($uid == 0 ) { ?>
-                                <li><a href="#" data-toggle="modal" data-target="#signinForm" ><i class="icon-login-2"></i> Sign in</a></li>
+                                <li><a id="userMenu" href="#" data-toggle="modal" data-target="#signinForm" ><i class="icon-login-2"></i> Sign in</a></li>
                             <?php } else {?>
-                                <li  id="userMenu">
+                                <li  id="userMenu2">
                                
                                 <div class="dropdown" >
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent;border-color : transparent;" ><i class="icon-user"></i> <?php echo $name ?></button>  
@@ -313,6 +322,7 @@ $(function() {
    if( screen.width < 720 ) 
    {
    $('#userMenu').hide() ;
+   $('#userMen2').hide() ;
    } 
 }); 
 </script>
