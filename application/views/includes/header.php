@@ -416,7 +416,8 @@ $(function() {
    if( screen.width <= 1090  ) 
    {
    $('#userMenu').hide() ;
-   $('#userMen2').hide() ;
+   $('#userMenu2').hide() ;
+  
    } 
 }); 
 </script>
