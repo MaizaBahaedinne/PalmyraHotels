@@ -413,7 +413,7 @@
 
 <script type="text/javascript">
 $(function() {
-   if( screen.width < 720 ) 
+   if( screen.width <= 1090  ) 
    {
    $('#userMenu').hide() ;
    $('#userMen2').hide() ;
