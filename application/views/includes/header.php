@@ -178,16 +178,7 @@
     <style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
 
 
-    <!-- COMMON CSS -->
-    <link href="<?php echo base_url() ?>assets/css/bootstrap.min-1.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/css/style-1.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/css/vendors-1.css" rel="stylesheet">
-    <!-- REVOLUTION SLIDER CSS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/rev-slider-files/fonts/font-awesome/css/font-awesome-1.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/rev-slider-files/css/settings-1.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/rev-slider-files/css/layers-1.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/rev-slider-files/css/navigation-1.css">
-    
+
     <!-- ALTERNATIVE COLORS CSS -->
     <link href="#" id="colors" rel="stylesheet">
 
@@ -206,10 +197,10 @@
 </head>
 <body>
 
-        <!-- Messenger Plugin de discussion Code -->
+        <!-- Messenger Plugin de discussion Code 
     <div id="fb-root"></div>
 
-    <!-- Your Plugin de discussion code -->
+    <!-- Your Plugin de discussion code 
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
 
@@ -219,7 +210,7 @@
       chatbox.setAttribute("attribution", "biz_inbox");
     </script>
 
-    <!-- Your SDK code -->
+    
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -255,7 +246,7 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    -->
 
     <div id="preloader">
         <div class="sk-spinner sk-spinner-wave">
@@ -306,16 +297,16 @@
                     <div id="logo" >
                       <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo-1.png" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo-1.webp" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
                       <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="250"  alt="Palmyra Hotels" class="logo_sticky"></a>
+                        <img src="<?php echo base_url()?>assets/img/logo_sticky-1.webp"  width="250"  alt="Palmyra Hotels" class="logo_sticky"></a>
                     </div>
                 </div>
                 <nav class="col-8" style="padding-top:2px ">
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close"  ><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="320" alt="Palmyra Hotels"> 
+                            <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.webp" width="250" alt="Palmyra Hotels"> 
                              
                                
                           
