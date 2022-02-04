@@ -44,13 +44,20 @@
                      </div>
                   </div>
                   <h2><?php echo $blog->titre ?></h2>
-                  <p style="width: auto;
-                     height: 20px;
-                     white-space: nowrap;
-                     overflow: hidden;
-                     text-overflow: ellipsis;
-                     resize: vertical;">
-                     <?php echo $blog->description ?>
+                  <p>
+                  <?php // strip tags to avoid breaking any html
+                                                            $string = strip_tags( $blog->description );
+                                                            if (strlen($string) > 50) {
+
+                                                                // truncate string
+                                                                $stringCut = substr($string, 0, 50);
+                                                                $endPoint = strrpos($stringCut, ' ');
+
+                                                                //if the string doesn't contain any space then it will cut without word basis.
+                                                                $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                                                                $string .= '...';
+                                                            }
+                                                            echo $string; ?>                     
                   </p>
                   <a href="<?php echo base_url() ?>Blog/view/<?php echo $blog->blogId ?>" class="btn_1">Read more</a>
                </div>
