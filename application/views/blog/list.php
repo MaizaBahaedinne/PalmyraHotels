@@ -63,7 +63,7 @@
 						</div>
 						<!-- end post -->
 
-						<hr>
+						
 
 						<?php } ?>
 						
