@@ -22,7 +22,7 @@ class Blog_model extends CI_Model
         $this->db->select('BaseTbl.* ');
         $this->db->from('tbl_blog as BaseTbl');
   
-        
+        $this->db->order_by('BaseTbl.createdDTM DESC' );
         $query = $this->db->get();
         return $query->result();
     }

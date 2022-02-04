@@ -26,7 +26,7 @@
             <div class="box_style_1">
             	<div class="row">
                <?php foreach ($blogs as $blog ) { ?>
-               <div class="post col-lg-6 ">
+               <div class="post col-lg-4 ">
                   <a href="<?php echo base_url() ?>Blog/view/<?php echo $blog->blogId ?>">
                   <img src="<?php echo base_url() ?>assets/img/blog/<?php echo $blog->image ?>" alt="Image"  style="width: 300px; height: 337px; object-fit: scale-down;" >
                   </a>
