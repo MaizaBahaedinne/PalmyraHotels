@@ -34,13 +34,7 @@ class Hotel extends BaseController {
         public function search( )
         {				
         				
-		                $data['hotel'] =  $this->hotel_model->hotel($this->input->get('hotelId'));
-		                $data['medias'] = $this->hotel_model->hotelMediaListing($this->input->get('hotelId')) ;
-		                $data['rooms'] = $this->hotel_model->hotelRoomsListing($this->input->get('hotelId')) ;
-		                foreach ($data['rooms'] as $room ) 
-		                {		
-		                	$room->prices = $this->hotel_model->roomMsPrice($this->input->get('hotelId') , $this->input->get('checkin')    ) ;
-		        		}
+		              
 
 		        		 $searchInfo = array(  
                             'hotelId' => $this->input->get('hotelId'),
@@ -75,15 +69,22 @@ class Hotel extends BaseController {
 
         public function searchHotel ($searchId){
 
-        	  				$data['search'] = $this->search_model->getSearchInfo($searchId) ; 
-        	  				$data['hotel'] =  $this->hotel_model->hotel($data['search']->hotelId) ;
-        	  				$data['rooms'] = $this->hotel_model->hotelRoomsListing($data['search']->hotelId) ;
+    	  				$data['search'] = $this->search_model->getSearchInfo($searchId) ; 
+
+    	  				if ((!(empty ($data['search'] )))  ) {
+    	  				$data['hotel'] =  $this->hotel_model->hotel($data['search']->hotelId) ;
+    	  				$data['rooms'] = $this->hotel_model->hotelRoomsListing($data['search']->hotelId) ;
 		                foreach ($data['rooms'] as $room ) 
 		                {		
 		                	$room->prices = $this->hotel_model->roomMsPrice($data['search']->hotelId , $data['search']->checkin , $data['search']->pension   ) ;
 		        		}
 			  	             $this->global['pageTitle'] = 'Booking  '.$data['hotel']->name  ;  		            	
 	        			    $this->loadViews("hotel/booking" , $this->global, $data  , NULL ) ;
+
+	        			 }else{
+                 			$this->global['pageTitle'] = '404';
+			             	$this->loadViews("404", $this->global, null , NULL); 
+			        	 }
         }
 
 		public function view($hotelId)

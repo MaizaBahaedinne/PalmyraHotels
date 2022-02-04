@@ -184,14 +184,19 @@ class Reservation extends BaseController
 
      public function mybookings() 
      {
-            $this->global['pageTitle'] = 'My Bookings';
+            
 
+            if ( $this->vendorId > 0 ) {
             $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId , '0,1' );
-             $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , '2' );
+            $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , '2' );
             $data['user'] =   $this->user_model->user($this->vendorId );
             
-            
+            $this->global['pageTitle'] = 'My Bookings';
             $this->loadViews("reservation/mybookings", $this->global, $data , NULL);
+            }else{
+                 $this->global['pageTitle'] = '404';
+             $this->loadViews("404", $this->global, null , NULL); 
+         }
      }
 
 
