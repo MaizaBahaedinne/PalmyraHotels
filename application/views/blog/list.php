@@ -24,6 +24,7 @@
       <div class="row">
          <div class="col-lg-12">
             <div class="box_style_1">
+            	<div class="row">
                <?php foreach ($blogs as $blog ) { ?>
                <div class="post col-lg-6 ">
                   <a href="<?php echo base_url() ?>Blog/view/<?php echo $blog->blogId ?>">
@@ -53,6 +54,7 @@
                </div>
                <!-- end post -->
                <?php } ?>
+           		</div>
             </div>
          </div>
          <!-- End col -->
