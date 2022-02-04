@@ -1,5 +1,7 @@
-User-agent: * 
-Disallow: /dashboard
-Access-Control-Allow-Origin: http://localhost
-Access-Control-Allow-Methods: GET, POST, PUT
-Access-Control-Allow-Headers: Content-Type
+User-agent: *
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: http://www.palmyrahotels.tn/sitemap.xml
