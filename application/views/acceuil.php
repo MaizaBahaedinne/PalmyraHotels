@@ -295,7 +295,7 @@
             <div class="col-lg-6">
                <a class="box_news" href="#">
                   <figure>
-                     <img src="<?php echo base_url() ?>assets/img/events/<?php echo $event->affiche?>" alt="">
+                     <img src="<?php echo base_url() ?>assets/img/events/<?php echo $event->affiche?>" alt="<?php echo $event->titre ?>">
                      <figcaption>
                         <strong>
                         <?php  
@@ -380,7 +380,7 @@
       <hr>
       <div class="row">
          <div class="col-md-6" style="text-align: center;"> 
-            <img src="<?php echo base_url() ?>assets/img/logopage.png" alt="Laptop" width='300px'  class="img-fluid laptop">
+            <img src="<?php echo base_url() ?>assets/img/logopage.webp" alt="Palmyra Hotels" style="max-height: 300px ;max-width: 300px;" >
          </div>
          <div class="col-md-6">
             <h3><span>Get started</span> with PalmyratHotels.tn</h3>
@@ -409,27 +409,27 @@
          <div class="owl-carousel owl-theme carousel-thumbs-2 magnific-gallery">
             <div class="item"  >
                <a href="<?php echo base_url() ?>assets/img/client/tunivisions.png" data-effect="mfp-zoom-in">
-                  <center><img  src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Image"></center>
+                  <center><img  src="<?php echo base_url() ?>assets/img/client/tunivisions.png" alt="Tunivisions FFoundation"></center>
                </a>
             </div>
             <div class="item">
                <a href="<?php echo base_url() ?>assets/img/client/aiesec.jpg" data-effect="mfp-zoom-in">
-                  <center><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Image"></center>
+                  <center><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Aiesec in Tunisia"></center>
                </a>
             </div>
             <div class="item">
                <a href="<?php echo base_url() ?>assets/img/client/rotaract.png" data-effect="mfp-zoom-in">
-                  <center><img src="<?php echo base_url() ?>assets/img/client/rotaract.png" alt="Image"></center>
+                  <center><img src="<?php echo base_url() ?>assets/img/client/rotaract.png" alt="Rotaract Tunisie"></center>
                </a>
             </div>
             <div class="item">
                <a href="<?php echo base_url() ?>assets/img/client/junior.png" data-effect="mfp-zoom-in">
-                  <center><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Image"></center>
+                  <center><img src="<?php echo base_url() ?>assets/img/client/junior.png" alt="Junior entreprise"></center>
                </a>
             </div>
             <div class="item">
                <a href="<?php echo base_url() ?>assets/img/client/AFALF.jpg" data-effect="mfp-zoom-in">
-                  <center><img src="<?php echo base_url() ?>assets/img/client/AFALF.jpg" alt="Image"></center>
+                  <center><img src="<?php echo base_url() ?>assets/img/client/AFALF.jpg" alt="AFALF"></center>
                </a>
             </div>
          </div>
