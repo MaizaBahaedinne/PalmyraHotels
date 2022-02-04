@@ -28,7 +28,9 @@
                <?php foreach ($blogs as $blog ) { ?>
                <div class="post col-lg-4 ">
                   <a href="<?php echo base_url() ?>Blog/view/<?php echo $blog->blogId ?>">
-                  <img src="<?php echo base_url() ?>assets/img/blog/<?php echo $blog->image ?>" alt="Image"  style="width: 300px; height: 337px; object-fit: scale-down;" >
+                  	<div class="img_container">
+	                  <img src="<?php echo base_url() ?>assets/img/blog/<?php echo $blog->image ?>" alt="<?php echo $blog->titre ?>" class="img-fluid"  >
+	                 </div>
                   </a>
                   <div class="post_info clearfix">
                      <div class="post-left">
