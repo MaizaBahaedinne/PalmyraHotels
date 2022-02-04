@@ -122,7 +122,19 @@
       <meta property="og:url"                content="<?php echo base_url() ?>Blog/view/<?php echo $blogDetails->blogId ?>" />
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="<?php echo $pageTitle ?> | Palmyra Hotels" />
-      <meta property="og:description"        content="<?php echo $blogDetails->description ?>" />
+      <meta property="og:description"        content="<?php // strip tags to avoid breaking any html
+                                                            $string = strip_tags( $blogDetails->description );
+                                                            if (strlen($string) > 50) {
+
+                                                                // truncate string
+                                                                $stringCut = substr($string, 0, 50);
+                                                                $endPoint = strrpos($stringCut, ' ');
+
+                                                                //if the string doesn't contain any space then it will cut without word basis.
+                                                                $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                                                                $string .= '...';
+                                                            }
+                                                            echo $string; ?>" />
       <meta property="og:image"              content="<?php echo base_url() ?>assets/img/blog/<?php echo $blogDetails->image ?>" />
       <?php 
          
