@@ -148,6 +148,7 @@
       <meta property="og:image"              content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
       <?php  } } ?>  
       <meta property="fb:app_id"             content="673400070509276" />
+      
       <meta charset="utf-8">
       <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -156,6 +157,7 @@
       <meta name="author" content="Maiza Bahaedinne">
       <meta name="keywords" content="Palmyra,Palmyra Hotels,Palmyra Aquapark kantaoui , Palmyra Club nabeul, Palmyra golden beach">
       <meta name="facebook-domain-verification" content="em8tnon11p3aq8s3e72jtulif3mr5k" />
+
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP7L2TPBWD"></script>
       <script>
@@ -165,7 +167,7 @@
          
          gtag('config', 'G-KP7L2TPBWD');
       </script>
-      <title>Palmyra Hotels - <?php echo $pageTitle ?></title>
+      <title><?php echo $pageTitle ?> - Palmyra Hotels</title>
       <!-- Favicons-->
       <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
       <!-- GOOGLE WEB FONT 
