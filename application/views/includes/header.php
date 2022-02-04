@@ -3,7 +3,7 @@
 
 <head>
 
-    
+
        <!-- COMMON CSS -->
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min-1.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/style-1.css" rel="stylesheet">
@@ -174,11 +174,11 @@
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
 
 
-    <!-- GOOGLE WEB FONT -->
+    <!-- GOOGLE WEB FONT 
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text:400">
 
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93">
-
+-->
     <style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}
     </style>
     <style>.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span{outline-offset:3px}
@@ -190,8 +190,8 @@
 
 
 
-    <!-- ALTERNATIVE COLORS CSS -->
-    <link href="#" id="colors" rel="stylesheet">
+    <!-- ALTERNATIVE COLORS CSS 
+    <link href="#" id="colors" rel="stylesheet">-->
 
     <!-- CUSTOM CSS -->
     <link href="<?php echo base_url() ?>assets/css/custom-1.css" rel="stylesheet">
