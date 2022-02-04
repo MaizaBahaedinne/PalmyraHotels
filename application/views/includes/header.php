@@ -3,6 +3,12 @@
 
 <head>
 
+    
+       <!-- COMMON CSS -->
+    <link href="<?php echo base_url() ?>assets/css/bootstrap.min-1.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/style-1.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/vendors-1.css" rel="stylesheet">
+
     <style type="text/css">
        .mobileShow { display: none;}
        /* Smartphone Portrait and Landscape */

@@ -1,10 +1,6 @@
 
 <main>
 
-       <!-- COMMON CSS -->
-    <link href="<?php echo base_url() ?>assets/css/bootstrap.min-1.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/css/style-1.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/css/vendors-1.css" rel="stylesheet">
     <!-- REVOLUTION SLIDER CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/rev-slider-files/fonts/font-awesome/css/font-awesome-1.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/rev-slider-files/css/settings-1.css">
