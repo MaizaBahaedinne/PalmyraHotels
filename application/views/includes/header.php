@@ -123,7 +123,7 @@
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="<?php echo $pageTitle ?> | Palmyra Hotels" />
       <meta property="og:description"        content="<?php echo $blogDetails->description ?>" />
-      <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $blogDetails->image ?>" />
+      <meta property="og:image"              content="<?php echo base_url() ?>assets/img/blof/<?php echo $blogDetails->image ?>" />
       <?php 
          
          
