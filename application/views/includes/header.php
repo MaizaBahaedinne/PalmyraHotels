@@ -134,7 +134,7 @@
       <meta property="og:title"              content="<?php echo $pageTitle ?> | Palmyra Hotels" />
       <meta property="og:description"        content="Palmyra Hotels is one of the world’s most reputable upscale hotel management companies. Since it was established in 2019, manages 2000-plus rooms in more than 4 hotels across Sousse , Nabeul ; Monastir." />
       <meta property="og:image"              content="<?php echo base_url() ?>assets/img/sitewal.jpg" />
-      <?php  } ?>  
+      <?php  } } ?>  
       <meta property="fb:app_id"             content="673400070509276" />
       <meta charset="utf-8">
       <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
