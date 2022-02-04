@@ -36,8 +36,8 @@ class Blog extends BaseController {
 		                $data['blog'] = $this->blog_model->blog($blogId) ;
 
 		                $data['blog']->createdBy  = $this->user_model->user($data['blog']->createdBy) ;
-		               
-
+		                $this->global['type'] = 'blog';	
+		                $this->global['blogDetails'] =  $data['blog'] ;
 		                 $this->global['pageTitle'] = $data['blog']->titre  ;
 		        		 $this->loadViews("blog/view", $this->global, $data  , NULL); 
 		        }  

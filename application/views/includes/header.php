@@ -103,7 +103,7 @@
       <meta property="og:description"        content="<?php echo $hotelDetails->description ?>" />
       <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotelDetails->facade ?>" />
       <?php       } 
-         if ($type=="bar" && !(empty($barDetails)) ) 
+         elseif ($type=="bar" && !(empty($barDetails)) ) 
          { 
          ?>
       <meta property="og:site_name" content="Palmyra Hotels" />
@@ -114,6 +114,18 @@
       <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $barDetails->repo ?>" />
       <?php 
          }
+
+         elseif ($type=="blog" && !(empty($blogDetails)) ) 
+         { 
+         ?>
+      <meta property="og:site_name" content="Palmyra Hotels" />
+      <meta property="og:url"                content="<?php echo base_url() ?>Blog/view/<?php echo $blogDetails->blogId ?>" />
+      <meta property="og:type"               content="website" />
+      <meta property="og:title"              content="<?php echo $pageTitle ?> | Palmyra Hotels" />
+      <meta property="og:description"        content="<?php echo $blogDetails->description ?>" />
+      <meta property="og:image"              content="<?php echo base_url() ?>assets/img/facade/bar/<?php echo $blogDetails->image ?>" />
+      <?php 
+         
          
          }else{ ?>
       <meta property="og:site_name" content="Palmyra Hotels" />
