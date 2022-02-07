@@ -80,24 +80,24 @@
                      </div>
                      <div class="panel-body">
                         <div class="table-responsive">
-                           <table class="table table-condensed" border="1px" width="100%">
+                        <table class="table "  width="100%">
                               <thead>
                                  <tr>
-                                    <td width="5%"><strong>N°</strong></td>
+                                    
                                     <td width="20%"><strong>Item</strong></td>
                                     <td class="text-center" width="5%"><strong>Adult</strong></td>
                                     <td class="text-center" width="5%"><strong>child</strong></td>
                                     <td class="text-center" width="20%"><strong>Guests</strong></td>
                                     <td class="text-center" width="25%"><strong>Options</strong></td>
                                     <td class="text-center" width="10%" ><strong>Price</strong></td>
-                                    <td class="text-center" width="10%" ><strong>Price</strong></td>
+                                    <td class="text-center" width="10%" ><strong>Total</strong></td>
                                  </tr>
                               </thead>
                               <tbody>
                                  <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                  <?php foreach ( $reservation->details as $detail ) {  ?>
                                  <tr>
-                                    <td><?php echo $detail->detailId ?></td>
+                                    
                                     <td><?php echo $detail->room->titre ?></td>
                                     <td class="text-center"><?php echo $detail->adult ?></td>
                                     <td class="text-center"><?php echo $detail->children ?></td>
@@ -108,13 +108,36 @@
                                        </ul>
                                     </td>
                                     <td class="text-center"><?php echo $detail->price ?> <sup>DT</sup></td>
+                                     <td class="text-center"><?php echo $detail->price *  $reservation->nights ?> <sup>DT</sup></td>
                                  </tr>
                                  <?php } ?>
+
                                  <tr>
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
-                                    <td class="thick-line text-center"><strong>  </strong></td>
-                                    <td class="thick-line text-right">$670.99</td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line text-center"><strong>Sub total</strong></td>
+                                    <td class="thick-line text-right"><?php echo $reservation->price ?><sup>DT</sup></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="no-line text-center"><strong>Taxe</strong></td>
+                                    <td class="no-line text-right"><?php  echo $reservation->adult * 2 ?><sup>DT</sup></td>
+                                 </tr>
+                                  <tr>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="no-line text-center"><strong>Total</strong></td>
+                                    <td class="no-line text-right"><?php echo $reservation->price +( $reservation->adult * 2) ?><sup>DT</sup></td>
                                  </tr>
                               </tbody>
                            </table>
