@@ -90,6 +90,7 @@
                                     <td class="text-center" width="20%"><strong>Guests</strong></td>
                                     <td class="text-center" width="25%"><strong>Options</strong></td>
                                     <td class="text-center" width="10%" ><strong>Price</strong></td>
+                                    <td class="text-center" width="10%" ><strong>Price</strong></td>
                                  </tr>
                               </thead>
                               <tbody>
@@ -109,6 +110,12 @@
                                     <td class="text-center"><?php echo $detail->price ?> <sup>DT</sup></td>
                                  </tr>
                                  <?php } ?>
+                                 <tr>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line text-center"><strong>  </strong></td>
+                                    <td class="thick-line text-right">$670.99</td>
+                                 </tr>
                               </tbody>
                            </table>
                         </div>
