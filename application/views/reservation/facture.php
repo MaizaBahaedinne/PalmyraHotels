@@ -89,7 +89,7 @@
                            <td>
                               <address>
                                  <strong>Payment Method:</strong><br>
-                                 Visa ending **** 4242<br>
+                                 
                                  <?php echo $reservation->client->email ?>
                               </address>
                            </td>
@@ -112,7 +112,7 @@
                      </div>
                      <div class="panel-body">
                         <div class="table-responsive">
-                           <table class="table "  width="100%">
+                            <table class="table "  width="100%" border="1">
                               <thead>
                                  <tr>
                                     
@@ -140,10 +140,13 @@
                                        </ul>
                                     </td>
                                     <td class="text-center"><?php echo $detail->price ?> <sup>DT</sup></td>
-                                     <td class="text-center"><?php echo $detail->price *  $reservation->nights ?> <sup>DT</sup></td>
+                                     <td class="text-center"><?php echo $detail->price *  $reservation->nights *  $reservation->adult  ?> <sup>DT</sup></td>
                                  </tr>
                                  <?php } ?>
-
+                              </tbody>
+                           </table>
+                           <table class="table "  width="100%"  >
+                              <tbody>
                                  <tr>
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
@@ -160,7 +163,7 @@
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
                                     <td class="no-line text-center"><strong>Taxe</strong></td>
-                                    <td class="no-line text-right"><?php  echo $reservation->adult * 2 ?><sup>DT</sup></td>
+                                    <td class="no-line text-right"><?php  echo $reservation->adult * 2 *  $reservation->nights ?><sup>DT</sup></td>
                                  </tr>
                                   <tr>
                                     <td class="thick-line"></td>
@@ -169,10 +172,18 @@
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
                                     <td class="no-line text-center"><strong>Total</strong></td>
-                                    <td class="no-line text-right"><?php echo $reservation->price +( $reservation->adult * 2) ?><sup>DT</sup></td>
+                                    <td class="no-line text-right"><?php echo $reservation->price + ( $reservation->adult * 2) ?><sup>DT</sup></td>
                                  </tr>
                               </tbody>
                            </table>
+
+                           <b>thank you for your trust.<br>
+
+                           Your reservation request will only be definitively confirmed after payment at the hotel </b>
+                           <br>
+                           <b style="color:palevioletred ;"> Amount to pay at the hotel: <?php echo $reservation->price + ( $reservation->adult * 2)   ?>   <sup>DT</sup> </b>
+
+
                         </div>
                      </div>
                   </div>
