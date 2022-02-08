@@ -26,18 +26,23 @@
    </div>
    <!-- End Position -->
    <div class="margin_60 container">
-      <div id="tabs" class="tabs">
-         <button type="button" onclick="printJS('ivoic', 'html')">
-         Print Form
-         </button>
-         <div class="content" style=" padding: 35px;border-radius: 30px;   background: url('<?php echo base_url() ?>assets/img/logopageBG.png') ; background-repeat: no-repeat ; background-size: 50% auto; background-color: white; background-position: center; "  id="ivoic">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="invoice-title">
-                        <table width="100%">
+     
+         
+          <div class="col-12">
+            <div class="card">
+             
+               <div class="card-body">
+                  <div id="tabs" class="tabs">
+                    
+                     <div class="content" style=" padding: 35px;border-radius: 30px;   background: url('https://www.palmyrahotels.tn/assets/img/logopageBG.webp' ; background-repeat: no-repeat ; background-size: 50% auto; background-color: white; background-position: center; "  id="ivoic">
+                        <div class="container">
+                           <div class="row">
+                              <div class="col-12">
+                                 <div class="invoice-title">
+                                       
+                                        <table width="100%">
                            <tr>
-                              <td width="30%" ><img src="<?php echo base_url() ?>assets/img/logopage.png" width="150px"></td>
+                              <td width="30%" ><img src="https://www.palmyrahotels.tn/assets/img/logopage.png" width="150px"></td>
                               <td></td>
                               <td width="30%">
                                  <div id="qrcode" style="float:right;"></div>
@@ -58,7 +63,7 @@
                         </table>
                         <h3 class="pull-right">Order # <?php echo $reservation->reservationId ?></h3>
                         <h3 class="pull-right">Palmyra <?php echo $hotel->name ?></h3>
-                        <span class="pull-right"><?php echo $hotel->Adresse ?></h3>
+                        <span class="pull-right"><?php echo $hotel->Adresse ?></span>
                      </div>
                      <hr>
                      <table width="100%">
@@ -145,7 +150,7 @@
                                  <?php } ?>
                               </tbody>
                            </table>
-                           <table class="table "  width="100%"  >
+                           <table class=" "  width="100%"  >
                               <tbody>
                                  <tr>
                                     <td class="thick-line"></td>
@@ -171,8 +176,8 @@
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
-                                    <td class="no-line text-center"><strong>Total</strong></td>
-                                    <td class="no-line text-right"><?php echo $reservation->price + ( $reservation->adult * 2) ?><sup>DT</sup></td>
+                                    <td class="no-line text-center" width="10%"><strong>Total</strong></td>
+                                    <td class="no-line text-right" width="10%" ><?php echo $reservation->price + (  $reservation->adult * 2 *  $reservation->nights ) ?><sup>DT</sup></td>
                                  </tr>
                               </tbody>
                            </table>
@@ -181,9 +186,11 @@
 
                            Your reservation request will only be definitively confirmed after payment at the hotel </b>
                            <br>
-                           <b style="color:palevioletred ;"> Amount to pay at the hotel: <?php echo $reservation->price + ( $reservation->adult * 2)   ?>   <sup>DT</sup> </b>
+                           <b style="color:palevioletred ;"> Amount to pay at the hotel: <?php echo $reservation->price + ( $reservation->adult * 2)   ?>   <sup>DT</sup> </b>                                                         
 
-
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -191,6 +198,7 @@
             </div>
          </div>
       </div>
+      
       <!-- End tabs -->
    </div>
    <!-- end container -->
