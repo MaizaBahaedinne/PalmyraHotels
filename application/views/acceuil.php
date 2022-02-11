@@ -400,6 +400,11 @@
                </a>
             </div>
             <div class="item">
+               <a href="<?php echo base_url() ?>assets/img/client/golden.jpg" data-effect="mfp-zoom-in">
+                  <center><img src="<?php echo base_url() ?>assets/img/client/golden.jpg" alt="AFALF"></center>
+               </a>
+            </div>
+            <div class="item">
                <a href="<?php echo base_url() ?>assets/img/client/aiesec.jpg" data-effect="mfp-zoom-in">
                   <center><img src="<?php echo base_url() ?>assets/img/client/aiesec.jpg" alt="Aiesec in Tunisia"></center>
                </a>
@@ -419,6 +424,7 @@
                   <center><img src="<?php echo base_url() ?>assets/img/client/AFALF.jpg" alt="AFALF"></center>
                </a>
             </div>
+            
          </div>
       </div>
       <!-- End row -->

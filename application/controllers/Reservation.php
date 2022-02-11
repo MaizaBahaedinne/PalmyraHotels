@@ -205,7 +205,7 @@ class Reservation extends BaseController
             $data['reservation'] =  $this->reservation_model->reservation($reservationId);
             
             
-            if( (!empty($data['reservation'])) && $data['reservation']->createdBy == $this->vendorId  ) { 
+            if( (!empty($data['reservation'])) && ($data['reservation']->createdBy == $this->vendorId || $this->role == 1 )  ) { 
 
             $this->global['pageTitle'] = 'My Bookings';
 
