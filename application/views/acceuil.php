@@ -556,4 +556,17 @@
           }
       });
    </script>
+   <script type="text/javascript">
+    $(window).on('load', function() {
+   
+      Swal.fire({
+           
+           imageUrl: '<?php echo base_url() ?>assets/img/pub/pub1.gif',
+           timer : 12000,
+           showCancelButton: false,
+           showConfirmButton: false
+          
+         }) ; 
+      });
+   </script>
 </main>

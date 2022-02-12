@@ -171,6 +171,38 @@
 <!-- SWITCHER  -->
 <script src="<?php echo base_url() ?>assets/js/switcher-1.js"></script>
 <script src="<?php echo base_url() ?>assets/js/jquery.sliderPro.min-1.js"></script>
+<!--
+  <script >
+     
+      $(function() {
+     setTimeout(function() {
+               $.notify({
+                   // options
+                   icon: '',
+                   title: "<a href='<?php echo base_url() ?>Reservation/mybookings' target=\"_blank\"><h4>Last booking</h4>",
+                   message: "<p>you have incomplete orders ! </a> "
+               }, {
+                   // settings
+                   icon_type: '',
+                   type: 'info',
+                   delay: 500,
+                   timer: 5000,
+                   z_index: 9999,
+                   showProgressbar: true,
+                   placement: {
+                       from: "bottom",
+                       align: "center"
+                   },
+                   animate: {
+                       enter: 'animated bounceInUp',
+                       exit: 'animated bounceOutDown'
+                   },
+               });
+           }, 7000); // change the start delay
+       });
+
+  </script>
+-->
 <script type="text/javascript">
    $(document).ready(function ($) {
        $('#Img_carousel').sliderPro({
