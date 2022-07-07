@@ -47,7 +47,7 @@ class Acceuil extends BaseController
     public function index()
     {
 
-         $data['events'] = $this->events_model->eventsListing() ;
+         $data['events'] = $this->events_model->eventsListing(4) ;
          foreach ($data['events']  as $event) {
              if($event->barId != null ){ 
                 $event->location = $this->bar_model->bar($event->barId)  ;
