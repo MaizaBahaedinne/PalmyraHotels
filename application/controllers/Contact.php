@@ -66,7 +66,7 @@ class Contact extends BaseController
 
                             $this->send_mail(
                                 $this->input->post('email'), 
-                            "Welcome to PalmyraHotels.tn"  , "" , 
+                            "request N(".$resultat .") has been sent"  , "" , 
                             "<h2>Welcome to PalmyraHotels.tn </h2>
                             <br><br>
                                 Your request N(".$resultat .") has been sent to the support Team <br>
