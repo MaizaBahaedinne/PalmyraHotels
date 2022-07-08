@@ -54,6 +54,7 @@ class Contact extends BaseController
                             'phone' => $this->input->post('phone'),
                             'email' => $this->input->post('email'), 
                             'message' => $this->input->post('message'), 
+                            'hotelId' => $this->input->post('hotelId'), 
 
                             'createdDTM'=> date('Y-m-d H:i:s'), 
                             
@@ -71,6 +72,8 @@ class Contact extends BaseController
                                 lastname : ".$this->input->post('lastname')."<br>
                                 phone : ".$this->input->post('code').$this->input->post('phone')."<br>
                                 email : ".$this->input->post('email')."<br>
+
+                                request for the hotel : Palmyra 
                                 message : <br>".$this->input->post('message')."<br>
 
                             <br>

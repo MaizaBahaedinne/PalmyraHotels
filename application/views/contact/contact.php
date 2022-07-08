@@ -287,8 +287,21 @@
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="number" id="phone_contact" maxlength="10" name="phone" class="form-control" placeholder="Enter Phone number" required>
+                                        <label>Request for the hotel</label>
+                                         <select name="hotelId" >
+                                         <option value="0" >Holding</option>       
+                                           <?php foreach ($hotels as $hotel ) { ?> 
+                                              <option <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea rows="10" id="message_contact" name="message" class="form-control" placeholder="Write your message" style="height:200px;" required></textarea>
                                     </div>
                                 </div>
                             </div>
