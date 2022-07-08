@@ -205,10 +205,10 @@
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
       
-      <!-- Messenger Plugin de discussion Code 
+      <!-- Messenger Plugin de discussion Code -->
          <div id="fb-root"></div>
          
-         <!-- Your Plugin de discussion code 
+         Your Plugin de discussion code 
          <div id="fb-customer-chat" class="fb-customerchat">
          </div>
          
@@ -254,7 +254,7 @@
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
          </script>
-         -->
+      
       <div id="preloader">
          <div class="sk-spinner sk-spinner-wave">
             <div class="sk-rect1"></div>
