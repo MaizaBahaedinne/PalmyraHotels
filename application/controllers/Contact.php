@@ -55,7 +55,7 @@ class Contact extends BaseController
                             'code' => $this->input->post('code'),
                             'phone' => $this->input->post('phone'),
                             'email' => $this->input->post('email'), 
-                            'message' => $this->input->post('message'), 
+                            'message' => nl2br($this->input->post('message')), 
                             'hotelId' => $this->input->post('hotelId'), 
 
                             'createdDTM'=> date('Y-m-d H:i:s'), 
@@ -69,14 +69,14 @@ class Contact extends BaseController
                             "Welcome to PalmyraHotels.tn"  , "" , 
                             "<h2>Welcome to PalmyraHotels.tn </h2>
                             <br><br>
-                                Your request N(".$resultat .") has been sent to the support Team 
+                                Your request N(".$resultat .") has been sent to the support Team <br>
 
                                 name : ".$this->input->post('name')."<br>
                                 lastname : ".$this->input->post('lastname')."<br>
                                 phone : +".$this->input->post('code').$this->input->post('phone')."<br>
                                 email : ".$this->input->post('email')."<br>
-                                request for the hotel : <b>Palmyra ".$hotel->name." </b><br>
-                                message : <br>".$this->input->post('message')."<br>
+                                request for the hotel : <b>Palmyra ".$hotel->name." </b><br><br>
+                                message : <br>".nl2br($this->input->post('message'))."<br>
 
                             <br>
                             <hr>
@@ -85,7 +85,7 @@ class Contact extends BaseController
                             <br>
                             The Palmyra Hotels team
 
-                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  "admin@palmyrahotels.tn ; ".$hotel->mail  )   ;
+                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  $hotel->mail ."; admin@palmyrahotels.tn ; "  )   ;
                             $this->session->set_Flashdata ('success' , 'You are subscribed');
                             
                             $this->global['pageTitle'] = 'Contact';
