@@ -561,7 +561,7 @@
    
       Swal.fire({
            
-           imageUrl: '<?php echo base_url() ?>assets/img/pub/pub1.gif',
+           imageUrl: '<?php echo base_url() ?>assets/img/Offres/1.jpg',
            timer : 12000,
            showCancelButton: false,
            showConfirmButton: false
