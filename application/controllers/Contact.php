@@ -47,6 +47,8 @@ class Contact extends BaseController
      */
     public function addNewMessage()
     {
+
+        $hotel =  $this->hotel_model->hotel($this->input->post('hotelId') );
         $newsInfo = array(  
                             'name' => $this->input->post('name'),
                             'lastname' => $this->input->post('lastname'),
@@ -67,13 +69,13 @@ class Contact extends BaseController
                             "Welcome to PalmyraHotels.tn"  , "" , 
                             "<h2>Welcome to PalmyraHotels.tn </h2>
                             <br><br>
-                                Your request has been sent to the support 
+                                Your request N(".$resultat .") has been sent to the support Team 
+
                                 name : ".$this->input->post('name')."<br>
                                 lastname : ".$this->input->post('lastname')."<br>
-                                phone : ".$this->input->post('code').$this->input->post('phone')."<br>
+                                phone : +".$this->input->post('code').$this->input->post('phone')."<br>
                                 email : ".$this->input->post('email')."<br>
-
-                                request for the hotel : Palmyra 
+                                request for the hotel : <b>Palmyra ".$hotel->name." </b><br>
                                 message : <br>".$this->input->post('message')."<br>
 
                             <br>
@@ -83,7 +85,7 @@ class Contact extends BaseController
                             <br>
                             The Palmyra Hotels team
 
-                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  "admin@palmyrahotels.tn" )   ;
+                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  "admin@palmyrahotels.tn ; ".$hotel->email  )   ;
                             $this->session->set_Flashdata ('success' , 'You are subscribed');
                             
                             $this->global['pageTitle'] = 'Contact';
