@@ -66,7 +66,7 @@
          <div class="row small-gutters categories_grid">
             <div class="col-sm-12 col-md-6">
                <a href="#search_2" class="scroll-container" >
-                  <img src="<?php echo base_url() ?>assets/img/hotels/GoldenBeach/GB292.jpg" style="height: inherit ;" class="img-fluid">
+                  <img src="<?php echo base_url() ?>assets/img/Offres/1.jpg" style="height: inherit ;" class="img-fluid">
                   <div class="wrapper">
                      <h2>Special Offers</h2>
                      <p>4 Locations</p>
@@ -77,7 +77,7 @@
                <div class="row small-gutters mt-md-0 mt-sm-2">
                   <div class="col-sm-6">
                      <a href="#hotelsSection" class="scroll-container">
-                        <img src="<?php echo base_url() ?>assets/img/hotels/AquaparkKantoui/Chambre.jpg" alt="" class="img-fluid">
+                        <img src="<?php echo base_url() ?>assets/img/Offres/2.jpg" alt="" class="img-fluid">
                         <div class="wrapper">
                            <h2>Hotels</h2>
                            <p>4 Locations</p>
@@ -86,7 +86,7 @@
                   </div>
                   <div class="col-sm-6">
                      <a href="#search_2">
-                        <img src="<?php echo base_url() ?>assets/img/bars/barroco/Barrocco-7.jpg" alt="" class="img-fluid">
+                        <img src="<?php echo base_url() ?>assets/img/Offres/3.jpg" alt="" class="img-fluid">
                         <div class="wrapper">
                            <h2>Beachs & Resto-lounge</h2>
                            <p>8 Locations</p>
@@ -95,7 +95,7 @@
                   </div>
                   <div class="col-sm-6 mt-sm-2">
                      <a href="#eventsSection" class="scroll-container">
-                        <img src="<?php echo base_url() ?>assets/img/events/<?php echo $events[0]->affiche?>" alt="" class="img-fluid" style="max-height: 350px;">
+                        <img src="<?php echo base_url() ?>assets/img/Offres/4.jpg" alt="" class="img-fluid" style="max-height: 350px;">
                         <div class="wrapper">
                            <h2>Events</h2>
                            <p>6 Locations</p>
@@ -104,7 +104,7 @@
                   </div>
                   <div class="col-sm-6 mt-sm-2">
                      <a href="#search_2" class="scroll-container">
-                        <img src="<?php echo base_url() ?>assets/img/events/<?php echo $events[0]->affiche?>" alt="" class="img-fluid" style="max-height: 350px;">
+                        <img src="<?php echo base_url() ?>assets/img/Offres/5.jpg" alt="" class="img-fluid" style="max-height: 350px;">
                         <div class="wrapper">
                            <h2>Events</h2>
                            <p>6 Locations</p>
