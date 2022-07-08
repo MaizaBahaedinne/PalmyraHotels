@@ -69,7 +69,7 @@
                   <img src="<?php echo base_url() ?>assets/img/Offres/1.jpg" style="height: inherit ;" class="img-fluid">
                   <div class="wrapper">
                      <h2>Special Offers</h2>
-                     <p>4 Locations</p>
+                     <p></p>
                   </div>
                </a>
             </div>
@@ -79,8 +79,8 @@
                      <a href="#hotelsSection" class="scroll-container">
                         <img src="<?php echo base_url() ?>assets/img/Offres/2.jpg" alt="" class="img-fluid">
                         <div class="wrapper">
-                           <h2>Hotels</h2>
-                           <p>4 Locations</p>
+                           <h2></h2>
+                           <p></p>
                         </div>
                      </a>
                   </div>
@@ -88,8 +88,8 @@
                      <a href="#search_2">
                         <img src="<?php echo base_url() ?>assets/img/Offres/3.jpg" alt="" class="img-fluid">
                         <div class="wrapper">
-                           <h2>Beachs & Resto-lounge</h2>
-                           <p>8 Locations</p>
+                           <h2></h2>
+                           <p></p>
                         </div>
                      </a>
                   </div>
@@ -97,8 +97,8 @@
                      <a href="#eventsSection" class="scroll-container">
                         <img src="<?php echo base_url() ?>assets/img/Offres/4.jpg" alt="" class="img-fluid" style="max-height: 350px;">
                         <div class="wrapper">
-                           <h2>Events</h2>
-                           <p>6 Locations</p>
+                           <h2></h2>
+                           <p></p>
                         </div>
                      </a>
                   </div>
@@ -106,8 +106,8 @@
                      <a href="#search_2" class="scroll-container">
                         <img src="<?php echo base_url() ?>assets/img/Offres/5.jpg" alt="" class="img-fluid" style="max-height: 350px;">
                         <div class="wrapper">
-                           <h2>Events</h2>
-                           <p>6 Locations</p>
+                           <h2></h2>
+                           <p></p>
                         </div>
                      </a>
                   </div>
@@ -240,7 +240,7 @@
                   <a href="<?php echo base_url() ?>Hotel/<?php echo $hotel->acro ?>">
                      <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
                      <div class="short_info">
-                        <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price + $hotel->prices->supS  ; } else{ echo "0" ; } ?><sup>DT</sup></span>
+                        <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price  ; } else{ echo "0" ; } ?><sup>DT</sup></span>
                      </div>
                   </a>
                </div>
