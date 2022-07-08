@@ -65,17 +65,17 @@ class Contact extends BaseController
                             $resultat = $this->contact_model->addNewContact($newsInfo);
 
                             $this->send_mail(
-                                $this->input->post('email'), 
-                            "request N(".$resultat .") has been sent"  , "" , 
-                            "<h2>Welcome to PalmyraHotels.tn </h2>
-                            <br><br>
+                            $this->input->post('email'), 
+                            "Request N(".$resultat .") has been sent"  , "" , 
+                            "Hello ".$this->input->post('name')." ".$this->input->post('lastname')." ,
+                                
+                                <br><br>
                                 Your request N(".$resultat .") has been sent to the support Team <br>
 
-                                name : ".$this->input->post('name')."<br>
-                                lastname : ".$this->input->post('lastname')."<br>
                                 phone : +".$this->input->post('code').$this->input->post('phone')."<br>
                                 email : ".$this->input->post('email')."<br>
-                                request for the hotel : <b>Palmyra ".$hotel->name." </b><br><br>
+                                request for : <b>Palmyra ".$hotel->name." </b><br><br>
+                                
                                 message : <br>".nl2br($this->input->post('message'))."<br>
 
                             <br>
