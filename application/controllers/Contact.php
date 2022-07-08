@@ -33,10 +33,10 @@ class Contact extends BaseController
     {
 
       
-                     
+               $data['hotels'] = $this->hotel_model->hotelListing() ;      
         
         $this->global['pageTitle'] = 'Contact';
-        $this->loadViews("contact/contact", $this->global, null , NULL);
+        $this->loadViews("contact/contact", $this->global, $data , NULL);
     }
     
 
