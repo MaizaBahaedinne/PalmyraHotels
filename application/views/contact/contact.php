@@ -296,7 +296,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label>Request for the hotel</label>
+                                        <label>Request for :</label>
                                          <select name="hotelId" class="form-control">
                                          <option value="0" >Holding</option>       
                                            <?php foreach ($hotels as $hotel ) { ?> 
