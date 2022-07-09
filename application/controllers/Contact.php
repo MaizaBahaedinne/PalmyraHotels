@@ -64,7 +64,7 @@ class Contact extends BaseController
     
                             $resultat = $this->contact_model->addNewContact($newsInfo);
 
-                        /*    $this->send_mail(
+                           $this->send_mail(
                             $this->input->post('email'), 
                             "Request N(".$resultat .") has been sent"  , "" , 
                             "Hello ".$this->input->post('name')." ".$this->input->post('lastname')." ,
@@ -85,9 +85,9 @@ class Contact extends BaseController
                             <br>
                             The Palmyra Hotels team
 
-                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  "".$hotel->mail ."; admin@palmyrahotels.tn ; "  )   ;*/
+                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  "".$hotel->mail ."; admin@palmyrahotels.tn ; "  )   ;
 
-                            echo ( "".$hotel->mail ."; admin@palmyrahotels.tn ; ") ;
+
                             $this->session->set_Flashdata ('success' , 'You are subscribed');
                             
                             $this->global['pageTitle'] = 'Contact';
