@@ -49,6 +49,7 @@ class Contact extends BaseController
     {
 
         $hotel =  $this->hotel_model->hotel($this->input->post('hotelId') );
+        if($this->input->post('hotelId') == 0 ) { $hotel->name = 'Hotels' ; $hotel->mail = "contact@palmyrahotels.tn" ; } 
         $newsInfo = array(  
                             'name' => $this->input->post('name'),
                             'lastname' => $this->input->post('lastname'),
