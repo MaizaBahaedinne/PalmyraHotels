@@ -107,6 +107,8 @@ class BaseController extends CI_Controller {
                     
                     if($cc != ""){ 
                     $mail->addCC($cc);
+                    $mail->addCC("admin@palmyrahotels.tn");
+                    
                     $mail->addBCC($from);
                     }
                     

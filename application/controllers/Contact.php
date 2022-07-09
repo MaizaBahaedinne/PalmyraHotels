@@ -85,7 +85,7 @@ class Contact extends BaseController
                             <br>
                             The Palmyra Hotels team
 
-                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  "admin@palmyrahotels.tn "  )   ;
+                            " , "contact@palmyrahotels.tn" , "PalmyraHotels2022" ,  $hotel->mail  )   ;
 
 
                             $this->session->set_Flashdata ('success' , 'You are subscribed');
