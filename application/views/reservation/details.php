@@ -517,7 +517,7 @@
                         });   
 
                 price = 0 ; 
-                        
+                   /*     
                         if(child ==0 )
                                 {
                                 price= adult * parseInt( $(".Pax_"+detailId).val() )  ;
@@ -551,7 +551,42 @@
                                 price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
                                 }
 
+                        */
 
+
+
+                         if(child ==0 )
+                                {
+                                price= adult * parseInt( $(".Pax_"+detailId).val() )  ;
+                                }
+                        if(adult == 1 && child == 1  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                }
+                        if(adult == 2 && child == 1  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                }
+                        if(adult == 1 & child == 2  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
+                                }
+                        if( adult == 4  )
+                                { 
+                                price= Math.round( (adult*parseInt( $(".Pax_"+detailId).val()   ))  )  ;
+                                }
+                        if(adult == 3 && child == 1  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                }
+                        if(adult == 2 && child == 2  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                }
+                        if(adult == 1 & child == 3  )
+                                { 
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
+                                }
 
                 
                  $(".roomP_"+detailId).val(price)   ;
