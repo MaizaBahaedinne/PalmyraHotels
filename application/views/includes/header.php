@@ -169,7 +169,7 @@
       </script>
       <title><?php echo $pageTitle ?> - Palmyra Hotels</title>
       <!-- Favicons-->
-      <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon-1.png" type="image/x-icon">
       <!-- GOOGLE WEB FONT 
          <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text:400">
          
