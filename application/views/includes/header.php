@@ -294,16 +294,16 @@
                   <div id="logo" >
                      <!--  <h3><a href="<?php echo base_url() ?>" title="Home"><b>Palmyra</b><small>Hotels.tn</small></a></h3>-->
                      <a href="<?php echo base_url() ?>">
-                     <img src="<?php echo base_url()?>assets/img/logo-1.webp" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
+                     <img src="<?php echo base_url()?>assets/img/logo-1.png" width="250"  alt="Palmyra Hotels" class="logo_normal"></a>
                      <a href="<?php echo base_url() ?>">
-                     <img src="<?php echo base_url()?>assets/img/logo_sticky-1.webp"  width="250"  alt="Palmyra Hotels" class="logo_sticky"></a>
+                     <img src="<?php echo base_url()?>assets/img/logo_sticky-1.png"  width="250"  alt="Palmyra Hotels" class="logo_sticky"></a>
                   </div>
                </div>
                <nav class="col-8" style="padding-top:2px ">
                   <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close"  ><span>Menu mobile</span></a>
                   <div class="main-menu">
                      <div id="header_menu">
-                        <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.webp" width="250" alt="Palmyra Hotels"> 
+                        <img src="<?php echo base_url() ?>assets/img/logo_sticky-1.png" width="250" alt="Palmyra Hotels"> 
                      </div>
                      <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                      <ul style="padding-top: 10px;" >

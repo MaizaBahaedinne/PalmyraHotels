@@ -367,7 +367,7 @@
       <hr>
       <div class="row">
          <div class="col-md-6" style="text-align: center;"> 
-            <img src="<?php echo base_url() ?>assets/img/logopage.webp" alt="Palmyra Hotels" style="max-height: 300px ;max-width: 300px;" >
+            <img src="<?php echo base_url() ?>assets/img/logopage.png" alt="Palmyra Hotels" style="max-height: 300px ;max-width: 300px;" >
          </div>
          <div class="col-md-6">
             <h3><span>Get started</span> with PalmyratHotels.tn</h3>
