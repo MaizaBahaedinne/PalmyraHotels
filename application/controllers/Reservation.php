@@ -13,7 +13,7 @@ class Reservation extends BaseController
 {
 
 
-    $sig = 'Best regards , Cordialement , أطيب التحيات ,
+    $this->sig = 'Best regards , Cordialement , أطيب التحيات ,
                 <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW" style="vertical-align: -webkit-baseline-middle; font-size: medium; font-family: Arial;">
                    <tbody>
                       <tr>
