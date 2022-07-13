@@ -198,7 +198,7 @@ class Reservation extends BaseController
                      ""  ,
                     $contenthotel ,  "booking@palmyrahotels.tn" ,  
                     "Booking2022" , 
-                    "admi@palmyrahotels.tn" )
+                    "admi@palmyrahotels.tn" );
 
 
                     redirect('Reservation/mybookings');
