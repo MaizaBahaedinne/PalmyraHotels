@@ -72,8 +72,8 @@ class Contact extends BaseController
                                 
                                 <br><br>
                                 Your request N(".$resultat .") has been sent to the support Team <br>
-
-                                phone : +".$this->input->post('code').$this->input->post('phone')."<br>
+                                Code : +".$this->input->post('code')."<br>
+                                phone : ".$this->input->post('phone')."<br>
                                 email : ".$this->input->post('email')."<br>
                                 request for : <b>Palmyra ".$hotel->name." </b><br><br>
                                 
