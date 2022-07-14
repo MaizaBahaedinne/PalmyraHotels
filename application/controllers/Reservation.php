@@ -180,12 +180,12 @@ class Reservation extends BaseController
 
 
                     $contenthotel =
-                 "Hello Palmyra ".$data['reservation']->hotel->name.", <br><br> a new booking request N".$data['reservation']->reservationId." for your hotel has been sent to you. 
-                 Please confirm the order  
-                 To ask the client you can contact him at 
-                    <a href='tel:+".$data['reservation']->client->code.$data['reservation']->client->mobile."' >".$data['reservation']->client->code.$data['reservation']->client->mobile."</a> <br>
-                    <a href='mailto:+".$data['reservation']->client->email."' >".$data['reservation']->client->email."</a> 
+                 "Hello Palmyra ".$data['reservation']->hotel->name.", <br><br> a new booking request N ".$data['reservation']->reservationId." for your hotel has been sent to you. 
+                 <br>Please accept or decline the order. <br> To ask the customer, you can contact him by: <br>
+                    <li><b> Mobile : </b><a href='tel:+".$data['reservation']->client->country_code.$data['reservation']->client->phone."' >".$data['reservation']->client->country_code.' '.$data['reservation']->client->phone."</a></li> <br>
+                    <li><b> Email : </b><a href='mailto:+".$data['reservation']->client->email."' >".$data['reservation']->client->email."</a> </li>
                 <br><br>
+
                 <hr>
                 
                
