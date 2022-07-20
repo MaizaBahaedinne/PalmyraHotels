@@ -551,7 +551,7 @@
                                 <div class="col-md-6">
                                      <div class="form-group">
                                         <label>mobile</label>
-                                            <input type="tel" name="phone" class=" form-control" placeholder="mobile" required>
+                                            <input type="number" maxlength="8" minlength="8" name="phone" class=" form-control" placeholder="mobile" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -569,13 +569,13 @@
                                 <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="password" name="password" class=" form-control" id="password1" placeholder="Password" required>
+                                            <input type="password" name="password" minlength="8" class=" form-control" id="password1" placeholder="Password" required>
                                         </div>
                                 </div>
                                 <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Confirm password</label>
-                                            <input type="password" class=" form-control" id="password2" placeholder="Confirm password">
+                                            <input type="password" class="form-control" minlength="8" id="password2" placeholder="Confirm password">
                                         </div>
                                 </div>
                             </div>
