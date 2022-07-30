@@ -3,7 +3,7 @@
       <div class="row">
          <div class="col-md-4">
             <h3>Need help?</h3>
-            <a href="tel://+21658465249" id="phone">+216 58 465 249</a>
+            <a href="" id="phone"></a>
             <a href="mailto:help@citytours.com" id="email_footer">contact@palmyrahotels.tn</a>
          </div>
          <div class="col-md-3">
