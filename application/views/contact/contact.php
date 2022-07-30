@@ -287,7 +287,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label>Request for the hotel</label>
-                                        <input class="form-control" type="number" name="phone">
+                                        <input class="form-control" type="number" name="phone" required>
                                     </div>
                                 </div>
                                 
@@ -297,7 +297,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Request for :</label>
-                                         <select name="hotelId" class="form-control">
+                                         <select name="hotelId" class="form-control" >
                                          <option value="0" >Holding</option>       
                                            <?php foreach ($hotels as $hotel ) { ?> 
                                               <option <?php if($hotel->statut == 1 ) { ?> disabled <?php } ?> value="<?php echo $hotel->hotelId ?>" >Palmyra <?php echo $hotel->name ?></option>
