@@ -181,10 +181,8 @@ class Reservation extends BaseController
 
                     $contenthotel =
                  "Hello Palmyra ".$data['reservation']->hotel->name.", <br><br> a new booking request N ".$data['reservation']->reservationId." for your hotel has been sent to you. 
-                 <br>Please accept or decline the order. <br> To ask the customer, you can contact him by: <br>
-                    <li><b> Name : </b>".$data['reservation']->client->name."<l/i>
-                    <li><b> Mobile : </b><a href='tel:+".$data['reservation']->client->country_code.$data['reservation']->client->phone."' >".$data['reservation']->client->country_code.' '.$data['reservation']->client->phone."</a></li>
-                    <li><b> Email : </b><a href='mailto:+".$data['reservation']->client->email."' >".$data['reservation']->client->email."</a> </li>
+                 <br>Please accept or decline the order in this <a href='admin.palmyrahotels.tn/Confirmation/view/".$data['reservation']->reservationId."?resa=".$data['reservation']->hotel->mailresa."' >link</a>  .
+                    
                 <br><br>
 
                 <hr>
@@ -215,8 +213,8 @@ class Reservation extends BaseController
             
 
             if ( $this->vendorId > 0 ) {
-            $data['reservation'] =   $this->reservation_model->myReservationListing($this->vendorId , '0,1' );
-            $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , '2' );
+            $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , '0,1,2,3' );
+           // $data['reservationC'] =   $this->reservation_model->myReservationListing($this->vendorId , '2' );
             $data['user'] =   $this->user_model->user($this->vendorId );
             
             $this->global['pageTitle'] = 'My Bookings';

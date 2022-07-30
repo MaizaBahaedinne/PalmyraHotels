@@ -76,63 +76,53 @@
    </div>
    <!-- END REVOLUTION SLIDER -->
    <!-- End layerslider -->
-   <div class="white_bg">
-      <div class="container margin_60">
-         <div class="row small-gutters categories_grid">
-            <div class="col-sm-12 col-md-6">
-               <a href="#search_2" class="scroll-container" >
-                  <img src="<?php echo base_url() ?>assets/img/Offres/1.jpg" style="height: inherit ;" class="img-fluid">
-                  <div class="wrapper">
-                     <h2>Special Offers</h2>
-                     <p></p>
+    <div class="container margin_60" id="hotelsSection" >
+      <div class="main_title">
+         <h2>Palmyra <span>Top</span> Hotels</h2>
+         <p></p>
+      </div>
+      <div class="row">
+         <?php foreach ($hotels as $hotel ) { ?> 
+         <div class="col-lg-6 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+            <div class="tour_container">
+               <?php if($hotel->statut == 1 ) { ?>  
+               <div class="ribbon_3 popular"><span>Closed</span></div>
+               <?php } ?>
+               <div class="img_container">
+                  <a href="<?php echo base_url() ?>Hotel/<?php echo $hotel->acro ?>">
+                     <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
+                     <div class="short_info">
+                        <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price  ; } else{ echo "0" ; } ?><sup>DT</sup></span>
+                     </div>
+                  </a>
+               </div>
+               <div class="tour_title">
+                  <h3>Palmyra <strong><?php echo $hotel->name ?></strong></h3>
+                  <div class="rating">
+                     <?php for ($i=0; $i < round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
+                     <?php for ($i=0; $i < 5-round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
+                     <small>(<?php echo count($hotel->avis) ?>)</small>
                   </div>
-               </a>
-            </div>
-            <div class="col-sm-12 col-md-6">
-               <div class="row small-gutters mt-md-0 mt-sm-2">
-                  <div class="col-sm-6">
-                     <a href="#hotelsSection" class="scroll-container">
-                        <img src="<?php echo base_url() ?>assets/img/Offres/2.jpg" alt="" class="img-fluid">
-                        <div class="wrapper">
-                           <h2></h2>
-                           <p></p>
-                        </div>
-                     </a>
+                  <!-- end rating -->
+                  <div class="wishlist">
+                     <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
                   </div>
-                  <div class="col-sm-6">
-                     <a href="#search_2">
-                        <img src="<?php echo base_url() ?>assets/img/Offres/3.jpg" alt="" class="img-fluid">
-                        <div class="wrapper">
-                           <h2></h2>
-                           <p></p>
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-sm-6 mt-sm-2">
-                     <a href="#eventsSection" class="scroll-container">
-                        <img src="<?php echo base_url() ?>assets/img/Offres/4.jpg" alt="" class="img-fluid" style="max-height: 350px;">
-                        <div class="wrapper">
-                           <h2></h2>
-                           <p></p>
-                        </div>
-                     </a>
-                  </div>
-                  <div class="col-sm-6 mt-sm-2">
-                     <a href="#search_2" class="scroll-container">
-                        <img src="<?php echo base_url() ?>assets/img/Offres/5.jpg" alt="" class="img-fluid" style="max-height: 350px;">
-                        <div class="wrapper">
-                           <h2></h2>
-                           <p></p>
-                        </div>
-                     </a>
-                  </div>
+                  <!-- End wish list-->
                </div>
             </div>
+            <!-- End box tour -->
          </div>
-         <!--/categories_grid-->
+         <!-- End col -->
+         <?php } ?>
       </div>
-      <!-- /container -->
+      <!-- End row -->
+      <!--
+         <p class="text-center nopadding">
+             <a href="#" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
+         </p>
+         -->
    </div>
+   <!-- End container -->
    <!-- /white_bg -->
    <div id="search_container_2">
       <div id="search_2">
@@ -239,53 +229,7 @@
           });
       });
    </script>
-   <div class="container margin_60" id="hotelsSection" >
-      <div class="main_title">
-         <h2>Palmyra <span>Top</span> Hotels</h2>
-         <p></p>
-      </div>
-      <div class="row">
-         <?php foreach ($hotels as $hotel ) { ?> 
-         <div class="col-lg-6 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-            <div class="tour_container">
-               <?php if($hotel->statut == 1 ) { ?>  
-               <div class="ribbon_3 popular"><span>Closed</span></div>
-               <?php } ?>
-               <div class="img_container">
-                  <a href="<?php echo base_url() ?>Hotel/<?php echo $hotel->acro ?>">
-                     <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
-                     <div class="short_info">
-                        <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price  ; } else{ echo "0" ; } ?><sup>DT</sup></span>
-                     </div>
-                  </a>
-               </div>
-               <div class="tour_title">
-                  <h3>Palmyra <strong><?php echo $hotel->name ?></strong></h3>
-                  <div class="rating">
-                     <?php for ($i=0; $i < round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile voted"></i>' ;   } ?>
-                     <?php for ($i=0; $i < 5-round($hotel->avisHotel->moyenne) ; $i++) { echo '<i class="icon-smile"></i>' ;   } ?>
-                     <small>(<?php echo count($hotel->avis) ?>)</small>
-                  </div>
-                  <!-- end rating -->
-                  <div class="wishlist">
-                     <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                  </div>
-                  <!-- End wish list-->
-               </div>
-            </div>
-            <!-- End box tour -->
-         </div>
-         <!-- End col -->
-         <?php } ?>
-      </div>
-      <!-- End row -->
-      <!--
-         <p class="text-center nopadding">
-             <a href="#" class="btn_1 medium"><i class="icon-eye-7"></i>View all tours (144) </a>
-         </p>
-         -->
-   </div>
-   <!-- End container -->
+  
    <div class="white_bg" id="eventsSection">
       <div class="container margin_60">
          <div class="main_title">

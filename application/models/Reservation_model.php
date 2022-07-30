@@ -114,8 +114,8 @@ class Reservation_model extends CI_Model
             }
 
              
-        
-     
+        $this->db->where('BaseTbl.checkin >= CURDATE()'  );
+        $this->db->order_by('BaseTbl.checkin '  );
         $query = $this->db->get();
         return $query->result();
     }
