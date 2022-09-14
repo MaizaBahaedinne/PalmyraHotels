@@ -561,7 +561,7 @@
                                 }
                         if(adult == 1 && child == 1  )
                                 { 
-                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*1) ) ) ;  
                                 }
                         if(adult == 2 && child == 1  )
                                 { 
@@ -569,7 +569,7 @@
                                 }
                         if(adult == 1 & child == 2  )
                                 { 
-                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.3) ) ) ;
                                 }
                         if( adult == 4  )
                                 { 
@@ -577,15 +577,15 @@
                                 }
                         if(adult == 3 && child == 1  )
                                 { 
-                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) ) )) ;  
                                 }
                         if(adult == 2 && child == 2  )
                                 { 
-                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;  
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) ) )) ;  
                                 }
                         if(adult == 1 & child == 3  )
                                 { 
-                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) - parseInt( $(".Pax_"+detailId).val() )*0.5) ) ) ;
+                                price= (adult*parseInt( $(".Pax_"+detailId).val() ) )  + (child * (parseInt( parseInt( $(".Pax_"+detailId).val() ) ) )) ;
                                 }
 
                 
