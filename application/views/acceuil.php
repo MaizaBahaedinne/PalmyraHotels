@@ -92,7 +92,7 @@
                   <a href="<?php echo base_url() ?>Hotel/<?php echo $hotel->acro ?>">
                      <img src="<?php echo base_url() ?>assets/img/facade/hotel/<?php echo $hotel->facade?>"  class="img-fluid" alt="Image">
                      <div class="short_info">
-                        <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price  ; } else{ echo "0" ; } ?><sup>DT</sup></span>
+                        <i class="icon_set_1_icon-44"></i><?php echo $hotel->location ?><span class="price"> <small><small>From</small></small> <?php if(!empty($hotel->prices->price)){ echo $hotel->prices->price + $hotel->prices->PD  ; } else{ echo "0" ; } ?><sup>DT</sup></span>
                      </div>
                   </a>
                </div>
