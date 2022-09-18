@@ -12,7 +12,7 @@
             <!-- start slide 01 -->
             <li data-index="rs-73" data-transition="zoomout" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="01" data-param1="01" data-description="">
                <!-- main image -->
-               <img src="<?php echo base_url() ?>assets/img/slides/aqua.webpp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+               <img src="<?php echo base_url() ?>assets/img/slides/aqua.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
                <div class="rev-slider-mask"></div>
                <!-- opacity mask -->
                <!-- main text layer -->
@@ -28,7 +28,7 @@
             <!-- start slide 02 -->
             <li data-index="rs-74" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="02" data-param1="02" data-description="">
                <!-- main image -->
-               <img src="<?php echo base_url() ?>assets/img/slides/golden.webpp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+               <img src="<?php echo base_url() ?>assets/img/slides/golden.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
                <div class="rev-slider-mask" style="opacity: 0.5"></div>
                <!-- opacity mask -->
                <!-- main text layer -->
@@ -44,7 +44,7 @@
             <!-- start slide 03 -->
             <li data-index="rs-75" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="03" data-param1="03" data-description="">
                <!-- main image -->
-               <img src="<?php echo base_url() ?>assets/img/slides/talamnca.webpp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+               <img src="<?php echo base_url() ?>assets/img/slides/talamnca.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
                <div class="rev-slider-mask" style="opacity: 0.6"></div>
                <!-- opacity mask -->
                <!-- main text layer -->
@@ -59,7 +59,7 @@
             <!-- start slide 03 -->
             <li data-index="rs-76" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="03" data-param1="03" data-description="">
                <!-- main image -->
-               <img src="<?php echo base_url() ?>assets/img/slides/Baro.webpp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+               <img src="<?php echo base_url() ?>assets/img/slides/Baro.webp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
                <div class="rev-slider-mask" style="opacity: 0.6"></div>
                <!-- opacity mask -->
                <!-- main text layer -->
