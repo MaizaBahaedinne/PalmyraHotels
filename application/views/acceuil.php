@@ -28,7 +28,7 @@
             <!-- start slide 02 -->
             <li data-index="rs-74" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="02" data-param1="02" data-description="">
                <!-- main image -->
-               <img src="<?php echo base_url() ?>assets/img/slides/golden.jpeg" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
+               <img src="<?php echo base_url() ?>assets/img/slides/golden.webpp" alt="" data-bgcolor="#ccc" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina="">
                <div class="rev-slider-mask" style="opacity: 0.5"></div>
                <!-- opacity mask -->
                <!-- main text layer -->
